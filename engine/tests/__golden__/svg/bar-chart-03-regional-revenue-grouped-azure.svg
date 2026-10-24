@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="bar-chart" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">Asia-Pacific overtook Europe as the second-largest region in FY26</title>
+<desc id="ds-svg-desc">Revenue by region, € millions</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Asia-Pacific overtook Europe as the second-largest region in FY26</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Revenue by region, € millions</tspan></text>
+<path id="category-1--fy25" data-role="node" data-node="fy25" data-emphasis="muted" d="M100 192H159V588.5H100Z" fill="#A6A6A6"/>
+<text id="category-1--fy25--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="129.5" y="185">412</tspan></text>
+<path id="category-1--fy26" data-role="node" data-node="fy26" data-emphasis="accent" d="M161 157.5H220V588.5H161Z" fill="#0078D4"/>
+<text id="category-1--fy26--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="190.5" y="150.5">448</tspan></text>
+<text id="category-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="160" y="609">North America</tspan></text>
+<path id="category-2--fy25" data-role="node" data-node="fy25" data-emphasis="muted" d="M340 369H399V588.5H340Z" fill="#A6A6A6"/>
+<text id="category-2--fy25--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="369.5" y="362">228</tspan></text>
+<path id="category-2--fy26" data-role="node" data-node="fy26" data-emphasis="accent" d="M401 299H460V588.5H401Z" fill="#0078D4"/>
+<text id="category-2--fy26--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="430.5" y="292">301</tspan></text>
+<text id="category-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="400" y="609">Asia-Pacific</tspan></text>
+<path id="category-3--fy25" data-role="node" data-node="fy25" data-emphasis="muted" d="M580 333.5H639V588.5H580Z" fill="#A6A6A6"/>
+<text id="category-3--fy25--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="609.5" y="326.5">265</tspan></text>
+<path id="category-3--fy26" data-role="node" data-node="fy26" data-emphasis="accent" d="M641 325H700V588.5H641Z" fill="#0078D4"/>
+<text id="category-3--fy26--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="670.5" y="318">274</tspan></text>
+<text id="category-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="640" y="609">Europe</tspan></text>
+<path id="category-4--fy25" data-role="node" data-node="fy25" data-emphasis="muted" d="M820 504H879V588.5H820Z" fill="#A6A6A6"/>
+<text id="category-4--fy25--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="849.5" y="497">88</tspan></text>
+<path id="category-4--fy26" data-role="node" data-node="fy26" data-emphasis="accent" d="M881 495H940V588.5H881Z" fill="#0078D4"/>
+<text id="category-4--fy26--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="910.5" y="488">97</tspan></text>
+<text id="category-4--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="880" y="609">Latin America</tspan></text>
+<path id="category-5--fy25" data-role="node" data-node="fy25" data-emphasis="muted" d="M1060 549H1119V588.5H1060Z" fill="#A6A6A6"/>
+<text id="category-5--fy25--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1089.5" y="542">41</tspan></text>
+<path id="category-5--fy26" data-role="node" data-node="fy26" data-emphasis="accent" d="M1121 538.5H1180V588.5H1121Z" fill="#0078D4"/>
+<text id="category-5--fy26--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1150.5" y="531.5">52</tspan></text>
+<text id="category-5--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1120" y="609">Middle East and Africa</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M40 588.5L1240 588.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="677">Source: Management accounts; fictitious data</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M42 633.5H50A2 2 0 0 1 52 635.5V643.5A2 2 0 0 1 50 645.5H42A2 2 0 0 1 40 643.5V635.5A2 2 0 0 1 42 633.5Z" fill="#A6A6A6"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="58" y="644">FY25</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M103.5 633.5H111.5A2 2 0 0 1 113.5 635.5V643.5A2 2 0 0 1 111.5 645.5H103.5A2 2 0 0 1 101.5 643.5V635.5A2 2 0 0 1 103.5 633.5Z" fill="#0078D4"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="119.5" y="644">FY26</tspan></text>
+</svg>

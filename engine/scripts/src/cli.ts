@@ -7,6 +7,7 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { exampleFiles, listTypes } from './catalog.js';
+import { isDeck, prepareDeck, renderDeck } from './deck.js';
 import { type Format, isFailure, prepare, readSpecFile, render } from './pipeline.js';
 import { iconNames } from './render/icons.js';
 import { catalogInfo, searchServices } from './azure/icons.js';
@@ -59,7 +60,7 @@ function str(v: string | true | undefined): string | undefined {
 const HELP = `diagram-studio — boardroom-quality diagrams from a JSON spec
 
 Usage:
-  diagram-studio render <spec.json> [--png --pdf --pptx --drawio | --all] [--out dir] [--theme id]
+  diagram-studio render <spec.json | deck.json> [--png --pdf --pptx --drawio | --all] [--out dir] [--theme id]
                         [--scale 1|2|3] [--transparent] [--force] [--no-preview]
   diagram-studio validate <spec.json> [--theme id]
   diagram-studio check <spec.json> [--theme id]
@@ -99,7 +100,9 @@ async function cmdRender(a: Args): Promise<number> {
   if (scale !== undefined && ![1, 2, 3].includes(scale)) throw new DiagramError('--scale must be 1, 2 or 3', 'usage');
   const outDir = path.resolve(str(a.flags.out) ?? path.dirname(path.resolve(file)));
   const t0 = Date.now();
-  const summary = await render(readSpecFile(file), {
+  const input = readSpecFile(file);
+  if (isDeck(input)) return renderDeckCommand(a, input, file, outDir, formats, scale, t0);
+  const summary = await render(input, {
     theme: str(a.flags.theme),
     outDir,
     formats,
@@ -123,6 +126,50 @@ async function cmdRender(a: Args): Promise<number> {
   return summary.exitCode;
 }
 
+async function renderDeckCommand(a: Args, input: unknown, file: string, outDir: string, formats: Format[], scale: number | undefined, t0: number): Promise<number> {
+  const summary = await renderDeck(input, {
+    theme: str(a.flags.theme),
+    outDir,
+    formats,
+    scale,
+    force: !!a.flags.force,
+    preview: !a.flags['no-preview'],
+    deckPath: path.resolve(file),
+  });
+  out({ ...summary, ms: Date.now() - t0 });
+  printIssues('Errors', summary.errors);
+  printIssues('Warnings', summary.warnings);
+  if (summary.files.length) {
+    err(`Wrote ${summary.files.length} file(s) to ${outDir}:`);
+    for (const f of summary.files) err(`  ${path.relative(outDir, f.path)}  (${(f.bytes / 1024).toFixed(1)} KB)`);
+  }
+  for (const n of summary.notes) err(`Note: ${n}`);
+  if (summary.exitCode === 0) err(`OK: rendered the deck "${summary.title}" (${summary.pages.length} pages). Now view preview.png (every page) and the pages/*.png, and run the self-review checklist on each.`);
+  else if (summary.exitCode === 1) err('Validation failed: fix the deck or the pages named above and run render again.');
+  else err('QA failed: edit the page specs (never the SVG) and run render again.');
+  return summary.exitCode;
+}
+
+/** validate and check on a deck: every page, through the same pipeline as render. */
+async function deckReport(input: unknown, file: string, theme: string | undefined, stage: 'validate' | 'check'): Promise<number> {
+  const { deck, pages, errors } = await prepareDeck(input, { deckPath: path.resolve(file), theme });
+  const results = pages.map((p) => p.result);
+  const invalid = !deck || pages.some((p) => !p.prepared);
+  const qa = results.flatMap((r) => r.errors);
+  const all = [...errors, ...qa];
+  out({ ok: !all.length, kind: 'deck', stage, pages: results, errors: all, warnings: results.flatMap((r) => r.warnings) });
+  printIssues('Errors', all);
+  printIssues('Warnings', results.flatMap((r) => r.warnings));
+  if (invalid) return 1;
+  if (stage === 'validate') {
+    if (all.length) err('Every page is valid, but some fail QA: run check or render for details.');
+    else err(`Valid: ${results.length} pages.`);
+    return 0;
+  }
+  if (!all.length) err(`Clean: ${results.length} pages.`);
+  return all.length ? 2 : 0;
+}
+
 async function cmdValidate(a: Args): Promise<number> {
   const file = a.pos[1];
   if (!file) throw new DiagramError('validate needs a spec file', 'usage');
@@ -133,6 +180,7 @@ async function cmdValidate(a: Args): Promise<number> {
     printIssues('Errors', e);
     return 1;
   }
+  if (isDeck(raw)) return deckReport(raw, file, str(a.flags.theme), 'validate');
   const r = validateSpec(raw, { theme: str(a.flags.theme) });
   out({ ok: r.ok, errors: r.errors, warnings: r.warnings });
   printIssues('Errors', r.errors);
@@ -144,7 +192,9 @@ async function cmdValidate(a: Args): Promise<number> {
 async function cmdCheck(a: Args): Promise<number> {
   const file = a.pos[1];
   if (!file) throw new DiagramError('check needs a spec file', 'usage');
-  const p = await prepare(readSpecFile(file), { theme: str(a.flags.theme) });
+  const raw = readSpecFile(file);
+  if (isDeck(raw)) return deckReport(raw, file, str(a.flags.theme), 'check');
+  const p = await prepare(raw, { theme: str(a.flags.theme) });
   if (isFailure(p)) {
     out({ ok: false, stage: 'validate', errors: p.validationErrors, warnings: p.warnings });
     printIssues('Errors', p.validationErrors);

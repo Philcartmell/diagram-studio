@@ -2,7 +2,7 @@
 
 Items placed on two axes with four named quadrants. Answers "where should we focus?" or "how do these compare on two dimensions?".
 
-**Use for:** impact vs effort prioritisation, portfolio positioning, vendor assessments, risk heatmaps (likelihood vs impact), BCG-style grids.
+**Use for:** impact vs effort prioritisation, portfolio positioning, vendor assessments, risk heatmaps (likelihood vs impact), growth-share grids.
 **Not for:** more than two dimensions (use tags for a third), exact data plots with axes and ticks (use a charting tool).
 
 ## Body fields
@@ -29,7 +29,7 @@ Items count toward the altitude node limit.
 - Use x/y only when the user gave scores or a relative order; otherwise use `quadrant`, which avoids implying precision.
 - Keep labels ≤ 3–4 words; spread items that share a position by ±0.05 so labels have room.
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive with positions
 

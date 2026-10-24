@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "type": "bar-chart",
+  "title": "Asia-Pacific overtook Europe as the second-largest region in FY26",
+  "subtitle": "Revenue by region, € millions",
+  "footer": { "source": "Management accounts; fictitious data" },
+  "body": {
+    "mode": "grouped",
+    "series": [
+      { "id": "fy25", "label": "FY25", "emphasis": "muted" },
+      { "id": "fy26", "label": "FY26", "emphasis": "accent" }
+    ],
+    "categories": [
+      { "label": "North America", "values": [412, 448] },
+      { "label": "Asia-Pacific", "values": [228, 301] },
+      { "label": "Europe", "values": [265, 274] },
+      { "label": "Latin America", "values": [88, 97] },
+      { "label": "Middle East and Africa", "values": [41, 52] }
+    ]
+  }
+}

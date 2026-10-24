@@ -73,8 +73,23 @@ describe('PPTX', () => {
     expect(slide).toMatch(/type="title"[\s\S]*?<a:t>A shared finance hub/);
     expect(notesXml).toContain('Target finance operating model, 2027');
     expect(notesXml).toContain('40% of transactional effort');
-    expect(notes.join(' ')).toMatch(/Calibri/);
+    // Inter is not an Office font, so every run names Arial, which every device has.
+    expect(notes.join(' ')).toMatch(/"Arial" in place of the theme font "Inter"/);
+    expect(slide).toMatch(/<a:latin typeface="Arial"/);
+    expect(slide).not.toMatch(/typeface="Inter"/);
     expect(XMLValidator.validate(slide)).toBe(true);
+  });
+
+  it('names the theme font when a theme maps it to an Office font, and keeps shape ids unique across slides', async () => {
+    const { renderPptxPages } = await load('export/pptx.js');
+    const ex = firsts().find((e) => e.type === 'operating-model');
+    const p = await prepare({ ...ex.spec, themeOverrides: { font: { officeFamily: 'Inter' } } });
+    const { buffer } = await renderPptxPages([p, p], { title: 'Two pages' });
+    const zip = await JSZip.loadAsync(buffer);
+    const slides = await Promise.all([1, 2].map((n) => zip.file(`ppt/slides/slide${n}.xml`).async('string')));
+    expect(slides[0]).toMatch(/<a:latin typeface="Inter"/);
+    const ids = slides.flatMap((s) => [...s.matchAll(/<p:cNvPr id="(\d+)"/g)].map((m) => m[1]));
+    expect(new Set(ids).size).toBe(ids.length);
   });
 
   it('writes well-formed slides for every type and theme', async () => {

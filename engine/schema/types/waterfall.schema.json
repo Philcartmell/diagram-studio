@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/waterfall.schema.json",
+  "title": "waterfall body",
+  "description": "A starting level, the changes that move it and the level they reach; the engine computes subtotals and the end.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["steps"],
+  "properties": {
+    "unit": { "type": "string", "minLength": 1, "maxLength": 60 },
+    "format": { "$ref": "bar-chart.schema.json#/$defs/format" },
+    "steps": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "value": { "type": "number" },
+          "kind": { "enum": ["start", "delta", "subtotal", "end"] },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" }
+        }
+      }
+    },
+    "colors": { "enum": ["neutral", "direction"] },
+    "invert": { "type": "boolean" },
+    "axis": { "enum": ["auto", "zero"] }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "type": "kpi",
+  "title": "The invoice automation pilot already pays for itself in all three teams that use it",
+  "subtitle": "Finance automation pilot, three teams, first six months",
+  "footer": { "source": "Pilot tracking; fictitious data" },
+  "body": {
+    "items": [
+      { "id": "touchless", "value": "41%", "label": "of invoices now post with no manual touch", "detail": "Up from 12% before the pilot" },
+      { "id": "saving", "value": "£1.8M", "label": "annual saving across the three pilot teams", "emphasis": "accent" },
+      { "id": "close", "value": "3 days", "label": "faster month-end close", "detail": "Largest in accounts payable" }
+    ]
+  }
+}

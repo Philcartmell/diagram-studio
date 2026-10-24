@@ -54,7 +54,7 @@ Exactly as for `azure-architecture`: every container lays out its children in a 
 - Product names change often at Databricks. Use the names the user gives, and the catalog's current labels otherwise.
 - Never invent products, workspaces, regions or numbers the user did not give you.
 
-Names and facts in the example below are illustrative. Copy the structure, not the facts.
+Names and facts in the example below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive use-case flow
 

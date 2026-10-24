@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="waterfall" data-theme="blueprint" data-altitude="executive">
+<title id="ds-svg-title">Automation and sourcing take €38 million out of the cost base by FY28</title>
+<desc id="ds-svg-desc">Operating cost walk, FY25 to FY28, € millions</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">Automation and sourcing take €38 million out of the cost base by FY28</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#B8CCE3"><tspan x="48" y="108.5">Operating cost walk, FY25 to FY28, € millions</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="step-1" data-role="node" data-node="step-1" d="M78 213.5H166V560H78Z" fill="#FFC24B"/>
+<text id="step-1--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="122" y="206">212</tspan></text>
+<path id="step-1--link" data-role="decoration" d="M166 213.5L226 213.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-1--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="122" y="582.5">FY25 cost base</tspan></text>
+<path id="step-2" data-role="node" data-node="step-2" d="M226 190.5H314V213.5H226Z" fill="#FF6B6B"/>
+<text id="step-2--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#B8CCE3" text-anchor="middle"><tspan x="270" y="183">+14</tspan></text>
+<path id="step-2--link" data-role="decoration" d="M314 190.5L374 190.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-2--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="270" y="582.5">Inflation</tspan></text>
+<path id="step-3" data-role="node" data-node="step-3" d="M374 176H462V190.5H374Z" fill="#FF6B6B"/>
+<text id="step-3--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#B8CCE3" text-anchor="middle"><tspan x="418" y="168.5">+9</tspan></text>
+<path id="step-3--link" data-role="decoration" d="M462 176L522 176" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-3--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="418" y="582.5">Volume growth</tspan></text>
+<path id="step-4" data-role="node" data-node="step-4" d="M522 176H610V560H522Z" fill="#FFC24B"/>
+<text id="step-4--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="566" y="168.5">235</tspan></text>
+<path id="step-4--link" data-role="decoration" d="M610 176L670 176" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-4--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="566" y="582.5">Subtotal before</tspan><tspan x="566" y="600.5">actions</tspan></text>
+<path id="step-5" data-role="node" data-node="step-5" data-emphasis="accent" d="M670 176H758V218.5H670Z" fill="#4FD1C5"/>
+<text id="step-5--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#B8CCE3" text-anchor="middle"><tspan x="714" y="236.5">−26</tspan></text>
+<path id="step-5--link" data-role="decoration" d="M758 218.5L818 218.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-5--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="714" y="582.5">Process automation</tspan></text>
+<path id="step-6" data-role="node" data-node="step-6" d="M818 218.5H906V238H818Z" fill="#7BD88F"/>
+<text id="step-6--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#B8CCE3" text-anchor="middle"><tspan x="862" y="256.5">−12</tspan></text>
+<path id="step-6--link" data-role="decoration" d="M906 238L966 238" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-6--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="862" y="582.5">Sourcing</tspan></text>
+<path id="step-7" data-role="node" data-node="step-7" d="M966 238H1054V251H966Z" fill="#7BD88F"/>
+<text id="step-7--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#B8CCE3" text-anchor="middle"><tspan x="1010" y="269.5">−8</tspan></text>
+<path id="step-7--link" data-role="decoration" d="M1054 251L1114 251" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-7--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="1010" y="582.5">Footprint</tspan></text>
+<path id="step-8" data-role="node" data-node="step-8" d="M1114 251H1202V560H1114Z" fill="#FFC24B"/>
+<text id="step-8--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="1158" y="243.5">189</tspan></text>
+<text id="step-8--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="1158" y="582.5">FY28 cost base</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M48 560L1232 560" fill="none" stroke="#DCE7F3" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="48" y="669">Source: Transformation business case; fictitious data</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M50 625.5H58A2 2 0 0 1 60 627.5V635.5A2 2 0 0 1 58 637.5H50A2 2 0 0 1 48 635.5V627.5A2 2 0 0 1 50 625.5Z" fill="#7BD88F"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="66" y="635.5">Decrease</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M134.5 625.5H142.5A2 2 0 0 1 144.5 627.5V635.5A2 2 0 0 1 142.5 637.5H134.5A2 2 0 0 1 132.5 635.5V627.5A2 2 0 0 1 134.5 625.5Z" fill="#FF6B6B"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="150.5" y="635.5">Increase</tspan></text>
+</svg>

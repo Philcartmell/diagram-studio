@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="line-chart" data-theme="bold" data-altitude="executive">
+<title id="ds-svg-title">Online orders are back to their 2019 level after the relaunch; store visits keep falling</title>
+<desc id="ds-svg-desc">Online orders and store visits, index (2019 = 100)</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0E1116"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" fill="#F4F6F8"><tspan x="48" y="78.5">Online orders are back to their 2019 level after the relaunch; store visits keep</tspan><tspan x="48" y="117.5">falling</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#AAB3BF"><tspan x="48" y="148.5">Online orders and store visits, index (2019 = 100)</tspan></text>
+<path id="grid-1" data-role="axis" d="M76.5 617.5L1097 617.5" fill="none" stroke="#C9D1DB" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-1--label" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="end"><tspan x="68.5" y="621.5">85</tspan></text>
+<path id="grid-2" data-role="decoration" d="M76.5 518L1097 518" fill="none" stroke="#282E38" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-2--label" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="end"><tspan x="68.5" y="522">90</tspan></text>
+<path id="grid-3" data-role="decoration" d="M76.5 418.5L1097 418.5" fill="none" stroke="#282E38" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-3--label" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="end"><tspan x="68.5" y="422.5">95</tspan></text>
+<path id="grid-4" data-role="decoration" d="M76.5 319L1097 319" fill="none" stroke="#282E38" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-4--label" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="end"><tspan x="68.5" y="323">100</tspan></text>
+<path id="grid-5" data-role="decoration" d="M76.5 220L1097 220" fill="none" stroke="#282E38" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-5--label" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="end"><tspan x="68.5" y="224">105</tspan></text>
+<text id="x-1" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="76.5" y="635">2018</tspan></text>
+<text id="x-2" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="127.5" y="635">Q2</tspan></text>
+<text id="x-3" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="178.5" y="635">Q3</tspan></text>
+<text id="x-4" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="229.5" y="635">Q4</tspan></text>
+<text id="x-5" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="280.5" y="635">2019</tspan></text>
+<text id="x-6" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="331.5" y="635">Q2</tspan></text>
+<text id="x-7" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="382.5" y="635">Q3</tspan></text>
+<text id="x-8" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="433.5" y="635">Q4</tspan></text>
+<text id="x-9" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="484.5" y="635">2020</tspan></text>
+<text id="x-10" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="535.5" y="635">Q2</tspan></text>
+<text id="x-11" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="587" y="635">Q3</tspan></text>
+<text id="x-12" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="638" y="635">Q4</tspan></text>
+<text id="x-13" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="689" y="635">2021</tspan></text>
+<text id="x-14" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="740" y="635">Q2</tspan></text>
+<text id="x-15" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="791" y="635">Q3</tspan></text>
+<text id="x-16" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="842" y="635">Q4</tspan></text>
+<text id="x-17" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="893" y="635">2022</tspan></text>
+<text id="x-18" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="944" y="635">Q2</tspan></text>
+<text id="x-19" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="995" y="635">Q3</tspan></text>
+<text id="x-20" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="1046" y="635">Q4</tspan></text>
+<text id="x-21" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF" text-anchor="middle"><tspan x="1097" y="635">2023</tspan></text>
+<path id="reference" data-role="decoration" d="M76.5 319L1097 319" fill="none" stroke="#C9D1DB" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="reference--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF"><tspan x="80.5" y="314">2019 = 100</tspan></text>
+<path id="annotation-1" data-role="decoration" d="M484.5 216L484.5 617.5" fill="none" stroke="#AAB3BF" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="annotation-1--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF"><tspan x="488.5" y="210.5">Website relaunch</tspan></text>
+<path id="stores--line-1" data-role="edge" d="M76.5 239.5L127.5 259.5L178.5 279.5L229.5 299.5L280.5 319L331.5 339L382.5 359L433.5 359L484.5 398.5L535.5 438.5L587 458.5L638 458.5L689 478.5L740 498L791 498L842 518L893 518L944 538L995 538L1046 558L1097 558" fill="none" stroke="#475162" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="online--line-1" data-role="edge" d="M76.5 398.5L127.5 379L178.5 339L229.5 339L280.5 319L331.5 299.5L382.5 299.5L433.5 279.5L484.5 359L535.5 538L587 438.5L638 379L689 339L740 299.5L791 279.5L842 299.5L893 319L944 299.5L995 339L1046 319L1097 319" fill="none" stroke="#FF5A36" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="online--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FF5A36"><tspan x="1107" y="324.5">Online orders  100</tspan></text>
+<text id="stores--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8"><tspan x="1107" y="563">Store visits  88</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF"><tspan x="48" y="669">Source: Trading data; fictitious data</tspan></text>
+</svg>

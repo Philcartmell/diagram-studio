@@ -8,7 +8,7 @@
     {
       "name": "diagram-studio",
       "source": "./plugins/diagram-studio",
-      "description": "Design Azure architectures (Microsoft reference style, official icons, ARM import), Databricks architectures (Databricks brand look, official product icons) and business diagrams with Claude, refined on a live preview board and exported to PowerPoint, draw.io, SVG, PNG or PDF."
+      "description": "Design Azure architectures (Microsoft reference style, official icons, ARM import), Databricks architectures (Databricks brand look, official product icons), business diagrams, consulting-style charts and exhibits, and whole decks with Claude, refined on a live preview board and exported to PowerPoint, draw.io, SVG, PNG or PDF."
     }
   ]
 }

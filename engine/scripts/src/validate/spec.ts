@@ -5,9 +5,18 @@
 import { iconNames, iconPaths } from '../render/icons.js';
 import { homePackOf } from '../azure/icons.js';
 import { azureLabel, azureNodes, checkAzure } from './azure.js';
+import { waterfallBars } from '../layout/waterfall.js';
+import { decimalsOf } from '../layout/chart.js';
+import { panelSpec } from '../spec.js';
 import type {
   Altitude,
   AzureArchitectureBody,
+  BarChartBody,
+  ExhibitBody,
+  KpiBody,
+  LineChartBody,
+  NarrativeBody,
+  WaterfallBody,
   LayeredArchitectureBody,
   MatrixBody,
   OperatingModelBody,
@@ -112,7 +121,9 @@ function crossReferences(spec: Spec, errors: Issue[], warnings: Issue[]) {
   const warn = (path: string, message: string, code: string) => warnings.push({ path, message: `${path}: ${message}`, code });
 
   const ids: { id: string; path: string }[] = [];
-  collectIds(spec.body, 'body', ids);
+  // An exhibit's panels are separate figures: only the panel ids share one namespace.
+  if (spec.type === 'exhibit') (spec.body as unknown as ExhibitBody).panels.forEach((p, i) => ids.push({ id: p.id, path: `body.panels[${i}].id` }));
+  else collectIds(spec.body, 'body', ids);
   const firstSeen = new Map<string, string>();
   for (const { id, path } of ids) {
     const prev = firstSeen.get(id);
@@ -138,7 +149,7 @@ function crossReferences(spec: Spec, errors: Issue[], warnings: Issue[]) {
       for (const [k, x] of Object.entries(v)) walkIcons(x, `${path}.${k}`);
     }
   };
-  walkIcons(spec.body, 'body');
+  if (spec.type !== 'exhibit') walkIcons(spec.body, 'body');
 
   switch (spec.type) {
     case 'swimlane': {
@@ -233,10 +244,149 @@ function crossReferences(spec: Spec, errors: Issue[], warnings: Issue[]) {
     case 'databricks-architecture':
       checkAzure(spec.body as unknown as AzureArchitectureBody, err, warn, homePackOf(spec.type));
       break;
+    case 'bar-chart':
+      checkBarChart(spec, err, warn);
+      break;
+    case 'waterfall':
+      checkWaterfall(spec.body as unknown as WaterfallBody, err);
+      break;
+    case 'line-chart':
+      checkLineChart(spec, err, warn);
+      break;
+    case 'kpi':
+      checkKpi(spec, warn);
+      break;
+    case 'narrative':
+      checkNarrative(spec, warn);
+      break;
     default:
       break;
   }
 }
+
+type Report = (path: string, message: string, code: string) => void;
+
+/** Series and categories a chart may carry at each altitude before it stops reading at a glance. */
+const CHART_LIMITS: Record<Altitude, { categories: number; series: number; kpis: number; words: number }> = {
+  executive: { categories: 12, series: 4, kpis: 4, words: 90 },
+  management: { categories: 24, series: 6, kpis: 5, words: 160 },
+  detailed: { categories: 40, series: 8, kpis: 6, words: 260 },
+};
+
+function raise(altitude: Altitude | undefined, verb = 'set'): string {
+  const higher = NEXT_ALTITUDE[altitude ?? 'executive'];
+  return higher ? `, or ${verb} "altitude": "${higher}"` : '';
+}
+
+function checkBarChart(spec: Spec, err: Report, warn: Report) {
+  const b = spec.body as unknown as BarChartBody;
+  const lim = CHART_LIMITS[spec.altitude ?? 'executive'];
+  const n = b.series.length;
+  const seen = new Set<string>();
+  b.series.forEach((s, i) => {
+    if (seen.has(s.id)) err(`body.series[${i}].id`, `series id "${s.id}" is used twice.`, 'ref.duplicate-id');
+    seen.add(s.id);
+  });
+  if (n > lim.series) err('body.series', `${n} series; ${spec.altitude} charts allow ${lim.series}. Combine small series into "Other"${raise(spec.altitude)}.`, 'altitude.series');
+  if (b.categories.length > lim.categories)
+    err('body.categories', `${b.categories.length} categories; ${spec.altitude} charts allow ${lim.categories}. Show the top ones and group the rest${raise(spec.altitude)}.`, 'altitude.categories');
+  const catIds = b.categories.map((c, i) => c.id ?? `category-${i + 1}`);
+  b.categories.forEach((c, i) => {
+    if (c.values.length !== n)
+      err(`body.categories[${i}].values`, `has ${c.values.length} value${c.values.length === 1 ? '' : 's'} but the chart has ${n} series. Give one value per series, in series order (null for a missing value).`, 'ref.values');
+    if (c.values.every((v) => v === null)) warn(`body.categories[${i}]`, `"${c.label}" has no values, so it draws as an empty slot.`, 'ref.values');
+    if (b.mode === 'percent' && c.values.some((v) => v !== null && v < 0))
+      err(`body.categories[${i}].values`, 'a 100% stacked chart cannot show negative values. Use "mode": "stacked" or "grouped".', 'ref.values');
+  });
+  const groups: string[] = [];
+  b.categories.forEach((c, i) => {
+    const g = c.group;
+    if (g && groups.includes(g) && b.categories[i - 1]?.group !== g) err(`body.categories[${i}].group`, `"${g}" appears again after another group. Keep each group's categories together.`, 'ref.group');
+    if (g && !groups.includes(g)) groups.push(g);
+  });
+  if (b.orientation === 'horizontal' && groups.length) err('body.categories', 'groups are drawn on columns only. Remove "group" or use "orientation": "vertical".', 'ref.group');
+  (b.deltas ?? []).forEach((d, i) => {
+    if (b.orientation === 'horizontal') err(`body.deltas[${i}]`, 'difference arrows are drawn on columns only. Remove "deltas" or use "orientation": "vertical".', 'ref.delta');
+    for (const end of ['from', 'to'] as const) {
+      if (!catIds.includes(d[end])) {
+        const g = closest(d[end], catIds);
+        err(`body.deltas[${i}].${end}`, `"${d[end]}" is not a category id.${g ? ` Did you mean "${g}"?` : ''} Give the categories an "id" to point at them.`, 'ref.delta');
+      }
+    }
+    if (catIds.indexOf(d.to) >= 0 && catIds.indexOf(d.to) < catIds.indexOf(d.from))
+      err(`body.deltas[${i}]`, `"to" (${d.to}) comes before "from" (${d.from}); the arrow runs left to right. Swap them.`, 'ref.delta');
+    if (b.mode === 'grouped' || (b.sort && b.sort !== 'none'))
+      err(`body.deltas[${i}]`, 'difference arrows need stacked or single columns in their given order. Remove "sort", use "mode": "stacked", or drop the delta.', 'ref.delta');
+  });
+  if (b.categories.some((c) => c.badge !== undefined) && !b.badges)
+    warn('body.badges', 'categories carry badges but nothing says what they mean. Add "badges": { "label": "…" } so the legend explains them.', 'ref.badges');
+}
+
+function checkWaterfall(b: WaterfallBody, err: Report) {
+  const kinds = b.steps.map((s, i) => s.kind ?? (i === 0 ? 'start' : 'delta'));
+  kinds.forEach((k, i) => {
+    if (k === 'start' && i > 0) err(`body.steps[${i}].kind`, 'only the first step can be the start. Use "subtotal" for a level part-way through.', 'ref.waterfall');
+    if (k === 'end' && i !== kinds.length - 1) err(`body.steps[${i}].kind`, '"end" must be the last step. Use "subtotal" for a level part-way through.', 'ref.waterfall');
+    if ((k === 'start' || k === 'delta') && b.steps[i].value === undefined) err(`body.steps[${i}].value`, `a ${k} step needs a value.`, 'ref.waterfall');
+  });
+  if (kinds[0] !== 'start') err('body.steps[0].kind', 'the first step must be the start level.', 'ref.waterfall');
+  // A stated total must equal the running total: the chart never shows a sum that does not add up.
+  const tol = 0.5 * 10 ** -Math.max(decimalsOf(b.steps.map((s) => s.value)), b.format?.decimals ?? 0);
+  waterfallBars(b).forEach((bar, i) => {
+    const stated = b.steps[i].value;
+    if ((bar.kind === 'subtotal' || bar.kind === 'end') && stated !== undefined && Math.abs(stated - bar.to) > tol + 1e-9)
+      err(`body.steps[${i}].value`, `says ${stated} but the steps before it add up to ${Math.round(bar.to * 1000) / 1000}. Check the figures, or leave "value" out and let the chart compute it.`, 'ref.waterfall-total');
+  });
+}
+
+function checkLineChart(spec: Spec, err: Report, warn: Report) {
+  const b = spec.body as unknown as LineChartBody;
+  const lim = CHART_LIMITS[spec.altitude ?? 'executive'];
+  if (b.series.length > lim.series)
+    err('body.series', `${b.series.length} lines; ${spec.altitude} charts allow ${lim.series}. Keep the lines the message is about and mute or drop the rest${raise(spec.altitude)}.`, 'altitude.series');
+  b.series.forEach((s, i) => {
+    if (s.values.length !== b.x.length) err(`body.series[${i}].values`, `has ${s.values.length} values but "x" has ${b.x.length} labels. Give one value per x label (null for a gap).`, 'ref.values');
+  });
+  (b.annotations ?? []).forEach((a, i) => {
+    if (!b.x.includes(a.at)) {
+      const g = closest(a.at, b.x);
+      err(`body.annotations[${i}].at`, `"${a.at}" is not one of the x labels.${g ? ` Did you mean "${g}"?` : ''}`, 'ref.annotation');
+    }
+  });
+  const y = b.yAxis;
+  if (y?.min !== undefined && y?.max !== undefined && y.min >= y.max) err('body.yAxis', '"min" must be below "max".', 'ref.axis');
+  const vals = b.series.flatMap((s) => s.values).filter((v): v is number => typeof v === 'number');
+  if (y?.min !== undefined && vals.some((v) => v < y.min!)) warn('body.yAxis.min', 'some values fall below "min" and are drawn on the axis. Lower "min" or leave it out.', 'ref.axis');
+  if (y?.max !== undefined && vals.some((v) => v > y.max!)) warn('body.yAxis.max', 'some values rise above "max" and are cut off. Raise "max" or leave it out.', 'ref.axis');
+}
+
+function checkKpi(spec: Spec, warn: Report) {
+  const b = spec.body as unknown as KpiBody;
+  const lim = CHART_LIMITS[spec.altitude ?? 'executive'];
+  if (b.items.length > lim.kpis) warn('body.items', `${b.items.length} figures; ${spec.altitude} slides read best with at most ${lim.kpis}. Keep the ones that carry the message.`, 'altitude.kpis');
+}
+
+function checkNarrative(spec: Spec, warn: Report) {
+  const b = spec.body as unknown as NarrativeBody;
+  const lim = CHART_LIMITS[spec.altitude ?? 'executive'];
+  const text = [b.heading ?? '', ...(b.paragraphs ?? []), ...(b.bullets ?? []).flatMap((x) => [x.lead ?? '', x.text])].join(' ');
+  const words = text.split(/\s+/).filter(Boolean).length;
+  if (words > lim.words) warn('body', `${words} words; ${spec.altitude} slides carry at most about ${lim.words}. Cut to the points that support the title${raise(spec.altitude)}.`, 'altitude.words');
+}
+
+/** Validate each exhibit panel as a stand-alone spec of its type, with paths under body.panels[i]. */
+function checkPanels(spec: Spec, opts: { theme?: string }, errors: Issue[], warnings: Issue[]) {
+  const b = spec.body as unknown as ExhibitBody;
+  b.panels.forEach((p, i) => {
+    const r = validateSpec(panelSpec(spec, p), opts);
+    const where = `body.panels[${i}]`;
+    const move = (x: Issue): Issue => ({ ...x, path: `${where}.${x.path}`, message: x.message.startsWith(x.path) ? `${where}.${x.message}` : `${where}: ${x.message}` });
+    // The exhibit's own title and accent count speak for the whole slide.
+    errors.push(...r.errors.filter((x) => x.path !== 'theme' && !x.path.startsWith('themeOverrides')).map(move));
+    warnings.push(...r.warnings.filter((x) => x.code !== 'title.topic' && x.code !== 'altitude.accent').map(move));
+  });
+}
+
 
 function altitudeChecks(spec: Spec, altitude: Altitude, errors: Issue[], warnings: Issue[]) {
   const rules = ALTITUDES[altitude];
@@ -280,7 +430,10 @@ function altitudeChecks(spec: Spec, altitude: Altitude, errors: Issue[], warning
       }
     }
   }
-  const accented = emphasisCarriers(spec).filter((c) => c.emphasis === 'accent');
+  // In an exhibit the same series accented in each small multiple is one accent, not several.
+  const accented = emphasisCarriers(spec)
+    .filter((c) => c.emphasis === 'accent')
+    .filter((c, i, all) => spec.type !== 'exhibit' || !c.id || all.findIndex((x) => x.id === c.id) === i);
   if (accented.length > rules.accentMax) {
     warnings.push({
       path: 'body',
@@ -344,6 +497,7 @@ export function validateSpec(input: unknown, opts: { theme?: string } = {}): Val
   }
   const spec = withDefaults(input as unknown as Spec, opts.theme);
   crossReferences(spec, errors, warnings);
+  if (spec.type === 'exhibit') checkPanels(spec, opts, errors, warnings);
   altitudeChecks(spec, spec.altitude!, errors, warnings);
   titleChecks(spec, warnings);
 

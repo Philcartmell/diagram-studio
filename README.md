@@ -6,7 +6,8 @@ A Claude Code plugin that designs diagrams with you. Describe what you need, or 
 | --- | --- |
 | `/diagram-studio:azure` | Azure architectures in the style of the Microsoft Azure Architecture Center, with the official Azure icons: solution workflows, network topologies, or a draft from your deployment. Azure Databricks workspaces included |
 | `/diagram-studio:databricks` | Databricks architectures in the Databricks brand look, with the official Databricks product icons: lakehouse and medallion pipelines, workspace deployment topologies, platform maps |
-| `/diagram-studio:business` | Business diagrams for leadership packs: operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures |
+| `/diagram-studio:business` | Business slides for leadership packs: operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures, and consulting-style data exhibits (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine them with text) |
+| `/diagram-studio:deck` | Decks: agree the storyline, then build every page from any of the above and export one PowerPoint, PDF or draw.io file with consistent titles, theme, classification and page numbers |
 
 ## Examples
 
@@ -57,6 +58,30 @@ governs it all with lineage and data quality monitoring.
 
 ![A Databricks medallion pipeline in the Databricks look: sources, ingest, bronze, silver and gold, serve and analyse stages over a Unity Catalog band](docs/images/example-databricks.png)
 
+**A data exhibit: the argument, the chart and the headline numbers**
+
+```
+/diagram-studio:business One exhibit for the board on pooling fleet charging. Annual charging cost in £ millions,
+split into grid connections, chargers and electricity: 2030 separate depots 20 / 90 / 260, pooled 30 / 80 / 200;
+2040 separate 10 / 340 / 1,050, pooled 110 / 290 / 700. Operating cost is 240, 220, 820 and 760. Show the saving
+between the options in each year, the 2040 saving as the headline, and three supporting points on the left:
+£110m a year in grid connections and hubs, £350m lower electricity cost, over £2bn saved to 2040.
+```
+
+![An exhibit: three bullet points on the left, stacked columns of fleet charging costs for 2030 and 2040 with computed totals, −60 and −300 difference arrows and operating-cost badges in the centre, and £60M and £300M headline figures on the right](docs/images/example-exhibit.png)
+
+The engine adds up the totals and the differences itself, from the figures you give it.
+
+**A deck: several pages, one file**
+
+```
+/diagram-studio:deck A nine-page steering committee pack on the platform and fleet charging investment case, confidential.
+Use the fleet charging exhibit, the margin bridge and the cloud survey charts as evidence, then the finance operating model,
+the medallion pipeline and the claims portal architecture with its cost case.
+```
+
+![A contact sheet of a nine-page deck: a title page, two section dividers, chart exhibits, an operating model, a Databricks pipeline and an Azure architecture beside a cost waterfall, every page with its tracker tag, action title in the same place, classification and page number](docs/images/example-deck.png)
+
 ## How it works
 
 Claude never draws anything itself. It writes a JSON spec, and a deterministic renderer (the [`diagram-studio`](engine/README.md) npm package, in [`engine/`](engine/)) does the layout, icons, styling, quality checks and export. Same spec, same picture, every time. The domain knowledge lives in the engine: the Azure style definition (from an analysis of 14 Microsoft reference architectures), the Databricks style definition (from 17 Databricks diagram sources and Microsoft's Azure Databricks diagrams), the Azure and Databricks icon catalogs, the layout rules and the ARM importer. The skills run the conversation.
@@ -82,8 +107,15 @@ Claude never draws anything itself. It writes a JSON spec, and a deterministic r
 - **The form that fits the content.** Layers for who serves whom, lanes for handoffs, horizons for what happens when, a chain for how value flows, a 2x2 for where to focus. Concepts differ in form or story, not just in colour.
 - **Written for leaders.** Every title states the finding ("Invoices over £10k wait two days for a second approval"), and the renderer enforces how much detail each audience gets.
 - **Your brand.** Seven themes, from boardroom navy to hand-drawn sketch, or a contrast-checked theme built from your brand colours.
+- **Charts the consulting way.** Figures on the data rather than on an axis, totals and difference arrows computed from your values (a waterfall whose total does not add up is refused), series named beside the bars, one accent. Exhibits put a chart beside its argument, line up small multiples, or set an Azure or Databricks architecture next to the numbers that justify it.
 
-**All three skills**
+**Decks** (`/diagram-studio:deck`)
+
+- **Storyline first.** Claude drafts one action title per page and agrees them with you before drawing; the render writes them out as a storyline so you can check the argument.
+- **Any page type.** Business diagrams, charts, exhibits, Azure and Databricks architectures, title pages and section dividers. A page can point at a diagram you designed in another session, so later edits there flow into the deck.
+- **Consistent by construction.** One theme and canvas, every action title in the same place, "Exhibit N" trackers, classification and page numbers on every page. One PowerPoint (a slide per page), one bookmarked PDF, one draw.io file with a tab per page.
+
+**All the skills**
 
 - **Pitched at the audience.** Executive (at most 9 boxes or services), management (up to 20) or detailed (up to 60), with fix-it messages when a diagram carries too much.
 - **Exports you can keep editing.** A PowerPoint slide of native, grouped shapes, a draw.io file, SVG, PNG and vector PDF.

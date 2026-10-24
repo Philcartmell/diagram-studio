@@ -35,9 +35,18 @@ The `databricks` skill, the `databricks-architecture` type, the icon catalog and
 
 Claude Code plugins can open a pane and draw it from a hook: an SVG on the desktop app and in VS Code, a PNG in terminals that show images (the browser board stays the answer elsewhere). Pane buttons can run slash commands, so "Use B", "Undo" and "Export…" can drive the skill directly. SVG sources are capped at 131,072 characters, so large detailed diagrams may need a lean preview SVG without embedded fonts. Start with a one-day spike: a pane that draws the working SVG, with fonts, size and refresh checked.
 
+## Charts, exhibits and decks follow-ups
+
+Bar and column charts, waterfalls, line charts, KPI figures, narrative panels, exhibits and decks shipped in the next release. Next:
+
+- **Tables.** Comparison tables with in-cell bars, heat fills, status dots and Harvey balls, as in consulting "what to watch" pages.
+- **A filmstrip on the board.** The deck card shows a contact sheet; a page-by-page strip with the storyline beside it would let the user say "page 4: move the accent".
+- **A logo slot** in the deck frame, and corporate `.potx` masters (below).
+- **Optional native PowerPoint charts** for plain bar and line charts, for users who must edit the data in PowerPoint's chart editor. Chart groups already carry their values, so the PPTX exporter could swap the shapes for a native chart.
+- **Long tables across pages** ("continued") for PDF reports.
+
 ## Later
 
-- Decks: several diagrams in one session, exported as one PPTX.
 - Corporate `.potx` masters, org charts and journey maps.
 - A project-level `.diagram-studio/` folder, so a team can share a brand theme through its repository.
 - Other destinations and sources: push the SVG to a Miro board; import Mermaid and draw.io.

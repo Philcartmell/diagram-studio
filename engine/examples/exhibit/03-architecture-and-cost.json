@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "type": "exhibit",
+  "title": "Moving the claims portal to managed services cuts its run cost by a third",
+  "footer": { "source": "Cost model, FY27 run rate; fictitious data" },
+  "body": {
+    "layout": "columns",
+    "panels": [
+      {
+        "id": "target", "type": "azure-architecture", "span": 1.5, "title": "Target architecture",
+        "body": {
+          "layout": "row",
+          "children": [
+            { "id": "users", "service": "users", "label": "Policyholders" },
+            { "id": "region", "boundary": "region", "label": "UK South", "layout": "row", "children": [
+              { "id": "front", "service": "front-door", "label": "Front Door" },
+              { "id": "app", "service": "app-service", "label": "Claims portal" },
+              { "id": "data", "layout": "column", "children": [
+                { "id": "sql", "service": "sql-database", "label": "Claims database" },
+                { "id": "kv", "service": "key-vault", "label": "Key Vault" }
+              ]}
+            ]}
+          ],
+          "flows": [
+            { "from": "users", "to": "front", "step": 1 },
+            { "from": "front", "to": "app", "step": 2 },
+            { "from": "app", "to": "sql", "step": 3 },
+            { "from": "app", "to": "kv" }
+          ],
+          "workflow": "none"
+        }
+      },
+      {
+        "id": "cost", "type": "waterfall", "title": "Annual run cost", "subtitle": "£ thousands",
+        "body": {
+          "axis": "zero",
+          "steps": [
+            { "label": "Today", "value": 1240, "kind": "start" },
+            { "label": "Servers retired", "value": -520 },
+            { "label": "Licences", "value": -180 },
+            { "label": "Managed services", "value": 290 },
+            { "label": "Target", "kind": "end", "emphasis": "accent" }
+          ]
+        }
+      }
+    ]
+  }
+}

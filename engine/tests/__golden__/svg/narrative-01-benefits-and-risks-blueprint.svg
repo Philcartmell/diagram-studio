@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="narrative" data-theme="blueprint" data-altitude="executive">
+<title id="ds-svg-title">Automating the two largest warehouses pays back in four years, if we manage two risks</title>
+<desc id="ds-svg-desc">What the board should weigh before committing capital</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">Automating the two largest warehouses pays back in four years, if we manage two risks</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#B8CCE3"><tspan x="48" y="108.5">What the board should weigh before committing capital</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="narrative-heading" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#FFC24B"><tspan x="48" y="167.5">Benefits</tspan></text>
+<path id="point-1--bullet-1" data-role="marker" d="M50 190.5A2.5 2.5 0 1 1 55 190.5A2.5 2.5 0 1 1 50 190.5Z" fill="#FFC24B"/>
+<text id="point-1--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="196">Later cut-off</tspan></text>
+<text id="point-1--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="214">Robotic picking lets both sites ship next-day orders placed up to 10 pm.</tspan></text>
+<path id="point-2--bullet-1" data-role="marker" d="M50 238.5A2.5 2.5 0 1 1 55 238.5A2.5 2.5 0 1 1 50 238.5Z" fill="#FFC24B"/>
+<text id="point-2--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="244">Fewer errors</tspan></text>
+<text id="point-2--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="262">Scan-to-pack checks remove most of the mis-picks behind customer returns.</tspan></text>
+<path id="point-3--bullet-1" data-role="marker" d="M50 286.5A2.5 2.5 0 1 1 55 286.5A2.5 2.5 0 1 1 50 286.5Z" fill="#FFC24B"/>
+<text id="point-3--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="292">Supplier risk</tspan></text>
+<text id="point-3--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="310">Few vendors can deliver at this scale; the plan depends on ours keeping its build slots.</tspan></text>
+<path id="point-4--bullet-1" data-role="marker" d="M50 334.5A2.5 2.5 0 1 1 55 334.5A2.5 2.5 0 1 1 50 334.5Z" fill="#FFC24B"/>
+<text id="point-4--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="340">Payback risk</tspan></text>
+<text id="point-4--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="358">Fit-out costs fall in the first two years while the savings build over five.</tspan></text>
+</svg>

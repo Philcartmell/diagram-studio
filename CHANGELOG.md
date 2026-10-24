@@ -4,6 +4,24 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+### Engine: `diagram-studio`
+
+- **Charts** (a deliberate reversal of v1's "no data charts"): `bar-chart` (columns or bars; single, stacked, grouped or 100% stacked; negative values; category groups; difference arrows; hexagon badge figures), `waterfall` (start, changes, subtotals, end; an automatic axis break; neutral or direction colours), `line-chart` (end labels, a reference line, event markers) and `kpi` (big figures printed as written). Figures sit on the data; totals, differences, shares and waterfall subtotals are computed from the values, and a stated waterfall total that does not add up fails validation. Charts are drawn from the same shapes as diagrams, so SVG, PNG, PDF, PPTX and draw.io match.
+- **`narrative`**: a heading, paragraphs and bullets with bold lead-ins, for the argument beside an exhibit.
+- **`exhibit`**: one slide of panels, each any other type (charts, business diagrams, Azure and Databricks architectures), in columns, rows or a grid. Every layout can now draw as a figure into a given box; a figure that needs more room is scaled to fit, and QA fails below 70% rather than print unreadable text.
+- **Decks**: `diagram-studio render deck.json` renders a list of pages (spec files, inline specs, title and section pages) as one PPTX (a slide per page, shared masters), one PDF (bookmarked by action title) and one draw.io file (a tab per page), with per-page SVG and PNG, a contact sheet and a storyline file. The deck sets the theme, canvas, classification and page numbers; every action title sits in the same place, and a page that outgrows the canvas is drawn as a figure under the standard frame. `validate` and `check` accept decks.
+- Deck title and section pages take `themeOverrides` (a divider in its part's colour), and `"inverted": true` draws the title page full-bleed in the accent.
+- **Series colours hold across a page and a deck**: a line or categorical bar series keeps its palette hue, matched by label, on every panel of an exhibit and every page of a deck. Series on the same page always get different hues; series that never meet may share one, so long decks do not run through the palette.
+- Envelope `footnotes` (numbered notes above the source line), a `hexagon` shape, and swatch and line legend entries.
+- The preview board shows a rendered deck as one card with its downloads.
+- PPTX text names a font every device has: the theme's `officeFamily` when set, the theme font when Office ships it, otherwise Arial (Inter, DM Sans and the other bundled fonts are not Office fonts, and viewers such as the iOS file preview drew them as a serif). Line breaks are unchanged. Set `font.officeFamily` in a theme override to name the theme font for a team that has it installed.
+- PPTX shape ids are unique across the whole presentation, not only within each slide: the iOS file preview drew shapes from earlier slides in place of later slides' shapes that shared an id.
+
+### Plugin: `diagram-studio`
+
+- `/diagram-studio:deck`: a deck design session. Claude agrees the storyline (one action title per page) before drawing, builds each page as any type (or reuses another session's diagram), shows the whole deck on the board, refines page by page and exports one PowerPoint, PDF or draw.io file.
+- `/diagram-studio:business` now designs charts and exhibits too: new forms and preview sketches in its visual-forms guide, chart requests in its refining guide, and a rule never to compute a figure.
+
 ## 1.0.2 (2026-10-24)
 
 ### Engine: `diagram-studio`

@@ -34,7 +34,7 @@
     ],
     "external": [
       { "id": "card-scheme", "label": "Card schemes" },
-      { "id": "faster-payments", "label": "Faster Payments" },
+      { "id": "instant-payments", "label": "Instant payments" },
       { "id": "regulator", "label": "Regulatory reporting" }
     ]
   }

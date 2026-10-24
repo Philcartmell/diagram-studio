@@ -99,7 +99,7 @@ When the user is happy ("that's it", "export it", "looks good"), ask which forma
 diagram-studio render diagrams/<session>/working/diagram.json --out diagrams/<session>/exports --pptx --drawio --png --pdf
 ```
 
-Pass only the flags they chose (`--all` for everything). SVG is always written. List the files with their paths and pass on any `notes` from the render output (the PPTX font note, for example: the slide names DM Sans, which PowerPoint replaces if it is not installed). Mention that the PowerPoint slide carries the numbered steps in its speaker notes, and that `exports/<slug>.diagram.json` is the source for later changes. The board shows the exports as downloads. Leave the board running unless they ask you to stop it.
+Pass only the flags they chose (`--all` for everything). SVG is always written. List the files with their paths and pass on any `notes` from the render output (the PPTX font note, for example: the slide uses Arial in place of DM Sans, so it looks the same on every device). Mention that the PowerPoint slide carries the numbered steps in its speaker notes, and that `exports/<slug>.diagram.json` is the source for later changes. The board shows the exports as downloads. Leave the board running unless they ask you to stop it.
 
 ## Rules
 

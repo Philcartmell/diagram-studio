@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "type": "bar-chart",
+  "title": "Pooled fleet charging cuts costs by 21%, saving £300 million a year by 2040",
+  "subtitle": "Annual fleet charging cost¹, £ millions",
+  "footnotes": ["Charging cost combines capital and operating expenditure for grid connections, chargers and electricity", "Each division builds and runs its own charging"],
+  "footer": { "source": "Fleet electrification model; fictitious data" },
+  "body": {
+    "series": [
+      { "id": "grid", "label": "Grid connections", "emphasis": "muted" },
+      { "id": "chargers", "label": "Chargers" },
+      { "id": "electricity", "label": "Electricity" }
+    ],
+    "categories": [
+      { "id": "separate-2030", "label": "Separate depots²", "group": "2030", "values": [20, 90, 260], "badge": 240 },
+      { "id": "pooled-2030", "label": "Pooled charging", "group": "2030", "values": [30, 80, 200], "badge": 220 },
+      { "id": "separate-2040", "label": "Separate depots²", "group": "2040", "values": [10, 340, 1050], "badge": 820 },
+      { "id": "pooled-2040", "label": "Pooled charging", "group": "2040", "values": [110, 290, 700], "badge": 760, "emphasis": "accent" }
+    ],
+    "deltas": [
+      { "from": "separate-2030", "to": "pooled-2030" },
+      { "from": "separate-2040", "to": "pooled-2040" }
+    ],
+    "badges": { "label": "£ of which operating cost" }
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="bar-chart" data-theme="bold" data-altitude="executive">
+<title id="ds-svg-title">Licence and project revenue drove the 2.1-point fall in group growth</title>
+<desc id="ds-svg-desc">Group revenue growth, FY26, contribution by business line in percentage points</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0E1116"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" fill="#F4F6F8"><tspan x="48" y="78.5">Licence and project revenue drove the 2.1-point fall in group growth</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#AAB3BF"><tspan x="48" y="108.5">Group revenue growth, FY26, contribution by business line in percentage points</tspan></text>
+<path id="category-1--contribution" data-role="node" data-node="category-1" d="M914 174.5H1192.5V210.5H914Z" fill="#652B22"/>
+<text id="category-1--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F4F6F8"><tspan x="1198.5" y="198">0.9</tspan></text>
+<text id="category-1--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8" text-anchor="end"><tspan x="211.5" y="198">Subscriptions</tspan></text>
+<path id="category-2--contribution" data-role="node" data-node="category-2" d="M914 256H1007V292H914Z" fill="#652B22"/>
+<text id="category-2--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F4F6F8"><tspan x="1013" y="279">0.3</tspan></text>
+<text id="category-2--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8" text-anchor="end"><tspan x="211.5" y="279">Support contracts</tspan></text>
+<path id="category-3--contribution" data-role="node" data-node="category-3" d="M543.5 337.5H914V373.5H543.5Z" fill="#652B22"/>
+<text id="category-3--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F4F6F8" text-anchor="end"><tspan x="537.5" y="360.5">−1.2</tspan></text>
+<text id="category-3--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8" text-anchor="end"><tspan x="211.5" y="360.5">Implementation projects</tspan></text>
+<path id="category-4--contribution" data-role="node" data-node="category-4" data-emphasis="accent" d="M420 418.5H914V454.5H420Z" fill="#FF5A36"/>
+<text id="category-4--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FF5A36" text-anchor="end"><tspan x="414" y="442">−1.6</tspan></text>
+<text id="category-4--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FF5A36" text-anchor="end"><tspan x="211.5" y="442">Perpetual licences</tspan></text>
+<path id="category-5--contribution" data-role="node" data-node="category-5" d="M759.5 500H914V536H759.5Z" fill="#652B22"/>
+<text id="category-5--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F4F6F8" text-anchor="end"><tspan x="753.5" y="523">−0.5</tspan></text>
+<text id="category-5--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8" text-anchor="end"><tspan x="211.5" y="523">Hardware resale</tspan></text>
+<path id="category-6--contribution" data-role="node" data-node="category-6" data-emphasis="muted" d="M265.5 581.5H914V617.5H265.5Z" fill="#475162"/>
+<text id="category-6--total" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F4F6F8" text-anchor="end"><tspan x="259.5" y="604.5">−2.1</tspan></text>
+<text id="category-6--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F4F6F8" text-anchor="end"><tspan x="211.5" y="604.5">Group revenue</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M914 152L914 640" fill="none" stroke="#C9D1DB" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#AAB3BF"><tspan x="48" y="669">Source: Management accounts; fictitious data</tspan></text>
+</svg>

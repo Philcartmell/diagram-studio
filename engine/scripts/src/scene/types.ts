@@ -60,7 +60,8 @@ export type ShapeKind =
   | 'document'
   | 'cylinder'
   | 'delay'
-  | 'predefined';
+  | 'predefined'
+  | 'hexagon';
 
 export type Dash = 'solid' | 'dashed' | 'dotted';
 
@@ -216,6 +217,8 @@ export interface SceneMeta {
   notes?: string;
   /** Number of nodes counted against the altitude limit. */
   nodeCount: number;
+  /** Smallest scale a composed panel was drawn at; the minimum text size shrinks with it. */
+  textScale?: number;
 }
 
 export interface Scene {

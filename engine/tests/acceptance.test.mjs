@@ -40,14 +40,16 @@ describe('PRD acceptance', () => {
       cli(['render', ex.file, '--out', b, '--no-preview']);
     }
     const svgs = fs.readdirSync(a).filter((f) => f.endsWith('.svg'));
-    expect(svgs.length).toBe(8);
+    expect(svgs.length).toBe(new Set(examples().map((e) => e.type)).size);
     for (const f of svgs) expect(fs.readFileSync(path.join(a, f)).equals(fs.readFileSync(path.join(b, f))), f).toBe(true);
   });
 
   it('switching boardroom → sketch changes styling only: node positions stay within 8 units', async () => {
     // The architecture types size each service cell from its label in the theme's own font,
     // so a theme with wider type grows the cells; its structure test lives in azure.test.mjs.
-    for (const ex of examples().filter((e) => e.type !== 'azure-architecture' && e.type !== 'databricks-architecture')) {
+    // Charts and exhibits likewise size their label columns and figures from the theme font.
+    const sized = ['azure-architecture', 'databricks-architecture', 'bar-chart', 'waterfall', 'line-chart', 'kpi', 'narrative', 'exhibit'];
+    for (const ex of examples().filter((e) => !sized.includes(e.type))) {
       const a = await prepare(ex.spec, { theme: 'boardroom' });
       const b = await prepare(ex.spec, { theme: 'sketch' });
       const na = nodeBoxes(a.scene);
@@ -100,8 +102,10 @@ describe('PRD acceptance', () => {
       const zip = await JSZip.loadAsync(buffer);
       const xml = await zip.file('ppt/slides/slide1.xml').async('string');
       const groups = [...xml.matchAll(/<p:grpSp>[\s\S]*?<\/p:grpSp>/g)].map((m) => m[0]);
-      const nodes = p.scene.elements.filter((e) => e.kind === 'shape' && (e.role === 'node' || e.role === 'marker') && e.meta?.specId && e.group);
-      expect(nodes.length).toBeGreaterThan(0);
+      // Chart bars carry figures, not labels: their names sit on the axis or in the legend.
+      const nodes = p.scene.elements.filter((e) => e.kind === 'shape' && (e.role === 'node' || e.role === 'marker') && e.meta?.specId && e.group && e.meta.kind !== 'bar');
+      // Charts (and exhibits built from them) have no labelled nodes; every diagram type has some.
+      if (!['bar-chart', 'waterfall', 'line-chart', 'kpi', 'narrative', 'exhibit'].includes(ex.type)) expect(nodes.length, ex.name).toBeGreaterThan(0);
       for (const n of nodes) {
         const g = groups.find((x) => x.includes(`name="${n.group.slice(2)}"`));
         expect(g, `${ex.name}: group for ${n.id}`).toBeTruthy();

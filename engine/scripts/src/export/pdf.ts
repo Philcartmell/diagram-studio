@@ -35,22 +35,54 @@ function pageSize(scene: Scene): { w: number; h: number; s: number } {
   return { w: scene.width * 0.75, h: scene.height * 0.75, s: 0.75 };
 }
 
+export interface PdfPage {
+  scene: Scene;
+  theme: Theme;
+  fonts: FontSet;
+}
+
 export async function renderPdf(scene: Scene, theme: Theme, fonts: FontSet): Promise<Buffer> {
-  const { w, h, s } = pageSize(scene);
+  return renderPdfPages([{ scene, theme, fonts }], { title: scene.meta.title, subject: scene.meta.subtitle });
+}
+
+/**
+ * One PDF with a page per scene and a bookmark per action title. `size` fixes every
+ * page to one canvas (a deck), scaling any larger page down to fit; without it the
+ * single page takes its scene's own size.
+ */
+export async function renderPdfPages(pages: PdfPage[], meta: { title: string; subject?: string; size?: { width: number; height: number } }): Promise<Buffer> {
+  const first = meta.size ? ({ width: meta.size.width, height: meta.size.height } as Scene) : pages[0].scene;
+  const { w, h } = pageSize(first);
   const doc = new PDFDocument({
     size: [w, h],
     margin: 0,
-    autoFirstPage: true,
-    info: { Title: scene.meta.title, Subject: scene.meta.subtitle ?? '', Creator: GENERATOR, Producer: GENERATOR },
+    autoFirstPage: false,
+    info: { Title: meta.title, Subject: meta.subject ?? '', Creator: GENERATOR, Producer: GENERATOR },
   });
   const chunks: Buffer[] = [];
   doc.on('data', (c: Buffer) => chunks.push(c));
   const done = new Promise<Buffer>((resolve) => doc.on('end', () => resolve(Buffer.concat(chunks))));
+  const registered = new Set<string>();
+  for (const page of pages) {
+    for (const f of page.fonts.faces) {
+      if (!registered.has(f.file)) doc.registerFont(f.file, f.file);
+      registered.add(f.file);
+    }
+    doc.addPage({ size: [w, h], margin: 0 });
+    if (pages.length > 1) doc.outline.addItem(page.scene.meta.title);
+    const s = Math.min(w / page.scene.width, h / page.scene.height);
+    doc.rect(0, 0, w, h).fill(page.scene.background);
+    doc.save();
+    doc.translate((w - page.scene.width * s) / 2, (h - page.scene.height * s) / 2);
+    doc.scale(s);
+    drawScene(doc, page.scene, page.theme, page.fonts);
+    doc.restore();
+  }
+  doc.end();
+  return done;
+}
 
-  for (const f of fonts.faces) doc.registerFont(f.file, f.file);
-  doc.scale(s);
-  doc.rect(0, 0, scene.width, scene.height).fill(scene.background);
-
+function drawScene(doc: InstanceType<typeof PDFDocument>, scene: Scene, theme: Theme, fonts: FontSet) {
   for (const item of sceneToDraw(scene, { theme, fonts })) {
     for (const p of item.prims) {
       switch (p.t) {
@@ -107,6 +139,4 @@ export async function renderPdf(scene: Scene, theme: Theme, fonts: FontSet): Pro
       }
     }
   }
-  doc.end();
-  return done;
 }

@@ -17,11 +17,11 @@ describe('docs', () => {
     expect(text).toMatch(/^---\nname: diagram-studio\ndescription: .+\n---\n/);
   });
 
-  it('there is a reference guide for every type plus the two shared guides', () => {
+  it('there is a reference guide for every type plus the shared guides', () => {
     const names = fs.readdirSync(path.join(ROOT, 'references')).sort();
     expect(names).toEqual([
-      'azure-architecture.md', 'azure-style.md', 'databricks-architecture.md', 'databricks-style.md', 'layered-architecture.md', 'matrix-2x2.md', 'operating-model.md', 'roadmap.md',
-      'spec-format.md', 'swimlane.md', 'value-chain.md', 'writing-for-leaders.md',
+      'azure-architecture.md', 'azure-style.md', 'bar-chart.md', 'databricks-architecture.md', 'databricks-style.md', 'deck.md', 'exhibit.md', 'kpi.md', 'layered-architecture.md',
+      'line-chart.md', 'matrix-2x2.md', 'narrative.md', 'operating-model.md', 'roadmap.md', 'spec-format.md', 'swimlane.md', 'value-chain.md', 'waterfall.md', 'writing-for-leaders.md',
     ]);
   });
 

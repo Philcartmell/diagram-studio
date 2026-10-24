@@ -39,7 +39,7 @@ Decide which one the reader needs before choosing anything else.
 | Numbered flows | amber `#FFAB00` (first), blue `#4299E0` (second) |
 | Medallion layers | bronze, silver, gold, one consistent set |
 
-**Lava is scarce.** Databricks keeps it for the account boundary, the Unity Catalog band and the logo. Diagrams that splash it on every box, or use Google Slides' default palettes, look off-brand.
+**Lava is scarce.** Databricks keeps it for the account boundary, the Unity Catalog band and the logo. Diagrams that splash it on every box, or use slide software's default palettes, look off-brand.
 
 ## Icons
 
@@ -87,7 +87,7 @@ Nest at most three levels: account > plane > items, or stage > layer > table.
 
 ## Common mistakes
 
-- **Google Slides defaults:** Arial, `#4285F4` blue, `#FFD966` yellow. Off-brand even in Databricks' own docs.
+- **Slide-software defaults:** Arial, `#4285F4` blue, `#FFD966` yellow. Off-brand even in Databricks' own docs.
 - **Lava everywhere.** It stops meaning "Databricks".
 - **Old names:** Delta Live Tables (now declarative pipelines), Databricks Workflows (Lakeflow Jobs), Vector Search (AI Search), Lakehouse Monitoring (data quality monitoring). The icon catalog knows the old names, and the labels show the new ones.
 - **The logo as a product icon,** or one product icon repeated to mean "data".

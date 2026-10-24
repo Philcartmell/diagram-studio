@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/exhibit.schema.json",
+  "title": "exhibit body",
+  "description": "One slide built from panels of any other type, in columns, rows or a grid, under one action title. Each panel's body is validated against its own type.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["panels"],
+  "properties": {
+    "layout": { "enum": ["columns", "rows", "grid"] },
+    "columns": { "type": "integer", "minimum": 1, "maximum": 4 },
+    "dividers": { "type": "boolean" },
+    "panels": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "body"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "type": {
+            "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture", "bar-chart", "waterfall", "line-chart", "kpi", "narrative"]
+          },
+          "title": { "type": "string", "minLength": 1, "maxLength": 60 },
+          "subtitle": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "span": { "type": "number", "minimum": 0.25, "maximum": 6 },
+          "altitude": { "enum": ["executive", "management", "detailed"] },
+          "legend": { "$ref": "../diagram.schema.json#/properties/legend" },
+          "callout": { "$ref": "../diagram.schema.json#/properties/callout" },
+          "body": { "type": "object" }
+        }
+      }
+    }
+  }
+}

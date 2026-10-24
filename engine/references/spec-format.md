@@ -7,7 +7,7 @@ One diagram is one JSON document: a shared **envelope** plus a type-specific **b
 | Field | Type | Required | Notes |
 | --- | --- | --- | --- |
 | `version` | `"1.0"` | yes | |
-| `type` | enum | yes | `operating-model`, `swimlane`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture` |
+| `type` | enum | yes | `operating-model`, `swimlane`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture`, `azure-architecture`, `databricks-architecture`, `bar-chart`, `waterfall`, `line-chart`, `kpi`, `narrative`, `exhibit` |
 | `altitude` | enum | no | `executive` (default), `management`, `detailed` |
 | `theme` | string | no | Theme id; default `boardroom` or the saved default |
 | `themeOverrides` | object | no | Token overrides for this diagram only, e.g. `{ "color": { "accent": "#D4001A" } }` |
@@ -17,6 +17,7 @@ One diagram is one JSON document: a shared **envelope** plus a type-specific **b
 | `callout` | object | no | `{ "text": "…", "anchor"?: "<id>" }` — the "so what" box. With an anchor it sits beside that element; without, as a bar at the bottom |
 | `legend` | `"auto"` \| `"none"` \| array | no | `auto` (default) lists the tags used; at detailed altitude it also lists statuses and emphasis. Status badges are labelled, so at executive and management altitude they need no legend |
 | `footer` | object | no | `{ "source"?, "note"?, "classification"? }` — shown as "Source: …  ·  Note: …" on the left and the classification in capitals on the right |
+| `footnotes` | array | no | 1–4 strings printed above the source line as "1  …", "2  …". Mark them in the title, subtitle or labels with ¹ ² ³ ⁴ |
 | `body` | object | yes | Type-specific; see `references/<type>.md` |
 
 ## Node (used inside every body)

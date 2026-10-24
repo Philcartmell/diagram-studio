@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="bar-chart" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">Pooled fleet charging cuts costs by 21%, saving £300 million a year by 2040</title>
+<desc id="ds-svg-desc">Annual fleet charging cost¹, £ millions</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Pooled fleet charging cuts costs by 21%, saving £300 million a year by 2040</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Annual fleet charging cost¹, £ millions</tspan></text>
+<text id="group-1" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="40" y="149.5">2030</tspan></text>
+<path id="group-1--rule" data-role="decoration" d="M40 157L550.5 157" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="group-3" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="590.5" y="149.5">2040</tspan></text>
+<path id="group-3--rule" data-role="decoration" d="M590.5 157L1108 157" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="separate-2030--grid" data-role="node" data-node="grid" data-emphasis="muted" d="M91 502H211V506.5H91Z" fill="#A6A6A6"/>
+<path id="separate-2030--chargers" data-role="node" data-node="chargers" d="M91 482H211V502H91Z" fill="#0078D4"/>
+<text id="separate-2030--chargers--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFFFFF" text-anchor="middle"><tspan x="151" y="496.5">90</tspan></text>
+<path id="separate-2030--electricity" data-role="node" data-node="electricity" d="M91 424H211V482H91Z" fill="#52A3E2"/>
+<text id="separate-2030--electricity--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="151" y="457.5">260</tspan></text>
+<text id="separate-2030--grid--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="215" y="501.5">20</tspan></text>
+<text id="separate-2030--total" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="151" y="417">370</tspan></text>
+<text id="separate-2030--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="151" y="527">Separate depots²</tspan></text>
+<path id="separate-2030--badge" data-role="badge" d="M134 542L168.5 542L177 557L168.5 572L134 572L125 557Z" fill="#107C10"/>
+<text id="separate-2030--badge--text" data-role="badge" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="151" y="561.5">240</tspan></text>
+<path id="pooled-2030--grid" data-role="node" data-node="grid" data-emphasis="muted" d="M313.5 500H433.5V506.5H313.5Z" fill="#A6A6A6"/>
+<path id="pooled-2030--chargers" data-role="node" data-node="chargers" d="M313.5 482H433.5V500H313.5Z" fill="#0078D4"/>
+<text id="pooled-2030--chargers--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFFFFF" text-anchor="middle"><tspan x="373.5" y="495.5">80</tspan></text>
+<path id="pooled-2030--electricity" data-role="node" data-node="electricity" d="M313.5 437.5H433.5V482H313.5Z" fill="#52A3E2"/>
+<text id="pooled-2030--electricity--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="373.5" y="464.5">200</tspan></text>
+<text id="pooled-2030--grid--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="437.5" y="501.5">30</tspan></text>
+<text id="pooled-2030--total" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="373.5" y="430.5">310</tspan></text>
+<text id="pooled-2030--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="373.5" y="527">Pooled charging</tspan></text>
+<path id="pooled-2030--badge" data-role="badge" d="M356.5 542L391 542L399.5 557L391 572L356.5 572L347.5 557Z" fill="#107C10"/>
+<text id="pooled-2030--badge--text" data-role="badge" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="373.5" y="561.5">220</tspan></text>
+<path id="separate-2040--grid" data-role="node" data-node="grid" data-emphasis="muted" d="M642 504.5H762V506.5H642Z" fill="#A6A6A6"/>
+<path id="separate-2040--chargers" data-role="node" data-node="chargers" d="M642 428.5H762V504.5H642Z" fill="#0078D4"/>
+<text id="separate-2040--chargers--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFFFFF" text-anchor="middle"><tspan x="702" y="471">340</tspan></text>
+<path id="separate-2040--electricity" data-role="node" data-node="electricity" d="M642 194.5H762V428.5H642Z" fill="#52A3E2"/>
+<text id="separate-2040--electricity--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="702" y="316">1,050</tspan></text>
+<text id="separate-2040--grid--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="766" y="501.5">10</tspan></text>
+<text id="separate-2040--total" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="702" y="187.5">1,400</tspan></text>
+<text id="separate-2040--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="702" y="527">Separate depots²</tspan></text>
+<path id="separate-2040--badge" data-role="badge" d="M684.5 542L719 542L728 557L719 572L684.5 572L676 557Z" fill="#107C10"/>
+<text id="separate-2040--badge--text" data-role="badge" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="702" y="561.5">820</tspan></text>
+<path id="pooled-2040--grid" data-role="node" data-node="grid" data-emphasis="muted" d="M864 482H984V506.5H864Z" fill="#A6A6A6"/>
+<text id="pooled-2040--grid--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="924" y="499">110</tspan></text>
+<path id="pooled-2040--chargers" data-role="node" data-node="chargers" d="M864 417.5H984V482H864Z" fill="#0078D4"/>
+<text id="pooled-2040--chargers--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFFFFF" text-anchor="middle"><tspan x="924" y="454.5">290</tspan></text>
+<path id="pooled-2040--electricity" data-role="node" data-node="electricity" d="M864 261.5H984V417.5H864Z" fill="#52A3E2"/>
+<text id="pooled-2040--electricity--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="924" y="344">700</tspan></text>
+<text id="pooled-2040--total" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#0078D4" text-anchor="middle"><tspan x="924" y="254.5">1,100</tspan></text>
+<text id="pooled-2040--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#0078D4" text-anchor="middle"><tspan x="924" y="527">Pooled charging</tspan></text>
+<path id="pooled-2040--badge" data-role="badge" d="M907 542L941.5 542L950 557L941.5 572L907 572L898 557Z" fill="#107C10"/>
+<text id="pooled-2040--badge--text" data-role="badge" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="924" y="561.5">760</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M40 506.5L1035.5 506.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="series-electricity--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="1026.5" y="343.5">Electricity</tspan></text>
+<text id="series-chargers--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="1026.5" y="454">Chargers</tspan></text>
+<text id="series-grid--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="1026.5" y="498.5">Grid connections</tspan></text>
+<path id="delta-separate-2030-pooled-2030--from-0" data-role="decoration" d="M213 424L359.5 424" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="delta-separate-2030-pooled-2030--from-1" data-role="decoration" d="M388 424L465.5 424" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="delta-separate-2030-pooled-2030--to-0" data-role="decoration" d="M435.5 437.5L465.5 437.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="delta-separate-2030-pooled-2030--arrow" data-role="decoration"><path d="M459.5 424L459.5 429" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M459.5 437.5L456 428L463.5 428Z" fill="#3B3B3B"/></g>
+<text id="delta-separate-2030-pooled-2030--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="467.5" y="435.5">–60</tspan></text>
+<path id="delta-separate-2040-pooled-2040--from-0" data-role="decoration" d="M764 194.5L1002 194.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="delta-separate-2040-pooled-2040--to-0" data-role="decoration" d="M986 261.5L1002 261.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="delta-separate-2040-pooled-2040--arrow" data-role="decoration"><path d="M996 194.5L996 253" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M996 261.5L992.5 252L1000 252Z" fill="#3B3B3B"/></g>
+<text id="delta-separate-2040-pooled-2040--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="1004" y="232.5">–300</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="677">Source: Fleet electrification model; fictitious data</tspan></text>
+<text id="ds-footnotes" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="644">1 Charging cost combines capital and operating expenditure for grid connections, chargers and electricity</tspan><tspan x="40" y="658.5">2 Each division builds and runs its own charging</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M43.5 600.5L48.5 600.5L52 606.5L48.5 612.5L43.5 612.5L40 606.5Z" fill="#107C10"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="58" y="611">£ of which operating cost</tspan></text>
+</svg>
