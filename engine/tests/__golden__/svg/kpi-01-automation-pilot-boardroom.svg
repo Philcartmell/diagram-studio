@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="kpi" data-theme="boardroom" data-altitude="executive">
+<title id="ds-svg-title">The invoice automation pilot already pays for itself in all three teams that use it</title>
+<desc id="ds-svg-desc">Finance automation pilot, three teams, first six months</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#1B2733"><tspan x="48" y="76.5">The invoice automation pilot already pays for itself in all three teams that use it</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#5B6875"><tspan x="48" y="108.5">Finance automation pilot, three teams, first six months</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#9AA5B1" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="touchless--rule" data-role="decoration" d="M48 340L421.5 340" fill="none" stroke="#9AA5B1" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="touchless--value" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="45" font-weight="600" fill="#1B2733"><tspan x="48" y="397.5">41%</tspan></text>
+<text id="touchless--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733"><tspan x="48" y="428.5">of invoices now post with no manual touch</tspan></text>
+<text id="touchless--detail" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#5B6875"><tspan x="48" y="448.5">Up from 12% before the pilot</tspan></text>
+<path id="saving--rule" data-role="decoration" d="M453.5 340L826.5 340" fill="none" stroke="#0B3D91" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="saving--value" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="45" font-weight="600" fill="#0B3D91"><tspan x="453.5" y="397.5">£1.8M</tspan></text>
+<text id="saving--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733"><tspan x="453.5" y="428.5">annual saving across the three pilot teams</tspan></text>
+<path id="close--rule" data-role="decoration" d="M858.5 340L1232 340" fill="none" stroke="#9AA5B1" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="close--value" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="45" font-weight="600" fill="#1B2733"><tspan x="858.5" y="397.5">3 days</tspan></text>
+<text id="close--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733"><tspan x="858.5" y="428.5">faster month-end close</tspan></text>
+<text id="close--detail" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#5B6875"><tspan x="858.5" y="448.5">Largest in accounts payable</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5B6875"><tspan x="48" y="669">Source: Pilot tracking; fictitious data</tspan></text>
+</svg>

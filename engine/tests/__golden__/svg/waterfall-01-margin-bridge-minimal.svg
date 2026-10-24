@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="waterfall" data-theme="minimal" data-altitude="executive">
+<title id="ds-svg-title">Procurement savings more than offset inflation, lifting margin by 2.1 points</title>
+<desc id="ds-svg-desc">Operating margin bridge, FY25 to FY26, % of revenue</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#1F2328"><tspan x="48" y="75.5">Procurement savings more than offset inflation, lifting margin by 2.1 points</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#57606A"><tspan x="48" y="108">Operating margin bridge, FY25 to FY26, % of revenue</tspan></text>
+<path id="step-1" data-role="node" data-node="step-1" d="M84.5 357H180.5V614H84.5Z" fill="#C2410C"/>
+<path id="step-1--break-1" data-role="decoration" d="M82.5 602L182.5 594" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="step-1--break-2" data-role="decoration" d="M82.5 594L182.5 586" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="step-1--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="132.5" y="349">12.4%</tspan></text>
+<path id="step-1--link" data-role="decoration" d="M180.5 357L253.5 357" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-1--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="132.5" y="635.5">FY25 margin</tspan></text>
+<path id="step-2" data-role="node" data-node="step-2" d="M253.5 221.5H349.5V357H253.5Z" fill="#E7B39E"/>
+<text id="step-2--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#57606A" text-anchor="middle"><tspan x="301.5" y="213">+1.8%</tspan></text>
+<path id="step-2--link" data-role="decoration" d="M349.5 221.5L423 221.5" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-2--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2328" text-anchor="middle"><tspan x="301.5" y="635.5">Price increases</tspan></text>
+<path id="step-3" data-role="node" data-node="step-3" d="M423 221.5H519V342H423Z" fill="#E7B39E"/>
+<text id="step-3--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#57606A" text-anchor="middle"><tspan x="471" y="360">−1.6%</tspan></text>
+<path id="step-3--link" data-role="decoration" d="M519 342L592 342" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-3--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2328" text-anchor="middle"><tspan x="471" y="635.5">Wage inflation</tspan></text>
+<path id="step-4" data-role="node" data-node="step-4" d="M592 342H688V395H592Z" fill="#E7B39E"/>
+<text id="step-4--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#57606A" text-anchor="middle"><tspan x="640" y="412.5">−0.7%</tspan></text>
+<path id="step-4--link" data-role="decoration" d="M688 395L761 395" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-4--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2328" text-anchor="middle"><tspan x="640" y="635.5">Energy costs</tspan></text>
+<path id="step-5" data-role="node" data-node="step-5" data-emphasis="accent" d="M761 176H857V395H761Z" fill="#4B5563"/>
+<text id="step-5--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#57606A" text-anchor="middle"><tspan x="809" y="167.5">+2.9%</tspan></text>
+<path id="step-5--link" data-role="decoration" d="M857 176L930.5 176" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-5--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2328" text-anchor="middle"><tspan x="809" y="635.5">Procurement savings</tspan></text>
+<path id="step-6" data-role="node" data-node="step-6" d="M930.5 176H1026.5V198.5H930.5Z" fill="#E7B39E"/>
+<text id="step-6--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#57606A" text-anchor="middle"><tspan x="978.5" y="216.5">−0.3%</tspan></text>
+<path id="step-6--link" data-role="decoration" d="M1026.5 198.5L1099.5 198.5" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-6--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#1F2328" text-anchor="middle"><tspan x="978.5" y="635.5">Mix effects</tspan></text>
+<path id="step-7" data-role="node" data-node="step-7" d="M1099.5 198.5H1195.5V614H1099.5Z" fill="#C2410C"/>
+<path id="step-7--break-1" data-role="decoration" d="M1097.5 602L1197.5 594" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="step-7--break-2" data-role="decoration" d="M1097.5 594L1197.5 586" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="step-7--value" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1147.5" y="190.5">14.5%</tspan></text>
+<text id="step-7--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1147.5" y="635.5">FY26 margin</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M48 614L1232 614" fill="none" stroke="#4B5563" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="48" y="668.5">Source: Fictitious data</tspan></text>
+</svg>

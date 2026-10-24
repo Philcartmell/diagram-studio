@@ -26,7 +26,7 @@ Only layer nodes count toward the node limit.
 - Name layers by what they do for the business ("Use", "Trusted data", "Collect"), not by technology tier names, unless the audience is technical.
 - Never add protocols, product versions or vendor names the user did not mention.
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive
 

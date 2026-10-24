@@ -14,6 +14,12 @@ Start from the shape of what the user gave you, not from the words they used. "O
 | A chain of activities from input to outcome | `value-chain` | each activity has clear owners and handoffs (`swimlane`) |
 | Items compared on two qualities | `matrix-2x2` | the items group into a few buckets with no second axis (`operating-model` with a layer per bucket) |
 | Systems or components stacked by role | `layered-architecture` | the audience thinks in teams rather than systems (`operating-model`) |
+| Figures for a few things, or how a total splits | `bar-chart` (stacked) | the point is the share, not the size (`"mode": "percent"`), or the gap between two bars (`deltas`) |
+| Figures to rank, often with long names or negatives | `bar-chart` (`"orientation": "horizontal"`) | one figure carries the message (`kpi`) |
+| A start figure, the changes, and where it ended | `waterfall` | only the end-points matter (`bar-chart` with a `delta`) |
+| Figures over many periods | `line-chart` | there are only two or three periods (`bar-chart`, grouped) |
+| Three or four headline figures | `kpi` | the figures compare like with like (`bar-chart`) |
+| A chart plus the argument for it, several related charts, or a diagram with the numbers that justify it | `exhibit` | the points are separate messages (one slide each, in a deck) |
 
 If only one form fits, say so and make the concepts differ in story instead (see below).
 
@@ -31,6 +37,11 @@ Ask for exactly what is missing, in plain words. Never fill a gap yourself.
 | `value-chain` | the activities in order | support activities, the outcome, the focus areas |
 | `matrix-2x2` | the two axes, the items, where each item sits (scores or a quadrant) | quadrant names, a third value as a metric |
 | `layered-architecture` | the layers and the components in each | cross-cutting concerns, external parties, what is new, changed or retired |
+| `bar-chart` | the categories, the series, every value, the unit | the period, the source, which category or series the message is about, any second figure for badges |
+| `waterfall` | the start level, each change with its sign, the unit | the end level (to cross-check: the engine computes it), subtotals, the source |
+| `line-chart` | the periods, the series, every value, the unit | a reference level (index base, target), events to mark, the source |
+| `kpi` | each figure exactly as it should print, and what it measures | a line of context per figure |
+| `exhibit` | what each panel needs, for its own form | which panel the message rests on (give it the larger `span`) |
 
 ## Sketches for option previews
 
@@ -94,6 +105,62 @@ An `AskUserQuestion` option can carry a `preview`, shown in a monospace box besi
  │ Bank     │ │ Services   [ Orders ] [ Payments ]    │ │          │
  │ Regulator│ │ Data       [ Customer data ]          │ │ Monitor  │
  └──────────┘ └ Platform   [ Cloud hosting ]  ────────┘ └──────────┘
+```
+
+`bar-chart` (stacked, with a difference arrow):
+
+```
+   1,400
+  ┌──────┐ - - - - - - - - ┐
+  │1,050 │   1,100         │ −300      ▒ Electricity
+  │      │  ┌──────┐ - - - ┘           ▓ Chargers
+  │──────│  │ 700  │                   ░ Grid connections
+  │ 340  │  │ 290  │
+ ─┴──────┴──┴──────┴─────
+   Separate  Pooled
+```
+
+`waterfall`:
+
+```
+                       +2.9
+         +1.8          ┌──┐┌─┐ −0.3  ┌──┐ 14.5%
+  12.4%  ┌──┐┌──┐ −1.6 │  │└─┘      │  │
+  ┌──┐   │  │└──┘┌─┐   │  │         │  │
+  │  │ ··└──┘    └─┘ −0.7          │  │
+ ─┴──┴─────────────────────────────┴──┴─
+  FY25  Price Wages Energy Sourcing Mix FY26
+```
+
+`line-chart`:
+
+```
+ 105 ┤          ╭──╮   ╭─╮
+ 100 ┤ ─ ─╭─────╯ ─ ╰─ ─╯─╰─ ─ Online orders 100
+  95 ┤╭───╯   ╰╮ ╭──╮
+  90 ┤╯         ╰─╯  ╰──────── Store visits 88
+     └──────────┬──────────────
+     2018      2020   2022
+```
+
+`kpi`:
+
+```
+ ─────────────  ━━━━━━━━━━━━━  ─────────────
+   41%            £1.8M          3 days
+   of invoices    annual         faster
+   touchless      saving         close
+```
+
+`exhibit` (narrative, chart, KPI column):
+
+```
+ Title: the finding the panels prove together
+ ───────────────────────────────────────────────
+ • £110m a year    │  ▇▇      ▇▇              │ £60M
+   in grid and hubs│  ▇▇ ▅▅   ▇▇ ▅▅           │ 2030
+ • £350m lower     │  2030    2040            │ ━━━━━━
+   electricity cost│                          │ £300M
 ```
 
 ## Making concepts diverge

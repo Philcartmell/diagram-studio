@@ -36,6 +36,24 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "Show real dates", "the phases aren't equal" | Roadmap `"scale": "time"` with `start` and `end` on every horizon |
 | "Show it as a … instead" | A new form is a new concept, not an edit: write `concepts/<next letter>-<form>/spec.json` from the brief, render it beside the current one, and let the user choose |
 
+## Charts and exhibits
+
+| The user says | Edit |
+| --- | --- |
+| "Show the saving / the gap between these two" | `deltas: [{ "from": "<category id>", "to": "<category id>" }]` (give the categories ids). `"show": "percent"` or `"both"` for a percentage. Never type the difference |
+| "Make it a percentage", "show the mix" | `"mode": "percent"` on the bar chart |
+| "Rank them", "biggest first" | `"orientation": "horizontal"`, `"sort": "descending"` |
+| "Side by side, not stacked" | `"mode": "grouped"` (difference arrows then go) |
+| "Too many colours" | `"emphasis": "muted"` on the context series; one series `accent`. Keep `"palette": "sequential"` |
+| "Use our brand colours for the series" | `"palette": "categorical"` takes the theme's palette; for brand colours make a brand theme |
+| "Show billions / with a £ sign / one decimal" | `format`: `{ "prefix": "£", "suffix": "bn", "decimals": 1 }`. Convert units only if the user gives the figures in the new unit |
+| "Show what drove the change" | A `waterfall`: a new concept, not an edit |
+| "Rises in green, falls in red" | Waterfall `"colors": "direction"`; add `"invert": true` when a fall is good news (costs) |
+| "Start the axis at zero" | Waterfall `"axis": "zero"` |
+| "Mark when X happened" | Line chart `annotations: [{ "at": "<x label>", "label": "X" }]` |
+| "Add the explanation next to it", "put the numbers beside it" | Make it an `exhibit`: the current spec's body becomes a panel, beside a `narrative` or `kpi` panel. Keep the title on the exhibit |
+| "The chart is too small" (exhibit) | Raise its panel `span`, or lower the others' |
+
 ## Look and feel
 
 | The user says | Edit |

@@ -1,6 +1,6 @@
 # What a good Azure diagram looks like
 
-The house style of the Microsoft Azure Architecture Center, written down so every Azure diagram this skill draws looks like it belongs there. It comes from a shape-by-shape analysis of 14 Microsoft reference architectures (18 diagram pages, Visio): AKS multi-region hub-spoke, AKS on Azure Local, AKS with Application Gateway for Containers (two pages), App Service Environment high availability, document classification with Durable Functions, the Microsoft Foundry chat baseline (three pages), cache-aside with Azure Managed Redis, write-through caching, event-driven cache updates, IBM Maximo on Azure Red Hat OpenShift, mainframe batch re-engineering (two pages), SAP BW/4HANA and multilayered VM protection. Measurements below are what those files actually contain.
+The house style of the Microsoft Azure Architecture Center, written down so every Azure diagram this skill draws looks like it belongs there. It comes from a shape-by-shape analysis of 14 Microsoft reference architectures (18 diagram pages, Visio): AKS multi-region hub-spoke, AKS on Azure Local, AKS with Application Gateway for Containers (two pages), App Service Environment high availability, document classification with Durable Functions, the Microsoft Foundry chat baseline (three pages), cache-aside with Azure Managed Redis, write-through caching, event-driven cache updates, an asset-management workload on Azure Red Hat OpenShift, mainframe batch re-engineering (two pages), an ERP analytics workload and multilayered VM protection. Measurements below are what those files actually contain.
 
 `azure-architecture` implements this style; `references/azure-architecture.md` says how to write the spec. Read this guide once per session before drawing Azure diagrams, and use it to judge the result.
 
@@ -11,7 +11,7 @@ Every reference diagram is one of two kinds, or a deliberate mix of both. Decide
 | | Solution workflow | Network and infrastructure topology |
 | --- | --- | --- |
 | Answers | "How does it work, step by step?" | "Where does it run, and how is traffic contained?" |
-| Reference examples | Document classification, cache-aside, write-through, event-driven cache, batch re-engineering, conversational insights | AKS hub-spoke, App Service Environment, IBM Maximo, SAP BW/4HANA, AKS on Azure Local, AGC multitenant |
+| Reference examples | Document classification, cache-aside, write-through, event-driven cache, batch re-engineering, conversational insights | AKS hub-spoke, App Service Environment, an asset-management workload, an ERP analytics workload, AKS on Azure Local, AGC multitenant |
 | Boundaries | Few and logical: stages or tiers ("Ingestion", "Application tier", "Monitoring") as grey dashed groups | Many and physical: Azure, region, virtual network, subnet, availability zone |
 | Numbered steps | Always: green numbered badges, explained in a workflow list | Rare; when used (Foundry baseline), one badge style per traffic flow |
 | Flows | 6–12 arrows following the story left to right | Arrows show traffic paths; private endpoint links, peering and DNS links drawn as lines |
@@ -41,8 +41,8 @@ Boundaries say where things run. They nest in a fixed order: Azure contains regi
 | Boundary | Line | Fill | Label | Seen in |
 | --- | --- | --- | --- | --- |
 | Azure (cloud edge) | Azure blue (`#0078D4`/`#4472C4`), dashed, 1.5 pt | none | "Azure", bold, top-left or top-right | Batch, AKS on Azure Local |
-| On-premises / customer-hosted | dark grey (`#3C3C41`), dashed, 1.5 pt | none, or a grey panel | bold, top | AKS on Azure Local, SAP |
-| Region | none | pale grey (`#F2F2F2`) or a 10% tint | bold, top-left ("Region A") | AKS multi-region, SAP |
+| On-premises / customer-hosted | dark grey (`#3C3C41`), dashed, 1.5 pt | none, or a grey panel | bold, top | AKS on Azure Local, an ERP workload |
+| Region | none | pale grey (`#F2F2F2`) or a 10% tint | bold, top-left ("Region A") | AKS multi-region, an ERP workload |
 | Virtual network | Azure blue, dashed or dotted, 1–1.5 pt | none (or very light blue) | virtual network icon (`<···>`) and name, top-left; the icon sometimes sits at the bottom-right corner | all network diagrams |
 | Subnet | grey (`#BFBFBF`) or black, thin (0.25–0.75 pt), solid or dashed | very light grey (`#F8F8F8`), or white on a grey region | subnet icon and name, top-left; NSG shield on the top-right corner, straddling the border | Foundry, Maximo, ASE, multilayered protection |
 | Availability zone | amber outline | none | "Zone 1", "Zone 2", "Zone 3" | Foundry |

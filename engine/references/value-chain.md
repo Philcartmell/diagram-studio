@@ -25,7 +25,7 @@ Primary and support activities count toward the altitude node limit.
 - Activity labels are short nouns or verbs ("Sourcing", "Plan", "Last-mile delivery").
 - Keep panels parallel: the same kind of content under every chevron (all levers, or all KPIs).
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive with support activities
 

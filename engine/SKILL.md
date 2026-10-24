@@ -1,6 +1,6 @@
 ---
 name: diagram-studio
-description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), or a Databricks architecture in the Databricks brand look with the official Databricks icons (lakehouse and medallion flows, workspace deployment topologies, platform maps, Databricks inside Azure diagrams), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports. Use it whenever someone wants a diagram for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing diagram re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling. Not for data charts (bar, line, pie) or for AWS and Google Cloud diagrams.
+description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), or a Databricks architecture in the Databricks brand look with the official Databricks icons (lakehouse and medallion flows, workspace deployment topologies, platform maps, Databricks inside Azure diagrams), or a consulting-style data exhibit (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine any of these with text or diagrams), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports; several pages render as one multi-slide deck. Use it whenever someone wants a diagram, chart or exhibit for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing one re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling, and computes every total and difference in a chart. Not for pie charts, scatter plots, maps, or AWS and Google Cloud diagrams.
 ---
 
 # Diagram Studio
@@ -20,6 +20,7 @@ then run `node <repo>/engine/scripts/dist/cli.js <command>`. Any of these is wri
 | Command | Purpose |
 | --- | --- |
 | `ds render spec.json [--png --pdf --pptx --drawio \| --all] [--out dir] [--theme id]` | Validate, lay out, check, render, export |
+| `ds render deck.json --pptx --pdf` | Render several pages as one deck (`ds docs deck`) |
 | `ds validate spec.json` | Schema and reference checks only |
 | `ds check spec.json` | Layout QA without writing files |
 | `ds types` / `ds example <type> [--n 2]` | List types / print a starter spec |
@@ -57,10 +58,22 @@ Results are JSON on stdout; human messages on stderr. Exit **0** ok, **1** valid
 | How a system fits together, for non-technical readers | `layered-architecture` | architecture, platform, layers, stack, systems landscape |
 | How it runs on Azure: services, networks, numbered flows | `azure-architecture` | Azure, AKS, App Service, VNet, subnet, private endpoint, hub-spoke, reference architecture, ARM template, Azure Databricks |
 | How it runs on Databricks: lakehouse flows, workspace deployment, platform map | `databricks-architecture` | Databricks, lakehouse, medallion, bronze/silver/gold, Unity Catalog, Lakeflow, control plane, workspace |
+| How big, and how it splits: stacks, before and after, rankings, shares | `bar-chart` | bar or column chart, stacked, breakdown, by region, comparison, ranking, share |
+| What moved the number from A to B | `waterfall` | waterfall, bridge, walk, variance, drivers |
+| How it moved over time | `line-chart` | trend, over time, index, time series, actual vs plan |
+| The headline numbers | `kpi` | KPIs, key figures, headline numbers |
+| The words beside an exhibit | `narrative` | benefits and risks, implications, what it means |
+| One slide combining any of the above: a chart with its argument, small multiples, an architecture with its cost case | `exhibit` | exhibit, chart with commentary, side by side, small multiples |
+
+Several pages for one meeting are a **deck**: one spec per page plus a `deck.json` (read `references/deck.md`). Any type, an exhibit included, can be a deck page.
 
 For `azure-architecture`, also read `references/azure-style.md` once per session: it defines what a good Azure diagram looks like (two kinds: solution workflow and network topology), and the self-review checklist there replaces the one below. Given an ARM template or resource list, start from `ds azure import`, then add the story. For `databricks-architecture`, read `references/databricks-style.md` the same way. An Azure architecture that includes Azure Databricks stays `azure-architecture` and uses `databricks:` icons; a Databricks-centred picture is `databricks-architecture`.
 
-Not supported: data charts (use a charting tool), free-form drawing, AWS or Google Cloud diagrams, org charts and journey maps (planned for v2 — say so, and offer the nearest supported type only if it genuinely fits).
+Not supported: pie and donut charts, scatter plots, maps and data tables, free-form drawing, AWS or Google Cloud diagrams, org charts and journey maps (planned for v2 — say so, and offer the nearest supported type only if it genuinely fits).
+
+## Numbers
+
+Charts take the figures the user gave, as given. **Never compute a figure yourself**: give the segment values and let the chart add totals (`totals`), work out differences (`deltas`), shares (`"mode": "percent"`) and waterfall subtotals; a stated waterfall total that does not add up is a validation error. Never round, convert or extrapolate a number to make a chart look better, and never fill a missing value: use `null` and say so. Put the unit in the subtitle or `unit`, and the source in `footer.source`.
 
 ## Altitude
 
@@ -146,7 +159,7 @@ Built-in: `boardroom` (default, consulting navy), `blueprint` (light on deep blu
 | SVG | always | Master copy, fonts embedded, deterministic |
 | PNG | `--png` | `--scale 1\|2\|3` (default 2), `--transparent` |
 | PDF | `--pdf` | Vector, fonts embedded; A4 aspects print on A4 |
-| PPTX | `--pptx` | One 16:9 slide of native, grouped, editable shapes; title in the title placeholder; subtitle and so-what in the notes; swimlane arrows are real connectors |
+| PPTX | `--pptx` | One 16:9 slide (a deck: a slide per page) of native, grouped, editable shapes, charts included; title in the title placeholder; subtitle and so-what in the notes; swimlane arrows are real connectors |
 | draw.io | `--drawio` | Opens in diagrams.net; lanes are swimlane containers |
 
 Files are named `<slug-of-title>.<ext>` in `--out` (default: the spec's folder), plus `preview.png` and `<slug>.diagram.json`.

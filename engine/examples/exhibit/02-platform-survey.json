@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "type": "exhibit",
+  "title": "Teams release more often, ship faster and recover sooner on the new platform",
+  "subtitle": "Share of developers, before and after the move to the new platform, %",
+  "footer": { "source": "Engineering survey, 240 developers; fictitious data" },
+  "body": {
+    "layout": "columns",
+    "dividers": true,
+    "panels": [
+      {
+        "id": "frequency",
+        "type": "bar-chart",
+        "title": "Release frequency",
+        "subtitle": "From every quarter to every month",
+        "body": {
+          "mode": "percent",
+          "series": [
+            { "id": "rare", "label": "Twice a year or less", "emphasis": "muted" },
+            { "id": "quarterly", "label": "Every quarter" },
+            { "id": "monthly", "label": "Every month" },
+            { "id": "often", "label": "Several times a month", "emphasis": "accent" }
+          ],
+          "categories": [
+            { "label": "Before", "values": [31, 34, 24, 11] },
+            { "label": "After", "values": [9, 24, 41, 26] }
+          ],
+          "seriesLabels": "legend"
+        }
+      },
+      {
+        "id": "lead-time",
+        "type": "bar-chart",
+        "title": "Lead time to deploy",
+        "subtitle": "From two to seven days to under two days",
+        "body": {
+          "mode": "percent",
+          "series": [
+            { "id": "weeks", "label": "Two weeks or more", "emphasis": "muted" },
+            { "id": "days", "label": "Two to seven days" },
+            { "id": "hours", "label": "Under two days" },
+            { "id": "fast", "label": "Under 12 hours", "emphasis": "accent" }
+          ],
+          "categories": [
+            { "label": "Before", "values": [18, 42, 29, 11] },
+            { "label": "After", "values": [5, 22, 38, 35] }
+          ],
+          "seriesLabels": "legend"
+        }
+      },
+      {
+        "id": "recovery",
+        "type": "bar-chart",
+        "title": "Mean time to recover",
+        "subtitle": "From half a day or more to a few hours",
+        "body": {
+          "mode": "percent",
+          "series": [
+            { "id": "day", "label": "More than a day", "emphasis": "muted" },
+            { "id": "half-day", "label": "Half a day to a day" },
+            { "id": "hours", "label": "Two to 12 hours" },
+            { "id": "fast", "label": "Under two hours", "emphasis": "accent" }
+          ],
+          "categories": [
+            { "label": "Before", "values": [27, 39, 25, 9] },
+            { "label": "After", "values": [7, 21, 44, 28] }
+          ],
+          "seriesLabels": "legend"
+        }
+      }
+    ]
+  }
+}

@@ -31,7 +31,7 @@ Steps count toward the altitude node limit.
 - One start and one end at most; skip them at executive altitude if they add nothing.
 - Every step should have at least one edge, and every lane at least one step (empty lanes warn).
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: management, horizontal with phases
 

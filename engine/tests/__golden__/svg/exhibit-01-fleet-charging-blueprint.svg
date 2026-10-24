@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="exhibit" data-theme="blueprint" data-altitude="executive">
+<title id="ds-svg-title">Shared hubs let every division charge where power is cheapest, saving £300m a year by 2040</title>
+<desc id="ds-svg-desc">Shared hubs let every division charge where power is cheapest, saving £300m a year by 2040</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">Shared hubs let every division charge where power is cheapest, saving £300m a year by</tspan><tspan x="48" y="113.5">2040</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 144L1232 144" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="p1_paragraph-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB"><tspan x="48" y="182.5">Investing in shared grid connections</tspan><tspan x="48" y="200.5">unlocks cheaper charging for every division.</tspan></text>
+<path id="p1_point-1--bullet-1" data-role="marker" d="M50 225A2.5 2.5 0 1 1 55 225A2.5 2.5 0 1 1 50 225Z" fill="#FFC24B"/>
+<text id="p1_point-1--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="230.5">£110 million a year</tspan></text>
+<text id="p1_point-1--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="248.5">in grid connections and hubs to charge</tspan><tspan x="64" y="266.5">over 9,000 vans by 2040</tspan></text>
+<path id="p1_point-2--bullet-1" data-role="marker" d="M50 291A2.5 2.5 0 1 1 55 291A2.5 2.5 0 1 1 50 291Z" fill="#FFC24B"/>
+<text id="p1_point-2--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="296.5">£350 million lower</tspan></text>
+<text id="p1_point-2--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="314.5">electricity cost as pooled sites buy power</tspan><tspan x="64" y="332.5">at volume and off-peak</tspan></text>
+<path id="p1_point-3--bullet-1" data-role="marker" d="M50 357A2.5 2.5 0 1 1 55 357A2.5 2.5 0 1 1 50 357Z" fill="#FFC24B"/>
+<text id="p1_point-3--lead" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="64" y="362.5">Over £2 billion</tspan></text>
+<text id="p1_point-3--text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#B8CCE3"><tspan x="64" y="380.5">saved in total charging costs to 2040</tspan><tspan x="64" y="398.5">against separate depots</tspan></text>
+<text id="costs--title" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="364" y="183.5">Annual fleet charging cost¹</tspan></text>
+<text id="costs--subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="364" y="201">£ millions</tspan></text>
+<text id="p2_group-1" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="364" y="235.5">2030</tspan></text>
+<path id="p2_group-1--rule" data-role="decoration" d="M364 243.5L575 243.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="p2_group-3" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="615" y="235.5">2040</tspan></text>
+<path id="p2_group-3--rule" data-role="decoration" d="M615 243.5L834 243.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p2_separate-2030--grid" data-role="node" data-node="p2_grid" data-emphasis="muted" d="M378 493H418V496H378Z" fill="#6E8FB5"/>
+<path id="p2_separate-2030--chargers" data-role="node" data-node="p2_chargers" d="M378 479.5H418V493H378Z" fill="#FFC24B"/>
+<path id="p2_separate-2030--electricity" data-role="node" data-node="p2_electricity" d="M378 440H418V479.5H378Z" fill="#B19049"/>
+<text id="p2_separate-2030--electricity--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="398" y="465">260</tspan></text>
+<text id="p2_separate-2030--total" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="398" y="432">370</tspan></text>
+<text id="p2_separate-2030--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="398" y="518.5">Own²</tspan></text>
+<path id="p2_separate-2030--badge" data-role="badge" d="M381 534L415.5 534L424 549L415.5 564L381 564L372 549Z" fill="#4FD1C5"/>
+<text id="p2_separate-2030--badge--text" data-role="badge" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#0B2545" text-anchor="middle"><tspan x="398" y="554.5">240</tspan></text>
+<path id="p2_pooled-2030--grid" data-role="node" data-node="p2_grid" data-emphasis="muted" d="M446.5 491.5H486.5V496H446.5Z" fill="#6E8FB5"/>
+<path id="p2_pooled-2030--chargers" data-role="node" data-node="p2_chargers" d="M446.5 479.5H486.5V491.5H446.5Z" fill="#FFC24B"/>
+<path id="p2_pooled-2030--electricity" data-role="node" data-node="p2_electricity" d="M446.5 449H486.5V479.5H446.5Z" fill="#B19049"/>
+<text id="p2_pooled-2030--electricity--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="466.5" y="469.5">200</tspan></text>
+<text id="p2_pooled-2030--grid--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="490.5" y="491">30</tspan></text>
+<text id="p2_pooled-2030--chargers--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="490.5" y="476.5">80</tspan></text>
+<text id="p2_pooled-2030--total" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="466.5" y="441">310</tspan></text>
+<text id="p2_pooled-2030--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="466.5" y="518.5">Pooled</tspan></text>
+<path id="p2_pooled-2030--badge" data-role="badge" d="M449 534L483.5 534L492.5 549L483.5 564L449 564L440.5 549Z" fill="#4FD1C5"/>
+<text id="p2_pooled-2030--badge--text" data-role="badge" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#0B2545" text-anchor="middle"><tspan x="466.5" y="554.5">220</tspan></text>
+<path id="p2_separate-2040--grid" data-role="node" data-node="p2_grid" data-emphasis="muted" d="M629 494.5H669V496H629Z" fill="#6E8FB5"/>
+<path id="p2_separate-2040--chargers" data-role="node" data-node="p2_chargers" d="M629 443H669V494.5H629Z" fill="#FFC24B"/>
+<text id="p2_separate-2040--chargers--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="649" y="474">340</tspan></text>
+<path id="p2_separate-2040--electricity" data-role="node" data-node="p2_electricity" d="M629 283.5H669V443H629Z" fill="#B19049"/>
+<text id="p2_separate-2040--electricity--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="649" y="367.5">1,050</tspan></text>
+<text id="p2_separate-2040--total" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="649" y="276">1,400</tspan></text>
+<text id="p2_separate-2040--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F6FB" text-anchor="middle"><tspan x="649" y="518.5">Own²</tspan></text>
+<path id="p2_separate-2040--badge" data-role="badge" d="M631.5 534L666.5 534L675 549L666.5 564L631.5 564L623 549Z" fill="#4FD1C5"/>
+<text id="p2_separate-2040--badge--text" data-role="badge" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#0B2545" text-anchor="middle"><tspan x="649" y="554.5">820</tspan></text>
+<path id="p2_pooled-2040--grid" data-role="node" data-node="p2_grid" data-emphasis="muted" d="M697 479.5H737V496H697Z" fill="#6E8FB5"/>
+<text id="p2_pooled-2040--grid--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="717" y="492">110</tspan></text>
+<path id="p2_pooled-2040--chargers" data-role="node" data-node="p2_chargers" d="M697 435.5H737V479.5H697Z" fill="#FFC24B"/>
+<text id="p2_pooled-2040--chargers--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="717" y="462.5">290</tspan></text>
+<path id="p2_pooled-2040--electricity" data-role="node" data-node="p2_electricity" d="M697 329H737V435.5H697Z" fill="#B19049"/>
+<text id="p2_pooled-2040--electricity--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#0B2545" text-anchor="middle"><tspan x="717" y="387.5">700</tspan></text>
+<text id="p2_pooled-2040--total" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="717" y="321.5">1,100</tspan></text>
+<text id="p2_pooled-2040--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="717" y="518.5">Pooled</tspan></text>
+<path id="p2_pooled-2040--badge" data-role="badge" d="M700 534L734.5 534L743 549L734.5 564L700 564L691 549Z" fill="#4FD1C5"/>
+<text id="p2_pooled-2040--badge--text" data-role="badge" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#0B2545" text-anchor="middle"><tspan x="717" y="554.5">760</tspan></text>
+<path id="p2_chart-baseline" data-role="axis" d="M364 496L751 496" fill="none" stroke="#DCE7F3" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="p2_series-electricity--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="782.5" y="386.5">Electricity</tspan></text>
+<text id="p2_series-chargers--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="782.5" y="461.5">Chargers</tspan></text>
+<text id="p2_series-grid--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="782.5" y="492">Grid connections</tspan></text>
+<path id="p2_delta-separate-2030-pooled-2030--from-0" data-role="decoration" d="M420 440L449.5 440" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p2_delta-separate-2030-pooled-2030--from-1" data-role="decoration" d="M483 440L519.5 440" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p2_delta-separate-2030-pooled-2030--to-0" data-role="decoration" d="M488.5 449L519.5 449" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="p2_delta-separate-2030-pooled-2030--arrow" data-role="decoration"><path d="M513.5 440L513.5 440" fill="none" stroke="#DCE7F3" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M513.5 449L509.5 439L517.5 439Z" fill="#DCE7F3"/></g>
+<text id="p2_delta-separate-2030-pooled-2030--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="521.5" y="449.5">−60</tspan></text>
+<path id="p2_delta-separate-2040-pooled-2040--from-0" data-role="decoration" d="M671 283.5L755 283.5" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p2_delta-separate-2040-pooled-2040--to-0" data-role="decoration" d="M739 329L755 329" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="p2_delta-separate-2040-pooled-2040--arrow" data-role="decoration"><path d="M749 283.5L749 320" fill="none" stroke="#DCE7F3" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M749 329L745 319L753 319Z" fill="#DCE7F3"/></g>
+<text id="p2_delta-separate-2040-pooled-2040--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="757" y="311.5">−300</tspan></text>
+<path id="p2_ds-legend-0-0-swatch" data-role="legend" d="M367.5 584L372.5 584L376 590L372.5 596L367.5 596L364 590Z" fill="#4FD1C5"/>
+<text id="p2_ds-legend-0-0-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="382" y="594">of which operating cost</tspan></text>
+<path id="p3_save-2030--rule" data-role="decoration" d="M1011.5 168L1231.5 168" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="p3_save-2030--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="600" fill="#F2F6FB"><tspan x="1011.5" y="217">£60M</tspan></text>
+<text id="p3_save-2030--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="1011.5" y="245.5">lower annual cost in 2030</tspan></text>
+<path id="p3_save-2040--rule" data-role="decoration" d="M1011.5 273L1231.5 273" fill="none" stroke="#FFC24B" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="p3_save-2040--value" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="600" fill="#FFC24B"><tspan x="1011.5" y="322">£300M</tspan></text>
+<text id="p3_save-2040--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="1011.5" y="350.5">lower annual cost in 2040</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="48" y="669">Source: Fleet electrification model; fictitious data</tspan></text>
+<text id="ds-footnotes" data-role="footer" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="48" y="636">1 Charging cost combines capital and operating expenditure for grid connections, chargers and electricity</tspan><tspan x="48" y="650.5">2 Each division builds and runs its own charging</tspan></text>
+</svg>

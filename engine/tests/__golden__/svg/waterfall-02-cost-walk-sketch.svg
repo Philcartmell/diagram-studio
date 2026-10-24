@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="waterfall" data-theme="sketch" data-altitude="executive">
+<title id="ds-svg-title">Automation and sourcing take €38 million out of the cost base by FY28</title>
+<desc id="ds-svg-desc">Operating cost walk, FY25 to FY28, € millions</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FBF8F1"/>
+<text id="ds-title" data-role="title" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" fill="#2B2A28"><tspan x="48" y="73.5">Automation and sourcing take €38 million out of the cost base by FY28</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#5C574F"><tspan x="48" y="107">Operating cost walk, FY25 to FY28, € millions</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128C404.5 128, 760 127.5, 1232 128" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="step-1" data-role="node" data-node="step-1" d="M78 215.5C109.5 218.5, 137.5 219.5, 166 215.5C170 337, 168 454.5, 166 578C132 580.5, 95 577, 78 578C75 452.5, 75.5 331, 78 215.5" fill="#C0392B"/>
+<text id="step-1--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="122" y="206">212</tspan></text>
+<path id="step-1--link" data-role="decoration" d="M166 215.5C186 214, 206.5 214, 226 215.5" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-1--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="122" y="598.5">FY25 cost base</tspan></text>
+<path id="step-2" data-role="node" data-node="step-2" d="M226 191.5C246.5 193.5, 268.5 194.5, 314 191.5C310 203.5, 317 209, 314 215.5C279 218, 245 216, 226 215.5C222 203, 229.5 194, 226 191.5" fill="#C0392B"/>
+<text id="step-2--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#5C574F" text-anchor="middle"><tspan x="270" y="182">+14</tspan></text>
+<path id="step-2--link" data-role="decoration" d="M314 191.5C330 191.5, 343.5 189.5, 374 191.5" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-2--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2A28" text-anchor="middle"><tspan x="270" y="598.5">Inflation</tspan></text>
+<path id="step-3" data-role="node" data-node="step-3" d="M374 176C392.5 171.5, 410.5 175, 462 176C460.5 180, 461.5 188, 462 191.5C424.5 193, 397.5 188, 374 191.5C374.5 187.5, 374.5 183.5, 374 176" fill="#C0392B"/>
+<text id="step-3--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#5C574F" text-anchor="middle"><tspan x="418" y="166.5">+9</tspan></text>
+<path id="step-3--link" data-role="decoration" d="M462 176C483.5 178, 502.5 176.5, 522 176" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-3--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2A28" text-anchor="middle"><tspan x="418" y="598.5">Volume growth</tspan></text>
+<path id="step-4" data-role="node" data-node="step-4" d="M522 176C547.5 178.5, 576.5 174, 610 176C611.5 323, 613.5 468.5, 610 578C579 580, 547 576, 522 578C525 458, 525 340.5, 522 176" fill="#C0392B"/>
+<text id="step-4--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="566" y="166.5">235</tspan></text>
+<path id="step-4--link" data-role="decoration" d="M610 176C625.5 177.5, 639 177, 670 176" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-4--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="566" y="598.5">Subtotal before actions</tspan></text>
+<path id="step-5" data-role="node" data-node="step-5" data-emphasis="accent" d="M670 176C693 174.5, 718.5 172.5, 758 176C759.5 194, 757.5 207.5, 758 220.5C725 224, 692 225, 670 220.5C669.5 206.5, 669.5 193, 670 176" fill="#1F8A70"/>
+<text id="step-5--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#5C574F" text-anchor="middle"><tspan x="714" y="237">−26</tspan></text>
+<path id="step-5--link" data-role="decoration" d="M758 220.5C780.5 222, 801.5 218, 818 220.5" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-5--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2A28" text-anchor="middle"><tspan x="714" y="598.5">Process automation</tspan></text>
+<path id="step-6" data-role="node" data-node="step-6" d="M818 220.5C848 218, 884.5 223.5, 906 220.5C908.5 224.5, 909 239.5, 906 241C872 244.5, 842 239.5, 818 241C820.5 232.5, 820 222.5, 818 220.5" fill="#2E8B57"/>
+<text id="step-6--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#5C574F" text-anchor="middle"><tspan x="862" y="257.5">−12</tspan></text>
+<path id="step-6--link" data-role="decoration" d="M906 241C926.5 242, 944 239.5, 966 241" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-6--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2A28" text-anchor="middle"><tspan x="862" y="598.5">Sourcing</tspan></text>
+<path id="step-7" data-role="node" data-node="step-7" d="M966 241H1054V254.5H966Z" fill="#2E8B57"/>
+<text id="step-7--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#5C574F" text-anchor="middle"><tspan x="1010" y="271.5">−8</tspan></text>
+<path id="step-7--link" data-role="decoration" d="M1054 254.5C1075.5 256, 1101.5 257, 1114 254.5" fill="none" stroke="#8C857A" stroke-width="1.5" stroke-dasharray="0.5 4" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-7--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2A28" text-anchor="middle"><tspan x="1010" y="598.5">Footprint</tspan></text>
+<path id="step-8" data-role="node" data-node="step-8" d="M1114 254.5C1146.5 255.5, 1174 251.5, 1202 254.5C1204.5 347, 1204.5 438, 1202 578C1185.5 581.5, 1167.5 580, 1114 578C1114.5 482.5, 1115.5 391.5, 1114 254.5" fill="#C0392B"/>
+<text id="step-8--value" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="1158" y="245.5">189</tspan></text>
+<text id="step-8--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28" text-anchor="middle"><tspan x="1158" y="598.5">FY28 cost base</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M48 578C467.5 579.5, 885.5 578.5, 1232 578" fill="none" stroke="#3A3833" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5C574F"><tspan x="48" y="667.5">Source: Transformation business case; fictitious data</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M50 625.5H58A2 2 0 0 1 60 627.5V635.5A2 2 0 0 1 58 637.5H50A2 2 0 0 1 48 635.5V627.5A2 2 0 0 1 50 625.5Z" fill="#2E8B57"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5C574F"><tspan x="66" y="634.5">Decrease</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M128.5 625.5H136.5A2 2 0 0 1 138.5 627.5V635.5A2 2 0 0 1 136.5 637.5H128.5A2 2 0 0 1 126.5 635.5V627.5A2 2 0 0 1 128.5 625.5Z" fill="#C0392B"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5C574F"><tspan x="144.5" y="634.5">Increase</tspan></text>
+</svg>

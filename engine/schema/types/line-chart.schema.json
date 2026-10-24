@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/line-chart.schema.json",
+  "title": "line-chart body",
+  "description": "Values over time as lines, named at their ends, with an optional reference line and event markers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["x", "series"],
+  "properties": {
+    "unit": { "type": "string", "minLength": 1, "maxLength": 60 },
+    "format": { "$ref": "bar-chart.schema.json#/$defs/format" },
+    "x": { "type": "array", "minItems": 2, "maxItems": 120, "items": { "type": "string", "minLength": 1, "maxLength": 16 } },
+    "series": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "values"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 32 },
+          "values": { "type": "array", "minItems": 1, "maxItems": 120, "items": { "type": ["number", "null"] } },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
+          "style": { "enum": ["solid", "dashed"] }
+        }
+      }
+    },
+    "yAxis": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": { "min": { "type": "number" }, "max": { "type": "number" } }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value"],
+      "properties": { "value": { "type": "number" }, "label": { "type": "string", "minLength": 1, "maxLength": 40 } }
+    },
+    "labels": { "enum": ["end", "legend"] },
+    "markers": { "type": "boolean" },
+    "annotations": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["at", "label"],
+        "properties": { "at": { "type": "string", "minLength": 1, "maxLength": 16 }, "label": { "type": "string", "minLength": 1, "maxLength": 32 } }
+      }
+    }
+  }
+}

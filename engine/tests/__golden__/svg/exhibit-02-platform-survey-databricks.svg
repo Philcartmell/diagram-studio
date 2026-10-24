@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="exhibit" data-theme="databricks" data-altitude="executive">
+<title id="ds-svg-title">Teams release more often, ship faster and recover sooner on the new platform</title>
+<desc id="ds-svg-desc">Share of developers, before and after the move to the new platform, %</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1B3139"><tspan x="40" y="63.5">Teams release more often, ship faster and recover sooner on the new platform</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#5A6F77"><tspan x="40" y="90">Share of developers, before and after the move to the new platform, %</tspan></text>
+<text id="frequency--title" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="40" y="149">Release frequency</tspan></text>
+<text id="frequency--subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="40" y="166">From every quarter to every month</tspan></text>
+<path id="p1_category-1--rare" data-role="node" data-node="p1_rare" data-emphasis="muted" d="M77.5 456H189.5V568H77.5Z" fill="#A3AFB4"/>
+<text id="p1_category-1--rare--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="133.5" y="516">31%</tspan></text>
+<path id="p1_category-1--quarterly" data-role="node" data-node="p1_quarterly" d="M77.5 333.5H189.5V456H77.5Z" fill="#FFCBC5"/>
+<text id="p1_category-1--quarterly--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="133.5" y="399">34%</tspan></text>
+<path id="p1_category-1--monthly" data-role="node" data-node="p1_monthly" d="M77.5 246.5H189.5V333.5H77.5Z" fill="#FFA79D"/>
+<text id="p1_category-1--monthly--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="133.5" y="294">24%</tspan></text>
+<path id="p1_category-1--often" data-role="node" data-node="p1_often" data-emphasis="accent" d="M77.5 207H189.5V246.5H77.5Z" fill="#FF3621"/>
+<text id="p1_category-1--often--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="133.5" y="231">11%</tspan></text>
+<text id="p1_category-1--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="133.5" y="588">Before</tspan></text>
+<path id="p1_category-2--rare" data-role="node" data-node="p1_rare" data-emphasis="muted" d="M264 535.5H376V568H264Z" fill="#A3AFB4"/>
+<text id="p1_category-2--rare--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="320" y="556">9%</tspan></text>
+<path id="p1_category-2--quarterly" data-role="node" data-node="p1_quarterly" d="M264 449H376V535.5H264Z" fill="#FFCBC5"/>
+<text id="p1_category-2--quarterly--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="320" y="496.5">24%</tspan></text>
+<path id="p1_category-2--monthly" data-role="node" data-node="p1_monthly" d="M264 301H376V449H264Z" fill="#FFA79D"/>
+<text id="p1_category-2--monthly--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="320" y="379">41%</tspan></text>
+<path id="p1_category-2--often" data-role="node" data-node="p1_often" data-emphasis="accent" d="M264 207H376V301H264Z" fill="#FF3621"/>
+<text id="p1_category-2--often--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="320" y="258">26%</tspan></text>
+<text id="p1_category-2--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="320" y="588">After</tspan></text>
+<path id="p1_chart-baseline" data-role="axis" d="M40 568L413 568" fill="none" stroke="#618794" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p1_ds-legend-0-0-swatch" data-role="legend" d="M42 611.5H50A2 2 0 0 1 52 613.5V621.5A2 2 0 0 1 50 623.5H42A2 2 0 0 1 40 621.5V613.5A2 2 0 0 1 42 611.5Z" fill="#FF3621"/>
+<text id="p1_ds-legend-0-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="58" y="621.5">Several times a month</tspan></text>
+<path id="p1_ds-legend-0-1-swatch" data-role="legend" d="M194 611.5H202A2 2 0 0 1 204 613.5V621.5A2 2 0 0 1 202 623.5H194A2 2 0 0 1 192 621.5V613.5A2 2 0 0 1 194 611.5Z" fill="#FFA79D"/>
+<text id="p1_ds-legend-0-1-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="210" y="621.5">Every month</tspan></text>
+<path id="p1_ds-legend-0-2-swatch" data-role="legend" d="M296.5 611.5H304.5A2 2 0 0 1 306.5 613.5V621.5A2 2 0 0 1 304.5 623.5H296.5A2 2 0 0 1 294.5 621.5V613.5A2 2 0 0 1 296.5 611.5Z" fill="#FFCBC5"/>
+<text id="p1_ds-legend-0-2-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="312.5" y="621.5">Every quarter</tspan></text>
+<path id="p1_ds-legend-1-0-swatch" data-role="legend" d="M42 631.5H50A2 2 0 0 1 52 633.5V641.5A2 2 0 0 1 50 643.5H42A2 2 0 0 1 40 641.5V633.5A2 2 0 0 1 42 631.5Z" fill="#A3AFB4"/>
+<text id="p1_ds-legend-1-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="58" y="641.5">Twice a year or less</tspan></text>
+<text id="lead-time--title" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="453.5" y="149">Lead time to deploy</tspan></text>
+<text id="lead-time--subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="453.5" y="166">From two to seven days to under two days</tspan></text>
+<path id="p2_category-1--weeks" data-role="node" data-node="p2_weeks" data-emphasis="muted" d="M491 503H603V568H491Z" fill="#A3AFB4"/>
+<text id="p2_category-1--weeks--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="547" y="539.5">18%</tspan></text>
+<path id="p2_category-1--days" data-role="node" data-node="p2_days" d="M491 351.5H603V503H491Z" fill="#FFCBC5"/>
+<text id="p2_category-1--days--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="547" y="431.5">42%</tspan></text>
+<path id="p2_category-1--hours" data-role="node" data-node="p2_hours" d="M491 246.5H603V351.5H491Z" fill="#FFA79D"/>
+<text id="p2_category-1--hours--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="547" y="303">29%</tspan></text>
+<path id="p2_category-1--fast" data-role="node" data-node="p2_fast" data-emphasis="accent" d="M491 207H603V246.5H491Z" fill="#FF3621"/>
+<text id="p2_category-1--fast--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="547" y="231">11%</tspan></text>
+<text id="p2_category-1--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="547" y="588">Before</tspan></text>
+<path id="p2_category-2--weeks" data-role="node" data-node="p2_weeks" data-emphasis="muted" d="M677.5 550H789.5V568H677.5Z" fill="#A3AFB4"/>
+<text id="p2_category-2--weeks--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="733.5" y="563">5%</tspan></text>
+<path id="p2_category-2--days" data-role="node" data-node="p2_days" d="M677.5 470.5H789.5V550H677.5Z" fill="#FFCBC5"/>
+<text id="p2_category-2--days--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="733.5" y="514.5">22%</tspan></text>
+<path id="p2_category-2--hours" data-role="node" data-node="p2_hours" d="M677.5 333.5H789.5V470.5H677.5Z" fill="#FFA79D"/>
+<text id="p2_category-2--hours--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="733.5" y="406">38%</tspan></text>
+<path id="p2_category-2--fast" data-role="node" data-node="p2_fast" data-emphasis="accent" d="M677.5 207H789.5V333.5H677.5Z" fill="#FF3621"/>
+<text id="p2_category-2--fast--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="733.5" y="274.5">35%</tspan></text>
+<text id="p2_category-2--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="733.5" y="588">After</tspan></text>
+<path id="p2_chart-baseline" data-role="axis" d="M453.5 568L826.5 568" fill="none" stroke="#618794" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p2_ds-legend-0-0-swatch" data-role="legend" d="M455.5 611.5H463.5A2 2 0 0 1 465.5 613.5V621.5A2 2 0 0 1 463.5 623.5H455.5A2 2 0 0 1 453.5 621.5V613.5A2 2 0 0 1 455.5 611.5Z" fill="#FF3621"/>
+<text id="p2_ds-legend-0-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="471.5" y="621.5">Under 12 hours</tspan></text>
+<path id="p2_ds-legend-0-1-swatch" data-role="legend" d="M568.5 611.5H576.5A2 2 0 0 1 578.5 613.5V621.5A2 2 0 0 1 576.5 623.5H568.5A2 2 0 0 1 566.5 621.5V613.5A2 2 0 0 1 568.5 611.5Z" fill="#FFA79D"/>
+<text id="p2_ds-legend-0-1-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="584.5" y="621.5">Under two days</tspan></text>
+<path id="p2_ds-legend-0-2-swatch" data-role="legend" d="M687 611.5H695A2 2 0 0 1 697 613.5V621.5A2 2 0 0 1 695 623.5H687A2 2 0 0 1 685 621.5V613.5A2 2 0 0 1 687 611.5Z" fill="#FFCBC5"/>
+<text id="p2_ds-legend-0-2-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="703" y="621.5">Two to seven days</tspan></text>
+<path id="p2_ds-legend-1-0-swatch" data-role="legend" d="M455.5 631.5H463.5A2 2 0 0 1 465.5 633.5V641.5A2 2 0 0 1 463.5 643.5H455.5A2 2 0 0 1 453.5 641.5V633.5A2 2 0 0 1 455.5 631.5Z" fill="#A3AFB4"/>
+<text id="p2_ds-legend-1-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="471.5" y="641.5">Two weeks or more</tspan></text>
+<text id="recovery--title" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="866.5" y="149">Mean time to recover</tspan></text>
+<text id="recovery--subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="866.5" y="166">From half a day or more to a few hours</tspan></text>
+<path id="p3_category-1--day" data-role="node" data-node="p3_day" data-emphasis="muted" d="M904 470.5H1016V568H904Z" fill="#A3AFB4"/>
+<text id="p3_category-1--day--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="960" y="523.5">27%</tspan></text>
+<path id="p3_category-1--half-day" data-role="node" data-node="p3_half-day" d="M904 329.5H1016V470.5H904Z" fill="#FFCBC5"/>
+<text id="p3_category-1--half-day--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="960" y="404">39%</tspan></text>
+<path id="p3_category-1--hours" data-role="node" data-node="p3_hours" d="M904 239.5H1016V329.5H904Z" fill="#FFA79D"/>
+<text id="p3_category-1--hours--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="960" y="288.5">25%</tspan></text>
+<path id="p3_category-1--fast" data-role="node" data-node="p3_fast" data-emphasis="accent" d="M904 207H1016V239.5H904Z" fill="#FF3621"/>
+<text id="p3_category-1--fast--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="960" y="227.5">9%</tspan></text>
+<text id="p3_category-1--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="960" y="588">Before</tspan></text>
+<path id="p3_category-2--day" data-role="node" data-node="p3_day" data-emphasis="muted" d="M1090.5 542.5H1202.5V568H1090.5Z" fill="#A3AFB4"/>
+<text id="p3_category-2--day--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="1146.5" y="559.5">7%</tspan></text>
+<path id="p3_category-2--half-day" data-role="node" data-node="p3_half-day" d="M1090.5 467H1202.5V542.5H1090.5Z" fill="#FFCBC5"/>
+<text id="p3_category-2--half-day--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="1146.5" y="509">21%</tspan></text>
+<path id="p3_category-2--hours" data-role="node" data-node="p3_hours" d="M1090.5 308H1202.5V467H1090.5Z" fill="#FFA79D"/>
+<text id="p3_category-2--hours--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="1146.5" y="391.5">44%</tspan></text>
+<path id="p3_category-2--fast" data-role="node" data-node="p3_fast" data-emphasis="accent" d="M1090.5 207H1202.5V308H1090.5Z" fill="#FF3621"/>
+<text id="p3_category-2--fast--value" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#0B2026" text-anchor="middle"><tspan x="1146.5" y="261.5">28%</tspan></text>
+<text id="p3_category-2--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B3139" text-anchor="middle"><tspan x="1146.5" y="588">After</tspan></text>
+<path id="p3_chart-baseline" data-role="axis" d="M867 568L1240 568" fill="none" stroke="#618794" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="p3_ds-legend-0-0-swatch" data-role="legend" d="M869 611.5H877A2 2 0 0 1 879 613.5V621.5A2 2 0 0 1 877 623.5H869A2 2 0 0 1 867 621.5V613.5A2 2 0 0 1 869 611.5Z" fill="#FF3621"/>
+<text id="p3_ds-legend-0-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="885" y="621.5">Under two hours</tspan></text>
+<path id="p3_ds-legend-0-1-swatch" data-role="legend" d="M991.5 611.5H999.5A2 2 0 0 1 1001.5 613.5V621.5A2 2 0 0 1 999.5 623.5H991.5A2 2 0 0 1 989.5 621.5V613.5A2 2 0 0 1 991.5 611.5Z" fill="#FFA79D"/>
+<text id="p3_ds-legend-0-1-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="1007.5" y="621.5">Two to 12 hours</tspan></text>
+<path id="p3_ds-legend-0-2-swatch" data-role="legend" d="M1108.5 611.5H1116.5A2 2 0 0 1 1118.5 613.5V621.5A2 2 0 0 1 1116.5 623.5H1108.5A2 2 0 0 1 1106.5 621.5V613.5A2 2 0 0 1 1108.5 611.5Z" fill="#FFCBC5"/>
+<text id="p3_ds-legend-0-2-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="1124.5" y="621.5">Half a day to a day</tspan></text>
+<path id="p3_ds-legend-1-0-swatch" data-role="legend" d="M869 631.5H877A2 2 0 0 1 879 633.5V641.5A2 2 0 0 1 877 643.5H869A2 2 0 0 1 867 641.5V633.5A2 2 0 0 1 869 631.5Z" fill="#A3AFB4"/>
+<text id="p3_ds-legend-1-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="885" y="641.5">More than a day</tspan></text>
+<path id="exhibit-divider-v1" data-role="decoration" d="M433 136L433 648" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="exhibit-divider-v2" data-role="decoration" d="M847 136L847 648" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="40" y="676.5">Source: Engineering survey, 240 developers; fictitious data</tspan></text>
+</svg>

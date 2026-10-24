@@ -7,6 +7,7 @@ import path from 'node:path';
 import { type CheckIssue, runChecks } from './check/index.js';
 import { renderPng } from './export/png.js';
 import { layout } from './layout/index.js';
+import type { PageInfo } from './layout/context.js';
 import { renderSvg } from './render/svg.js';
 import type { Scene } from './scene/types.js';
 import type { Spec } from './spec.js';
@@ -62,7 +63,7 @@ function toCheckIssue(i: Issue): CheckIssue {
 }
 
 /** Validate, lay out, theme and check a spec. */
-export async function prepare(input: unknown, opts: { theme?: string } = {}): Promise<Prepared | PrepareFailure> {
+export async function prepare(input: unknown, opts: { theme?: string; page?: PageInfo; seriesHues?: Map<string, number> } = {}): Promise<Prepared | PrepareFailure> {
   if (input && typeof input === 'object' && '__parseError' in input) {
     return { validationErrors: [{ path: 'spec', code: 'json', message: String((input as { __parseError: string }).__parseError) }], warnings: [] };
   }
@@ -71,7 +72,7 @@ export async function prepare(input: unknown, opts: { theme?: string } = {}): Pr
   const spec = v.spec;
   const theme = loadTheme(spec.theme!, spec.themeOverrides);
   const fonts = fontSetFor(theme);
-  const { scene: raw, issues, notes } = await layout(spec, theme, fonts);
+  const { scene: raw, issues, notes } = await layout(spec, theme, fonts, { page: opts.page, seriesHues: opts.seriesHues });
   const scene = applyTheme(raw, theme);
   const qa = runChecks(scene, { theme, fonts, altitude: spec.altitude!, layoutIssues: issues });
   const hasAccentCheck = qa.warnings.some((w) => w.check === 'accent-count');

@@ -185,9 +185,11 @@ export function runChecks(scene: Scene, o: CheckOptions): CheckResult {
   }
 
   // Minimum text size.
+  // A panel shrunk to fit an exhibit shrinks its text too; the exhibit checks that scale itself.
+  const minText = o.theme.font.size.caption * Math.min(1, scene.meta.textScale ?? 1);
   for (const t of texts) {
-    if (t.size < o.theme.font.size.caption - 0.01) {
-      errors.push({ check: 'min-text-size', id: specId(t.id), message: `Text ${quote(t)} is ${t.size} units, below the ${o.theme.font.size.caption} minimum.` });
+    if (t.size < minText - 0.01) {
+      errors.push({ check: 'min-text-size', id: specId(t.id), message: `Text ${quote(t)} is ${Math.round(t.size * 10) / 10} units, below the ${Math.round(minText * 10) / 10} minimum.` });
     }
   }
 
@@ -219,7 +221,8 @@ export function runChecks(scene: Scene, o: CheckOptions): CheckResult {
   }
 
   // Accent count.
-  const accented = new Set(shapes.filter((s) => s.meta?.emphasis === 'accent' && s.meta.specId).map((s) => s.meta!.specId!));
+  // The same series accented in each of several small multiples is one accent, not several.
+  const accented = new Set(shapes.filter((s) => s.meta?.emphasis === 'accent' && s.meta.specId).map((s) => s.meta!.specId!.replace(/^p\d+_/, '')));
   if (accented.size > rules.accentMax) {
     warnings.push({
       check: 'accent-count',
@@ -279,7 +282,7 @@ export function runChecks(scene: Scene, o: CheckOptions): CheckResult {
   if (errors.some((e) => e.check === 'canvas-fit')) {
     for (const e of errors) if (e.check === 'overlap' || e.check === 'off-canvas') e.hint = 'Probably a knock-on effect of the canvas-fit error; fix that first.';
   }
-  for (const e of [...errors, ...warnings]) e.message = e.message.replace(/"ds-callout"/g, 'the callout').replace(/"ds-legend[^"]*"/g, 'the legend').replace(/"ds-(title|subtitle|footer)"/g, 'the $1');
+  for (const e of [...errors, ...warnings]) e.message = e.message.replace(/"p(\d+)_([^"]+)"/g, '"$2" (panel $1)').replace(/"ds-callout"/g, 'the callout').replace(/"ds-legend[^"]*"/g, 'the legend').replace(/"ds-(title|subtitle|footer)"/g, 'the $1');
   return { errors: dedupe(errors), warnings: dedupe(warnings) };
 }
 

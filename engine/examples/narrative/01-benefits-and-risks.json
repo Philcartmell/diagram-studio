@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "type": "narrative",
+  "title": "Automating the two largest warehouses pays back in four years, if we manage two risks",
+  "subtitle": "What the board should weigh before committing capital",
+  "body": {
+    "heading": "Benefits",
+    "bullets": [
+      { "lead": "Later cut-off", "text": "Robotic picking lets both sites ship next-day orders placed up to 10 pm." },
+      { "lead": "Fewer errors", "text": "Scan-to-pack checks remove most of the mis-picks behind customer returns." },
+      { "lead": "Supplier risk", "text": "Few vendors can deliver at this scale; the plan depends on ours keeping its build slots." },
+      { "lead": "Payback risk", "text": "Fit-out costs fall in the first two years while the savings build over five." }
+    ]
+  }
+}

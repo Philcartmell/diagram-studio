@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "type": "waterfall",
+  "title": "Automation and sourcing take €38 million out of the cost base by FY28",
+  "subtitle": "Operating cost walk, FY25 to FY28, € millions",
+  "footer": { "source": "Transformation business case; fictitious data" },
+  "body": {
+    "colors": "direction",
+    "invert": true,
+    "axis": "zero",
+    "steps": [
+      { "label": "FY25 cost base", "value": 212, "kind": "start" },
+      { "label": "Inflation", "value": 14 },
+      { "label": "Volume growth", "value": 9 },
+      { "label": "Subtotal before actions", "kind": "subtotal" },
+      { "label": "Process automation", "value": -26, "emphasis": "accent" },
+      { "label": "Sourcing", "value": -12 },
+      { "label": "Footprint", "value": -8 },
+      { "label": "FY28 cost base", "kind": "end", "value": 189 }
+    ]
+  }
+}

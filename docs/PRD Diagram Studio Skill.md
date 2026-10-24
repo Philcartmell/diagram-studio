@@ -20,7 +20,7 @@ Diagram Studio is a Claude skill that turns a plain-language request ("show our 
 **Non-goals for v1**
 
 - Free-form drawing or a visual editor.
-- Data charts (bar, line, pie). These belong to a charting tool; the skill may embed simple numbers as labels only.
+- ~~Data charts (bar, line, pie). These belong to a charting tool; the skill may embed simple numbers as labels only.~~ Reversed on purpose in v1.1: consulting-style charts, exhibits and multi-page decks are in scope (see [Charts, exhibits and decks](#charts-exhibits-and-decks-v11)). Pie charts, scatter plots and maps stay out.
 - Detailed cloud infrastructure diagrams with vendor icon sets.
 - Animation or interactivity beyond a static SVG.
 
@@ -257,6 +257,43 @@ v1 ships six types chosen for leadership use; v2 adds six more. Each type is a s
 
 Each type has `references/<type>.md` loaded by Claude only when that type is chosen. It contains: when to use (and when not), a field-by-field guide, writing tips for labels at each altitude, two complete example specs, and common mistakes (e.g. "more than 7 steps in one lane at executive altitude: group them").
 
+## Charts, exhibits and decks (v1.1)
+
+**Decision.** v1 left data charts to a charting tool. Leadership packs, though, are mostly exhibits: a chart with its argument, small multiples, a diagram beside the numbers that justify it, and decks of them. Users rebuilt these by hand next to our diagrams, in a different style. v1.1 brings them into the engine on the same principles as the diagrams. The decision is deliberate and can be revisited; the reference was a set of McKinsey-style exhibits.
+
+**Principles**
+
+- **The user's figures, the engine's arithmetic.** Specs carry the values the user gave. Totals, differences, shares and waterfall subtotals are computed; a stated total that does not add up fails validation. One number format per chart.
+- **Figures on the data.** Values inside segments (beside them when too thin), totals on top, series named beside the last column, difference arrows between columns, lines named at their ends. Axes and gridlines only where a trend needs them (line charts).
+- **Colour carries meaning.** Shades of the accent by default; one accented category or series; muted context in grey.
+- **One scene graph.** Charts are drawn from the same shapes, text and lines as diagrams, not as native PowerPoint charts. Every exporter handles them unchanged, and SVG, PNG, PDF and PPTX match exactly. The trade-off: chart data is not editable through PowerPoint's chart editor.
+
+**Types**
+
+| Type id | What it shows | Body essentials |
+| --- | --- | --- |
+| `bar-chart` | Columns or bars: single, stacked, grouped, 100% stacked; negatives; groups; difference arrows; badge figures | `series[]`, `categories[]` (`values[]`, `group`, `badge`), `deltas[]`, `format` |
+| `waterfall` | Start, changes, subtotals, end; optional axis break; neutral or direction colours | `steps[]` (`start`, `delta`, `subtotal`, `end`) |
+| `line-chart` | Lines over time with end labels, a reference line and event markers | `x[]`, `series[]`, `reference`, `annotations[]` |
+| `kpi` | Big figures printed exactly as written, in a row or a column | `items[]` |
+| `narrative` | Heading, paragraphs and bullets with lead-ins | `heading`, `paragraphs[]`, `bullets[]` |
+| `exhibit` | One slide of panels, each any other type, in columns, rows or a grid | `panels[]` (`type`, `body`, `span`, `title`) |
+
+Chart altitude limits replace the node limit: categories and series (12 and 4 at executive, 24 and 6 at management, 40 and 8 at detailed), figures for KPIs, words for narrative.
+
+**Exhibits.** Every layout can draw as a *figure*: into a given box, without its own title, footer or margin. An exhibit lays each panel out as a figure in its box, then places the result (scaled, moved, ids prefixed per panel) on one slide. A figure that needs more room is laid out at its natural size and scaled down to fit; below 70% QA fails rather than print unreadable text.
+
+**Decks.** A `deck.json` lists pages: diagram specs of any type (files or inline), and title and section pages the engine draws. Each page goes through the normal pipeline with the deck's theme, canvas, classification and page number applied. Every action title sits in the same place on every page; a page that outgrows the canvas is redrawn as a figure under the standard frame. Outputs: one PPTX (a slide per page, shared masters), one PDF (bookmarked by action title), one draw.io file (a tab per page), per-page SVG and PNG, a contact sheet, and a storyline file listing the action titles in order. A new `/diagram-studio:deck` skill agrees the storyline before drawing.
+
+**Acceptance tests (v1.1)**
+
+- [x] The fleet charging exhibit (stacked columns in two groups, differences, badges, footnotes) renders from segment values alone, with every total and difference computed.
+- [x] A waterfall whose stated end does not add up fails validation, naming the computed figure.
+- [x] An exhibit with an Azure architecture beside a waterfall renders clean, keeps the official icons, and has unique element ids.
+- [x] A deck of a title page, a section page, a chart, an operating model, a Databricks architecture and an inline waterfall renders to one six-slide PPTX, a six-page PDF and a six-tab draw.io file, with every title in the same place.
+- [x] Every chart and exhibit example renders clean in every built-in theme.
+- [ ] Deck-wide series colours: a series keeps its colour on every page it appears on.
+
 ## Theme system
 
 A theme is a JSON file of design tokens. Layout code references token names only (`color.accent`, `space.gap`), so swapping the theme re-styles any diagram without changing its spec or geometry rules.
@@ -380,13 +417,13 @@ SVG is the master output; every other format is generated from the same scene gr
 | SVG | `--svg` (default) | Native | In vector tools | Fonts embedded; master copy |
 | PNG | `--png` | @resvg/resvg-js | No | `--scale` of 1, 2 or 3 (default 2); transparent background option |
 | PDF | `--pdf` | svg2pdf.js + jsPDF | No (vector) | Page size follows canvas aspect; fonts embedded |
-| PPTX | `--pptx` | pptxgenjs | Yes, native shapes | One slide, 16:9; title in slide title placeholder; each node a grouped shape + text box; connectors as elbow connectors where supported, else line shapes |
+| PPTX | `--pptx` | pptxgenjs | Yes, native shapes | One slide, 16:9 (a deck: a slide per page); title in slide title placeholder; each node a grouped shape + text box; connectors as elbow connectors where supported, else line shapes |
 | draw.io | `--drawio` | Generated mxGraph XML | Yes | Styles mapped from theme tokens; lanes as draw.io pools |
 | Spec | always | — | Yes | `diagram.json` saved beside outputs so the diagram can be revised later |
 
 **PPTX specifics**
 
-- Use theme fonts by name; fall back to Calibri if the user's machine lacks them, and note this in the output message.
+- Name a font every device has. A theme's metric-compatible `officeFamily` (Segoe UI for Selawik) when it has one, the theme font when Office ships it, otherwise Arial; line breaks come from the layout, so nothing re-wraps. Many viewers (the iOS file preview among them) ignore embedded fonts and draw a missing font as a serif, and in testing PowerPoint itself did not use embedded fonts, so the engine does not embed them. Note the substitution in the output message.
 - Group each node's shape and text so it moves as one unit.
 - Put the `callout` and `footer` in separate text boxes; put the spec's `subtitle` in the slide notes as well.
 - Optional `--pptx-template <file.potx>` places the diagram into a corporate master's content area (v2).

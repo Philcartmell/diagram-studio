@@ -73,6 +73,8 @@ function shapeStyle(s: ShapeEl): Record<string, string | number | undefined> {
       return { shape: 'cylinder3', boundedLbl: 1, backgroundOutline: 1, size: 8 };
     case 'delay':
       return { shape: 'delay' };
+    case 'hexagon':
+      return { shape: 'hexagon', perimeter: 'hexagonPerimeter2', fixedSize: 1, size: Math.min(s.w / 2, s.h * 0.29) };
     case 'predefined':
       return { shape: 'process', backgroundOutline: 1, size: 0.08 };
   }
@@ -102,6 +104,19 @@ function pathMid(points: Point[]): Point {
 }
 
 export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string {
+  return mxfile([diagramXml(scene, theme, fonts, 'diagram-studio')]);
+}
+
+/** One draw.io file with a tab per page, named after each page's action title. */
+export function renderDrawioPages(pages: { scene: Scene; theme: Theme; fonts: FontSet }[]): string {
+  return mxfile(pages.map((p, i) => diagramXml(p.scene, p.theme, p.fonts, `page-${i + 1}`, `${i + 1}. `)));
+}
+
+function mxfile(diagrams: string[]): string {
+  return `<mxfile host="diagram-studio" agent="${GENERATOR}" type="device">\n${diagrams.join('')}</mxfile>\n`;
+}
+
+function diagramXml(scene: Scene, theme: Theme, fonts: FontSet, diagramId: string, namePrefix = ''): string {
   const els = scene.elements;
   const family = theme.font.officeFamily ?? theme.font.family;
   const shapes = new Map(els.filter((e): e is ShapeEl => e.kind === 'shape').map((s) => [s.id, s]));
@@ -284,11 +299,10 @@ export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string
     )
     .join('\n        ');
   return (
-    `<mxfile host="diagram-studio" agent="${GENERATOR}" type="device">\n` +
-    `  <diagram id="diagram-studio" name="${escapeXml(scene.meta.title.slice(0, 60))}">\n` +
+    `  <diagram id="${diagramId}" name="${escapeXml((namePrefix + scene.meta.title).slice(0, 60))}">\n` +
     `    <mxGraphModel dx="${scene.width}" dy="${scene.height}" grid="1" gridSize="8" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="${scene.width}" pageHeight="${scene.height}" background="${scene.background}" math="0" shadow="0">\n` +
     `      <root>\n        <mxCell id="0"/>\n        <mxCell id="1" parent="0"/>\n        ${body}\n      </root>\n` +
-    `    </mxGraphModel>\n  </diagram>\n</mxfile>\n`
+    `    </mxGraphModel>\n  </diagram>\n`
   );
 }
 

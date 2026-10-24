@@ -30,7 +30,7 @@ Items count toward the altitude node limit; milestones do not.
 - Bar labels are deliverables or outcomes ("Move P2P to the hub"), not activities ("Work on P2P").
 - Use only dates the user gave you. With no dates, use relative horizons (Now / Next / Later, Year 1 / 2 / 3).
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive
 

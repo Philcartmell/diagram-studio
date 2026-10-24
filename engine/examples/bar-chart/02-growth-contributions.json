@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "type": "bar-chart",
+  "title": "Licence and project revenue drove the 2.1-point fall in group growth",
+  "subtitle": "Group revenue growth, FY26, contribution by business line in percentage points",
+  "footer": { "source": "Management accounts; fictitious data" },
+  "body": {
+    "orientation": "horizontal",
+    "format": { "decimals": 1 },
+    "series": [{ "id": "contribution", "label": "Contribution" }],
+    "categories": [
+      { "label": "Subscriptions", "values": [0.9] },
+      { "label": "Support contracts", "values": [0.3] },
+      { "label": "Implementation projects", "values": [-1.2] },
+      { "label": "Perpetual licences", "values": [-1.6], "emphasis": "accent" },
+      { "label": "Hardware resale", "values": [-0.5] },
+      { "label": "Group revenue", "values": [-2.1], "emphasis": "muted" }
+    ]
+  }
+}

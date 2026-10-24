@@ -44,6 +44,36 @@ export const TYPE_INFO: Record<DiagramType, { summary: string; useFor: string; e
     useFor: '"How this runs on Databricks" — lakehouse data flows, platform and workspace topology, governance and AI serving.',
     essentials: ['children[] (products and boundaries)', 'flows[]', 'steps[]', 'flowTypes[]'],
   },
+  'bar-chart': {
+    summary: 'Columns or bars from numbers: single, stacked, grouped or 100% stacked, with figures on the data, computed totals and difference arrows.',
+    useFor: '"How big, and how it splits" — cost stacks, before and after, rankings, share of total.',
+    essentials: ['series[]', 'categories[] (label, values[], group)', 'deltas[]', 'format'],
+  },
+  waterfall: {
+    summary: 'A starting level, the rises and falls that move it, and the level they reach; subtotals and the end are computed.',
+    useFor: '"What moved the number" — profit bridges, cost-saving walks, headcount changes.',
+    essentials: ['steps[] (start, delta, subtotal, end)', 'format', 'colors'],
+  },
+  'line-chart': {
+    summary: 'Values over time as lines, named at their ends, with an optional reference line and event markers.',
+    useFor: '"How it moved over time" — trends, indices, forecasts against actuals.',
+    essentials: ['x[]', 'series[] (values[])', 'reference', 'annotations[]'],
+  },
+  kpi: {
+    summary: 'Big figures with a line of explanation each, in a row or a column.',
+    useFor: '"The numbers that matter" — headline results, a KPI strip beside a chart.',
+    essentials: ['items[] (value, label, detail)'],
+  },
+  narrative: {
+    summary: 'A short block of text: a heading, paragraphs and bulleted points with bold lead-ins.',
+    useFor: 'The argument beside an exhibit — benefits and risks, what it means, next steps.',
+    essentials: ['heading', 'paragraphs[]', 'bullets[]'],
+  },
+  exhibit: {
+    summary: 'One slide built from panels: any chart or diagram type side by side, in rows or in a grid, under one action title.',
+    useFor: 'Consulting-style exhibits — narrative beside a chart, small multiples, an architecture with its cost case.',
+    essentials: ['layout', 'panels[] (type, title, span, body)'],
+  },
 };
 
 export function listTypes() {

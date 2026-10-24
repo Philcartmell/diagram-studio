@@ -82,6 +82,18 @@ export function shapePoints(kind: ShapeKind, x: number, y: number, w: number, h:
         { x: x + w, y: y + h },
         { x, y: y + h },
       ];
+    case 'hexagon': {
+      // Points left and right, like PowerPoint's preset.
+      const k = Math.min(w / 2, h * 0.29);
+      return [
+        { x: x + k, y },
+        { x: x + w - k, y },
+        { x: x + w, y: y + h / 2 },
+        { x: x + w - k, y: y + h },
+        { x: x + k, y: y + h },
+        { x, y: y + h / 2 },
+      ];
+    }
     default:
       return null;
   }
@@ -100,6 +112,7 @@ export function shapePath(s: Pick<ShapeEl, 'shape' | 'x' | 'y' | 'w' | 'h' | 'ra
     case 'pentagon':
     case 'diamond':
     case 'triangle':
+    case 'hexagon':
       return polygonPath(shapePoints(s.shape, x, y, w, h, s.depth)!);
     case 'ellipse': {
       const rx = w / 2;
@@ -157,6 +170,8 @@ export function shapeTextInsets(kind: ShapeKind, w: number, h: number, depth: nu
       return { l: w * 0.16, r: w * 0.16, t: h * 0.16, b: h * 0.16 };
     case 'triangle':
       return { l: w * 0.25, r: w * 0.25, t: h * 0.4, b: h * 0.05 };
+    case 'hexagon':
+      return { l: Math.min(w / 2, h * 0.29), r: Math.min(w / 2, h * 0.29), t: pad / 2, b: pad / 2 };
     case 'pill':
       return { l: Math.min(h / 2, pad + 4), r: Math.min(h / 2, pad + 4), t: pad / 2, b: pad / 2 };
     case 'document':

@@ -107,7 +107,7 @@ Then curate it, because a deployment has no story:
 - Keep lines black unless `flowTypes` explains a colour. Use `"style": "dotted", "arrows": "none", "label": "Linked"` for DNS zone links and `"arrows": "both"` for peering.
 - Never invent services, SKUs, IP ranges or numbers the user did not give or the deployment does not contain.
 
-Names and facts in the examples below are illustrative. Copy the structure, not the facts.
+Names and facts in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive solution workflow
 

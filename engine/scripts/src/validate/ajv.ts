@@ -32,10 +32,11 @@ export function getAjv(): AjvInstance {
   }
   ajv.addSchema(readSchema(path.join(dirs.schema, 'diagram.schema.json')));
   ajv.addSchema(readSchema(path.join(dirs.schema, 'theme.schema.json')));
+  ajv.addSchema(readSchema(path.join(dirs.schema, 'deck.schema.json')));
   return ajv;
 }
 
-export function validator(id: 'diagram' | 'theme'): ValidateFunction {
+export function validator(id: 'diagram' | 'theme' | 'deck'): ValidateFunction {
   const fn = getAjv().getSchema(`${SCHEMA_BASE}${id}.schema.json`);
   if (!fn) throw new Error(`Schema ${id} not found`);
   return fn;

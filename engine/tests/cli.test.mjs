@@ -80,7 +80,7 @@ describe('CLI', () => {
   });
 
   it('types, example, icons and theme list print JSON', () => {
-    expect(run('types').json.types.map((t) => t.type)).toEqual(['operating-model', 'swimlane', 'roadmap', 'value-chain', 'matrix-2x2', 'layered-architecture', 'azure-architecture', 'databricks-architecture']);
+    expect(run('types').json.types.map((t) => t.type)).toEqual(['operating-model', 'swimlane', 'roadmap', 'value-chain', 'matrix-2x2', 'layered-architecture', 'azure-architecture', 'databricks-architecture', 'bar-chart', 'waterfall', 'line-chart', 'kpi', 'narrative', 'exhibit']);
     const e = run('example', 'roadmap', '--n', '2');
     expect(e.code).toBe(0);
     expect(e.json.type).toBe('roadmap');

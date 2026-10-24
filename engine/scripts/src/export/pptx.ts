@@ -45,6 +45,25 @@ interface Ctx {
   names: string[];
 }
 
+/** Fonts every PowerPoint has (Windows, Mac, the web, iOS and Android, or a metric-compatible stand-in). */
+const OFFICE_FONTS = new Set(['Arial', 'Calibri', 'Aptos', 'Segoe UI', 'Helvetica', 'Verdana', 'Tahoma', 'Trebuchet MS', 'Georgia', 'Times New Roman', 'Cambria', 'Century Gothic', 'Gill Sans MT']);
+
+/**
+ * The typeface a PPTX names. The theme's `officeFamily` when it has one; the theme font itself
+ * when Office ships it; otherwise Arial, which every device has. Many viewers ignore embedded
+ * fonts and fall back to a serif for a font they lack, so naming a font that is everywhere keeps
+ * the slides looking as designed. Line breaks come from the layout, and Arial is at most about
+ * 12% wider than the bundled theme fonts (Source Sans 3), inside the 15% slack every text box
+ * gets, so no line re-wraps.
+ */
+export function pptxFamily(theme: Theme): string {
+  return theme.font.officeFamily ?? (OFFICE_FONTS.has(theme.font.family) ? theme.font.family : 'Arial');
+}
+
+function runFont(c: Ctx, weight: number): { fontFace: string; bold: boolean } {
+  return { fontFace: pptxFamily(c.theme), bold: weight >= 600 };
+}
+
 const hex = (c: string) => c.replace('#', '').toUpperCase();
 const inX = (c: Ctx, x: number) => c.ox + x * c.S;
 const inY = (c: Ctx, y: number) => c.oy + y * c.S;
@@ -82,6 +101,7 @@ const PRESET: Record<string, string> = {
   cylinder: 'can',
   delay: 'flowChartDelay',
   predefined: 'flowChartPredefinedProcess',
+  hexagon: 'hexagon',
 };
 
 function addShape(c: Ctx, s: ShapeEl) {
@@ -135,7 +155,7 @@ function addTextBox(c: Ctx, texts: TextEl[], shape: ShapeEl | undefined, group?:
       text: lineText,
       options: {
         fontSize: pt(c, t.size),
-        bold: t.weight >= 600,
+        ...runFont(c, t.weight),
         color: hex(t.color),
         charSpacing: t.letterSpacing ? pt(c, t.letterSpacing) : undefined,
         softBreakBefore: li > 0,
@@ -150,7 +170,7 @@ function addTextBox(c: Ctx, texts: TextEl[], shape: ShapeEl | undefined, group?:
     y: inY(c, g.y),
     w: inL(c, g.w),
     h: inL(c, g.h),
-    fontFace: c.theme.font.officeFamily ?? c.theme.font.family,
+    fontFace: runFont(c, texts[0].weight).fontFace,
     align: anchor === 'start' ? 'left' : anchor === 'end' ? 'right' : 'center',
     valign: 'top',
     margin: 0,
@@ -186,115 +206,146 @@ function iconPng(nameStr: string, color: string): string | undefined {
   return 'image/png;base64,' + new Resvg(svg, { font: { loadSystemFonts: false } }).render().asPng().toString('base64');
 }
 
+export interface PptxPage {
+  scene: Scene;
+  theme: Theme;
+  fonts: FontSet;
+}
+
 export async function renderPptx(scene: Scene, theme: Theme, fonts: FontSet): Promise<{ buffer: Buffer; notes: string[] }> {
+  return renderPptxPages([{ scene, theme, fonts }], { title: scene.meta.title });
+}
+
+/** One presentation with a slide per scene; slides whose title sits in the same place share a master. */
+export async function renderPptxPages(pages: PptxPage[], meta: { title: string }): Promise<{ buffer: Buffer; notes: string[] }> {
   const pptx = new PptxGenJS();
   pptx.layout = 'LAYOUT_WIDE';
-  pptx.title = scene.meta.title;
+  pptx.title = meta.title;
   pptx.company = 'diagram-studio';
-  const S = Math.min(SLIDE_W / scene.width, SLIDE_H / scene.height);
-  const ox = (SLIDE_W - scene.width * S) / 2;
-  const oy = (SLIDE_H - scene.height * S) / 2;
-  const els = scene.elements;
-  const title = els.find((e): e is TextEl => e.kind === 'text' && e.role === 'title');
-  const widthOf = (t: TextEl) => fonts.blockWidth(t.lines, t.size, t.weight);
-  const tb = title ? textBox(title, widthOf) : undefined;
-  pptx.defineSlideMaster({
-    title: 'DIAGRAM',
-    background: { color: hex(scene.background) },
-    objects: tb
-      ? [{ placeholder: { options: { name: 'title', type: 'title', x: ox + (tb.x - 2) * S, y: oy + (tb.y - 2) * S, w: (scene.width - 2 * scene.margin + 4) * S, h: (tb.h + 4) * S }, text: '' } }]
-      : [],
-  } as never);
-  const slide = pptx.addSlide({ masterName: 'DIAGRAM' });
-  const c: Ctx = { scene, theme, fonts, S, ox, oy, slide, pptx, adj: new Map(), edges: new Map(), names: [] };
+  const masters = new Map<string, string>();
+  const ctxs: Ctx[] = [];
+  for (const { scene, theme, fonts } of pages) {
+    const S = Math.min(SLIDE_W / scene.width, SLIDE_H / scene.height);
+    const ox = (SLIDE_W - scene.width * S) / 2;
+    const oy = (SLIDE_H - scene.height * S) / 2;
+    const els = scene.elements;
+    const title = els.find((e): e is TextEl => e.kind === 'text' && e.role === 'title');
+    const widthOf = (t: TextEl) => fonts.blockWidth(t.lines, t.size, t.weight);
+    const tb = title ? textBox(title, widthOf) : undefined;
+    const titleBox = tb && { x: ox + (tb.x - 2) * S, y: oy + (tb.y - 2) * S, w: (scene.width - 2 * scene.margin + 4) * S, h: (tb.h + 4) * S };
+    const key = JSON.stringify([scene.background, titleBox && Object.values(titleBox).map((v) => Math.round(v * 100))]);
+    let masterName = masters.get(key);
+    if (!masterName) {
+      masterName = masters.size ? `DIAGRAM ${masters.size + 1}` : 'DIAGRAM';
+      masters.set(key, masterName);
+      pptx.defineSlideMaster({
+        title: masterName,
+        background: { color: hex(scene.background) },
+        objects: titleBox ? [{ placeholder: { options: { name: 'title', type: 'title', ...titleBox }, text: '' } }] : [],
+      } as never);
+    }
+    const slide = pptx.addSlide({ masterName });
+    const c: Ctx = { scene, theme, fonts, S, ox, oy, slide, pptx, adj: new Map(), edges: new Map(), names: [] };
+    ctxs.push(c);
 
-  const textsByBox = new Map<string, TextEl[]>();
-  for (const e of els) if (e.kind === 'text' && e.box) textsByBox.set(e.box, [...(textsByBox.get(e.box) ?? []), e]);
+    const textsByBox = new Map<string, TextEl[]>();
+    for (const e of els) if (e.kind === 'text' && e.box) textsByBox.set(e.box, [...(textsByBox.get(e.box) ?? []), e]);
 
-  for (const e of els as SceneElement[]) {
-    switch (e.kind) {
-      case 'grid':
-        break;
-      case 'shape': {
-        // Bullet dots become native bullets on the text instead.
-        if (/--bullet-\d+$/.test(e.id)) break;
-        addShape(c, e);
-        for (const block of textBlocks(textsByBox.get(e.id) ?? [])) addTextBox(c, block, e);
-        break;
-      }
-      case 'text': {
-        if (e.box) break;
-        if (e.role === 'title') {
-          slide.addText(e.lines.join(' '), {
-            placeholder: 'title',
-            fontFace: theme.font.officeFamily ?? theme.font.family,
-            fontSize: pt(c, e.size),
-            bold: e.weight >= 600,
-            color: hex(e.color),
-            align: 'left',
-            valign: 'top',
-            margin: 0,
-          } as never);
+    for (const e of els as SceneElement[]) {
+      switch (e.kind) {
+        case 'grid':
+          break;
+        case 'shape': {
+          // Bullet dots become native bullets on the text instead.
+          if (/--bullet-\d+$/.test(e.id)) break;
+          addShape(c, e);
+          for (const block of textBlocks(textsByBox.get(e.id) ?? [])) addTextBox(c, block, e);
           break;
         }
-        addTextBox(c, [e], undefined, e.group);
-        break;
-      }
-      case 'connector': {
-        const n = `ds~~${e.id}`;
-        c.edges.set(n, { c: e });
-        addPolyline(c, e.id, e.points, e.paint.stroke, e.paint.strokeWidth, e.paint.dash, e.arrowEnd && theme.connector.arrow !== 'none', !!e.arrowStart && theme.connector.arrow !== 'none');
-        break;
-      }
-      case 'line': {
-        const l = e as LineEl;
-        addPolyline(c, l.id, l.points, l.paint.stroke, l.paint.strokeWidth, l.paint.dash, !!l.arrowEnd, !!l.arrowStart, l.group);
-        break;
-      }
-      case 'icon': {
-        if (e.set === 'product') {
-          // Native SVG (PowerPoint 365); the PNG fallback is filled in after writing.
-          const svg = iconSvgAt(e.name, 96);
-          if (svg) slide.addImage({ data: 'image/svg+xml;base64,' + Buffer.from(svg).toString('base64'), x: inX(c, e.x), y: inY(c, e.y), w: inL(c, e.size), h: inL(c, e.size), altText: e.alt ?? '', objectName: name(c, e.group, e.id) } as never);
+        case 'text': {
+          if (e.box) break;
+          if (e.role === 'title') {
+            slide.addText(e.lines.join(' '), {
+              placeholder: 'title',
+              fontSize: pt(c, e.size),
+              ...runFont(c, e.weight),
+              color: hex(e.color),
+              align: 'left',
+              valign: 'top',
+              margin: 0,
+            } as never);
+            break;
+          }
+          addTextBox(c, [e], undefined, e.group);
           break;
         }
-        const data = iconPng(e.name, e.color);
-        if (data) slide.addImage({ data, x: inX(c, e.x), y: inY(c, e.y), w: inL(c, e.size), h: inL(c, e.size), objectName: name(c, e.group, e.id) } as never);
-        break;
+        case 'connector': {
+          const n = `ds~~${e.id}`;
+          c.edges.set(n, { c: e });
+          addPolyline(c, e.id, e.points, e.paint.stroke, e.paint.strokeWidth, e.paint.dash, e.arrowEnd && theme.connector.arrow !== 'none', !!e.arrowStart && theme.connector.arrow !== 'none');
+          break;
+        }
+        case 'line': {
+          const l = e as LineEl;
+          addPolyline(c, l.id, l.points, l.paint.stroke, l.paint.strokeWidth, l.paint.dash, !!l.arrowEnd, !!l.arrowStart, l.group);
+          break;
+        }
+        case 'icon': {
+          if (e.set === 'product') {
+            // Native SVG (PowerPoint 365); the PNG fallback is filled in after writing.
+            const svg = iconSvgAt(e.name, 96);
+            if (svg) slide.addImage({ data: 'image/svg+xml;base64,' + Buffer.from(svg).toString('base64'), x: inX(c, e.x), y: inY(c, e.y), w: inL(c, e.size), h: inL(c, e.size), altText: e.alt ?? '', objectName: name(c, e.group, e.id) } as never);
+            break;
+          }
+          const data = iconPng(e.name, e.color);
+          if (data) slide.addImage({ data, x: inX(c, e.x), y: inY(c, e.y), w: inL(c, e.size), h: inL(c, e.size), objectName: name(c, e.group, e.id) } as never);
+          break;
+        }
       }
     }
+    const notes = [scene.meta.subtitle, scene.meta.notes?.split('\n').filter((l) => l !== scene.meta.subtitle).join('\n')].filter(Boolean).join('\n');
+    if (notes) slide.addNotes(notes);
   }
-  const notes = [scene.meta.subtitle, scene.meta.notes?.split('\n').filter((l) => l !== scene.meta.subtitle).join('\n')].filter(Boolean).join('\n');
-  if (notes) slide.addNotes(notes);
 
   const raw = (await pptx.write({ outputType: 'nodebuffer' })) as Buffer;
   const zip = await JSZip.loadAsync(raw);
-  const slidePath = 'ppt/slides/slide1.xml';
-  const xml = await zip.file(slidePath)!.async('string');
-  zip.file(slidePath, postProcess(xml, c));
-  await fixSvgFallbacks(zip);
-  // Speaker notes: one paragraph per line (a raw newline would run them together).
-  const notesPath = 'ppt/notesSlides/notesSlide1.xml';
-  const notesFile = zip.file(notesPath);
-  if (notesFile) {
-    const nx = await notesFile.async('string');
-    zip.file(
-      notesPath,
-      nx.replace(/<a:p><a:r>(<a:rPr[^>]*\/>)<a:t>([^<]*\n[^<]*)<\/a:t><\/a:r>(<a:endParaRPr[^>]*\/>)?<\/a:p>/, (_m, rpr: string, text: string) =>
-        text
-          .split('\n')
-          .map((t) => `<a:p><a:r>${rpr}<a:t>${t}</a:t></a:r></a:p>`)
-          .join(''),
-      ),
-    );
+  let idBase = 0;
+  for (const [i, c] of ctxs.entries()) {
+    const slidePath = `ppt/slides/slide${i + 1}.xml`;
+    const xml = await zip.file(slidePath)!.async('string');
+    const done = uniqueIds(postProcess(xml, c), idBase);
+    zip.file(slidePath, done.xml);
+    idBase = done.max;
+    // Speaker notes: one paragraph per line (a raw newline would run them together).
+    const notesPath = `ppt/notesSlides/notesSlide${i + 1}.xml`;
+    const notesFile = zip.file(notesPath);
+    if (notesFile) {
+      const nx = await notesFile.async('string');
+      zip.file(
+        notesPath,
+        nx.replace(/<a:p><a:r>(<a:rPr[^>]*\/>)<a:t>([^<]*\n[^<]*)<\/a:t><\/a:r>(<a:endParaRPr[^>]*\/>)?<\/a:p>/, (_m, rpr: string, text: string) =>
+          text
+            .split('\n')
+            .map((t) => `<a:p><a:r>${rpr}<a:t>${t}</a:t></a:r></a:p>`)
+            .join(''),
+        ),
+      );
+    }
   }
+  await fixSvgFallbacks(zip);
   const buffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
-  const out: string[] = [
-    theme.font.officeFamily
-      ? `PPTX uses "${theme.font.officeFamily}", which has the same metrics as the theme font "${theme.font.family}", so text wraps exactly as in the SVG.`
-      : `PPTX uses the theme font "${theme.font.family}". If it is not installed on the viewer's machine PowerPoint substitutes a default (usually Calibri); the font files are in assets/fonts.`,
-  ];
-  if (theme.style.renderer === 'sketch') out.push('The sketch style is drawn with clean native shapes in PPTX so every shape stays editable.');
+  const out: string[] = [];
+  for (const theme of new Map(pages.map((p) => [p.theme.id, p.theme])).values()) {
+    const family = pptxFamily(theme);
+    out.push(
+      theme.font.officeFamily
+        ? `PPTX uses "${family}", which has the same metrics as the theme font "${theme.font.family}", so text wraps exactly as in the SVG.`
+        : family === theme.font.family
+          ? `PPTX uses the theme font "${family}", which Office ships.`
+          : `PPTX uses "${family}" in place of the theme font "${theme.font.family}", which Office does not ship, so the slides look the same on every device, phones included; line breaks are kept. The SVG, PNG and PDF use "${theme.font.family}". To name "${theme.font.family}" in the PPTX for a team that has it installed, set "themeOverrides": { "font": { "officeFamily": "${theme.font.family}" } }.`,
+    );
+    if (theme.style.renderer === 'sketch') out.push('The sketch style is drawn with clean native shapes in PPTX so every shape stays editable.');
+  }
   return { buffer, notes: out };
 }
 
@@ -311,6 +362,25 @@ async function fixSvgFallbacks(zip: JSZip) {
     const svg = await zip.file(svgPath)!.async('string');
     zip.file(pngPath, new Resvg(svg, { fitTo: { mode: 'width', value: 192 }, font: { loadSystemFonts: false } }).render().asPng());
   }
+}
+
+/**
+ * Shape ids only need to be unique within a slide, but some viewers (the iOS file preview)
+ * cache shapes by id across the whole file and draw another slide's shape in their place.
+ * Number every slide's shapes, and the connector glue that points at them, after the last
+ * slide's, so each id is unique in the presentation.
+ */
+function uniqueIds(xml: string, base: number): { xml: string; max: number } {
+  let max = base;
+  const shift = (id: string) => {
+    const v = Number(id) + base;
+    max = Math.max(max, v);
+    return String(v);
+  };
+  const out = xml
+    .replace(/(<p:cNvPr id=")(\d+)"/g, (_m, pre: string, id: string) => `${pre}${shift(id)}"`)
+    .replace(/(<a:(?:stCxn|endCxn) id=")(\d+)"/g, (_m, pre: string, id: string) => `${pre}${shift(id)}"`);
+  return { xml: out, max };
 }
 
 // ---- Post-processing: adjust values, real connectors, groups ---------------

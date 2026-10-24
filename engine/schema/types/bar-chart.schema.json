@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/bar-chart.schema.json",
+  "title": "bar-chart body",
+  "description": "Columns or bars from numbers: single, stacked, grouped or 100% stacked, with values on the data, computed totals and difference arrows.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["series", "categories"],
+  "properties": {
+    "orientation": { "enum": ["vertical", "horizontal"] },
+    "mode": { "enum": ["stacked", "grouped", "percent"] },
+    "unit": { "type": "string", "minLength": 1, "maxLength": 60 },
+    "format": { "$ref": "#/$defs/format" },
+    "series": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "values"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+          "values": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": ["number", "null"] } },
+          "group": { "type": "string", "minLength": 1, "maxLength": 30 },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
+          "badge": { "type": "number" }
+        }
+      }
+    },
+    "totals": { "type": "boolean" },
+    "labels": { "enum": ["auto", "none"] },
+    "seriesLabels": { "enum": ["auto", "direct", "legend"] },
+    "sort": { "enum": ["none", "descending", "ascending"] },
+    "deltas": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to"],
+        "properties": {
+          "from": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "to": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 16 },
+          "show": { "enum": ["absolute", "percent", "both"] }
+        }
+      }
+    },
+    "badges": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "format": { "$ref": "#/$defs/format" }
+      }
+    },
+    "palette": { "enum": ["sequential", "categorical"] }
+  },
+  "$defs": {
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prefix": { "type": "string", "maxLength": 4 },
+        "suffix": { "type": "string", "maxLength": 6 },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "thousands": { "type": "boolean" }
+      }
+    }
+  }
+}

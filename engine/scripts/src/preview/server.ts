@@ -91,7 +91,9 @@ export function collectState(root: string): PreviewState {
       const svg = svgs.sort((a, b) => mtime(b) - mtime(a))[0];
       const updated = mtime(svg);
       const slug = path.basename(svg, '.svg');
-      const spec = readJson(path.join(abs, `${slug}.diagram.json`));
+      // A deck folder's card is its contact sheet; the deck file names it.
+      const deck = readJson(path.join(abs, `${slug}.deck.json`));
+      const spec = readJson(path.join(abs, `${slug}.diagram.json`)) ?? (deck ? { ...deck, type: 'deck' } : undefined);
       const preview = path.join(abs, 'preview.png');
       const rel = path.relative(root, abs);
       cards.push({
@@ -110,7 +112,10 @@ export function collectState(root: string): PreviewState {
       });
     }
     if (depth >= 4) return;
-    for (const e of entries) if (e.isDirectory() && !SKIP_DIRS.has(e.name) && !e.name.startsWith('.')) walk(path.join(abs, e.name), depth + 1);
+    // A rendered deck's pages/ folder holds one SVG per page: the deck card already shows them all.
+    const isDeck = entries.some((e) => e.isFile() && e.name.endsWith('.deck.json'));
+    for (const e of entries)
+      if (e.isDirectory() && !SKIP_DIRS.has(e.name) && !e.name.startsWith('.') && !(isDeck && e.name === 'pages')) walk(path.join(abs, e.name), depth + 1);
   };
   walk(root, 0);
   // Newest activity first, so a new or re-rendered diagram is always at the front.

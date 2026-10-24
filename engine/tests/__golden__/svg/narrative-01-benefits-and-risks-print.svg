@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="narrative" data-theme="print" data-altitude="executive">
+<title id="ds-svg-title">Automating the two largest warehouses pays back in four years, if we manage two risks</title>
+<desc id="ds-svg-desc">What the board should weigh before committing capital</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#000000"><tspan x="48" y="76.5">Automating the two largest warehouses pays back in four years, if we manage two</tspan><tspan x="48" y="113">risks</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#4A4A4A"><tspan x="48" y="148.5">What the board should weigh before committing capital</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 168L1232 168" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="narrative-heading" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1A1A1A"><tspan x="48" y="207">Benefits</tspan></text>
+<path id="point-1--bullet-1" data-role="marker" d="M50 230.5A2.5 2.5 0 1 1 55 230.5A2.5 2.5 0 1 1 50 230.5Z" fill="#1A1A1A"/>
+<text id="point-1--lead" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="64" y="235.5">Later cut-off</tspan></text>
+<text id="point-1--text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#4A4A4A"><tspan x="64" y="253.5">Robotic picking lets both sites ship next-day orders placed up to 10 pm.</tspan></text>
+<path id="point-2--bullet-1" data-role="marker" d="M50 278.5A2.5 2.5 0 1 1 55 278.5A2.5 2.5 0 1 1 50 278.5Z" fill="#1A1A1A"/>
+<text id="point-2--lead" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="64" y="283.5">Fewer errors</tspan></text>
+<text id="point-2--text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#4A4A4A"><tspan x="64" y="301.5">Scan-to-pack checks remove most of the mis-picks behind customer returns.</tspan></text>
+<path id="point-3--bullet-1" data-role="marker" d="M50 326.5A2.5 2.5 0 1 1 55 326.5A2.5 2.5 0 1 1 50 326.5Z" fill="#1A1A1A"/>
+<text id="point-3--lead" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="64" y="331.5">Supplier risk</tspan></text>
+<text id="point-3--text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#4A4A4A"><tspan x="64" y="349.5">Few vendors can deliver at this scale; the plan depends on ours keeping its build slots.</tspan></text>
+<path id="point-4--bullet-1" data-role="marker" d="M50 374.5A2.5 2.5 0 1 1 55 374.5A2.5 2.5 0 1 1 50 374.5Z" fill="#1A1A1A"/>
+<text id="point-4--lead" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="64" y="379.5">Payback risk</tspan></text>
+<text id="point-4--text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#4A4A4A"><tspan x="64" y="397.5">Fit-out costs fall in the first two years while the savings build over five.</tspan></text>
+</svg>

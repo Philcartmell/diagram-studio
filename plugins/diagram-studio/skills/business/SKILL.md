@@ -1,6 +1,6 @@
 ---
 name: business
-description: Runs a business diagram design session with the user. It asks a few sharp questions about the message, audience and content, proposes two or three visual concepts (operating model, swimlane, roadmap, value chain, 2x2 matrix or layered architecture) side by side on a live preview board, refines the chosen one through conversation, and exports PowerPoint, draw.io, SVG, PNG or PDF when the user is happy. Use it when someone describes a diagram or slide they want to build ("I need a slide showing our operating model", "help me visualise this process", "what's the best way to show X, Y and Z?"), wants to explore options, or wants to keep tweaking a diagram until it is right. Not for Azure architecture diagrams with Azure icons, VNets or ARM templates (this plugin's azure skill draws those), Databricks lakehouse, pipeline or platform diagrams (this plugin's databricks skill), data charts (bar, line, pie), org charts, or AWS and Google Cloud diagrams.
+description: Runs a business slide design session with the user. It asks a few sharp questions about the message, audience and content, proposes two or three visual concepts (operating model, swimlane, roadmap, value chain, 2x2 matrix, layered architecture, or a consulting-style data exhibit with bar and column charts, waterfalls, line charts and KPI figures) side by side on a live preview board, refines the chosen one through conversation, and exports PowerPoint, draw.io, SVG, PNG or PDF when the user is happy. Use it when someone describes a diagram, chart or slide they want to build ("I need a slide showing our operating model", "chart these cost figures for the board", "help me visualise this process", "what's the best way to show X, Y and Z?"), wants to explore options, or wants to keep tweaking a slide until it is right. Not for multi-slide decks (this plugin's deck skill builds those), Azure architecture diagrams with Azure icons, VNets or ARM templates (the azure skill), Databricks lakehouse, pipeline or platform diagrams (the databricks skill), pie charts, scatter plots, org charts, or AWS and Google Cloud diagrams.
 argument-hint: "[what the diagram or slide should show]"
 ---
 
@@ -54,7 +54,7 @@ From what the user has given you, pull out:
 
 - **Message:** what the reader should believe afterwards. This becomes the action title.
 - **Audience and room**, which set the altitude (board or ExCo means `executive`, a programme board means `management`, a working team means `detailed`).
-- **Content:** the things themselves (teams, steps, phases, capabilities, items) and how they relate (who hands off to whom, what sits on what, what comes before what).
+- **Content:** the things themselves (teams, steps, phases, capabilities, items) and how they relate (who hands off to whom, what sits on what, what comes before what). For a chart, the figures exactly as given, with their unit, period and source.
 - **Where it will be used:** a slide in a deck (16:9, `boardroom`), a page in a document (`A4-landscape` or `A4-portrait`, `minimal` or `print`), or a workshop wall (`sketch`).
 
 Then ask only what you cannot infer, in **one** `AskUserQuestion` call with at most four questions, most important first:
@@ -64,7 +64,7 @@ Then ask only what you cannot infer, in **one** `AskUserQuestion` call with at m
 3. **Message**: two or three draft action titles built only from what they told you. They can type their own.
 4. **Where it will be used**, if unclear.
 
-Do not ask about export formats yet. Never put facts up as multiple choice: if content is missing (the steps, the teams, the dates), ask for it in plain words, once, and list exactly what you need. Never fill a gap with invented names, numbers, owners or dates. Without `AskUserQuestion`, ask the same questions as a short numbered list.
+Do not ask about export formats yet. Never put facts up as multiple choice: if content is missing (the steps, the teams, the dates, the figures), ask for it in plain words, once, and list exactly what you need. Never fill a gap with invented names, numbers, owners or dates. Without `AskUserQuestion`, ask the same questions as a short numbered list.
 
 Skip the questions when the request is already specific ("swimlane of these six steps across these three teams for the ExCo"): write the brief and go straight to step 3 with a single spec.
 
@@ -98,11 +98,14 @@ diagram-studio render diagrams/<session>/working/diagram.json --out diagrams/<se
 
 Pass only the flags they chose (`--all` for everything). SVG is always written. List the files with their paths, pass on any `notes` from the render output (the PPTX font note, for example), and mention that `exports/<slug>.diagram.json` is the source for later changes. The board shows the exports as downloads. Leave the board running unless they ask you to stop it.
 
+If the slide belongs in a pack, say it can go into a deck: `/diagram-studio:deck` adds `diagrams/<session>/working/diagram.json` as a page, so later edits here flow into the deck.
+
 ## Rules
 
 - **Never invent facts.** Names, figures, owners, dates and statuses come from the user. Record assumptions in `brief.md` and say them in one line.
+- **Never compute a figure.** Give a chart the values the user gave; the engine adds the totals, differences, shares and waterfall subtotals (`diagram-studio docs guide`, "Numbers"). Never round, convert or estimate to make a chart look better; a missing value is `null`, said out loud.
 - **Edit the spec, never an output.** No hand-written SVG, no editing the PPTX or draw.io files.
 - **Keep chat short.** The board carries the picture; chat carries decisions and trade-offs.
-- **One diagram per session folder.** A second diagram gets its own session. Multi-slide decks are not supported yet: offer one diagram per slide.
-- **Stay inside the six business types.** For data charts, org charts, journey maps or AWS and Google Cloud diagrams, say the engine does not draw them yet, and offer the nearest supported form only if it genuinely fits.
+- **One slide per session folder.** A second slide gets its own session. Several slides for one meeting are a deck: hand over to `/diagram-studio:deck`.
+- **Stay inside the supported forms**: the six business diagrams, the charts (`bar-chart`, `waterfall`, `line-chart`, `kpi`), `narrative`, and `exhibit` slides that combine any of them. For pie charts, scatter plots, data tables, org charts, journey maps or AWS and Google Cloud diagrams, say the engine does not draw them yet, and offer the nearest supported form only if it genuinely fits (a share of a total is a 100% `bar-chart`; a ranking a horizontal one).
 - **Azure and Databricks architectures belong to their skills.** When the user wants Azure services drawn with their icons, networks, subnets and private endpoints, or a diagram from an ARM template, hand over to `/diagram-studio:azure`. For a Databricks lakehouse, pipeline, deployment or platform map, hand over to `/diagram-studio:databricks`. Draw it here only as a plain `layered-architecture`, without Azure icons, when the audience is non-technical and the user wants that.

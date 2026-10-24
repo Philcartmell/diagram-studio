@@ -11,7 +11,7 @@ import type { Emphasis, LegendEntry, Status } from '../spec.js';
 import { STATUS_LABEL, badgeLook, nodeLook, panelLook, rulePaint, statusToken, tagToken } from '../theme/paint.js';
 import { emphasisCarriers } from '../validate/spec.js';
 import { humanize, snap, snapUp } from '../util.js';
-import { type LayoutContext, addShape, addText, applyCase, fitIssue, lh, styles, textWidth, wrap } from './context.js';
+import { type LayoutContext, addShape, addText, applyCase, fitIssue, lh, styles, textOn, textWidth, wrap } from './context.js';
 
 export interface Frame {
   /** The box layout modules fill. */
@@ -25,12 +25,16 @@ export interface Frame {
 
 export interface LegendItem {
   label: string;
-  kind: 'emphasis' | 'status' | 'tag' | 'text' | 'flow';
+  kind: 'emphasis' | 'status' | 'tag' | 'text' | 'flow' | 'swatch' | 'line';
   emphasis?: Emphasis;
   status?: Status;
   tag?: string;
   /** Flow entries: a line sample and, optionally, the step-badge shape used by that flow. */
   flow?: { stroke: Token; dash?: Dash; badge?: { shape: ShapeKind; fill: Token } };
+  /** Swatch entries (chart series): a filled square, or another shape such as a badge hexagon. */
+  swatch?: { fill: Token; shape?: ShapeKind };
+  /** Line entries (line-chart series): a short line sample without an arrow. */
+  line?: { stroke: Token; dash?: Dash; width?: number };
 }
 
 const CALLOUT_GAP = 24;
@@ -75,7 +79,8 @@ const FLOW_W = 28;
 
 function swatchWidth(it: LegendItem): number {
   if (it.kind === 'flow') return FLOW_W + (it.flow?.badge ? 6 + SWATCH_H + 2 : 0);
-  return it.kind === 'tag' ? SWATCH_H : SWATCH_W;
+  if (it.kind === 'line') return SWATCH_W;
+  return it.kind === 'tag' || it.kind === 'swatch' ? SWATCH_H : SWATCH_W;
 }
 
 function legendRows(ctx: LayoutContext, items: LegendItem[], width: number): LegendItem[][] {
@@ -95,10 +100,20 @@ function legendRows(ctx: LayoutContext, items: LegendItem[], width: number): Leg
 }
 
 function footerText(ctx: LayoutContext): { left: string; right: string } | undefined {
-  const f = ctx.spec.footer;
-  if (!f || (!f.source && !f.note && !f.classification)) return undefined;
+  if (ctx.figure) return undefined;
+  const f = ctx.spec.footer ?? {};
+  const pageNo = ctx.page?.showNumber ? String(ctx.page.number) : '';
+  if (!f.source && !f.note && !f.classification && !pageNo) return undefined;
   const left = [f.source ? `Source: ${f.source}` : '', f.note ? `Note: ${f.note}` : ''].filter(Boolean).join('   ·   ');
-  return { left, right: f.classification?.toUpperCase() ?? '' };
+  const right = [f.classification?.toUpperCase() ?? '', pageNo].filter(Boolean).join('   ');
+  return { left, right };
+}
+
+/** Numbered footnotes ("1  Capital and operating expenditures"), drawn above the source line. */
+function footnoteLines(ctx: LayoutContext, width: number): string[][] {
+  if (ctx.figure || !ctx.spec.footnotes?.length) return [];
+  const st = styles(ctx.theme).caption;
+  return ctx.spec.footnotes.map((n, i) => wrap(ctx, `${i + 1}  ${n}`, width, st));
 }
 
 function calloutHeight(ctx: LayoutContext, width: number): number {
@@ -122,33 +137,41 @@ export function beginFrame(ctx: LayoutContext, opts: FrameOptions = {}): Frame {
   const m = ctx.margin;
   const st = styles(theme);
   const fullW = ctx.W - 2 * m;
+  const hideTitle = opts.hideTitle || ctx.figure;
 
-  // Header: action title + subtitle.
+  // Header: deck tracker tag, action title, subtitle.
   let y = m;
-  if (!opts.hideTitle) {
+  // Every deck page keeps the tag line, tagged or not, so titles sit in one place throughout.
+  if (ctx.page && !hideTitle) {
+    if (ctx.page.tag) addText(ctx, { id: 'ds-tag', role: 'label', x: m, y, w: fullW, lines: [ctx.page.tag.toUpperCase()], ...st.captionStrong, anchor: 'start', color: textOn('accent', 'background'), letterSpacing: 0.6, slot: 'text' });
+    y += snapUp(lh(ctx, st.caption.size) + 4);
+  }
+  if (!hideTitle) {
     const title = applyCase(spec.title, theme.font.titleCase);
     const tLines = wrap(ctx, title, fullW, st.title);
     if (tLines.length > 2) fitIssue(ctx, 'ds-title', `title wraps to ${tLines.length} lines on this canvas; keep it to two. Shorten the title.`);
     const tLh = lh(ctx, st.title.size);
-    addText(ctx, { id: 'ds-title', role: 'title', x: m, y: m, w: fullW, lines: tLines, ...st.title, anchor: 'start', color: 'ink', slot: 'heading' });
-    y = m + snapUp(tLines.length * tLh);
+    addText(ctx, { id: 'ds-title', role: 'title', x: m, y, w: fullW, lines: tLines, ...st.title, anchor: 'start', color: 'ink', slot: 'heading' });
+    y += snapUp(tLines.length * tLh);
   }
-  if (spec.subtitle && !opts.hideTitle) {
+  if (spec.subtitle && !hideTitle) {
     const sLines = wrap(ctx, spec.subtitle, fullW, st.subtitle);
     y += 4;
     addText(ctx, { id: 'ds-subtitle', role: 'subtitle', x: m, y, w: fullW, lines: sLines, ...st.subtitle, anchor: 'start', color: 'inkMuted', slot: 'text' });
     y += sLines.length * lh(ctx, st.subtitle.size);
   }
-  y = opts.hideTitle ? y - 24 : snapUp(y + 12);
-  if (theme.style.headerRule && !opts.hideTitle) {
+  y = hideTitle ? y - 24 : snapUp(y + 12);
+  if (theme.style.headerRule && !hideTitle) {
     ctx.els.push({ kind: 'line', id: 'ds-header-rule', role: 'decoration', points: [{ x: m, y }, { x: ctx.W - m, y }], paint: rulePaint(theme) });
   }
   const top = y + 24;
 
-  // Bottom reserve: footer, legend, unanchored callout.
+  // Bottom reserve: footer, footnotes, legend, unanchored callout.
   let bottom = 0;
   const foot = footerText(ctx);
   if (foot) bottom += snapUp(lh(ctx, st.caption.size)) + 16;
+  const notes = footnoteLines(ctx, fullW);
+  if (notes.length) bottom += snapUp(notes.flat().length * lh(ctx, st.caption.size) + (foot ? 4 : 0)) + (foot ? 0 : 16);
   const legend = legendItems(ctx, opts.legend);
   if (legend.length) bottom += legendRows(ctx, legend, fullW).length * LEGEND_ROW + 16;
   let calloutColumn: Frame['calloutColumn'];
@@ -187,26 +210,34 @@ export function endFrame(ctx: LayoutContext, frame: Frame, contentBottom: number
     fitIssue(
       ctx,
       'ds-content',
-      `content needs ${Math.ceil(contentBottom - frame.content.y)} units of height but the ${spec.canvas?.aspect ?? '16:9'} canvas leaves ${Math.floor(frame.content.h)}. Remove or group nodes, shorten text, set "legend": "none", drop the subtitle, or set "canvas": { "aspect": "auto" }.`,
+      ctx.figure
+        ? `content needs ${Math.ceil(contentBottom - frame.content.y)} units of height but the panel leaves ${Math.floor(frame.content.h)}. Give the panel more room (a larger "span", fewer panels, or "layout": "rows"), or remove or shorten content.`
+        : `content needs ${Math.ceil(contentBottom - frame.content.y)} units of height but the ${spec.canvas?.aspect ?? '16:9'} canvas leaves ${Math.floor(frame.content.h)}. Remove or group nodes, shorten text, set "legend": "none", drop the subtitle, or set "canvas": { "aspect": "auto" }.`,
     );
   }
   let y = ctx.H - m;
 
+  const fl = lh(ctx, st.caption.size);
+  const footInk = textOn('inkMuted', ctx.background ?? 'background');
   const foot = footerText(ctx);
   if (foot) {
-    const fl = lh(ctx, st.caption.size);
     y -= fl;
     const rightW = foot.right ? textWidth(ctx, foot.right, st.captionStrong) + 0.5 : 0;
     if (foot.left) {
       const lines = wrap(ctx, foot.left, fullW - rightW - 24, st.caption);
-      addText(ctx, { id: 'ds-footer', role: 'footer', x: m, y: y - (lines.length - 1) * fl, w: fullW - rightW - 24, lines, ...st.caption, anchor: 'start', color: 'inkMuted', slot: 'text' });
+      addText(ctx, { id: 'ds-footer', role: 'footer', x: m, y: y - (lines.length - 1) * fl, w: fullW - rightW - 24, lines, ...st.caption, anchor: 'start', color: footInk, slot: 'text' });
       y -= (lines.length - 1) * fl;
     }
     if (foot.right) {
-      addText(ctx, { id: 'ds-classification', role: 'footer', x: ctx.W - m, y: ctx.H - m - fl, lines: [foot.right], ...st.captionStrong, anchor: 'end', color: 'inkMuted', letterSpacing: 0.5, slot: 'text' });
+      addText(ctx, { id: 'ds-classification', role: 'footer', x: ctx.W - m, y: ctx.H - m - fl, lines: [foot.right], ...st.captionStrong, anchor: 'end', color: footInk, letterSpacing: 0.5, slot: 'text' });
     }
-    y -= 16;
   }
+  const notes = footnoteLines(ctx, fullW);
+  if (notes.length) {
+    y -= notes.flat().length * fl + (foot ? 4 : 0);
+    addText(ctx, { id: 'ds-footnotes', role: 'footer', x: m, y, w: fullW, lines: notes.flat(), ...st.caption, anchor: 'start', color: footInk, slot: 'text' });
+  }
+  if (foot || notes.length) y -= 16;
 
   if (frame.legend.length) {
     const rows = legendRows(ctx, frame.legend, fullW);
@@ -345,6 +376,33 @@ function drawLegend(ctx: LayoutContext, rows: LegendItem[][], x0: number, y0: nu
           });
         }
         const tx = x + swatchWidth(it) + 6;
+        addText(ctx, { id: `${id}-label`, role: 'legend', x: tx, y, lines: [it.label], ...st, lineHeight: LEGEND_ROW, anchor: 'start', color: 'inkMuted', group: 'g-ds-legend', slot: 'text' });
+        x = tx + textWidth(ctx, it.label, st) + 20;
+        return;
+      }
+      if (it.kind === 'line' && it.line) {
+        const ly = y + LEGEND_ROW / 2;
+        ctx.els.push({ kind: 'line', id: `${id}-line`, role: 'legend', points: [{ x, y: ly }, { x: x + SWATCH_W, y: ly }], paint: { fill: 'none', stroke: it.line.stroke, strokeWidth: it.line.width ?? 2, dash: it.line.dash }, group: 'g-ds-legend' });
+        const tx = x + SWATCH_W + 6;
+        addText(ctx, { id: `${id}-label`, role: 'legend', x: tx, y, lines: [it.label], ...st, lineHeight: LEGEND_ROW, anchor: 'start', color: 'inkMuted', group: 'g-ds-legend', slot: 'text' });
+        x = tx + textWidth(ctx, it.label, st) + 20;
+        return;
+      }
+      if (it.kind === 'swatch' && it.swatch) {
+        addShape(ctx, {
+          id: `${id}-swatch`,
+          role: 'legend',
+          shape: it.swatch.shape ?? 'rect',
+          x,
+          y: sy,
+          w: SWATCH_H,
+          h: SWATCH_H,
+          radius: 2,
+          paint: { fill: it.swatch.fill, stroke: 'none', strokeWidth: 0 },
+          box: false,
+          group: 'g-ds-legend',
+        });
+        const tx = x + SWATCH_H + 6;
         addText(ctx, { id: `${id}-label`, role: 'legend', x: tx, y, lines: [it.label], ...st, lineHeight: LEGEND_ROW, anchor: 'start', color: 'inkMuted', group: 'g-ds-legend', slot: 'text' });
         x = tx + textWidth(ctx, it.label, st) + 20;
         return;

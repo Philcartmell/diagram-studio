@@ -30,7 +30,7 @@ Process-named capability towers ("Record to report", "Purchase to pay") are fine
 - Order layers from closest-to-customer to most shared/foundational.
 - Layer labels are roles or groupings ("Business partnering", "Centres of expertise"), node labels are capabilities or teams.
 
-Names, figures and dates in the examples below are illustrative. Copy the structure, not the facts.
+Names, figures and dates in the examples below are fictitious. Copy the structure, not the facts.
 
 ## Example: executive
 

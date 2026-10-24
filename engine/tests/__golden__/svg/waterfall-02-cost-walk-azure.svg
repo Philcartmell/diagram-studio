@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="waterfall" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">Automation and sourcing take €38 million out of the cost base by FY28</title>
+<desc id="ds-svg-desc">Operating cost walk, FY25 to FY28, € millions</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Automation and sourcing take €38 million out of the cost base by FY28</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Operating cost walk, FY25 to FY28, € millions</tspan></text>
+<path id="step-1" data-role="node" data-node="step-1" d="M67 199.5H163V588.5H67Z" fill="#0078D4"/>
+<text id="step-1--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="115" y="192.5">212</tspan></text>
+<path id="step-1--link" data-role="decoration" d="M163 199.5L217 199.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="115" y="609">FY25 cost base</tspan></text>
+<path id="step-2" data-role="node" data-node="step-2" d="M217 174H313V199.5H217Z" fill="#D13438"/>
+<text id="step-2--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#505050" text-anchor="middle"><tspan x="265" y="167">+14</tspan></text>
+<path id="step-2--link" data-role="decoration" d="M313 174L367 174" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="265" y="609">Inflation</tspan></text>
+<path id="step-3" data-role="node" data-node="step-3" d="M367 157.5H463V174H367Z" fill="#D13438"/>
+<text id="step-3--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#505050" text-anchor="middle"><tspan x="415" y="150.5">+9</tspan></text>
+<path id="step-3--link" data-role="decoration" d="M463 157.5L517 157.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="415" y="609">Volume growth</tspan></text>
+<path id="step-4" data-role="node" data-node="step-4" d="M517 157.5H613V588.5H517Z" fill="#0078D4"/>
+<text id="step-4--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="565" y="150.5">235</tspan></text>
+<path id="step-4--link" data-role="decoration" d="M613 157.5L667 157.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-4--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="565" y="609">Subtotal before actions</tspan></text>
+<path id="step-5" data-role="node" data-node="step-5" data-emphasis="accent" d="M667 157.5H763V205H667Z" fill="#107C10"/>
+<text id="step-5--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#505050" text-anchor="middle"><tspan x="715" y="221.5">–26</tspan></text>
+<path id="step-5--link" data-role="decoration" d="M763 205L817 205" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-5--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="715" y="609">Process automation</tspan></text>
+<path id="step-6" data-role="node" data-node="step-6" d="M817 205H913V227H817Z" fill="#107C10"/>
+<text id="step-6--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#505050" text-anchor="middle"><tspan x="865" y="243.5">–12</tspan></text>
+<path id="step-6--link" data-role="decoration" d="M913 227L967 227" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-6--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="865" y="609">Sourcing</tspan></text>
+<path id="step-7" data-role="node" data-node="step-7" d="M967 227H1063V242H967Z" fill="#107C10"/>
+<text id="step-7--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#505050" text-anchor="middle"><tspan x="1015" y="258.5">–8</tspan></text>
+<path id="step-7--link" data-role="decoration" d="M1063 242L1117 242" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="step-7--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="1015" y="609">Footprint</tspan></text>
+<path id="step-8" data-role="node" data-node="step-8" d="M1117 242H1213V588.5H1117Z" fill="#0078D4"/>
+<text id="step-8--value" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1165" y="235">189</tspan></text>
+<text id="step-8--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1165" y="609">FY28 cost base</tspan></text>
+<path id="chart-baseline" data-role="axis" d="M40 588.5L1240 588.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-footer" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="677">Source: Transformation business case; fictitious data</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M42 633.5H50A2 2 0 0 1 52 635.5V643.5A2 2 0 0 1 50 645.5H42A2 2 0 0 1 40 643.5V635.5A2 2 0 0 1 42 633.5Z" fill="#107C10"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="58" y="644">Decrease</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M124 633.5H132A2 2 0 0 1 134 635.5V643.5A2 2 0 0 1 132 645.5H124A2 2 0 0 1 122 643.5V635.5A2 2 0 0 1 124 633.5Z" fill="#D13438"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="140" y="644">Increase</tspan></text>
+</svg>

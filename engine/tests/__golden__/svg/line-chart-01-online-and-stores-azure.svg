@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="line-chart" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">Online orders are back to their 2019 level after the relaunch; store visits keep falling</title>
+<desc id="ds-svg-desc">Online orders and store visits, index (2019 = 100)</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Online orders are back to their 2019 level after the relaunch; store visits keep falling</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Online orders and store visits, index (2019 = 100)</tspan></text>
+<path id="grid-1" data-role="axis" d="M68 625.5L1126.5 625.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-1--label" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="60" y="630">85</tspan></text>
+<path id="grid-2" data-role="decoration" d="M68 510L1126.5 510" fill="none" stroke="#D7D7D7" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-2--label" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="60" y="514.5">90</tspan></text>
+<path id="grid-3" data-role="decoration" d="M68 394.5L1126.5 394.5" fill="none" stroke="#D7D7D7" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-3--label" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="60" y="399">95</tspan></text>
+<path id="grid-4" data-role="decoration" d="M68 279L1126.5 279" fill="none" stroke="#D7D7D7" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-4--label" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="60" y="283.5">100</tspan></text>
+<path id="grid-5" data-role="decoration" d="M68 164L1126.5 164" fill="none" stroke="#D7D7D7" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="grid-5--label" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="60" y="168">105</tspan></text>
+<text id="x-1" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="68" y="643">2018</tspan></text>
+<text id="x-2" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="120.5" y="643">Q2</tspan></text>
+<text id="x-3" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="173.5" y="643">Q3</tspan></text>
+<text id="x-4" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="226.5" y="643">Q4</tspan></text>
+<text id="x-5" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="279.5" y="643">2019</tspan></text>
+<text id="x-6" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="332.5" y="643">Q2</tspan></text>
+<text id="x-7" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="385.5" y="643">Q3</tspan></text>
+<text id="x-8" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="438.5" y="643">Q4</tspan></text>
+<text id="x-9" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="491" y="643">2020</tspan></text>
+<text id="x-10" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="544" y="643">Q2</tspan></text>
+<text id="x-11" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="597" y="643">Q3</tspan></text>
+<text id="x-12" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="650" y="643">Q4</tspan></text>
+<text id="x-13" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="703" y="643">2021</tspan></text>
+<text id="x-14" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="756" y="643">Q2</tspan></text>
+<text id="x-15" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="808.5" y="643">Q3</tspan></text>
+<text id="x-16" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="861.5" y="643">Q4</tspan></text>
+<text id="x-17" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="914.5" y="643">2022</tspan></text>
+<text id="x-18" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="967.5" y="643">Q2</tspan></text>
+<text id="x-19" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="1020.5" y="643">Q3</tspan></text>
+<text id="x-20" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="1073.5" y="643">Q4</tspan></text>
+<text id="x-21" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="1126.5" y="643">2023</tspan></text>
+<path id="reference" data-role="decoration" d="M68 279L1126.5 279" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="reference--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="72" y="274">2019 = 100</tspan></text>
+<path id="annotation-1" data-role="decoration" d="M491 160L491 625.5" fill="none" stroke="#505050" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="annotation-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="495" y="155">Website relaunch</tspan></text>
+<path id="stores--line-1" data-role="edge" d="M68 187L120.5 210L173.5 233L226.5 256L279.5 279L332.5 302.5L385.5 325.5L438.5 325.5L491 371.5L544 417.5L597 441L650 441L703 464L756 487L808.5 487L861.5 510L914.5 510L967.5 533L1020.5 533L1073.5 556L1126.5 556" fill="none" stroke="#A6A6A6" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="online--line-1" data-role="edge" d="M68 371.5L120.5 348.5L173.5 302.5L226.5 302.5L279.5 279L332.5 256L385.5 256L438.5 233L491 325.5L544 533L597 417.5L650 348.5L703 302.5L756 256L808.5 233L861.5 256L914.5 279L967.5 256L1020.5 302.5L1073.5 279L1126.5 279" fill="none" stroke="#0078D4" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="online--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#0078D4"><tspan x="1136.5" y="284">Online orders  100</tspan></text>
+<text id="stores--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000"><tspan x="1136.5" y="561">Store visits  88</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="677">Source: Trading data; fictitious data</tspan></text>
+</svg>
