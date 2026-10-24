@@ -259,6 +259,25 @@ describe('deck', () => {
     expect(lineColours(alone.scene).eu).toBe(one.china);
   });
 
+  it('inverts the title page and colours a divider with its own accent', async () => {
+    const { pages, errors } = await prepareDeck({
+      version: '1.0',
+      title: 'Platform review',
+      theme: 'boardroom',
+      pages: [
+        { kind: 'title', inverted: true },
+        { kind: 'section', title: 'Part one', themeOverrides: { color: { accent: '#C2185B' } } },
+        { kind: 'title' },
+      ],
+    });
+    expect(errors).toEqual([]);
+    const [inverted, divider, plain] = pages.map((p) => p.prepared);
+    expect(inverted.scene.background).toBe(inverted.theme.color.accent);
+    expect(divider.scene.background).toBe('#C2185B');
+    expect(plain.scene.background).toBe(plain.theme.color.background);
+    for (const p of pages) expect(p.result.errors).toEqual([]);
+  });
+
   it('rejects a malformed deck', async () => {
     const r = await prepareDeck({ version: '1.0', title: 'x', pages: [{ kind: 'cover' }] });
     expect(r.errors.length).toBeGreaterThan(0);

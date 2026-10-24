@@ -56,7 +56,9 @@
               "kind": { "enum": ["title", "section"] },
               "title": { "type": "string", "minLength": 1, "maxLength": 90 },
               "subtitle": { "type": "string", "minLength": 1, "maxLength": 140 },
-              "tag": { "$ref": "#/$defs/tag" }
+              "tag": { "$ref": "#/$defs/tag" },
+              "inverted": { "type": "boolean", "description": "Title page only: draw it full-bleed in the accent colour, like a section divider." },
+              "themeOverrides": { "type": "object", "description": "Theme overrides for this page, as in a diagram spec (\"color\": { \"accent\": \"#7A5CFA\" } colours a divider)." }
             }
           }
         ]

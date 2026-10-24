@@ -32,6 +32,8 @@ Page entries:
 | `{ "kind": "title", "title": "…", "subtitle": "…", "tag": "24 October 2026" }` | A title page (title and subtitle default to the deck's) |
 | `{ "kind": "section", "title": "How we will run it", "tag": "Section 2" }` | A full-bleed section divider |
 
+Title and section pages also take `themeOverrides`, as a diagram spec does: `{ "color": { "accent": "#7A5CFA" } }` gives a divider its part's colour (give that part's pages the same override, so colour tells the reader where they are). `"inverted": true` draws the title page full-bleed in the accent, like a divider.
+
 ```json
 {
   "version": "1.0",

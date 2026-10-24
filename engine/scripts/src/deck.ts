@@ -40,7 +40,7 @@ export interface DeckSpec {
 export type DeckPage =
   | { spec: string; tag?: string; theme?: string }
   | { diagram: Record<string, unknown>; tag?: string; theme?: string }
-  | { kind: 'title' | 'section'; title?: string; subtitle?: string; tag?: string };
+  | { kind: 'title' | 'section'; title?: string; subtitle?: string; tag?: string; inverted?: boolean; themeOverrides?: Record<string, unknown> };
 
 /** A deck file is recognised by its page list (a diagram spec has a "type" instead). */
 export function isDeck(input: unknown): input is DeckSpec {
@@ -205,9 +205,10 @@ async function prepareCover(deck: DeckSpec, entry: Extract<DeckPage, { kind: str
     subtitle: entry.subtitle ?? (entry.kind === 'title' ? deck.subtitle : undefined),
     footer: deck.footer?.classification ? { classification: deck.footer.classification } : undefined,
     theme: themeOverride ?? deck.theme ?? loadDefaults().theme ?? 'boardroom',
-    body: { kind: entry.kind, tag: entry.tag },
+    themeOverrides: entry.themeOverrides,
+    body: { kind: entry.kind, tag: entry.tag, inverted: entry.inverted },
   } as unknown as Spec;
-  const theme = loadTheme(spec.theme!);
+  const theme = loadTheme(spec.theme!, entry.themeOverrides);
   const fonts = fontSetFor(theme);
   const { scene: raw, issues, notes } = await layout(spec, theme, fonts, { page: { ...info, tag: undefined } }, layoutCover);
   const scene = applyTheme(raw, theme);

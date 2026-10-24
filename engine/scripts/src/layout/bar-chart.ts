@@ -420,8 +420,10 @@ function layoutHorizontal(ctx: LayoutContext, p: Prep): void {
   if (body.unit) top += capLh + 12;
 
   // Label column on the left, figures at the bar ends.
-  const labelColW = Math.min(Math.max(...cats.map((c) => textWidth(ctx, c.label, st.category))) + 4, snap(C.w * 0.32));
-  const labelLines = cats.map((c) => wrap(ctx, c.label, labelColW, st.category));
+  // Measured in the weight each label is drawn in: an accented label is bold, so wider.
+  const labelStyle = (c: Cat): TextStyle => (c.emphasis === 'accent' ? { ...st.category, weight: st.total.weight } : st.category);
+  const labelColW = Math.min(Math.max(...cats.map((c) => textWidth(ctx, c.label, labelStyle(c)))) + 4, snap(C.w * 0.32));
+  const labelLines = cats.map((c) => wrap(ctx, c.label, labelColW, labelStyle(c)));
   const endText = (c: Cat, v: number) => (p.mode === 'percent' ? p.pct(c.total === 0 ? 0 : (v / c.total) * 100) : p.fmt(v));
   const endStyle: TextStyle = p.single ? st.total : st.value;
   const endW = (c: Cat) => {
@@ -517,8 +519,7 @@ function layoutHorizontal(ctx: LayoutContext, p: Prep): void {
       y: ry + rowH / 2 - (labelLines[ci].length * lLh) / 2,
       w: labelColW,
       lines: labelLines[ci],
-      ...st.category,
-      weight: c.emphasis === 'accent' ? st.total.weight : st.category.weight,
+      ...labelStyle(c),
       anchor: 'end',
       color: c.emphasis === 'accent' ? 'text(accent,background)' : 'ink',
       slot: 'text',
