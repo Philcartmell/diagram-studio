@@ -18,6 +18,9 @@ diagrams/
 *.tmp.*
 *.tmp
 
+# Private local notes
+LOCAL-DEV.md
+
 # Logs and caches
 *.log
 npm-debug.log*

@@ -4,12 +4,10 @@ Where Diagram Studio is going. Version 1.0.0 has the engine, the `azure`, `datab
 
 Every skill works from the same **session folder** (`diagrams/<name>/`: `brief.md`, `concepts/`, `working/`, `history/`, `exports/`). The skill writes it, the engine renders into it, and each view (the browser board now, a Claude Code pane later) only reads it. Keeping that contract stable lets each item below ship on its own.
 
-## Go public
+## Housekeeping
 
-- Check Microsoft's terms for redistributing the Azure icons, and Databricks' brand guidelines for the Databricks artwork, in a public npm package.
-- Make the repository public, publish 1.0.0 to npm and turn on trusted publishing (see [RELEASING.md](RELEASING.md)).
 - Optionally submit the plugin to Anthropic's plugin directory, which requires a name nobody else has listed there.
-- `pptxgenjs` depends on a version of `image-size` with a denial-of-service advisory for formats the engine never passes it (JXL, HEIF, ICNS). Update when `pptxgenjs` moves to a fixed version.
+- Dependencies: try `opentype.js` 2 and `elkjs` 0.12 against the golden renders (they measure text and lay out diagrams, so they may move things). Retry `subset-font` 2.9+ when its `harfbuzzjs` 1.x no longer crashes the CLI on exit on Windows. Drop the `image-size` override when `pptxgenjs` ships a fixed version.
 
 ## Databricks follow-ups
 

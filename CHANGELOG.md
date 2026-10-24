@@ -4,6 +4,13 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+### Engine: `diagram-studio`
+
+- Installs no longer print deprecation warnings: `pdfkit` 0.20.2 replaces the unmaintained `crypto-js` and `jpeg-exif` it used to pull in. PDF output is unchanged.
+- `jszip` 3.10.2 and `subset-font` 2.8.0. `subset-font` stays below 2.9.0, whose `harfbuzzjs` 1.x crashes the CLI on exit on Windows.
+- `image-size` is overridden to 2.0.4, clearing its denial-of-service advisory. `pptxgenjs` lists it but never loads it.
+- Development: `fast-xml-parser` 5.11.2 clears a critical advisory (used only in tests, on our own output).
+
 ## 1.0.0 (2026-10-24)
 
 First public release.
