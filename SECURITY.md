@@ -16,4 +16,4 @@ Fixes go into the latest 1.x release.
 
 ## How releases are protected
 
-Releases are published to npm only from this repository's release workflow, using npm trusted publishing with provenance. Each version on npm links to the commit and workflow run that built it. Only repository admins can push the `v*` tags that trigger a release.
+Releases reach npm only through this repository's release workflow, using npm trusted publishing with provenance. Each version on npm links to the commit and workflow run that built it. The workflow can only stage a version: it goes live after the maintainer approves it on npmjs.com with two-factor authentication. Only repository admins can push the `v*` tags that start a release.

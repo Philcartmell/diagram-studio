@@ -14,9 +14,9 @@ CI fails if they disagree (`node tools/release.mjs check`). A new skill must car
 ## How a release reaches users
 
 - **The plugin** comes from the default branch of this repository, through the marketplace in `.claude-plugin/marketplace.json`. Users get it with `claude plugin marketplace update` and `claude plugin update`.
-- **The engine** is published to npm by `.github/workflows/release.yml` when you push a `v<version>` tag. Each publish carries provenance, linking the package to the commit and workflow that built it.
+- **The engine** is staged on npm by `.github/workflows/release.yml` when you push a `v<version>` tag, and goes live when you approve it on npmjs.com with 2FA. The workflow's trusted publisher may only stage, so no version reaches users without that approval. Each version carries provenance, linking the package to the commit and workflow that built it.
 
-Because the skills pin the engine version, a plugin release always runs the engine it was tested with. Push the release commit and its tag **together**, in one push (step 4 below). A user who updates the plugin in the few minutes before the npm publish finishes would otherwise get an `npx` error.
+Because the skills pin the engine version, a plugin release always runs the engine it was tested with. Push the release commit and its tag **together**, in one push (step 4 below), and approve the staged version as soon as the workflow finishes. Until then, a user who updates the plugin gets an `npx` error, because the version the skills ask for isn't live yet.
 
 ## Versioning
 
@@ -55,21 +55,23 @@ Golden renders change with layout improvements. Review the `engine/tests/__golde
 
    Name the tag in the push. `git push --follow-tags` sends only annotated tags, so a plain `git tag v1.1.0` would never reach GitHub and the release would never start. `main` and `v*` tags are protected by rulesets (see below). As a repository admin you bypass them for this push.
 
-5. The release workflow checks that the tag matches every version, runs the full suite, publishes `diagram-studio@1.1.0` to npm and creates the GitHub release from the changelog section. Watch it with `gh run watch`. If npm's staged publishing is on for the account, approve the staged version on npmjs.com.
+5. The release workflow checks that the tag matches every version, runs the full suite, stages `diagram-studio@1.1.0` on npm and creates the GitHub release from the changelog section. Watch it with `gh run watch`.
+6. **Approve the staged version** on npmjs.com (the package's staged versions), or from a terminal: `npm stage list diagram-studio`, then `npm stage approve <id>` (npm 11.15 or later; it asks for your 2FA). Approval waits for npm's malware scan to finish. Once approved, the version is `latest` on npm. Check with `npm view diagram-studio version`.
 
 If the workflow fails:
 
-- **A problem outside the code** (npm settings, a network error): fix it, then re-run the failed job with `gh run rerun <run-id> --failed`. An `E404` on `PUT https://registry.npmjs.org/diagram-studio` means npm didn't recognise the workflow: check the trusted publisher (step 6 of "Going public").
+- **A problem outside the code** (npm settings, a network error): fix it, then re-run the failed job with `gh run rerun <run-id> --failed`. On `PUT https://registry.npmjs.org/diagram-studio`, an `E404` means npm didn't recognise the workflow, and an `E403 OIDC permission denied for this action` means the trusted publisher isn't allowed the command the workflow ran. Check the trusted publisher (step 6 of "Going public").
 - **A problem in the code, found before publishing:** fix it, then move the tag (`git tag -fa v1.1.0 -m v1.1.0 && git push -f origin v1.1.0`) so it runs again on the fixed commit.
+- **The version is already staged:** npm won't stage it twice, so approve or reject it (`npm stage reject <id>`) before re-running.
 
-Once a version is on npm it cannot be republished: release a patch instead. The workflow skips the publish step when that version is already on npm, so a re-run only redoes the GitHub release.
+Once a version is on npm it cannot be republished: release a patch instead. The workflow skips the stage step when that version is already on npm, so a re-run only redoes the GitHub release.
 
 ## Branch and tag protection
 
 Two rulesets (repository **Settings** → **Rules**) guard what reaches users:
 
 - **Protect main:** changes arrive through a pull request with all five CI jobs passing, merged by squash or rebase. No force-pushes, no deletion.
-- **Protect release tags:** only repository admins can create, move or delete `v*` tags. Pushing one publishes to npm.
+- **Protect release tags:** only repository admins can create, move or delete `v*` tags. Pushing one stages a release on npm.
 
 Repository admins bypass both, which the release commit and tag need. Outside contributors work from forks. Their CI runs wait for an admin's approval, and only an admin can merge.
 
@@ -95,7 +97,7 @@ The repository starts private. While it is private you can install the plugin fr
    cd engine && npm publish && cd ..     # builds and runs the full suite first
    ```
 
-6. **Turn on trusted publishing** at npmjs.com: the package's **Settings** → **Trusted publisher** → **GitHub Actions**, with owner `Philcartmell`, repository `diagram-studio` and workflow `release.yml`. From now on the workflow publishes without any stored token. Then, under **Publishing access**, require two-factor authentication and disallow tokens, so only the workflow (or you, with 2FA) can publish.
+6. **Turn on trusted publishing** at npmjs.com: the package's **Settings** → **Trusted publisher** → **GitHub Actions**, with owner `Philcartmell`, repository `diagram-studio`, workflow `release.yml`, no environment, and **Allowed actions: npm stage publish** only. From now on the workflow stages each release without any stored token, and you approve it with 2FA. Then, under **Publishing access**, require two-factor authentication and disallow tokens, so nothing reaches users without your 2FA.
 7. **Tag and push:**
 
    ```bash

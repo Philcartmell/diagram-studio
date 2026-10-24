@@ -1,7 +1,9 @@
 name: Release
 
-# Push a v<version> tag (see RELEASING.md): publishes the engine to npm with
-# provenance, then creates the GitHub release from the changelog.
+# Push a v<version> tag (see RELEASING.md): stages the engine on npm with
+# provenance, then creates the GitHub release from the changelog. The staged
+# version goes live only when a maintainer approves it on npmjs.com with 2FA:
+# the trusted publisher may stage, never publish directly.
 on:
   push:
     tags: ['v*']
@@ -22,19 +24,22 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-      - name: Use npm 11.5.1 or later (trusted publishing)
+      - name: Use npm 11.15 or later (trusted publishing, npm stage)
         run: npm install -g npm@11
       - name: The tag matches every version and has changelog notes
         run: node ../tools/release.mjs check "$GITHUB_REF_NAME"
       - run: npm ci
       - run: npm test
-      - name: Publish to npm (skipped when this version is already published)
+      # A version that is staged but not yet approved can't be staged again:
+      # approve or reject it before re-running this job.
+      - name: Stage on npm for approval (skipped when this version is already published)
         run: |
           version="${GITHUB_REF_NAME#v}"
           if npm view "diagram-studio@$version" version >/dev/null 2>&1; then
-            echo "diagram-studio@$version is already on npm; skipping the publish."
+            echo "diagram-studio@$version is already on npm; skipping."
           else
-            npm publish --provenance --access public
+            npm stage publish . --provenance --access public
+            echo "::notice::diagram-studio@$version is staged. Approve it on npmjs.com (or npm stage list diagram-studio, then npm stage approve <id>) to make it live."
           fi
       - name: GitHub release
         working-directory: .
