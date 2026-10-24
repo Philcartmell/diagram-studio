@@ -1,6 +1,6 @@
 {
   "name": "diagram-studio",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Design diagrams with Claude: Azure architectures in Microsoft Azure Architecture Center style with the official icons (/diagram-studio:azure), Databricks lakehouses, deployments and platform maps in the Databricks brand look (/diagram-studio:databricks), business diagrams such as operating models, swimlanes, roadmaps, value chains, 2x2s and layered architectures, and consulting-style data exhibits with bar charts, waterfalls, line charts and KPIs (/diagram-studio:business), and whole decks built from any of these (/diagram-studio:deck). Compare concepts on a live preview board, refine by conversation, then export PowerPoint, draw.io, SVG, PNG or PDF.",
   "license": "MIT",
   "author": {

@@ -4,6 +4,8 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+## 1.1.0 (2026-10-24)
+
 ### Engine: `diagram-studio`
 
 - **Charts** (a deliberate reversal of v1's "no data charts"): `bar-chart` (columns or bars; single, stacked, grouped or 100% stacked; negative values; category groups; difference arrows; hexagon badge figures), `waterfall` (start, changes, subtotals, end; an automatic axis break; neutral or direction colours), `line-chart` (end labels, a reference line, event markers) and `kpi` (big figures printed as written). Figures sit on the data; totals, differences, shares and waterfall subtotals are computed from the values, and a stated waterfall total that does not add up fails validation. Charts are drawn from the same shapes as diagrams, so SVG, PNG, PDF, PPTX and draw.io match.
