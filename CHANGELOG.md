@@ -4,6 +4,8 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+## 1.0.1 (2026-10-24)
+
 ### Engine: `diagram-studio`
 
 - Installs no longer print deprecation warnings: `pdfkit` 0.20.2 replaces the unmaintained `crypto-js` and `jpeg-exif` it used to pull in. PDF output is unchanged.
