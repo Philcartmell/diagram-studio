@@ -7,7 +7,7 @@ Every skill works from the same **session folder** (`diagrams/<name>/`: `brief.m
 ## Housekeeping
 
 - Optionally submit the plugin to Anthropic's plugin directory, which requires a name nobody else has listed there.
-- Dependencies: try `opentype.js` 2 and `elkjs` 0.12 against the golden renders (they measure text and lay out diagrams, so they may move things). Retry `subset-font` 2.9+ when its `harfbuzzjs` 1.x no longer crashes the CLI on exit on Windows. Drop the `image-size` override when `pptxgenjs` ships a fixed version.
+- Dependencies: try `opentype.js` 2 and `elkjs` 0.12 against the golden renders (they measure text and lay out diagrams, so they may move things). Drop the `image-size` override when `pptxgenjs` ships a fixed version.
 
 ## Databricks follow-ups
 

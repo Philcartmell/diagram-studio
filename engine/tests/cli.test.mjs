@@ -32,6 +32,17 @@ describe('CLI', () => {
     expect(r.stderr).toMatch(/self-review checklist/);
   });
 
+  it('render (SVG only): every example exits 0, with no crash on exit', () => {
+    // Fast SVG-only renders hit a libuv assertion on Windows when the CLI called
+    // process.exit() with the HarfBuzz WASM from subset-font 2.9 still busy.
+    for (const e of examples()) {
+      const r = run('render', e.file, '--out', path.join(dir, 'svg-only', `${e.type}-${e.name}`), '--no-preview');
+      expect(r.code, `${e.type}/${e.name}: ${r.stderr}`).toBe(0);
+      expect(r.stderr).not.toMatch(/Assertion failed/);
+      expect(r.json.files.map((f) => f.format).sort()).toEqual(['spec', 'svg']);
+    }
+  });
+
   it('validate: exit 1 with plain-sentence errors for a bad spec', () => {
     const bad = path.join(dir, 'bad.json');
     const spec = JSON.parse(fs.readFileSync(ex('01-invoice-approval'), 'utf8'));

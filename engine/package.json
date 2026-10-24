@@ -65,7 +65,7 @@
     "pdfkit": "0.20.2",
     "pptxgenjs": "4.0.1",
     "roughjs": "4.6.6",
-    "subset-font": "2.8.0"
+    "subset-font": "2.9.0"
   },
   "devDependencies": {
     "@types/node": "20.19.0",

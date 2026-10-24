@@ -414,14 +414,19 @@ async function main(): Promise<number> {
   }
 }
 
+// Set exitCode and let Node exit on its own: calling process.exit() while the
+// HarfBuzz WASM (subset-font 2.9+) still has work pending trips a libuv
+// assertion on Windows (src\win\async.c) and the CLI exits non-zero.
 main().then(
-  (code) => process.exit(code),
+  (code) => {
+    process.exitCode = code;
+  },
   (e: unknown) => {
     const de = e instanceof DiagramError ? e : undefined;
     const code = de?.code === 'validation' ? 1 : de?.code === 'layout' || de?.code === 'qa' ? 2 : 1;
     out({ ok: false, error: (e as Error).message });
     err(`Error: ${(e as Error).message}`);
     if (!de && process.env.DIAGRAM_STUDIO_DEBUG) err((e as Error).stack ?? '');
-    process.exit(code);
+    process.exitCode = code;
   },
 );
