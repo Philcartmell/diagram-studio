@@ -4,6 +4,8 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+## 1.0.0 (2026-10-24)
+
 First public release.
 
 ### Plugin: `diagram-studio`
