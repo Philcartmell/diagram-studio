@@ -10,7 +10,7 @@ You run a short design conversation about a Databricks architecture. Work out wh
 
 ## The engine
 
-This plugin is released together with engine version 1.0.1. Check it once per session with `diagram-studio version`, and use that command if it reports 1.0.1 or a later 1.x version. Otherwise (not installed, or older) use `npx -y diagram-studio@1.0.1` wherever `diagram-studio` appears below: the first call downloads the engine and later calls reuse the cache. Both need Node 20 or later. If the user will draw often, suggest `npm install -g diagram-studio`.
+This plugin is released together with engine version 1.0.2. Check it once per session with `diagram-studio version`, and use that command if it reports 1.0.2 or a later 1.x version. Otherwise (not installed, or older) use `npx -y diagram-studio@1.0.2` wherever `diagram-studio` appears below: the first call downloads the engine and later calls reuse the cache. Both need Node 20 or later. If the user will draw often, suggest `npm install -g diagram-studio`.
 
 The spec rules ship with the engine, so read them from it rather than from memory:
 

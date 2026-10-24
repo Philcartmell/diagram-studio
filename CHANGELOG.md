@@ -4,6 +4,8 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+## 1.0.2 (2026-10-24)
+
 ### Engine: `diagram-studio`
 
 - `subset-font` 2.9.0, with `harfbuzzjs` 1.6.4. The CLI now sets its exit code and lets Node exit on its own instead of calling `process.exit()`, which tripped a libuv assertion on Windows with Node 24 after some SVG-only renders (every Azure example) and exited non-zero although every file had been written.

@@ -1,6 +1,6 @@
 {
   "name": "diagram-studio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Boardroom-quality business diagrams, Microsoft-style Azure architectures and Databricks architectures from a JSON spec: a deterministic renderer with SVG, PNG, PDF, editable PowerPoint and draw.io export.",
   "type": "module",
   "license": "MIT",
