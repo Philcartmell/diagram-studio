@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="value-chain" data-theme="minimal" data-altitude="detailed">
+<title id="ds-svg-title">Claims automation and pricing analytics carry the digital investment case</title>
+<desc id="ds-svg-desc">Personal lines insurance value chain, detailed view</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#1F2328"><tspan x="48" y="75.5">Claims automation and pricing analytics carry the digital investment case</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#57606A"><tspan x="48" y="108">Personal lines insurance value chain, detailed view</tspan></text>
+<path id="data" data-role="band" data-node="data" data-emphasis="highlight" d="M50 152H1046A2 2 0 0 1 1048 154V198A2 2 0 0 1 1046 200H50A2 2 0 0 1 48 198V154A2 2 0 0 1 50 152Z" fill="#F1F1F3" stroke="#4B5563" stroke-width="2" stroke-linejoin="round"/>
+<text id="data--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#4B5563"><tspan x="64" y="181">Data &amp; analytics</tspan></text>
+<text id="data--description" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#57606A"><tspan x="232" y="180">Pricing models · Fraud scoring · Customer data platform</tspan></text>
+<path id="tech" data-role="band" data-node="tech" d="M50 216H1046A2 2 0 0 1 1048 218V262A2 2 0 0 1 1046 264H50A2 2 0 0 1 48 262V218A2 2 0 0 1 50 216Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="tech--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1F2328"><tspan x="64" y="245">Technology</tspan></text>
+<text id="tech--description" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#57606A"><tspan x="232" y="244">Policy admin system · Claims platform · Cloud</tspan></text>
+<path id="people" data-role="band" data-node="people" d="M50 280H1046A2 2 0 0 1 1048 282V326A2 2 0 0 1 1046 328H50A2 2 0 0 1 48 326V282A2 2 0 0 1 50 280Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="people--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1F2328"><tspan x="64" y="309">People</tspan></text>
+<text id="people--description" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#57606A"><tspan x="232" y="308">Underwriting academy · Claims handler skills</tspan></text>
+<path id="product" data-role="node" data-node="product" d="M48 352L232 352L248 408L232 464L48 464Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="product--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="143" y="405.5">Product design</tspan></text>
+<path id="product--tag-core" data-role="marker" d="M58 450H62A2 2 0 0 1 64 452V456A2 2 0 0 1 62 458H58A2 2 0 0 1 56 456V452A2 2 0 0 1 58 450Z" fill="#C2410C"/>
+<path id="pricing" data-role="node" data-node="pricing" data-emphasis="accent" d="M248 352L432 352L448 408L432 464L248 464L264 408Z" fill="#F6E4DD" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/>
+<text id="pricing--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="349.5" y="405.5">Pricing &amp; underwriting</tspan></text>
+<path id="pricing--tag-digital" data-role="marker" d="M272 450H276A2 2 0 0 1 278 452V456A2 2 0 0 1 276 458H272A2 2 0 0 1 270 456V452A2 2 0 0 1 272 450Z" fill="#4B5563"/>
+<path id="distribution" data-role="node" data-node="distribution" d="M448 352L632 352L648 408L632 464L448 464L464 408Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="distribution--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="549.5" y="405.5">Distribution</tspan></text>
+<path id="distribution--tag-core" data-role="marker" d="M472 450H476A2 2 0 0 1 478 452V456A2 2 0 0 1 476 458H472A2 2 0 0 1 470 456V452A2 2 0 0 1 472 450Z" fill="#C2410C"/>
+<path id="servicing" data-role="node" data-node="servicing" d="M648 352L832 352L848 408L832 464L648 464L664 408Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="servicing--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="749.5" y="405.5">Policy servicing</tspan></text>
+<path id="servicing--tag-core" data-role="marker" d="M672 450H676A2 2 0 0 1 678 452V456A2 2 0 0 1 676 458H672A2 2 0 0 1 670 456V452A2 2 0 0 1 672 450Z" fill="#C2410C"/>
+<path id="claims" data-role="node" data-node="claims" data-emphasis="accent" data-status="changed" d="M848 352L1032 352L1048 408L1032 464L848 464L864 408Z" fill="#F6E4DD" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/>
+<text id="claims--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="949.5" y="416.5">Claims</tspan></text>
+<path id="claims--badge" data-role="badge" d="M980 358H1020A8 8 0 0 1 1028 366V366A8 8 0 0 1 1020 374H980A8 8 0 0 1 972 366V366A8 8 0 0 1 980 358Z" fill="#E3C7AE" stroke="#A16207" stroke-width="1" stroke-linejoin="round"/>
+<text id="claims--badge-text" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1000" y="369.5">Changed</tspan></text>
+<path id="claims--tag-digital" data-role="marker" d="M872 450H876A2 2 0 0 1 878 452V456A2 2 0 0 1 876 458H872A2 2 0 0 1 870 456V452A2 2 0 0 1 872 450Z" fill="#4B5563"/>
+<path id="product--panel" data-role="node" d="M58 480H238A2 2 0 0 1 240 482V630A2 2 0 0 1 238 632H58A2 2 0 0 1 56 630V482A2 2 0 0 1 58 480Z" fill="#FFFFFF"/>
+<path id="product--bullet-1" data-role="marker" d="M69 500A2.5 2.5 0 1 1 74 500A2.5 2.5 0 1 1 69 500Z" fill="#4B5563"/>
+<text id="product--item-1" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="80" y="504">Cover design</tspan></text>
+<path id="product--bullet-2" data-role="marker" d="M69 519.5A2.5 2.5 0 1 1 74 519.5A2.5 2.5 0 1 1 69 519.5Z" fill="#4B5563"/>
+<text id="product--item-2" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="80" y="523.5">Partner products</tspan></text>
+<path id="pricing--panel" data-role="node" d="M258 480H438A2 2 0 0 1 440 482V630A2 2 0 0 1 438 632H258A2 2 0 0 1 256 630V482A2 2 0 0 1 258 480Z" fill="#FAF0EC" stroke="#C2410C" stroke-width="1" stroke-linejoin="round"/>
+<path id="pricing--bullet-1" data-role="marker" d="M269 500A2.5 2.5 0 1 1 274 500A2.5 2.5 0 1 1 269 500Z" fill="#C2410C"/>
+<text id="pricing--item-1" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="280" y="504">Risk models</tspan></text>
+<path id="pricing--bullet-2" data-role="marker" d="M269 519.5A2.5 2.5 0 1 1 274 519.5A2.5 2.5 0 1 1 269 519.5Z" fill="#C2410C"/>
+<text id="pricing--item-2" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="280" y="523.5">Rate changes</tspan></text>
+<path id="pricing--bullet-3" data-role="marker" d="M269 539A2.5 2.5 0 1 1 274 539A2.5 2.5 0 1 1 269 539Z" fill="#C2410C"/>
+<text id="pricing--item-3" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="280" y="543">Referral rules</tspan></text>
+<path id="distribution--panel" data-role="node" d="M458 480H638A2 2 0 0 1 640 482V630A2 2 0 0 1 638 632H458A2 2 0 0 1 456 630V482A2 2 0 0 1 458 480Z" fill="#FFFFFF"/>
+<path id="distribution--bullet-1" data-role="marker" d="M469 500A2.5 2.5 0 1 1 474 500A2.5 2.5 0 1 1 469 500Z" fill="#4B5563"/>
+<text id="distribution--item-1" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="480" y="504">Aggregators</tspan></text>
+<path id="distribution--bullet-2" data-role="marker" d="M469 519.5A2.5 2.5 0 1 1 474 519.5A2.5 2.5 0 1 1 469 519.5Z" fill="#4B5563"/>
+<text id="distribution--item-2" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="480" y="523.5">Direct web</tspan></text>
+<path id="distribution--bullet-3" data-role="marker" d="M469 539A2.5 2.5 0 1 1 474 539A2.5 2.5 0 1 1 469 539Z" fill="#4B5563"/>
+<text id="distribution--item-3" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="480" y="543">Brokers</tspan></text>
+<path id="servicing--panel" data-role="node" d="M658 480H838A2 2 0 0 1 840 482V630A2 2 0 0 1 838 632H658A2 2 0 0 1 656 630V482A2 2 0 0 1 658 480Z" fill="#FFFFFF"/>
+<path id="servicing--bullet-1" data-role="marker" d="M669 500A2.5 2.5 0 1 1 674 500A2.5 2.5 0 1 1 669 500Z" fill="#4B5563"/>
+<text id="servicing--item-1" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="680" y="504">Renewals</tspan></text>
+<path id="servicing--bullet-2" data-role="marker" d="M669 519.5A2.5 2.5 0 1 1 674 519.5A2.5 2.5 0 1 1 669 519.5Z" fill="#4B5563"/>
+<text id="servicing--item-2" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="680" y="523.5">Mid-term changes</tspan></text>
+<path id="claims--panel" data-role="node" d="M858 480H1038A2 2 0 0 1 1040 482V630A2 2 0 0 1 1038 632H858A2 2 0 0 1 856 630V482A2 2 0 0 1 858 480Z" fill="#FAF0EC" stroke="#C2410C" stroke-width="1" stroke-linejoin="round"/>
+<path id="claims--bullet-1" data-role="marker" d="M869 500A2.5 2.5 0 1 1 874 500A2.5 2.5 0 1 1 869 500Z" fill="#C2410C"/>
+<text id="claims--item-1" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="880" y="504">First notice of loss</tspan></text>
+<path id="claims--bullet-2" data-role="marker" d="M869 519.5A2.5 2.5 0 1 1 874 519.5A2.5 2.5 0 1 1 869 519.5Z" fill="#C2410C"/>
+<text id="claims--item-2" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="880" y="523.5">Triage</tspan></text>
+<path id="claims--bullet-3" data-role="marker" d="M869 539A2.5 2.5 0 1 1 874 539A2.5 2.5 0 1 1 869 539Z" fill="#C2410C"/>
+<text id="claims--item-3" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1F2328"><tspan x="880" y="543">Settlement</tspan></text>
+<path id="outcome" data-role="node" d="M1080 152L1194 152L1232 308L1194 464L1080 464Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="outcome--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1140" y="303">Combined ratio</tspan></text>
+<text id="outcome--description" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#57606A" text-anchor="middle"><tspan x="1140" y="323">Target 92%</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M51 656H65A3 3 0 0 1 68 659V665A3 3 0 0 1 65 668H51A3 3 0 0 1 48 665V659A3 3 0 0 1 51 656Z" fill="#F6E4DD" stroke="#C2410C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="74" y="665.5">Focus area</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M146.5 656H160.5A3 3 0 0 1 163.5 659V665A3 3 0 0 1 160.5 668H146.5A3 3 0 0 1 143.5 665V659A3 3 0 0 1 146.5 656Z" fill="#E6E7E9" stroke="#4B5563" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="169.5" y="665.5">Secondary focus</tspan></text>
+<path id="ds-legend-0-2-swatch" data-role="legend" d="M271.5 656H279.5A6 6 0 0 1 285.5 662V662A6 6 0 0 1 279.5 668H271.5A6 6 0 0 1 265.5 662V662A6 6 0 0 1 271.5 656Z" fill="#EADCC8" stroke="#A16207" stroke-width="1" stroke-linejoin="round"/>
+<text id="ds-legend-0-2-label" data-role="legend" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="291.5" y="665.5">Changed</tspan></text>
+<path id="ds-legend-0-3-swatch" data-role="legend" d="M354.5 656H362.5A2 2 0 0 1 364.5 658V666A2 2 0 0 1 362.5 668H354.5A2 2 0 0 1 352.5 666V658A2 2 0 0 1 354.5 656Z" fill="#C2410C"/>
+<text id="ds-legend-0-3-label" data-role="legend" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="370.5" y="665.5">Core</tspan></text>
+<path id="ds-legend-0-4-swatch" data-role="legend" d="M414 656H422A2 2 0 0 1 424 658V666A2 2 0 0 1 422 668H414A2 2 0 0 1 412 666V658A2 2 0 0 1 414 656Z" fill="#4B5563"/>
+<text id="ds-legend-0-4-label" data-role="legend" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#57606A"><tspan x="430" y="665.5">Digital</tspan></text>
+</svg>

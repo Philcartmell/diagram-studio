@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "executive",
+  "title": "Expense claims under £100 now pay out without manager approval",
+  "canvas": { "aspect": "4:3" },
+  "body": {
+    "orientation": "vertical",
+    "lanes": [
+      { "id": "employee", "label": "Employee" },
+      { "id": "manager", "label": "Manager" },
+      { "id": "finance", "label": "Finance" }
+    ],
+    "steps": [
+      { "id": "submit", "lane": "employee", "label": "Submit claim", "shape": "start" },
+      { "id": "check", "lane": "finance", "label": "Under £100?", "shape": "decision" },
+      { "id": "approve", "lane": "manager", "label": "Approve claim" },
+      { "id": "pay", "lane": "finance", "label": "Pay in next run", "emphasis": "accent", "status": "new" },
+      { "id": "paid", "lane": "employee", "label": "Claim paid", "shape": "end" }
+    ],
+    "edges": [
+      { "from": "submit", "to": "check" },
+      { "from": "check", "to": "pay", "label": "yes" },
+      { "from": "check", "to": "approve", "label": "no" },
+      { "from": "approve", "to": "pay" },
+      { "from": "pay", "to": "paid" }
+    ]
+  }
+}

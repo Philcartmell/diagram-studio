@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "executive",
+  "theme": "boardroom",
+  "title": "A shared finance hub frees business partners to focus on decisions",
+  "subtitle": "Target finance operating model, 2027",
+  "callout": { "text": "40% of transactional effort moves to the hub", "anchor": "hub" },
+  "body": {
+    "customers": { "label": "Business units", "items": ["Retail", "Commercial", "Wealth"] },
+    "layers": [
+      { "id": "partnering", "label": "Business partnering", "nodes": [
+        { "id": "bp", "label": "Finance business partners", "description": "Embedded in each unit" }
+      ]},
+      { "id": "expertise", "label": "Centres of expertise", "nodes": [
+        { "id": "fpa", "label": "FP&A" },
+        { "id": "tax", "label": "Tax & Treasury" },
+        { "id": "control", "label": "Financial control" }
+      ]},
+      { "id": "hub", "label": "Finance hub", "emphasis": "accent", "status": "new", "nodes": [
+        { "id": "r2r", "label": "Record to report" },
+        { "id": "p2p", "label": "Purchase to pay" },
+        { "id": "o2c", "label": "Order to cash" }
+      ]}
+    ],
+    "foundations": ["Single ERP", "Data & reporting platform", "Controls framework"],
+    "governance": { "label": "Finance leadership team", "position": "right" }
+  }
+}

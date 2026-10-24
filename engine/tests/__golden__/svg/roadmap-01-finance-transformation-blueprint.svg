@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="blueprint" data-altitude="executive">
+<title id="ds-svg-title">The ERP switch in Q3 2027 unlocks the finance hub a year later</title>
+<desc id="ds-svg-desc">Finance transformation roadmap, 2026–2028</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">The ERP switch in Q3 2027 unlocks the finance hub a year later</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#B8CCE3"><tspan x="48" y="108.5">Finance transformation roadmap, 2026–2028</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="h1" data-role="phase" data-node="h1" d="M196 152H452A2 2 0 0 1 454 154V198A2 2 0 0 1 452 200H196A2 2 0 0 1 194 198V154A2 2 0 0 1 196 152Z" fill="#1A426F"/>
+<text id="h1--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="324" y="173.5">H2 2026</tspan></text>
+<text id="h1--description" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="324" y="188">Mobilise</tspan></text>
+<path id="h2--column" data-role="decoration" d="M456 248H720V656H456Z" fill="#0F2D53"/>
+<path id="h2" data-role="phase" data-node="h2" d="M460 152H716A2 2 0 0 1 718 154V198A2 2 0 0 1 716 200H460A2 2 0 0 1 458 198V154A2 2 0 0 1 460 152Z" fill="#1A426F"/>
+<text id="h2--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="588" y="173.5">H1 2027</tspan></text>
+<text id="h2--description" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="588" y="188">Build</tspan></text>
+<path id="h3" data-role="phase" data-node="h3" d="M724 152H980A2 2 0 0 1 982 154V198A2 2 0 0 1 980 200H724A2 2 0 0 1 722 198V154A2 2 0 0 1 724 152Z" fill="#1A426F"/>
+<text id="h3--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="852" y="173.5">H2 2027</tspan></text>
+<text id="h3--description" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="852" y="188">Switch</tspan></text>
+<path id="h4--column" data-role="decoration" d="M984 248H1232V656H984Z" fill="#0F2D53"/>
+<path id="h4" data-role="phase" data-node="h4" d="M988 152H1228A2 2 0 0 1 1230 154V198A2 2 0 0 1 1228 200H988A2 2 0 0 1 986 198V154A2 2 0 0 1 988 152Z" fill="#1A426F"/>
+<text id="h4--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="1108" y="173.5">2028</tspan></text>
+<text id="h4--description" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="1108" y="188">Scale</tspan></text>
+<path id="erp" data-role="lane" data-node="erp" d="M50 252H182A2 2 0 0 1 184 254V378A2 2 0 0 1 182 380H50A2 2 0 0 1 48 378V254A2 2 0 0 1 50 252Z" fill="#12335C"/>
+<text id="erp--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="60" y="321.5">ERP platform</tspan></text>
+<path id="hub" data-role="lane" data-node="hub" d="M50 388H182A2 2 0 0 1 184 390V514A2 2 0 0 1 182 516H50A2 2 0 0 1 48 514V390A2 2 0 0 1 50 388Z" fill="#12335C"/>
+<text id="hub--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="60" y="457.5">Finance hub</tspan></text>
+<path id="hub--rule" data-role="decoration" d="M48 384L1232 384" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="people" data-role="lane" data-node="people" d="M50 524H182A2 2 0 0 1 184 526V650A2 2 0 0 1 182 652H50A2 2 0 0 1 48 650V526A2 2 0 0 1 50 524Z" fill="#12335C"/>
+<text id="people--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="60" y="593.5">People &amp; skills</tspan></text>
+<path id="people--rule" data-role="decoration" d="M48 520L1232 520" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="gate-1--line" data-role="decoration" d="M456 242L456 656" fill="none" stroke="#DCE7F3" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="erp-design" data-role="node" data-node="erp-design" d="M202 288H710A2 2 0 0 1 712 290V350A2 2 0 0 1 710 352H202A2 2 0 0 1 200 350V290A2 2 0 0 1 202 288Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp-design--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="212" y="325.5">Design &amp; configure</tspan></text>
+<path id="erp-cutover" data-role="node" data-node="erp-cutover" data-status="at-risk" d="M730 288H974A2 2 0 0 1 976 290V350A2 2 0 0 1 974 352H730A2 2 0 0 1 728 350V290A2 2 0 0 1 730 288Z" fill="#12335C" stroke="#FF6B6B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp-cutover--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="740" y="336.5">Cutover</tspan></text>
+<path id="erp-cutover--badge" data-role="badge" d="M930 294H962A8 8 0 0 1 970 302V302A8 8 0 0 1 962 310H930A8 8 0 0 1 922 302V302A8 8 0 0 1 930 294Z" fill="#463F5F" stroke="#FF6B6B" stroke-width="1" stroke-linejoin="round"/>
+<text id="erp-cutover--badge-text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="946" y="306">At risk</tspan></text>
+<path id="hub-pilot" data-role="node" data-node="hub-pilot" d="M466 424H974A2 2 0 0 1 976 426V486A2 2 0 0 1 974 488H466A2 2 0 0 1 464 486V426A2 2 0 0 1 466 424Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="hub-pilot--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="476" y="461.5">Pilot R2R in the hub</tspan></text>
+<path id="hub-scale" data-role="node" data-node="hub-scale" data-emphasis="accent" d="M994 424H1222A2 2 0 0 1 1224 426V486A2 2 0 0 1 1222 488H994A2 2 0 0 1 992 486V426A2 2 0 0 1 994 424Z" fill="#33475A" stroke="#FFC24B" stroke-width="2" stroke-linejoin="round"/>
+<text id="hub-scale--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="1004" y="461.5">Move P2P and O2C to the hub</tspan></text>
+<path id="upskill" data-role="node" data-node="upskill" d="M202 560H1222A2 2 0 0 1 1224 562V622A2 2 0 0 1 1222 624H202A2 2 0 0 1 200 622V562A2 2 0 0 1 202 560Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="upskill--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB"><tspan x="212" y="597.5">Business partner academy</tspan></text>
+<path id="ds-track" data-role="decoration" d="M192 234L1232 234" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-live" data-role="marker" data-node="go-live" data-emphasis="accent" d="M856 224L866 234L856 244L846 234Z" fill="#FFC24B" stroke="#FFC24B" stroke-width="1" stroke-linejoin="round"/>
+<text id="go-live--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFC24B"><tspan x="868" y="227.5">ERP go-live</tspan></text>
+<path id="gate-1" data-role="marker" data-node="gate-1" d="M456 226L464 234L456 242L448 234Z" fill="#0B2545" stroke="#DCE7F3" stroke-width="2" stroke-linejoin="round"/>
+<text id="gate-1--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#F2F6FB"><tspan x="466" y="228">Investment gate</tspan></text>
+</svg>

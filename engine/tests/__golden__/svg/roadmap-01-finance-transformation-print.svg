@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="print" data-altitude="executive">
+<title id="ds-svg-title">The ERP switch in Q3 2027 unlocks the finance hub a year later</title>
+<desc id="ds-svg-desc">Finance transformation roadmap, 2026–2028</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#000000"><tspan x="48" y="76.5">The ERP switch in Q3 2027 unlocks the finance hub a year later</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#4A4A4A"><tspan x="48" y="108.5">Finance transformation roadmap, 2026–2028</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="h1" data-role="phase" data-node="h1" d="M198 152H450A4 4 0 0 1 454 156V196A4 4 0 0 1 450 200H198A4 4 0 0 1 194 196V156A4 4 0 0 1 198 152Z" fill="#E3E3E3"/>
+<text id="h1--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="324" y="173">H2 2026</tspan></text>
+<text id="h1--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="middle"><tspan x="324" y="188">Mobilise</tspan></text>
+<path id="h2--column" data-role="decoration" d="M456 248H720V656H456Z" fill="#F7F7F7"/>
+<path id="h2" data-role="phase" data-node="h2" d="M462 152H714A4 4 0 0 1 718 156V196A4 4 0 0 1 714 200H462A4 4 0 0 1 458 196V156A4 4 0 0 1 462 152Z" fill="#E3E3E3"/>
+<text id="h2--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="588" y="173">H1 2027</tspan></text>
+<text id="h2--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="middle"><tspan x="588" y="188">Build</tspan></text>
+<path id="h3" data-role="phase" data-node="h3" d="M726 152H978A4 4 0 0 1 982 156V196A4 4 0 0 1 978 200H726A4 4 0 0 1 722 196V156A4 4 0 0 1 726 152Z" fill="#E3E3E3"/>
+<text id="h3--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="852" y="173">H2 2027</tspan></text>
+<text id="h3--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="middle"><tspan x="852" y="188">Switch</tspan></text>
+<path id="h4--column" data-role="decoration" d="M984 248H1232V656H984Z" fill="#F7F7F7"/>
+<path id="h4" data-role="phase" data-node="h4" d="M990 152H1226A4 4 0 0 1 1230 156V196A4 4 0 0 1 1226 200H990A4 4 0 0 1 986 196V156A4 4 0 0 1 990 152Z" fill="#E3E3E3"/>
+<text id="h4--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1108" y="173">2028</tspan></text>
+<text id="h4--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="middle"><tspan x="1108" y="188">Scale</tspan></text>
+<path id="erp" data-role="lane" data-node="erp" d="M52 252H180A4 4 0 0 1 184 256V376A4 4 0 0 1 180 380H52A4 4 0 0 1 48 376V256A4 4 0 0 1 52 252Z" fill="#F2F2F2"/>
+<text id="erp--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="321.5">ERP platform</tspan></text>
+<path id="hub" data-role="lane" data-node="hub" d="M52 388H180A4 4 0 0 1 184 392V512A4 4 0 0 1 180 516H52A4 4 0 0 1 48 512V392A4 4 0 0 1 52 388Z" fill="#F2F2F2"/>
+<text id="hub--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="457.5">Finance hub</tspan></text>
+<path id="hub--rule" data-role="decoration" d="M48 384L1232 384" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="people" data-role="lane" data-node="people" d="M52 524H180A4 4 0 0 1 184 528V648A4 4 0 0 1 180 652H52A4 4 0 0 1 48 648V528A4 4 0 0 1 52 524Z" fill="#F2F2F2"/>
+<text id="people--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="593.5">People &amp; skills</tspan></text>
+<path id="people--rule" data-role="decoration" d="M48 520L1232 520" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="gate-1--line" data-role="decoration" d="M456 242L456 656" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-dasharray="10 7.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="erp-design" data-role="node" data-node="erp-design" d="M204 288H708A4 4 0 0 1 712 292V348A4 4 0 0 1 708 352H204A4 4 0 0 1 200 348V292A4 4 0 0 1 204 288Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp-design--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="212" y="325">Design &amp; configure</tspan></text>
+<path id="erp-cutover" data-role="node" data-node="erp-cutover" data-status="at-risk" d="M732 288H972A4 4 0 0 1 976 292V348A4 4 0 0 1 972 352H732A4 4 0 0 1 728 348V292A4 4 0 0 1 732 288Z" fill="#F2F2F2" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp-cutover--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="740" y="336">Cutover</tspan></text>
+<path id="erp-cutover--badge" data-role="badge" d="M929 294H962A8 8 0 0 1 970 302V302A8 8 0 0 1 962 310H929A8 8 0 0 1 921 302V302A8 8 0 0 1 929 294Z" fill="#BDBDBD" stroke="#000000" stroke-width="1" stroke-linejoin="round"/>
+<text id="erp-cutover--badge-text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="945.5" y="306">At risk</tspan></text>
+<path id="hub-pilot" data-role="node" data-node="hub-pilot" d="M468 424H972A4 4 0 0 1 976 428V484A4 4 0 0 1 972 488H468A4 4 0 0 1 464 484V428A4 4 0 0 1 468 424Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="hub-pilot--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="476" y="461">Pilot R2R in the hub</tspan></text>
+<path id="hub-scale" data-role="node" data-node="hub-scale" data-emphasis="accent" d="M996 424H1220A4 4 0 0 1 1224 428V484A4 4 0 0 1 1220 488H996A4 4 0 0 1 992 484V428A4 4 0 0 1 996 424Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="hub-scale--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF"><tspan x="1004" y="461">Move P2P and O2C to the hub</tspan></text>
+<path id="upskill" data-role="node" data-node="upskill" d="M204 560H1220A4 4 0 0 1 1224 564V620A4 4 0 0 1 1220 624H204A4 4 0 0 1 200 620V564A4 4 0 0 1 204 560Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="upskill--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="212" y="597">Business partner academy</tspan></text>
+<path id="ds-track" data-role="decoration" d="M192 234L1232 234" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-live" data-role="marker" data-node="go-live" data-emphasis="accent" d="M856 224L866 234L856 244L846 234Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1" stroke-linejoin="round"/>
+<text id="go-live--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1A1A1A"><tspan x="868" y="227">ERP go-live</tspan></text>
+<path id="gate-1" data-role="marker" data-node="gate-1" d="M456 226L464 234L456 242L448 234Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+<text id="gate-1--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="466" y="227.5">Investment gate</tspan></text>
+</svg>

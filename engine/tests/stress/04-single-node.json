@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "executive",
+  "title": "One shared service now handles every request from the business",
+  "body": {
+    "layers": [
+      {
+        "id": "service",
+        "label": "Shared service",
+        "nodes": [
+          {
+            "id": "only",
+            "label": "Global service desk",
+            "emphasis": "accent"
+          }
+        ]
+      }
+    ]
+  }
+}

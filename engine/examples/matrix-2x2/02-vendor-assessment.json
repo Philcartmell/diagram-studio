@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "type": "matrix-2x2",
+  "altitude": "management",
+  "title": "Two vendors combine strong capability with an acceptable price",
+  "subtitle": "CRM vendor shortlist, placed by quadrant after scoring workshops",
+  "body": {
+    "xAxis": { "label": "Total cost of ownership", "low": "Lower", "high": "Higher" },
+    "yAxis": { "label": "Capability fit", "low": "Weaker", "high": "Stronger" },
+    "quadrants": [
+      { "position": "top-left", "label": "Shortlist", "description": "Strong fit, affordable", "emphasis": "accent" },
+      { "position": "top-right", "label": "Negotiate", "description": "Strong fit, expensive" },
+      { "position": "bottom-left", "label": "Watch", "description": "Cheap but limited" },
+      { "position": "bottom-right", "label": "Reject", "description": "Weak and costly" }
+    ],
+    "items": [
+      { "id": "vendor-a", "label": "Vendor A", "quadrant": "top-left", "emphasis": "accent" },
+      { "id": "vendor-b", "label": "Vendor B", "quadrant": "top-left" },
+      { "id": "vendor-c", "label": "Vendor C", "quadrant": "top-right" },
+      { "id": "vendor-d", "label": "Vendor D", "quadrant": "bottom-left" },
+      { "id": "vendor-e", "label": "Vendor E", "quadrant": "bottom-right" },
+      { "id": "vendor-f", "label": "Vendor F", "quadrant": "bottom-right" }
+    ]
+  }
+}

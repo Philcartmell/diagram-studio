@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/matrix-2x2.schema.json",
+  "title": "matrix-2x2 body",
+  "description": "Items placed on two axes with four named quadrants.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["xAxis", "yAxis", "quadrants", "items"],
+  "properties": {
+    "xAxis": { "$ref": "#/$defs/axis" },
+    "yAxis": { "$ref": "#/$defs/axis" },
+    "quadrants": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["position", "label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "position": { "$ref": "#/$defs/quadrant" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 32 },
+          "description": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "x": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y": { "type": "number", "minimum": 0, "maximum": 1 },
+          "quadrant": { "$ref": "#/$defs/quadrant" },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
+          "status": { "$ref": "../diagram.schema.json#/$defs/status" },
+          "metric": { "type": "string", "minLength": 1, "maxLength": 24 },
+          "tags": { "type": "array", "maxItems": 2, "uniqueItems": true, "items": { "$ref": "../diagram.schema.json#/$defs/tag" } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "quadrant": { "enum": ["top-left", "top-right", "bottom-left", "bottom-right"] },
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "low": { "type": "string", "minLength": 1, "maxLength": 20 },
+        "high": { "type": "string", "minLength": 1, "maxLength": 20 }
+      }
+    }
+  }
+}

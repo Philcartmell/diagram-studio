@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="value-chain" data-theme="blueprint" data-altitude="management">
+<title id="ds-svg-title">Planning and procurement drive two thirds of the cost-out programme</title>
+<desc id="ds-svg-desc">Manufacturing value chain with 2027 savings targets</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">Planning and procurement drive two thirds of the cost-out programme</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#B8CCE3"><tspan x="48" y="108.5">Manufacturing value chain with 2027 savings targets</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="plan" data-role="node" data-node="plan" data-emphasis="accent" d="M48 152L230 152L248 212L230 272L48 272Z" fill="#33475A" stroke="#FFC24B" stroke-width="2" stroke-linejoin="round"/>
+<text id="plan--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="142" y="207.5">Plan</tspan></text>
+<text id="plan--metric" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="142" y="227.5">£14m</tspan></text>
+<path id="procure" data-role="node" data-node="procure" data-emphasis="accent" d="M246 152L428 152L446 212L428 272L246 272L264 212Z" fill="#33475A" stroke="#FFC24B" stroke-width="2" stroke-linejoin="round"/>
+<text id="procure--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="347.5" y="207.5">Procure</tspan></text>
+<text id="procure--metric" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="347.5" y="227.5">£11m</tspan></text>
+<path id="make" data-role="node" data-node="make" data-status="changed" d="M444 152L626 152L644 212L626 272L444 272L462 212Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="make--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="545.5" y="218.5">Make</tspan></text>
+<text id="make--metric" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="545.5" y="238.5">£6m</tspan></text>
+<path id="make--badge" data-role="badge" d="M571 158H614A8 8 0 0 1 622 166V166A8 8 0 0 1 614 174H571A8 8 0 0 1 563 166V166A8 8 0 0 1 571 158Z" fill="#46565E" stroke="#FFD166" stroke-width="1" stroke-linejoin="round"/>
+<text id="make--badge-text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="592.5" y="170">Changed</tspan></text>
+<path id="deliver" data-role="node" data-node="deliver" d="M642 152L824 152L842 212L824 272L642 272L660 212Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="deliver--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="743.5" y="207.5">Deliver</tspan></text>
+<text id="deliver--metric" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="743.5" y="227.5">£4m</tspan></text>
+<path id="service" data-role="node" data-node="service" d="M840 152L1022 152L1040 212L1022 272L840 272L858 212Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="service--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="941.5" y="207.5">Service</tspan></text>
+<text id="service--metric" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FFC24B" text-anchor="middle"><tspan x="941.5" y="227.5">£2m</tspan></text>
+<path id="plan--panel" data-role="node" d="M59 288H237A2 2 0 0 1 239 290V406A2 2 0 0 1 237 408H59A2 2 0 0 1 57 406V290A2 2 0 0 1 59 288Z" fill="#1F3245" stroke="#FFC24B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="plan--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFC24B"><tspan x="69" y="312.5">Integrated demand and</tspan><tspan x="69" y="328">supply planning</tspan></text>
+<path id="procure--panel" data-role="node" d="M257 288H435A2 2 0 0 1 437 290V406A2 2 0 0 1 435 408H257A2 2 0 0 1 255 406V290A2 2 0 0 1 257 288Z" fill="#1F3245" stroke="#FFC24B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="procure--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#FFC24B"><tspan x="267" y="312.5">Category-led sourcing, fewer</tspan><tspan x="267" y="328">suppliers</tspan></text>
+<path id="make--panel" data-role="node" d="M455 288H633A2 2 0 0 1 635 290V406A2 2 0 0 1 633 408H455A2 2 0 0 1 453 406V290A2 2 0 0 1 455 288Z" fill="#12335C"/>
+<text id="make--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="465" y="312.5">Lean lines, predictive</tspan><tspan x="465" y="328">maintenance</tspan></text>
+<path id="deliver--panel" data-role="node" d="M653 288H831A2 2 0 0 1 833 290V406A2 2 0 0 1 831 408H653A2 2 0 0 1 651 406V290A2 2 0 0 1 653 288Z" fill="#12335C"/>
+<text id="deliver--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="663" y="312.5">Network redesign, two DCs</tspan></text>
+<path id="service--panel" data-role="node" d="M851 288H1029A2 2 0 0 1 1031 290V406A2 2 0 0 1 1029 408H851A2 2 0 0 1 849 406V290A2 2 0 0 1 851 288Z" fill="#12335C"/>
+<text id="service--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="861" y="312.5">Spares and field service</tspan></text>
+<path id="outcome" data-role="node" d="M1080 152L1194 152L1232 212L1194 272L1080 272Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="outcome--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="1140" y="200">£37m</tspan></text>
+<text id="outcome--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="1140" y="220">run-rate savings</tspan><tspan x="1140" y="235.5">by 2028</tspan></text>
+</svg>

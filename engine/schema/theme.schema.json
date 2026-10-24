@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/theme.schema.json",
+  "title": "Diagram Studio theme",
+  "description": "Design tokens. Validated after `extends` is resolved, so a theme file that extends another may contain only the tokens it changes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "color", "font", "shape", "space", "connector", "style"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "extends": { "type": ["string", "null"] },
+    "color": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "surface", "surfaceAlt", "ink", "inkMuted", "line", "lineStrong", "accent", "accentInk", "highlight", "categorical", "status"],
+      "properties": {
+        "background": { "$ref": "#/$defs/hex" },
+        "surface": { "$ref": "#/$defs/hex" },
+        "surfaceAlt": { "$ref": "#/$defs/hex" },
+        "ink": { "$ref": "#/$defs/hex" },
+        "inkMuted": { "$ref": "#/$defs/hex" },
+        "line": { "$ref": "#/$defs/hex" },
+        "lineStrong": { "$ref": "#/$defs/hex" },
+        "accent": { "$ref": "#/$defs/hex" },
+        "accentInk": { "$ref": "#/$defs/hex" },
+        "highlight": { "$ref": "#/$defs/hex" },
+        "categorical": { "type": "array", "minItems": 3, "maxItems": 12, "items": { "$ref": "#/$defs/hex" } },
+        "status": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["new", "changed", "retired", "atRisk"],
+          "properties": {
+            "new": { "$ref": "#/$defs/hex" },
+            "changed": { "$ref": "#/$defs/hex" },
+            "retired": { "$ref": "#/$defs/hex" },
+            "atRisk": { "$ref": "#/$defs/hex" }
+          }
+        },
+        "notation": {
+          "type": "object",
+          "description": "Optional colours for diagram notation (azure-architecture). Missing entries fall back to accent, accentInk and status.changed.",
+          "additionalProperties": false,
+          "properties": {
+            "step": { "$ref": "#/$defs/hex", "description": "Numbered step badges" },
+            "stepInk": { "$ref": "#/$defs/hex", "description": "Numbers on step badges" },
+            "network": { "$ref": "#/$defs/hex", "description": "Virtual network boundaries" },
+            "zone": { "$ref": "#/$defs/hex", "description": "Availability zone outlines" }
+          }
+        }
+      }
+    },
+    "font": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "files", "size", "weight", "titleCase"],
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "officeFamily": { "type": "string", "minLength": 1, "description": "Font named in editable exports (PPTX, draw.io) when a metric-compatible system font is likelier to be installed than the theme font (e.g. Segoe UI for Selawik)." },
+        "files": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "regular": { "type": "string" },
+            "medium": { "type": "string" },
+            "semibold": { "type": "string" },
+            "bold": { "type": "string" }
+          }
+        },
+        "size": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "subtitle", "group", "label", "body", "caption"],
+          "properties": {
+            "title": { "type": "number", "minimum": 16, "maximum": 48 },
+            "subtitle": { "type": "number", "minimum": 11, "maximum": 28 },
+            "group": { "type": "number", "minimum": 11, "maximum": 24 },
+            "label": { "type": "number", "minimum": 11, "maximum": 22 },
+            "body": { "type": "number", "minimum": 11, "maximum": 18 },
+            "caption": { "type": "number", "minimum": 11, "maximum": 16 }
+          }
+        },
+        "weight": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "label", "body"],
+          "properties": {
+            "title": { "type": "integer", "minimum": 100, "maximum": 900 },
+            "label": { "type": "integer", "minimum": 100, "maximum": 900 },
+            "body": { "type": "integer", "minimum": 100, "maximum": 900 }
+          }
+        },
+        "titleCase": { "enum": ["sentence", "title", "upper", "none"] },
+        "lineHeight": { "type": "number", "minimum": 1.1, "maximum": 1.8 }
+      }
+    },
+    "shape": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["radius", "stroke", "strokeStrong", "shadow", "chevronDepth"],
+      "properties": {
+        "radius": { "type": "number", "minimum": 0, "maximum": 24 },
+        "stroke": { "type": "number", "minimum": 0.5, "maximum": 4 },
+        "strokeStrong": { "type": "number", "minimum": 0.5, "maximum": 6 },
+        "shadow": { "enum": ["none", "soft"] },
+        "chevronDepth": { "type": "number", "minimum": 8, "maximum": 40 }
+      }
+    },
+    "space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unit", "gap", "padding", "margin"],
+      "properties": {
+        "unit": { "const": 8 },
+        "gap": { "type": "number", "minimum": 16, "maximum": 48, "multipleOf": 8 },
+        "padding": { "type": "number", "minimum": 8, "maximum": 32, "multipleOf": 4 },
+        "margin": { "type": "number", "minimum": 24, "maximum": 96, "multipleOf": 8 }
+      }
+    },
+    "connector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "arrow", "cornerRadius"],
+      "properties": {
+        "style": { "const": "orthogonal" },
+        "arrow": { "enum": ["triangle", "open", "none"] },
+        "cornerRadius": { "type": "number", "minimum": 0, "maximum": 16 }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renderer", "showIcons", "accentFill"],
+      "properties": {
+        "renderer": { "enum": ["clean", "sketch"] },
+        "showIcons": { "type": "boolean" },
+        "accentFill": { "enum": ["solid", "tint"] },
+        "grid": { "type": "boolean" },
+        "headerRule": { "type": "boolean" },
+        "roughness": { "type": "number", "minimum": 0, "maximum": 3 },
+        "bandFill": { "enum": ["surface", "surfaceAlt", "none"] }
+      }
+    }
+  },
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^#([0-9a-fA-F]{6})$" }
+  }
+}

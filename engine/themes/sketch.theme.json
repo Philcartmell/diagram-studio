@@ -1,0 +1,32 @@
+{
+  "id": "sketch",
+  "name": "Sketch",
+  "description": "Hand-drawn and informal: warm off-white paper, charcoal lines, marker accents. For workshops and early ideas.",
+  "extends": null,
+  "color": {
+    "background": "#FBF8F1",
+    "surface": "#FFFDF8",
+    "surfaceAlt": "#F1EADB",
+    "ink": "#2B2A28",
+    "inkMuted": "#5C574F",
+    "line": "#8C857A",
+    "lineStrong": "#3A3833",
+    "accent": "#C0392B",
+    "accentInk": "#FFFFFF",
+    "highlight": "#1F8A70",
+    "categorical": ["#C0392B", "#1F8A70", "#D68910", "#2E6DB4", "#7A9E3E", "#8E44AD"],
+    "status": { "new": "#2E8B57", "changed": "#D68910", "retired": "#A39E93", "atRisk": "#C0392B" }
+  },
+  "font": {
+    "family": "Kalam",
+    "files": { "regular": "fonts/Kalam-Regular.ttf", "bold": "fonts/Kalam-Bold.ttf" },
+    "size": { "title": 28, "subtitle": 16, "group": 15, "label": 14, "body": 12, "caption": 11 },
+    "weight": { "title": 700, "label": 700, "body": 400 },
+    "titleCase": "sentence",
+    "lineHeight": 1.3
+  },
+  "shape": { "radius": 8, "stroke": 1.5, "strokeStrong": 2.5, "shadow": "none", "chevronDepth": 18 },
+  "space": { "unit": 8, "gap": 16, "padding": 16, "margin": 48 },
+  "connector": { "style": "orthogonal", "arrow": "triangle", "cornerRadius": 0 },
+  "style": { "renderer": "sketch", "showIcons": true, "accentFill": "tint", "headerRule": true, "roughness": 1.1, "bandFill": "surfaceAlt" }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "type": "value-chain",
+  "altitude": "executive",
+  "title": "Margin gains sit in sourcing and last-mile delivery, not in stores",
+  "subtitle": "Retail value chain, focus areas for 2027",
+  "body": {
+    "support": [
+      { "id": "tech", "label": "Technology", "items": ["Data platform", "Store systems", "E-commerce"] },
+      { "id": "people", "label": "People", "items": ["Workforce planning", "Training"] }
+    ],
+    "primary": [
+      { "id": "source", "label": "Sourcing", "emphasis": "accent", "items": ["Supplier consolidation", "Own-label growth"] },
+      { "id": "inbound", "label": "Inbound logistics", "items": ["Distribution centres"] },
+      { "id": "stores", "label": "Stores & online", "items": ["Store estate", "Web and app"] },
+      { "id": "delivery", "label": "Last-mile delivery", "emphasis": "accent", "items": ["Route density", "Click & collect"] },
+      { "id": "service", "label": "Customer service", "items": ["Returns", "Contact centre"] }
+    ],
+    "outcome": { "label": "Margin", "description": "+180 bps by 2028" }
+  }
+}

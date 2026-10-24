@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="value-chain" data-theme="boardroom" data-altitude="executive">
+<title id="ds-svg-title">Margin gains sit in sourcing and last-mile delivery, not in stores</title>
+<desc id="ds-svg-desc">Retail value chain, focus areas for 2027</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#1B2733"><tspan x="48" y="76.5">Margin gains sit in sourcing and last-mile delivery, not in stores</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#5B6875"><tspan x="48" y="108.5">Retail value chain, focus areas for 2027</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#9AA5B1" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="tech" data-role="band" data-node="tech" d="M54 152H1034A6 6 0 0 1 1040 158V194A6 6 0 0 1 1034 200H54A6 6 0 0 1 48 194V158A6 6 0 0 1 54 152Z" fill="#F5F7FA"/>
+<text id="tech--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1B2733"><tspan x="64" y="181.5">Technology</tspan></text>
+<text id="tech--description" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#5B6875"><tspan x="232" y="180.5">Data platform · Store systems · E-commerce</tspan></text>
+<path id="people" data-role="band" data-node="people" d="M54 216H1034A6 6 0 0 1 1040 222V258A6 6 0 0 1 1034 264H54A6 6 0 0 1 48 258V222A6 6 0 0 1 54 216Z" fill="#F5F7FA"/>
+<text id="people--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1B2733"><tspan x="64" y="245.5">People</tspan></text>
+<text id="people--description" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#5B6875"><tspan x="232" y="244.5">Workforce planning · Training</tspan></text>
+<path id="source" data-role="node" data-node="source" data-emphasis="accent" d="M48 296L230 296L248 352L230 408L48 408Z" fill="#D4DDEB" stroke="#0B3D91" stroke-width="2" stroke-linejoin="round"/>
+<text id="source--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="142" y="357">Sourcing</tspan></text>
+<path id="inbound" data-role="node" data-node="inbound" d="M246 296L428 296L446 352L428 408L246 408L264 352Z" fill="#F5F7FA" stroke="#9AA5B1" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="inbound--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="347.5" y="357">Inbound logistics</tspan></text>
+<path id="stores" data-role="node" data-node="stores" d="M444 296L626 296L644 352L626 408L444 408L462 352Z" fill="#F5F7FA" stroke="#9AA5B1" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="stores--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="545.5" y="357">Stores &amp; online</tspan></text>
+<path id="delivery" data-role="node" data-node="delivery" data-emphasis="accent" d="M642 296L824 296L842 352L824 408L642 408L660 352Z" fill="#D4DDEB" stroke="#0B3D91" stroke-width="2" stroke-linejoin="round"/>
+<text id="delivery--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="743.5" y="357">Last-mile delivery</tspan></text>
+<path id="service" data-role="node" data-node="service" d="M840 296L1022 296L1040 352L1022 408L840 408L858 352Z" fill="#F5F7FA" stroke="#9AA5B1" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="service--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="941.5" y="357">Customer service</tspan></text>
+<path id="source--panel" data-role="node" d="M63 424H233A6 6 0 0 1 239 430V546A6 6 0 0 1 233 552H63A6 6 0 0 1 57 546V430A6 6 0 0 1 63 424Z" fill="#EBEFF6" stroke="#0B3D91" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="source--bullet-1" data-role="marker" d="M70 444A2.5 2.5 0 1 1 75 444A2.5 2.5 0 1 1 70 444Z" fill="#0B3D91"/>
+<text id="source--item-1" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="81" y="448">Supplier consolidation</tspan></text>
+<path id="source--bullet-2" data-role="marker" d="M70 463.5A2.5 2.5 0 1 1 75 463.5A2.5 2.5 0 1 1 70 463.5Z" fill="#0B3D91"/>
+<text id="source--item-2" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="81" y="467.5">Own-label growth</tspan></text>
+<path id="inbound--panel" data-role="node" d="M261 424H431A6 6 0 0 1 437 430V546A6 6 0 0 1 431 552H261A6 6 0 0 1 255 546V430A6 6 0 0 1 261 424Z" fill="#F5F7FA"/>
+<path id="inbound--bullet-1" data-role="marker" d="M268 444A2.5 2.5 0 1 1 273 444A2.5 2.5 0 1 1 268 444Z" fill="#3E4C59"/>
+<text id="inbound--item-1" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="279" y="448">Distribution centres</tspan></text>
+<path id="stores--panel" data-role="node" d="M459 424H629A6 6 0 0 1 635 430V546A6 6 0 0 1 629 552H459A6 6 0 0 1 453 546V430A6 6 0 0 1 459 424Z" fill="#F5F7FA"/>
+<path id="stores--bullet-1" data-role="marker" d="M466 444A2.5 2.5 0 1 1 471 444A2.5 2.5 0 1 1 466 444Z" fill="#3E4C59"/>
+<text id="stores--item-1" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="477" y="448">Store estate</tspan></text>
+<path id="stores--bullet-2" data-role="marker" d="M466 463.5A2.5 2.5 0 1 1 471 463.5A2.5 2.5 0 1 1 466 463.5Z" fill="#3E4C59"/>
+<text id="stores--item-2" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="477" y="467.5">Web and app</tspan></text>
+<path id="delivery--panel" data-role="node" d="M657 424H827A6 6 0 0 1 833 430V546A6 6 0 0 1 827 552H657A6 6 0 0 1 651 546V430A6 6 0 0 1 657 424Z" fill="#EBEFF6" stroke="#0B3D91" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="delivery--bullet-1" data-role="marker" d="M664 444A2.5 2.5 0 1 1 669 444A2.5 2.5 0 1 1 664 444Z" fill="#0B3D91"/>
+<text id="delivery--item-1" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="675" y="448">Route density</tspan></text>
+<path id="delivery--bullet-2" data-role="marker" d="M664 463.5A2.5 2.5 0 1 1 669 463.5A2.5 2.5 0 1 1 664 463.5Z" fill="#0B3D91"/>
+<text id="delivery--item-2" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="675" y="467.5">Click &amp; collect</tspan></text>
+<path id="service--panel" data-role="node" d="M855 424H1025A6 6 0 0 1 1031 430V546A6 6 0 0 1 1025 552H855A6 6 0 0 1 849 546V430A6 6 0 0 1 855 424Z" fill="#F5F7FA"/>
+<path id="service--bullet-1" data-role="marker" d="M862 444A2.5 2.5 0 1 1 867 444A2.5 2.5 0 1 1 862 444Z" fill="#3E4C59"/>
+<text id="service--item-1" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="873" y="448">Returns</tspan></text>
+<path id="service--bullet-2" data-role="marker" d="M862 463.5A2.5 2.5 0 1 1 867 463.5A2.5 2.5 0 1 1 862 463.5Z" fill="#3E4C59"/>
+<text id="service--item-2" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#1B2733"><tspan x="873" y="467.5">Contact centre</tspan></text>
+<path id="outcome" data-role="node" d="M1080 152L1194 152L1232 280L1194 408L1080 408Z" fill="#F5F7FA" stroke="#9AA5B1" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="outcome--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733" text-anchor="middle"><tspan x="1140" y="267.5">Margin</tspan></text>
+<text id="outcome--description" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#5B6875" text-anchor="middle"><tspan x="1140" y="287.5">+180 bps by</tspan><tspan x="1140" y="303">2028</tspan></text>
+</svg>

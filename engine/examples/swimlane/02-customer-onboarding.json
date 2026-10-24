@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "management",
+  "title": "Onboarding stalls at compliance review, where a third of cases loop back",
+  "subtitle": "Business customer onboarding, current process",
+  "body": {
+    "orientation": "horizontal",
+    "lanes": [
+      {"id": "customer", "label": "Customer"},
+      {"id": "sales", "label": "Relationship manager"},
+      {"id": "compliance", "label": "Compliance"},
+      {"id": "ops", "label": "Operations"}
+    ],
+    "phases": ["Apply", "Verify", "Set up"],
+    "steps": [
+      {"id": "enquire", "lane": "customer", "phase": "Apply", "label": "Request account", "shape": "start"},
+      {"id": "qualify", "lane": "sales", "phase": "Apply", "label": "Qualify the need"},
+      {"id": "collect", "lane": "sales", "phase": "Apply", "label": "Collect documents", "shape": "document"},
+      {"id": "upload", "lane": "customer", "phase": "Apply", "label": "Upload documents"},
+      {"id": "kyc", "lane": "compliance", "phase": "Verify", "label": "KYC review", "metric": "avg 6 days", "emphasis": "accent"},
+      {"id": "complete", "lane": "compliance", "phase": "Verify", "label": "Complete?", "shape": "decision"},
+      {"id": "screening", "lane": "compliance", "phase": "Verify", "label": "Sanctions screening", "shape": "system"},
+      {"id": "approve", "lane": "sales", "phase": "Verify", "label": "Approve relationship"},
+      {"id": "open", "lane": "ops", "phase": "Set up", "label": "Open accounts", "shape": "system"},
+      {"id": "cards", "lane": "ops", "phase": "Set up", "label": "Issue cards"},
+      {"id": "welcome", "lane": "sales", "phase": "Set up", "label": "Welcome call"},
+      {"id": "live", "lane": "customer", "phase": "Set up", "label": "Account live", "shape": "end"}
+    ],
+    "edges": [
+      {"from": "enquire", "to": "qualify"},
+      {"from": "qualify", "to": "collect"},
+      {"from": "collect", "to": "upload"},
+      {"from": "upload", "to": "kyc"},
+      {"from": "kyc", "to": "complete"},
+      {"from": "complete", "to": "screening", "label": "yes"},
+      {"from": "complete", "to": "collect", "label": "no", "kind": "feedback", "style": "dashed"},
+      {"from": "screening", "to": "approve"},
+      {"from": "approve", "to": "open"},
+      {"from": "open", "to": "cards"},
+      {"from": "cards", "to": "welcome"},
+      {"from": "welcome", "to": "live"}
+    ]
+  }
+}

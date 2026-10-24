@@ -1,0 +1,79 @@
+[
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.Cdn/profiles/afd-shop",
+    "kind": "frontdoor",
+    "location": "Global",
+    "name": "afd-shop",
+    "resourceGroup": "rg-shop",
+    "sku": { "name": "Standard_AzureFrontDoor" },
+    "type": "Microsoft.Cdn/profiles"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.Network/virtualNetworks/vnet-shop",
+    "location": "eastus2",
+    "name": "vnet-shop",
+    "resourceGroup": "rg-shop",
+    "type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.ContainerService/managedClusters/aks-shop",
+    "location": "eastus2",
+    "name": "aks-shop",
+    "resourceGroup": "rg-shop",
+    "sku": { "name": "Base", "tier": "Standard" },
+    "type": "Microsoft.ContainerService/managedClusters"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.ContainerRegistry/registries/crshop",
+    "location": "eastus2",
+    "name": "crshop",
+    "resourceGroup": "rg-shop",
+    "sku": { "name": "Premium" },
+    "type": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.DocumentDB/databaseAccounts/cosmos-shop",
+    "kind": "GlobalDocumentDB",
+    "location": "eastus2",
+    "name": "cosmos-shop",
+    "resourceGroup": "rg-shop",
+    "type": "Microsoft.DocumentDB/databaseAccounts"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop-eu/providers/Microsoft.KeyVault/vaults/kv-shop-eu",
+    "location": "westeurope",
+    "name": "kv-shop-eu",
+    "resourceGroup": "rg-shop-eu",
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop-eu/providers/Microsoft.Storage/storageAccounts/stshopeu",
+    "kind": "StorageV2",
+    "location": "westeurope",
+    "name": "stshopeu",
+    "resourceGroup": "rg-shop-eu",
+    "sku": { "name": "Standard_ZRS" },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.Network/networkInterfaces/nic-1",
+    "location": "eastus2",
+    "name": "nic-1",
+    "resourceGroup": "rg-shop",
+    "type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.Compute/disks/disk-1",
+    "location": "eastus2",
+    "name": "disk-1",
+    "resourceGroup": "rg-shop",
+    "type": "Microsoft.Compute/disks"
+  },
+  {
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-shop/providers/Microsoft.OperationalInsights/workspaces/log-shop",
+    "location": "eastus2",
+    "name": "log-shop",
+    "resourceGroup": "rg-shop",
+    "type": "Microsoft.OperationalInsights/workspaces"
+  }
+]

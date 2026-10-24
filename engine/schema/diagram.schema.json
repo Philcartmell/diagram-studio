@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/diagram.schema.json",
+  "title": "Diagram Studio spec",
+  "description": "One diagram: a shared envelope plus a type-specific body. Carries meaning only (roles, emphasis, status), never colours, coordinates or font sizes.",
+  "type": "object",
+  "required": ["version", "type", "title", "body"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": "1.0", "description": "Schema version." },
+    "type": {
+      "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture"]
+    },
+    "altitude": { "enum": ["executive", "management", "detailed"] },
+    "theme": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "themeOverrides": { "type": "object" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aspect": { "enum": ["16:9", "4:3", "A4-landscape", "A4-portrait", "square", "auto"] }
+      }
+    },
+    "title": { "type": "string", "minLength": 1, "maxLength": 90, "description": "Action title stating the finding." },
+    "subtitle": { "type": "string", "minLength": 1, "maxLength": 140 },
+    "callout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "anchor": { "$ref": "#/$defs/id" }
+      }
+    },
+    "legend": {
+      "anyOf": [
+        { "enum": ["auto", "none"] },
+        { "type": "array", "minItems": 1, "maxItems": 10, "items": { "$ref": "#/$defs/legendEntry" } }
+      ]
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "maxLength": 140 },
+        "note": { "type": "string", "maxLength": 140 },
+        "classification": { "type": "string", "maxLength": 40 }
+      }
+    },
+    "body": { "type": "object" }
+  },
+  "discriminator": { "propertyName": "type" },
+  "oneOf": [
+    { "properties": { "type": { "const": "operating-model" }, "body": { "$ref": "types/operating-model.schema.json" } } },
+    { "properties": { "type": { "const": "swimlane" }, "body": { "$ref": "types/swimlane.schema.json" } } },
+    { "properties": { "type": { "const": "roadmap" }, "body": { "$ref": "types/roadmap.schema.json" } } },
+    { "properties": { "type": { "const": "value-chain" }, "body": { "$ref": "types/value-chain.schema.json" } } },
+    { "properties": { "type": { "const": "matrix-2x2" }, "body": { "$ref": "types/matrix-2x2.schema.json" } } },
+    { "properties": { "type": { "const": "layered-architecture" }, "body": { "$ref": "types/layered-architecture.schema.json" } } },
+    { "properties": { "type": { "const": "azure-architecture" }, "body": { "$ref": "types/azure-architecture.schema.json" } } }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      "maxLength": 48,
+      "description": "kebab-case, unique per diagram"
+    },
+    "tag": { "type": "string", "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$", "maxLength": 32 },
+    "emphasis": { "enum": ["normal", "accent", "muted", "highlight"] },
+    "status": { "enum": ["current", "new", "changed", "retired", "at-risk"] },
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 40 },
+    "nodeProps": {
+      "type": "object",
+      "required": ["id", "label"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "owner": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "emphasis": { "$ref": "#/$defs/emphasis" },
+        "status": { "$ref": "#/$defs/status" },
+        "tags": { "type": "array", "maxItems": 4, "uniqueItems": true, "items": { "$ref": "#/$defs/tag" } },
+        "icon": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "metric": { "type": "string", "minLength": 1, "maxLength": 40 }
+      }
+    },
+    "node": { "$ref": "#/$defs/nodeProps", "unevaluatedProperties": false },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to"],
+      "properties": {
+        "from": { "$ref": "#/$defs/id" },
+        "to": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 30 },
+        "style": { "enum": ["solid", "dashed", "dotted"] },
+        "kind": { "enum": ["flow", "handoff", "feedback"] }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "nodes"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "emphasis": { "$ref": "#/$defs/emphasis" },
+        "status": { "$ref": "#/$defs/status" },
+        "nodes": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "$ref": "#/$defs/node" } }
+      }
+    },
+    "legendEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "emphasis": { "$ref": "#/$defs/emphasis" },
+        "status": { "$ref": "#/$defs/status" },
+        "tag": { "$ref": "#/$defs/tag" }
+      }
+    }
+  }
+}

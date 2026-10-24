@@ -1,0 +1,97 @@
+# Releasing
+
+The engine (npm package `diagram-studio`, in `engine/`) and the plugin (`diagram-studio`, in `plugins/`) share **one version** and are released together. The version lives in four places, and `tools/release.mjs` keeps them in step:
+
+| Where | What it does |
+| --- | --- |
+| `engine/package.json` (and its lockfile) | The npm version |
+| `plugins/diagram-studio/.claude-plugin/plugin.json` | The plugin version. Claude Code offers users an update only when it changes |
+| `plugins/diagram-studio/skills/*/SKILL.md` (every skill) | The engine version each skill runs: `npx -y diagram-studio@<version>`, or an installed `diagram-studio` of that version or a later one with the same major |
+| `CHANGELOG.md` | One section per version; the GitHub release notes come from it |
+
+CI fails if they disagree (`node tools/release.mjs check`). A new skill must carry the same "The engine" paragraph as the others, or the check fails.
+
+## How a release reaches users
+
+- **The plugin** comes from the default branch of this repository, through the marketplace in `.claude-plugin/marketplace.json`. Users get it with `claude plugin marketplace update` and `claude plugin update`.
+- **The engine** is published to npm by `.github/workflows/release.yml` when you push a `v<version>` tag. Each publish carries provenance, linking the package to the commit and workflow that built it.
+
+Because the skills pin the engine version, a plugin release always runs the engine it was tested with. Push the release commit and its tag **together** (`git push --follow-tags`). A user who updates the plugin in the few minutes before the npm publish finishes would otherwise get an `npx` error.
+
+## Versioning
+
+Semantic versioning, judged by what a spec, a script or a skill relies on:
+
+- **Major:** a spec field, diagram type, theme, CLI command or flag is removed or renamed; output files are named differently; a valid spec now fails validation; a skill is renamed or removed (its command changes). The skills accept a later engine within the same major only, so a breaking change must bump the major.
+- **Minor:** a new skill (a new domain such as Databricks), new diagram features, spec fields, commands, icons or themes.
+- **Patch:** fixes, layout improvements that keep specs valid, documentation.
+
+Golden renders change with layout improvements. Review the `engine/tests/__golden__` diff (`npm run test:update-golden`) and mention visible changes in the changelog.
+
+## Every release
+
+1. Write the notes under `## Unreleased` in `CHANGELOG.md`, in the plugin and engine subsections.
+2. Set the version everywhere and date the notes:
+
+   ```bash
+   node tools/release.mjs 1.1.0
+   ```
+
+3. Check it locally:
+
+   ```bash
+   cd engine && npm test && npm pack --dry-run && cd ..
+   claude plugin validate .
+   claude --plugin-dir ./plugins/diagram-studio     # try a short session with each skill you changed
+   ```
+
+4. Commit, tag and push together:
+
+   ```bash
+   git commit -am "Release v1.1.0"
+   git tag v1.1.0
+   git push --follow-tags
+   ```
+
+5. The release workflow checks that the tag matches every version, runs the full suite, publishes `diagram-studio@1.1.0` to npm and creates the GitHub release from the changelog section. Watch it with `gh run watch`.
+
+If the workflow fails before publishing, fix the problem, move the tag (`git tag -f v1.1.0 && git push -f origin v1.1.0`) and it runs again. Once a version is on npm it cannot be republished: release a patch instead. The workflow skips the publish step when that version is already on npm, so a re-run only redoes the GitHub release.
+
+## Going public: the first release (once)
+
+The repository starts private. While it is private you can install the plugin from it yourself (Claude Code uses your git credentials) or load it with `--plugin-dir`, but nobody else can, and nothing is on npm. Don't push a `v*` tag until step 6.
+
+1. **Check the icon terms.** The npm package contains Microsoft's Azure icons, and a public package redistributes them. Read Microsoft's current terms for the icons (see `engine/assets/azure-icons/NOTICE.md`) before publishing.
+2. **Make the repository public:**
+
+   ```bash
+   gh repo edit Philcartmell/diagram-studio --visibility public --accept-visibility-change-consequences
+   ```
+
+   The repository URL appears in `engine/package.json` (`repository`, `homepage`, `bugs`), `plugin.json` and the README. npm provenance checks `repository.url` against the repository that publishes, so update those if the repository ever moves.
+3. **Create an npm account** at [npmjs.com](https://www.npmjs.com/signup), turn on two-factor authentication, then sign in from a terminal: `npm login`.
+4. **Check the name is still free:** `npm view diagram-studio` should answer 404.
+5. **Publish 1.0.0 by hand.** Trusted publishing (step 6) is set up on a package that already exists:
+
+   ```bash
+   node tools/release.mjs 1.0.0          # dates the 1.0.0 notes
+   git commit -am "Release v1.0.0"
+   cd engine && npm publish && cd ..     # builds and runs the full suite first
+   ```
+
+6. **Turn on trusted publishing** at npmjs.com: the package's **Settings** → **Trusted publisher** → **GitHub Actions**, with owner `Philcartmell`, repository `diagram-studio` and workflow `release.yml`. From now on the workflow publishes without any stored token. Then, under **Publishing access**, require two-factor authentication and disallow tokens, so only the workflow (or you, with 2FA) can publish.
+7. **Tag and push:**
+
+   ```bash
+   git tag v1.0.0
+   git push --follow-tags
+   ```
+
+   The workflow sees 1.0.0 already on npm, skips the publish and creates the GitHub release.
+8. **Try it as a user would**, in a fresh terminal: `claude plugin marketplace add Philcartmell/diagram-studio`, `claude plugin install diagram-studio@diagram-studio`, restart, and run `/diagram-studio:azure`.
+
+If you would rather publish with a token than with trusted publishing, create a granular access token on npmjs.com with publish rights to `diagram-studio`, store it as the repository secret `NPM_TOKEN`, and add `env: NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}` to the publish step.
+
+## Continuous integration
+
+`.github/workflows/ci.yml` runs on every push to `main` and every pull request: the full suite on Linux with Node 20, 22 and 24, and on Windows and macOS with Node 24, then the version check and a dry-run pack. Windows and macOS minutes cost more than Linux on a private repository, so they run on one Node version only. `scripts/dist/` is built by `npm ci` (`prepare`) and on publish, never committed.

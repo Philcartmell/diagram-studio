@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "type": "roadmap",
+  "altitude": "executive",
+  "title": "Self-service onboarding comes first; pricing changes wait for the new data",
+  "body": {
+    "horizons": [
+      { "id": "now", "label": "Now" },
+      { "id": "next", "label": "Next" },
+      { "id": "later", "label": "Later" }
+    ],
+    "workstreams": [
+      { "id": "acquire", "label": "Acquire" },
+      { "id": "engage", "label": "Engage" },
+      { "id": "monetise", "label": "Monetise" }
+    ],
+    "items": [
+      { "id": "self-onboard", "label": "Self-service onboarding", "workstream": "acquire", "start": "now", "emphasis": "accent" },
+      { "id": "referrals", "label": "Referral programme", "workstream": "acquire", "start": "next", "end": "later" },
+      { "id": "insights", "label": "Usage insights", "workstream": "engage", "start": "now", "end": "next" },
+      { "id": "pricing", "label": "Usage-based pricing", "workstream": "monetise", "start": "later", "emphasis": "highlight" }
+    ],
+    "milestones": [
+      { "id": "launch", "label": "Public launch", "horizon": "now", "at": "end", "kind": "gate" }
+    ]
+  }
+}

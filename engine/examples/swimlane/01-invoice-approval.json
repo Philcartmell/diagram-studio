@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "management",
+  "title": "Invoices over £10k wait two days for a second approval",
+  "body": {
+    "orientation": "horizontal",
+    "lanes": [
+      { "id": "supplier", "label": "Supplier" },
+      { "id": "ap", "label": "Accounts payable" },
+      { "id": "budget", "label": "Budget holder" },
+      { "id": "cfo", "label": "CFO office" }
+    ],
+    "phases": ["Receive", "Approve", "Pay"],
+    "steps": [
+      { "id": "submit", "lane": "supplier", "phase": "Receive", "label": "Submit invoice" },
+      { "id": "match", "lane": "ap", "phase": "Receive", "label": "3-way match" },
+      { "id": "approve", "lane": "budget", "phase": "Approve", "label": "Approve spend" },
+      { "id": "over10k", "lane": "budget", "phase": "Approve", "label": "Over £10k?", "shape": "decision" },
+      { "id": "cfo-ok", "lane": "cfo", "phase": "Approve", "label": "Second approval", "emphasis": "accent", "metric": "avg 2 days" },
+      { "id": "pay", "lane": "ap", "phase": "Pay", "label": "Schedule payment" }
+    ],
+    "edges": [
+      { "from": "submit", "to": "match", "kind": "handoff" },
+      { "from": "match", "to": "approve", "kind": "handoff" },
+      { "from": "approve", "to": "over10k" },
+      { "from": "over10k", "to": "cfo-ok", "label": "yes", "kind": "handoff" },
+      { "from": "over10k", "to": "pay", "label": "no", "kind": "handoff" },
+      { "from": "cfo-ok", "to": "pay", "kind": "handoff" }
+    ]
+  }
+}

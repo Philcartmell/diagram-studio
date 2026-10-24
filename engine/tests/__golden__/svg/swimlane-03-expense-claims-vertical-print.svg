@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1152" height="864" viewBox="0 0 1152 864" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="swimlane" data-theme="print" data-altitude="executive">
+<title id="ds-svg-title">Expense claims under £100 now pay out without manager approval</title>
+<desc id="ds-svg-desc">Expense claims under £100 now pay out without manager approval</desc>
+<rect id="ds-background" data-role="background" width="1152" height="864" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#000000"><tspan x="48" y="76.5">Expense claims under £100 now pay out without manager approval</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 104L1104 104" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="lane-employee" data-role="lane" data-node="employee" d="M48 128H400V816H48Z" fill="#FFFFFF" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="lane-employee--header" data-role="header" d="M48 128H400V168H48Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="lane-employee--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="224" y="153.5">Employee</tspan></text>
+<path id="lane-manager" data-role="lane" data-node="manager" d="M400 128H752V816H400Z" fill="#FFFFFF" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="lane-manager--header" data-role="header" d="M400 128H752V168H400Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="lane-manager--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576" y="153.5">Manager</tspan></text>
+<path id="lane-finance" data-role="lane" data-node="finance" d="M752 128H1104V816H752Z" fill="#FFFFFF" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="lane-finance--header" data-role="header" d="M752 128H1104V168H752Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="lane-finance--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="928" y="153.5">Finance</tspan></text>
+<path id="submit" data-role="node" data-node="submit" d="M152 200H296A32 32 0 0 1 328 232V232A32 32 0 0 1 296 264H152A32 32 0 0 1 120 232V232A32 32 0 0 1 152 200Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="submit--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="224" y="237">Submit claim</tspan></text>
+<path id="check" data-role="node" data-node="check" d="M928 328L1032 360L928 392L824 360Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="check--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="928" y="364.5">Under £100?</tspan></text>
+<path id="approve" data-role="node" data-node="approve" d="M476 464H676A4 4 0 0 1 680 468V524A4 4 0 0 1 676 528H476A4 4 0 0 1 472 524V468A4 4 0 0 1 476 464Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="approve--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576" y="501">Approve claim</tspan></text>
+<path id="pay" data-role="node" data-node="pay" data-emphasis="accent" data-status="new" d="M828 592H1028A4 4 0 0 1 1032 596V652A4 4 0 0 1 1028 656H828A4 4 0 0 1 824 652V596A4 4 0 0 1 828 592Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="pay--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="928" y="640">Pay in next run</tspan></text>
+<path id="pay--badge" data-role="badge" d="M995 598H1018A8 8 0 0 1 1026 606V606A8 8 0 0 1 1018 614H995A8 8 0 0 1 987 606V606A8 8 0 0 1 995 598Z" fill="#222222" stroke="#3D3D3D" stroke-width="1" stroke-linejoin="round"/>
+<text id="pay--badge-text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="1006.5" y="610">New</tspan></text>
+<path id="paid" data-role="node" data-node="paid" d="M152 720H296A32 32 0 0 1 328 752V752A32 32 0 0 1 296 784H152A32 32 0 0 1 120 752V752A32 32 0 0 1 152 720Z" fill="#F2F2F2" stroke="#1A1A1A" stroke-width="3" stroke-linejoin="round"/>
+<text id="paid--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="224" y="757">Claim paid</tspan></text>
+<g id="edge-submit-check" data-role="edge" data-from="submit" data-to="check" data-kind="handoff"><path d="M328 232L928 232L928 317" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M928 328L923.5 316L933 316Z" fill="#1A1A1A"/></g>
+<g id="edge-check-pay" data-role="edge" data-from="check" data-to="pay" data-kind="flow"><path d="M928 392L928 583" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M928 592L924 582L932 582Z" fill="#1A1A1A"/></g>
+<g id="edge-check-approve" data-role="edge" data-from="check" data-to="approve" data-kind="handoff"><path d="M824 360L576 360L576 453" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M576 464L571.5 452L581 452Z" fill="#1A1A1A"/></g>
+<g id="edge-approve-pay" data-role="edge" data-from="approve" data-to="pay" data-kind="handoff"><path d="M680 496L896 496L896 581" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M896 592L891.5 580L901 580Z" fill="#1A1A1A"/></g>
+<g id="edge-pay-paid" data-role="edge" data-from="pay" data-to="paid" data-kind="handoff"><path d="M824 624L224 624L224 709" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M224 720L219.5 708L229 708Z" fill="#1A1A1A"/></g>
+<text id="edge-check-pay--label" data-role="edge-label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#4A4A4A"><tspan x="934" y="408">yes</tspan></text>
+<text id="edge-check-approve--label" data-role="edge-label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#4A4A4A"><tspan x="805" y="352.5">no</tspan></text>
+</svg>

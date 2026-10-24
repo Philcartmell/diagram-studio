@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="minimal" data-altitude="executive">
+<title id="ds-svg-title">Self-service onboarding comes first; pricing changes wait for the new data</title>
+<desc id="ds-svg-desc">Self-service onboarding comes first; pricing changes wait for the new data</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#1F2328"><tspan x="48" y="75.5">Self-service onboarding comes first; pricing changes wait for the new data</tspan></text>
+<path id="now" data-role="phase" data-node="now" d="M196 128H532A2 2 0 0 1 534 130V158A2 2 0 0 1 532 160H196A2 2 0 0 1 194 158V130A2 2 0 0 1 196 128Z" fill="#F2F3F5"/>
+<text id="now--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="364" y="148">Now</tspan></text>
+<path id="next--column" data-role="decoration" d="M536 208H880V544H536Z" fill="#FFFFFF"/>
+<path id="next" data-role="phase" data-node="next" d="M540 128H876A2 2 0 0 1 878 130V158A2 2 0 0 1 876 160H540A2 2 0 0 1 538 158V130A2 2 0 0 1 540 128Z" fill="#F2F3F5"/>
+<text id="next--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="708" y="148">Next</tspan></text>
+<path id="later" data-role="phase" data-node="later" d="M884 128H1228A2 2 0 0 1 1230 130V158A2 2 0 0 1 1228 160H884A2 2 0 0 1 882 158V130A2 2 0 0 1 884 128Z" fill="#F2F3F5"/>
+<text id="later--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1056" y="148">Later</tspan></text>
+<path id="acquire" data-role="lane" data-node="acquire" d="M50 212H182A2 2 0 0 1 184 214V314A2 2 0 0 1 182 316H50A2 2 0 0 1 48 314V214A2 2 0 0 1 50 212Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="acquire--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1F2328"><tspan x="60" y="269">Acquire</tspan></text>
+<path id="engage" data-role="lane" data-node="engage" d="M50 324H182A2 2 0 0 1 184 326V426A2 2 0 0 1 182 428H50A2 2 0 0 1 48 426V326A2 2 0 0 1 50 324Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="engage--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1F2328"><tspan x="60" y="381">Engage</tspan></text>
+<path id="engage--rule" data-role="decoration" d="M48 320L1232 320" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="monetise" data-role="lane" data-node="monetise" d="M50 436H182A2 2 0 0 1 184 438V538A2 2 0 0 1 182 540H50A2 2 0 0 1 48 538V438A2 2 0 0 1 50 436Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="monetise--label" data-role="header" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1F2328"><tspan x="60" y="493">Monetise</tspan></text>
+<path id="monetise--rule" data-role="decoration" d="M48 432L1232 432" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch--line" data-role="decoration" d="M536 202L536 544" fill="none" stroke="#4B5563" stroke-width="2" stroke-dasharray="7 5.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="self-onboard" data-role="node" data-node="self-onboard" data-emphasis="accent" d="M202 248H526A2 2 0 0 1 528 250V286A2 2 0 0 1 526 288H202A2 2 0 0 1 200 286V250A2 2 0 0 1 202 248Z" fill="#F6E4DD" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/>
+<text id="self-onboard--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328"><tspan x="212" y="272.5">Self-service onboarding</tspan></text>
+<path id="referrals" data-role="node" data-node="referrals" d="M546 248H1222A2 2 0 0 1 1224 250V286A2 2 0 0 1 1222 288H546A2 2 0 0 1 544 286V250A2 2 0 0 1 546 248Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="referrals--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328"><tspan x="556" y="272.5">Referral programme</tspan></text>
+<path id="insights" data-role="node" data-node="insights" d="M202 360H870A2 2 0 0 1 872 362V398A2 2 0 0 1 870 400H202A2 2 0 0 1 200 398V362A2 2 0 0 1 202 360Z" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+<text id="insights--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328"><tspan x="212" y="384.5">Usage insights</tspan></text>
+<path id="pricing" data-role="node" data-node="pricing" data-emphasis="highlight" d="M890 472H1222A2 2 0 0 1 1224 474V510A2 2 0 0 1 1222 512H890A2 2 0 0 1 888 510V474A2 2 0 0 1 890 472Z" fill="#E6E7E9" stroke="#4B5563" stroke-width="2" stroke-linejoin="round"/>
+<text id="pricing--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328"><tspan x="900" y="496.5">Usage-based pricing</tspan></text>
+<path id="ds-track" data-role="decoration" d="M192 194L1232 194" fill="none" stroke="#C7CDD4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch" data-role="marker" data-node="launch" d="M536 186L544 194L536 202L528 194Z" fill="#FFFFFF" stroke="#4B5563" stroke-width="2" stroke-linejoin="round"/>
+<text id="launch--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1F2328"><tspan x="546" y="187.5">Public launch</tspan></text>
+</svg>

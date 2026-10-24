@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="matrix-2x2" data-theme="print" data-altitude="management">
+<title id="ds-svg-title">Two vendors combine strong capability with an acceptable price</title>
+<desc id="ds-svg-desc">CRM vendor shortlist, placed by quadrant after scoring workshops</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#000000"><tspan x="48" y="76.5">Two vendors combine strong capability with an acceptable price</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#4A4A4A"><tspan x="48" y="108.5">CRM vendor shortlist, placed by quadrant after scoring workshops</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="quadrant-top-left" data-role="group" data-emphasis="accent" d="M236 176H668A4 4 0 0 1 672 180V388A4 4 0 0 1 668 392H236A4 4 0 0 1 232 388V180A4 4 0 0 1 236 176Z" fill="#EDEDED" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+<text id="quadrant-top-left--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#1A1A1A"><tspan x="244" y="201">Shortlist</tspan></text>
+<text id="quadrant-top-left--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A"><tspan x="244" y="219">Strong fit, affordable</tspan></text>
+<path id="quadrant-top-right" data-role="group" d="M692 176H1124A4 4 0 0 1 1128 180V388A4 4 0 0 1 1124 392H692A4 4 0 0 1 688 388V180A4 4 0 0 1 692 176Z" fill="#F2F2F2"/>
+<text id="quadrant-top-right--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000" text-anchor="end"><tspan x="1116" y="201">Negotiate</tspan></text>
+<text id="quadrant-top-right--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="end"><tspan x="1116" y="219">Strong fit, expensive</tspan></text>
+<path id="quadrant-bottom-left" data-role="group" d="M236 408H668A4 4 0 0 1 672 412V620A4 4 0 0 1 668 624H236A4 4 0 0 1 232 620V412A4 4 0 0 1 236 408Z" fill="#F2F2F2"/>
+<text id="quadrant-bottom-left--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="244" y="593">Watch</tspan></text>
+<text id="quadrant-bottom-left--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A"><tspan x="244" y="611">Cheap but limited</tspan></text>
+<path id="quadrant-bottom-right" data-role="group" d="M692 408H1124A4 4 0 0 1 1128 412V620A4 4 0 0 1 1124 624H692A4 4 0 0 1 688 620V412A4 4 0 0 1 692 408Z" fill="#F2F2F2"/>
+<text id="quadrant-bottom-right--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000" text-anchor="end"><tspan x="1116" y="593">Reject</tspan></text>
+<text id="quadrant-bottom-right--description" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="end"><tspan x="1116" y="611">Weak and costly</tspan></text>
+<g id="ds-axis-y" data-role="axis"><path d="M220 624L220 187" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M220 176L225 188L215.5 188Z" fill="#1A1A1A"/></g>
+<g id="ds-axis-x" data-role="axis"><path d="M232 636L1117 636" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M1128 636L1116 641L1116 631.5Z" fill="#1A1A1A"/></g>
+<text id="ds-axis-y-high" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="end"><tspan x="212" y="189.5">Stronger</tspan></text>
+<text id="ds-axis-y-low" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="end"><tspan x="212" y="621">Weaker</tspan></text>
+<text id="ds-axis-x-low" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A"><tspan x="232" y="653.5">Lower</tspan></text>
+<text id="ds-axis-x-high" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#4A4A4A" text-anchor="end"><tspan x="1128" y="653.5">Higher</tspan></text>
+<text id="ds-axis-x-title" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="680" y="668.5">Total cost of ownership</tspan></text>
+<text id="ds-axis-y-title" data-role="axis" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="214" y="164">Capability fit</tspan></text>
+<path id="vendor-a" data-role="marker" data-node="vendor-a" data-emphasis="accent" d="M310 320A10 10 0 1 1 330 320A10 10 0 1 1 310 320Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-a--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="336" y="325">Vendor A</tspan></text>
+<path id="vendor-b" data-role="marker" data-node="vendor-b" d="M440 320A8 8 0 1 1 456 320A8 8 0 1 1 440 320Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-b--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="462" y="324.5">Vendor B</tspan></text>
+<path id="vendor-c" data-role="marker" data-node="vendor-c" d="M800 320A8 8 0 1 1 816 320A8 8 0 1 1 800 320Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-c--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="822" y="324.5">Vendor C</tspan></text>
+<path id="vendor-d" data-role="marker" data-node="vendor-d" d="M376 480A8 8 0 1 1 392 480A8 8 0 1 1 376 480Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-d--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="398" y="484.5">Vendor D</tspan></text>
+<path id="vendor-e" data-role="marker" data-node="vendor-e" d="M728 480A8 8 0 1 1 744 480A8 8 0 1 1 728 480Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-e--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="750" y="484.5">Vendor E</tspan></text>
+<path id="vendor-f" data-role="marker" data-node="vendor-f" d="M864 480A8 8 0 1 1 880 480A8 8 0 1 1 864 480Z" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="vendor-f--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="886" y="484.5">Vendor F</tspan></text>
+</svg>

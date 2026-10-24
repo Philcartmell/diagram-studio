@@ -1,0 +1,32 @@
+{
+  "id": "bold",
+  "name": "Bold",
+  "description": "High contrast keynote style: near-black background with one vivid accent. For town halls and keynotes.",
+  "extends": null,
+  "color": {
+    "background": "#0E1116",
+    "surface": "#1A1F27",
+    "surfaceAlt": "#252C36",
+    "ink": "#F4F6F8",
+    "inkMuted": "#AAB3BF",
+    "line": "#475162",
+    "lineStrong": "#C9D1DB",
+    "accent": "#FF5A36",
+    "accentInk": "#0E1116",
+    "highlight": "#2EC4B6",
+    "categorical": ["#FF5A36", "#2EC4B6", "#FFD23F", "#8C7BFF", "#5CC8FF", "#9BE564"],
+    "status": { "new": "#3FB950", "changed": "#E3B341", "retired": "#6E7681", "atRisk": "#FF5A5A" }
+  },
+  "font": {
+    "family": "Inter",
+    "files": { "regular": "fonts/Inter-Regular.ttf", "semibold": "fonts/Inter-SemiBold.ttf" },
+    "size": { "title": 30, "subtitle": 16, "group": 15, "label": 14, "body": 12, "caption": 11 },
+    "weight": { "title": 600, "label": 600, "body": 400 },
+    "titleCase": "sentence",
+    "lineHeight": 1.3
+  },
+  "shape": { "radius": 10, "stroke": 1.25, "strokeStrong": 2, "shadow": "none", "chevronDepth": 20 },
+  "space": { "unit": 8, "gap": 16, "padding": 16, "margin": 48 },
+  "connector": { "style": "orthogonal", "arrow": "triangle", "cornerRadius": 6 },
+  "style": { "renderer": "clean", "showIcons": false, "accentFill": "solid", "headerRule": false, "bandFill": "surface" }
+}

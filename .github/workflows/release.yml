@@ -1,0 +1,49 @@
+name: Release
+
+# Push a v<version> tag (see RELEASING.md): publishes the engine to npm with
+# provenance, then creates the GitHub release from the changelog.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write # create the GitHub release
+  id-token: write # npm trusted publishing and provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: Use npm 11.5.1 or later (trusted publishing)
+        run: npm install -g npm@11
+      - name: The tag matches every version and has changelog notes
+        run: node ../tools/release.mjs check "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm test
+      - name: Publish to npm (skipped when this version is already published)
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          if npm view "diagram-studio@$version" version >/dev/null 2>&1; then
+            echo "diagram-studio@$version is already on npm; skipping the publish."
+          else
+            npm publish --provenance --access public
+          fi
+      - name: GitHub release
+        working-directory: .
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node tools/release.mjs notes "$GITHUB_REF_NAME" > release-notes.md
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release edit "$GITHUB_REF_NAME" --notes-file release-notes.md
+          else
+            gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes-file release-notes.md
+          fi

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "type": "value-chain",
+  "altitude": "management",
+  "title": "Planning and procurement drive two thirds of the cost-out programme",
+  "subtitle": "Manufacturing value chain with 2027 savings targets",
+  "body": {
+    "primary": [
+      { "id": "plan", "label": "Plan", "description": "Integrated demand and supply planning", "metric": "£14m", "emphasis": "accent" },
+      { "id": "procure", "label": "Procure", "description": "Category-led sourcing, fewer suppliers", "metric": "£11m", "emphasis": "accent" },
+      { "id": "make", "label": "Make", "description": "Lean lines, predictive maintenance", "metric": "£6m", "status": "changed" },
+      { "id": "deliver", "label": "Deliver", "description": "Network redesign, two DCs", "metric": "£4m" },
+      { "id": "service", "label": "Service", "description": "Spares and field service", "metric": "£2m" }
+    ],
+    "outcome": { "label": "£37m", "description": "run-rate savings by 2028" }
+  }
+}

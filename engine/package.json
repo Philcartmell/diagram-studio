@@ -1,0 +1,78 @@
+{
+  "name": "diagram-studio",
+  "version": "1.0.0",
+  "description": "Boardroom-quality business diagrams and Microsoft-style Azure architecture diagrams from a JSON spec: a deterministic renderer with SVG, PNG, PDF, editable PowerPoint and draw.io export.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Phil Cartmell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Philcartmell/diagram-studio.git",
+    "directory": "engine"
+  },
+  "homepage": "https://github.com/Philcartmell/diagram-studio#readme",
+  "bugs": {
+    "url": "https://github.com/Philcartmell/diagram-studio/issues"
+  },
+  "keywords": [
+    "diagrams",
+    "azure",
+    "architecture",
+    "powerpoint",
+    "pptx",
+    "drawio",
+    "svg",
+    "operating-model",
+    "swimlane",
+    "roadmap",
+    "claude"
+  ],
+  "bin": {
+    "diagram-studio": "scripts/dist/cli.js"
+  },
+  "files": [
+    "scripts/dist/",
+    "assets/",
+    "themes/*.theme.json",
+    "schema/",
+    "references/",
+    "examples/",
+    "SKILL.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json && vitest run",
+    "test:update-golden": "tsc -p tsconfig.json && node scripts/tools/update-golden.mjs",
+    "matrix": "node scripts/tools/matrix.mjs",
+    "icons": "node scripts/tools/build-icons.mjs",
+    "azure-icons": "node scripts/tools/build-azure-icons.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "ajv": "8.20.0",
+    "elkjs": "0.10.2",
+    "jszip": "3.10.1",
+    "opentype.js": "1.3.4",
+    "pdfkit": "0.17.2",
+    "pptxgenjs": "4.0.1",
+    "roughjs": "4.6.6",
+    "subset-font": "2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.0",
+    "@types/opentype.js": "1.3.8",
+    "@types/pdfkit": "0.17.2",
+    "fast-xml-parser": "4.5.3",
+    "lucide-static": "0.544.0",
+    "pixelmatch": "7.1.0",
+    "pngjs": "7.0.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.12"
+  }
+}

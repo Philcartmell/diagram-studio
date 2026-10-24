@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "type": "layered-architecture",
+  "altitude": "detailed",
+  "title": "Retiring the core mainframe removes four integration layers by 2028",
+  "subtitle": "Core banking modernisation: changes by layer",
+  "legend": "auto",
+  "body": {
+    "layers": [
+      { "id": "channels", "label": "Channels", "nodes": [
+        { "id": "mobile", "label": "Mobile app", "status": "changed" },
+        { "id": "online", "label": "Online banking", "status": "changed" },
+        { "id": "branch", "label": "Branch desktop" },
+        { "id": "ivr", "label": "Phone banking", "status": "retired", "emphasis": "muted" }
+      ]},
+      { "id": "integration", "label": "Integration", "nodes": [
+        { "id": "api-gateway", "label": "API gateway", "status": "new" },
+        { "id": "esb", "label": "Service bus", "status": "retired", "emphasis": "muted" },
+        { "id": "batch", "label": "Batch file transfer", "status": "retired", "emphasis": "muted" }
+      ]},
+      { "id": "core", "label": "Core banking", "emphasis": "accent", "nodes": [
+        { "id": "new-core", "label": "Cloud core ledger", "status": "new" },
+        { "id": "mainframe", "label": "Mainframe core", "status": "retired", "emphasis": "muted" },
+        { "id": "payments-hub", "label": "Payments hub", "status": "at-risk" }
+      ]},
+      { "id": "data", "label": "Data", "nodes": [
+        { "id": "warehouse", "label": "Data warehouse", "status": "changed" },
+        { "id": "streaming", "label": "Event streaming", "status": "new" }
+      ]}
+    ],
+    "crossCutting": [
+      { "id": "security", "label": "Identity & security" },
+      { "id": "observability", "label": "Observability", "status": "new" }
+    ],
+    "external": [
+      { "id": "card-scheme", "label": "Card schemes" },
+      { "id": "faster-payments", "label": "Faster Payments" },
+      { "id": "regulator", "label": "Regulatory reporting" }
+    ]
+  }
+}

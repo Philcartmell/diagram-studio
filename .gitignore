@@ -1,0 +1,40 @@
+# Dependencies (installed with `npm ci` in engine/)
+node_modules/
+
+# Build output: `npm ci` (prepare) and `npm publish` build it, so it is never committed
+engine/scripts/dist/
+
+# Render output and test scratch space
+engine/scripts/out/
+engine/tests/.tmp/
+out/
+diagrams/
+*.ppt.png
+
+# npm pack output
+*.tgz
+
+# Scratch scripts
+*.tmp.*
+*.tmp
+
+# Logs and caches
+*.log
+npm-debug.log*
+.npm/
+.cache/
+coverage/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.swp
+.idea/
+.vscode/

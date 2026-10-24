@@ -1,0 +1,208 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "management",
+  "canvas": {
+    "aspect": "auto"
+  },
+  "title": "Sixteen steps across five teams fit when the canvas is allowed to grow",
+  "body": {
+    "lanes": [
+      {
+        "id": "customer",
+        "label": "Customer"
+      },
+      {
+        "id": "sales",
+        "label": "Sales"
+      },
+      {
+        "id": "credit",
+        "label": "Credit"
+      },
+      {
+        "id": "legal",
+        "label": "Legal"
+      },
+      {
+        "id": "operations",
+        "label": "Operations"
+      }
+    ],
+    "phases": [
+      "Request",
+      "Assess",
+      "Contract",
+      "Deliver"
+    ],
+    "steps": [
+      {
+        "id": "ask",
+        "lane": "customer",
+        "phase": "Request",
+        "label": "Request quote"
+      },
+      {
+        "id": "scope",
+        "lane": "sales",
+        "phase": "Request",
+        "label": "Scope the need"
+      },
+      {
+        "id": "quote",
+        "lane": "sales",
+        "phase": "Request",
+        "label": "Send quote"
+      },
+      {
+        "id": "accept",
+        "lane": "customer",
+        "phase": "Assess",
+        "label": "Accept quote"
+      },
+      {
+        "id": "score",
+        "lane": "credit",
+        "phase": "Assess",
+        "label": "Credit score"
+      },
+      {
+        "id": "limit",
+        "lane": "credit",
+        "phase": "Assess",
+        "label": "Set limit"
+      },
+      {
+        "id": "ok",
+        "lane": "credit",
+        "phase": "Assess",
+        "label": "Approved?",
+        "shape": "decision"
+      },
+      {
+        "id": "draft",
+        "lane": "legal",
+        "phase": "Contract",
+        "label": "Draft contract"
+      },
+      {
+        "id": "review",
+        "lane": "legal",
+        "phase": "Contract",
+        "label": "Legal review"
+      },
+      {
+        "id": "sign",
+        "lane": "customer",
+        "phase": "Contract",
+        "label": "Sign contract"
+      },
+      {
+        "id": "counter",
+        "lane": "sales",
+        "phase": "Contract",
+        "label": "Countersign"
+      },
+      {
+        "id": "setup",
+        "lane": "operations",
+        "phase": "Deliver",
+        "label": "Set up account"
+      },
+      {
+        "id": "ship",
+        "lane": "operations",
+        "phase": "Deliver",
+        "label": "Ship order"
+      },
+      {
+        "id": "invoice",
+        "lane": "operations",
+        "phase": "Deliver",
+        "label": "Invoice"
+      },
+      {
+        "id": "pay",
+        "lane": "customer",
+        "phase": "Deliver",
+        "label": "Pay invoice"
+      },
+      {
+        "id": "close",
+        "lane": "sales",
+        "phase": "Deliver",
+        "label": "Close deal"
+      }
+    ],
+    "edges": [
+      {
+        "from": "ask",
+        "to": "scope"
+      },
+      {
+        "from": "scope",
+        "to": "quote"
+      },
+      {
+        "from": "quote",
+        "to": "accept"
+      },
+      {
+        "from": "accept",
+        "to": "score"
+      },
+      {
+        "from": "score",
+        "to": "limit"
+      },
+      {
+        "from": "limit",
+        "to": "ok"
+      },
+      {
+        "from": "ok",
+        "to": "draft",
+        "label": "yes"
+      },
+      {
+        "from": "ok",
+        "to": "scope",
+        "label": "no",
+        "kind": "feedback",
+        "style": "dashed"
+      },
+      {
+        "from": "draft",
+        "to": "review"
+      },
+      {
+        "from": "review",
+        "to": "sign"
+      },
+      {
+        "from": "sign",
+        "to": "counter"
+      },
+      {
+        "from": "counter",
+        "to": "setup"
+      },
+      {
+        "from": "setup",
+        "to": "ship"
+      },
+      {
+        "from": "ship",
+        "to": "invoice"
+      },
+      {
+        "from": "invoice",
+        "to": "pay"
+      },
+      {
+        "from": "pay",
+        "to": "close"
+      }
+    ]
+  }
+}

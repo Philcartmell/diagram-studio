@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="operating-model" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">A shared finance hub frees business partners to focus on decisions</title>
+<desc id="ds-svg-desc">Target finance operating model, 2027</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">A shared finance hub frees business partners to focus on decisions</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Target finance operating model, 2027</tspan></text>
+<path id="customers" data-role="band" d="M296 136H1080V192H296Z" fill="#F2F2F2"/>
+<text id="customers--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="312" y="169">Business units</tspan></text>
+<path id="customers-1" data-role="node" d="M448 152H616A16 16 0 0 1 632 168V168A16 16 0 0 1 616 184H448A16 16 0 0 1 432 168V168A16 16 0 0 1 448 152Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="customers-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="532" y="172.5">Retail</tspan></text>
+<path id="customers-2" data-role="node" d="M664 152H832A16 16 0 0 1 848 168V168A16 16 0 0 1 832 184H664A16 16 0 0 1 648 168V168A16 16 0 0 1 664 152Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="customers-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="748" y="172.5">Commercial</tspan></text>
+<path id="customers-3" data-role="node" d="M880 152H1048A16 16 0 0 1 1064 168V168A16 16 0 0 1 1048 184H880A16 16 0 0 1 864 168V168A16 16 0 0 1 880 152Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="customers-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="964" y="172.5">Wealth</tspan></text>
+<path id="partnering" data-role="band" data-node="partnering" d="M296 208H1080V320H296Z" fill="#F2F2F2"/>
+<text id="partnering--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="312" y="260.5">Business</tspan><tspan x="312" y="277.5">partnering</tspan></text>
+<path id="bp" data-role="node" data-node="bp" d="M424 240H1064V296H424Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="bp--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="744" y="263.5">Finance business partners</tspan></text>
+<text id="bp--description" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="744" y="282">Embedded in each unit</tspan></text>
+<path id="expertise" data-role="band" data-node="expertise" d="M296 336H1080V448H296Z" fill="#F2F2F2"/>
+<text id="expertise--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="312" y="388.5">Centres of</tspan><tspan x="312" y="405.5">expertise</tspan></text>
+<path id="fpa" data-role="node" data-node="fpa" d="M432 368H632V424H432Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="fpa--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="532" y="400.5">FP&amp;A</tspan></text>
+<path id="tax" data-role="node" data-node="tax" d="M648 368H848V424H648Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="tax--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="748" y="400.5">Tax &amp; Treasury</tspan></text>
+<path id="control" data-role="node" data-node="control" d="M864 368H1064V424H864Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="control--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="964" y="400.5">Financial control</tspan></text>
+<path id="hub" data-role="band" data-node="hub" data-emphasis="accent" data-status="new" d="M296 464H1080V576H296Z" fill="#EBF4FC" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="hub--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="312" y="514">Finance hub</tspan></text>
+<path id="hub--badge" data-role="badge" d="M320 523.5H341A8 8 0 0 1 349 531.5V531.5A8 8 0 0 1 341 539.5H320A8 8 0 0 1 312 531.5V531.5A8 8 0 0 1 320 523.5Z" fill="#BBDAC8" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="hub--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="330.5" y="536">New</tspan></text>
+<path id="r2r" data-role="node" data-node="r2r" d="M432 496H632V552H432Z" fill="#FFFFFF" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="r2r--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="532" y="528.5">Record to report</tspan></text>
+<path id="p2p" data-role="node" data-node="p2p" d="M648 496H848V552H648Z" fill="#FFFFFF" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="p2p--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="748" y="528.5">Purchase to pay</tspan></text>
+<path id="o2c" data-role="node" data-node="o2c" d="M864 496H1064V552H864Z" fill="#FFFFFF" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="o2c--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="964" y="528.5">Order to cash</tspan></text>
+<path id="foundations" data-role="band" d="M296 592H1080V672H296Z" fill="#F2F2F2"/>
+<text id="foundations--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="312" y="637">Foundations</tspan></text>
+<path id="foundations-1" data-role="node" d="M432 608H632V664H432Z" fill="#E6E6E6"/>
+<text id="foundations-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="532" y="640.5">Single ERP</tspan></text>
+<path id="foundations-2" data-role="node" d="M648 608H848V664H648Z" fill="#E6E6E6"/>
+<text id="foundations-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="748" y="640.5">Data &amp; reporting platform</tspan></text>
+<path id="foundations-3" data-role="node" d="M864 608H1064V664H864Z" fill="#E6E6E6"/>
+<text id="foundations-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="964" y="640.5">Controls framework</tspan></text>
+<path id="governance" data-role="group" d="M1096 208H1240V576H1096Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="governance--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1168" y="389">Finance leadership</tspan><tspan x="1168" y="404.5">team</tspan></text>
+<path id="ds-callout" data-role="callout" d="M40 480H272V560H40Z" fill="#EBF4FC"/>
+<path id="ds-callout-bar" data-role="decoration" d="M40 480H44V560H40Z" fill="#0078D4"/>
+<text id="ds-callout-heading" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" letter-spacing="0.5"><tspan x="56" y="503.5">SO WHAT</tspan></text>
+<text id="ds-callout-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="56" y="523">40% of transactional effort moves to</tspan><tspan x="56" y="538.5">the hub</tspan></text>
+<path id="ds-callout-pointer" data-role="decoration" d="M272 520L296 520" fill="none" stroke="#0078D4" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

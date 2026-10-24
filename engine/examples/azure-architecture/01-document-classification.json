@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "type": "azure-architecture",
+  "altitude": "management",
+  "title": "Durable Functions classify every upload and index it for chat within minutes",
+  "subtitle": "Document classification with Azure Functions and Microsoft Foundry",
+  "body": {
+    "layout": "row",
+    "children": [
+      {
+        "id": "ingestion",
+        "boundary": "group",
+        "label": "Ingestion",
+        "layout": "column",
+        "children": [
+          { "id": "web-app", "service": "app-services", "label": "Web app" },
+          { "id": "blob", "service": "blob-storage", "label": "Blob Storage", "description": "Document store" }
+        ]
+      },
+      {
+        "id": "processing",
+        "boundary": "group",
+        "label": "Azure Functions orchestration",
+        "layout": "grid",
+        "columns": 4,
+        "children": [
+          { "id": "queue", "service": "service-bus", "label": "Service Bus queue" },
+          { "id": "analyze", "service": "function-apps", "label": "Analyze activity" },
+          { "id": "metadata", "service": "function-apps", "label": "Metadata activity" },
+          { "id": "embedding", "service": "function-apps", "label": "Embedding activity" },
+          { "id": "spacer-note", "label": "Durable orchestration", "description": "Fan-out per document" },
+          { "id": "doc-intel", "service": "document-intelligence", "label": "Document Intelligence" },
+          { "id": "cosmos", "service": "cosmos-db", "label": "Azure Cosmos DB", "description": "Metadata" },
+          { "id": "search", "service": "ai-search", "label": "Azure AI Search", "description": "Vector index" }
+        ]
+      },
+      {
+        "id": "chat",
+        "boundary": "group",
+        "label": "Chat with your data",
+        "layout": "column",
+        "children": [
+          { "id": "agent", "service": "foundry-agent-service" },
+          { "id": "model", "service": "azure-openai", "label": "Embedding and chat models" }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "web-app", "to": "blob", "step": "1a" },
+      { "from": "web-app", "to": "queue", "step": "1b" },
+      { "from": "queue", "to": "analyze", "step": 2 },
+      { "from": "analyze", "to": "doc-intel", "step": 3 },
+      { "from": "analyze", "to": "metadata", "step": 4 },
+      { "from": "metadata", "to": "cosmos" },
+      { "from": "metadata", "to": "embedding", "step": 5 },
+      { "from": "embedding", "to": "search" },
+      { "from": "web-app", "to": "agent", "step": 6 },
+      { "from": "agent", "to": "search", "step": 7 }
+    ],
+    "steps": [
+      { "step": "1a", "text": "Users upload documents through the web app; files land in Blob Storage." },
+      { "step": "1b", "text": "The web app posts a message per upload to a Service Bus queue." },
+      { "step": 2, "text": "The queue triggers a Durable Functions orchestration for each document." },
+      { "step": 3, "text": "The analyze activity calls Document Intelligence to classify and extract content." },
+      { "step": 4, "text": "The metadata activity records document type and location in Azure Cosmos DB." },
+      { "step": 5, "text": "The embedding activity chunks the text, embeds it and indexes it in Azure AI Search." },
+      { "step": 6, "text": "Users ask questions in the web app, which calls the Foundry agent." },
+      { "step": 7, "text": "The agent retrieves the relevant chunks from the index and answers with citations." }
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/azure-architecture.schema.json",
+  "title": "azure-architecture body",
+  "description": "An Azure architecture in Microsoft reference style: services drawn with the official Azure icons, nested boundaries (Azure, region, virtual network, subnet, zone, group), flows with numbered steps, and an optional workflow narrative.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["children"],
+  "properties": {
+    "layout": { "$ref": "#/$defs/layout" },
+    "columns": { "$ref": "#/$defs/columns" },
+    "children": { "$ref": "#/$defs/children" },
+    "flows": {
+      "type": "array",
+      "maxItems": 80,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to"],
+        "properties": {
+          "from": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "to": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "step": { "$ref": "#/$defs/step" },
+          "type": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "style": { "enum": ["solid", "dashed", "dotted"] },
+          "arrows": { "enum": ["forward", "both", "none"] }
+        }
+      }
+    },
+    "flowTypes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "style": { "enum": ["solid", "dashed", "dotted"] }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["step", "text"],
+        "properties": {
+          "step": { "$ref": "#/$defs/step" },
+          "text": { "type": "string", "minLength": 1, "maxLength": 300 }
+        }
+      }
+    },
+    "workflow": { "enum": ["auto", "right", "bottom", "none"] },
+    "frame": { "enum": ["slide", "figure"] }
+  },
+  "$defs": {
+    "layout": { "enum": ["row", "column", "grid"] },
+    "columns": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "step": {
+      "anyOf": [
+        { "type": "integer", "minimum": 1, "maximum": 99 },
+        { "type": "string", "pattern": "^[1-9][0-9]?[a-z]?$" }
+      ]
+    },
+    "children": { "type": "array", "minItems": 1, "maxItems": 24, "items": { "$ref": "#/$defs/item" } },
+    "item": {
+      "if": { "type": "object", "required": ["children"] },
+      "then": { "$ref": "#/$defs/container" },
+      "else": { "$ref": "#/$defs/node" }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "service": { "type": "string", "pattern": "^[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 64 },
+        "icon": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "description": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
+        "status": { "$ref": "../diagram.schema.json#/$defs/status" },
+        "step": { "$ref": "#/$defs/step" }
+      }
+    },
+    "container": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "children"],
+      "properties": {
+        "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+        "boundary": { "enum": ["azure", "on-premises", "region", "subscription", "resource-group", "virtual-network", "subnet", "zone", "group", "service"] },
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "service": { "type": "string", "pattern": "^[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 64 },
+        "layout": { "$ref": "#/$defs/layout" },
+        "columns": { "$ref": "#/$defs/columns" },
+        "nsg": { "type": "boolean" },
+        "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
+        "step": { "$ref": "#/$defs/step" },
+        "children": { "$ref": "#/$defs/children" }
+      }
+    }
+  }
+}

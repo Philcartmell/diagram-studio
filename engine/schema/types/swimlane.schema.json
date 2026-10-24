@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/swimlane.schema.json",
+  "title": "swimlane body",
+  "description": "Who does what across teams: lanes, optional phases as column bands, steps and edges.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lanes", "steps", "edges"],
+  "properties": {
+    "orientation": { "enum": ["horizontal", "vertical"] },
+    "lanes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label"],
+        "properties": {
+          "id": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 32 },
+          "description": { "type": "string", "minLength": 1, "maxLength": 60 },
+          "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" }
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 30 }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 60,
+      "items": {
+        "$ref": "../diagram.schema.json#/$defs/nodeProps",
+        "required": ["lane"],
+        "properties": {
+          "lane": { "$ref": "../diagram.schema.json#/$defs/id" },
+          "phase": { "type": "string", "minLength": 1, "maxLength": 30 },
+          "shape": { "enum": ["task", "decision", "start", "end", "document", "system", "wait"] }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "maxItems": 120,
+      "items": { "$ref": "../diagram.schema.json#/$defs/edge" }
+    }
+  }
+}

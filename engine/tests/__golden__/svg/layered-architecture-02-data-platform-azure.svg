@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="layered-architecture" data-theme="azure" data-altitude="management">
+<title id="ds-svg-title">A governed data layer lets every team build on the same trusted numbers</title>
+<desc id="ds-svg-desc">Target data platform, for the investment committee</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">A governed data layer lets every team build on the same trusted numbers</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Target data platform, for the investment committee</tspan></text>
+<path id="consume" data-role="band" data-node="consume" d="M40 136H904V280H40Z" fill="#F2F2F2"/>
+<text id="consume--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="56" y="204">Use</tspan></text>
+<text id="consume--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="56" y="223">Where people see data</tspan></text>
+<path id="dashboards" data-role="node" data-node="dashboards" d="M184 168H408V248H184Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="dashboards--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="296" y="203.5">Dashboards</tspan></text>
+<text id="dashboards--description" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="296" y="222">Board and management packs</tspan></text>
+<path id="self-serve" data-role="node" data-node="self-serve" d="M424 168H648V248H424Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="self-serve--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="536" y="212.5">Self-service analysis</tspan></text>
+<path id="models" data-role="node" data-node="models" data-status="new" d="M664 168H888V248H664Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="models--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="776" y="223.5">AI and forecasting</tspan></text>
+<path id="models--badge" data-role="badge" d="M853 174H874A8 8 0 0 1 882 182V182A8 8 0 0 1 874 190H853A8 8 0 0 1 845 182V182A8 8 0 0 1 853 174Z" fill="#CAE2CA" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="models--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="863.5" y="186.5">New</tspan></text>
+<path id="trusted" data-role="band" data-node="trusted" data-emphasis="accent" d="M40 304H904V448H40Z" fill="#EBF4FC" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="trusted--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="56" y="364.5">Trusted data</tspan></text>
+<text id="trusted--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="56" y="383.5">One version of the</tspan><tspan x="56" y="398">truth</tspan></text>
+<path id="metrics" data-role="node" data-node="metrics" data-status="new" d="M184 336H528V416H184Z" fill="#FFFFFF" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="metrics--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="356" y="382.5">Shared metrics layer</tspan></text>
+<text id="metrics--description" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="356" y="401">Revenue, margin, churn defined once</tspan></text>
+<path id="metrics--badge" data-role="badge" d="M493 342H514A8 8 0 0 1 522 350V350A8 8 0 0 1 514 358H493A8 8 0 0 1 485 350V350A8 8 0 0 1 493 342Z" fill="#CAE2CA" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="metrics--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="503.5" y="354.5">New</tspan></text>
+<path id="catalogue" data-role="node" data-node="catalogue" d="M544 336H888V416H544Z" fill="#FFFFFF" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="catalogue--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="716" y="371.5">Data catalogue</tspan></text>
+<text id="catalogue--description" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="716" y="390">Owners and definitions</tspan></text>
+<path id="ingest" data-role="band" data-node="ingest" d="M40 472H904V616H40Z" fill="#F2F2F2"/>
+<text id="ingest--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="56" y="532.5">Collect</tspan></text>
+<text id="ingest--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="56" y="551.5">Raw data from source</tspan><tspan x="56" y="566">systems</tspan></text>
+<path id="erp-feed" data-role="node" data-node="erp-feed" d="M192 504H352V584H192Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="erp-feed--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="272" y="548.5">ERP</tspan></text>
+<path id="crm-feed" data-role="node" data-node="crm-feed" d="M368 504H528V584H368Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="crm-feed--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="448" y="548.5">CRM</tspan></text>
+<path id="web-feed" data-role="node" data-node="web-feed" d="M544 504H704V584H544Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="web-feed--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="624" y="548.5">Web &amp; app events</tspan></text>
+<path id="files" data-role="node" data-node="files" d="M720 504H880V584H720Z" fill="#FFFFFF" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="files--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="800" y="548.5">Partner files</tspan></text>
+<path id="governance" data-role="group" data-node="governance" d="M920 136H1016V616H920Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="governance--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="968" y="356.5">Data</tspan><tspan x="968" y="372">governance</tspan></text>
+<text id="governance--description" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="968" y="390.5">Owners,</tspan><tspan x="968" y="405">quality, access</tspan></text>
+<path id="privacy" data-role="group" data-node="privacy" d="M1032 136H1128V616H1032Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="privacy--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1080" y="373">Privacy &amp;</tspan><tspan x="1080" y="388.5">security</tspan></text>
+<path id="finops" data-role="group" data-node="finops" d="M1144 136H1240V616H1144Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="finops--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1192" y="373">Cost</tspan><tspan x="1192" y="388.5">controls</tspan></text>
+</svg>

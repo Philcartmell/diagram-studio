@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="matrix-2x2" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">Three initiatives deliver most of the value for modest effort</title>
+<desc id="ds-svg-desc">2027 initiative portfolio by value and effort</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Three initiatives deliver most of the value for modest effort</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">2027 initiative portfolio by value and effort</tspan></text>
+<path id="quadrant-top-left" data-role="group" data-emphasis="accent" d="M96 160H532V388H96Z" fill="#EBF4FC" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="quadrant-top-left--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="108" y="183.5">Quick wins</tspan></text>
+<text id="quadrant-top-left--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="108" y="200.5">Do now</tspan></text>
+<path id="quadrant-top-right" data-role="group" d="M548 160H984V388H548Z" fill="#F2F2F2"/>
+<text id="quadrant-top-right--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000" text-anchor="end"><tspan x="972" y="183.5">Major projects</tspan></text>
+<text id="quadrant-top-right--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="972" y="200.5">Plan carefully</tspan></text>
+<path id="quadrant-bottom-left" data-role="group" d="M96 404H532V632H96Z" fill="#F2F2F2"/>
+<text id="quadrant-bottom-left--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="108" y="602">Fill-ins</tspan></text>
+<text id="quadrant-bottom-left--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="108" y="619">Do when capacity allows</tspan></text>
+<path id="quadrant-bottom-right" data-role="group" d="M548 404H984V632H548Z" fill="#F2F2F2"/>
+<text id="quadrant-bottom-right--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000" text-anchor="end"><tspan x="972" y="602">Thankless tasks</tspan></text>
+<text id="quadrant-bottom-right--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="972" y="619">Avoid or re-scope</tspan></text>
+<g id="ds-axis-y" data-role="axis"><path d="M84 632L84 169" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M84 160L88 170L80 170Z" fill="#3B3B3B"/></g>
+<g id="ds-axis-x" data-role="axis"><path d="M96 644L975 644" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M984 644L974 648L974 640Z" fill="#3B3B3B"/></g>
+<text id="ds-axis-y-high" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="76" y="173.5">High</tspan></text>
+<text id="ds-axis-y-low" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="76" y="629">Low</tspan></text>
+<text id="ds-axis-x-low" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="96" y="661.5">Low</tspan></text>
+<text id="ds-axis-x-high" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="end"><tspan x="984" y="661.5">High</tspan></text>
+<text id="ds-axis-x-title" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="540" y="676">Effort to deliver</tspan></text>
+<text id="ds-axis-y-title" data-role="axis" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="78" y="147.5">Value to the business</tspan></text>
+<path id="e-invoicing" data-role="marker" data-node="e-invoicing" data-emphasis="accent" d="M246 248A10 10 0 1 1 266 248A10 10 0 1 1 246 248Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="e-invoicing--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="272" y="252.5">E-invoicing</tspan></text>
+<path id="self-service" data-role="marker" data-node="self-service" d="M360 296A8 8 0 1 1 376 296A8 8 0 1 1 360 296Z" fill="#3B3B3B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="self-service--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="382" y="300.5">Self-service reporting</tspan></text>
+<path id="auto-recs" data-role="marker" data-node="auto-recs" d="M328 336A8 8 0 1 1 344 336A8 8 0 1 1 328 336Z" fill="#3B3B3B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="auto-recs--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="350" y="340.5">Automated reconciliations</tspan></text>
+<path id="erp" data-role="marker" data-node="erp" d="M816 264A8 8 0 1 1 832 264A8 8 0 1 1 816 264Z" fill="#3B3B3B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="838" y="268.5">ERP upgrade</tspan></text>
+<path id="data-lake" data-role="marker" data-node="data-lake" data-status="at-risk" d="M848 528A8 8 0 1 1 864 528A8 8 0 1 1 848 528Z" fill="#3B3B3B" stroke="#D13438" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="data-lake--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="870" y="532.5">Data lake (at risk)</tspan></text>
+<path id="policy" data-role="marker" data-node="policy" d="M264 520A8 8 0 1 1 280 520A8 8 0 1 1 264 520Z" fill="#3B3B3B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="policy--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="286" y="524.5">Policy refresh</tspan></text>
+<path id="ds-callout" data-role="callout" d="M1008 488H1240V568H1008Z" fill="#EBF4FC"/>
+<path id="ds-callout-bar" data-role="decoration" d="M1008 488H1012V568H1008Z" fill="#0078D4"/>
+<text id="ds-callout-heading" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" letter-spacing="0.5"><tspan x="1024" y="511.5">SO WHAT</tspan></text>
+<text id="ds-callout-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="1024" y="531">Fund the quick wins first; re-scope</tspan><tspan x="1024" y="546.5">the data lake before approving it</tspan></text>
+</svg>

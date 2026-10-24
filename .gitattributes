@@ -1,0 +1,11 @@
+# Keep LF everywhere: golden SVG snapshots are compared byte for byte, and
+# the renderer's output must be identical on every platform.
+* text=auto eol=lf
+
+# Binary assets and baselines
+*.png binary
+*.ttf binary
+*.pdf binary
+*.pptx binary
+*.vsdx binary
+*.woff2 binary

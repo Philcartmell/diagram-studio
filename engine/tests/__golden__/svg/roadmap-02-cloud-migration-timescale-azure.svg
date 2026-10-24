@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="azure" data-altitude="management">
+<title id="ds-svg-title">Most applications move to cloud in 2027, after a six-month foundation phase</title>
+<desc id="ds-svg-desc">Cloud migration plan, horizons drawn to time scale</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Most applications move to cloud in 2027, after a six-month foundation phase</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Cloud migration plan, horizons drawn to time scale</tspan></text>
+<path id="found" data-role="phase" data-node="found" d="M186 136H486V184H186Z" fill="#E6E6E6"/>
+<text id="found--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="336" y="157">Foundations</tspan></text>
+<text id="found--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="336" y="171.5">Q4 2026 – Q1 2027</tspan></text>
+<path id="wave1--column" data-role="decoration" d="M488 232H640V648H488Z" fill="#F7F7F7"/>
+<path id="wave1" data-role="phase" data-node="wave1" d="M490 136H638V184H490Z" fill="#E6E6E6"/>
+<text id="wave1--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="564" y="157">Wave 1</tspan></text>
+<text id="wave1--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="564" y="171.5">Q2 2027</tspan></text>
+<path id="wave2" data-role="phase" data-node="wave2" d="M642 136H942V184H642Z" fill="#E6E6E6"/>
+<text id="wave2--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="792" y="157">Waves 2–3</tspan></text>
+<text id="wave2--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="792" y="171.5">H2 2027</tspan></text>
+<path id="exit--column" data-role="decoration" d="M944 232H1240V648H944Z" fill="#F7F7F7"/>
+<path id="exit" data-role="phase" data-node="exit" d="M946 136H1238V184H946Z" fill="#E6E6E6"/>
+<text id="exit--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1092" y="157">Data centre exit</tspan></text>
+<text id="exit--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="1092" y="171.5">H1 2028</tspan></text>
+<path id="platform" data-role="lane" data-node="platform" d="M40 236H176V388H40Z" fill="#F2F2F2"/>
+<text id="platform--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="309">Landing zone</tspan></text>
+<text id="platform--owner" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="52" y="326">Cloud platform team</tspan></text>
+<path id="apps" data-role="lane" data-node="apps" data-emphasis="accent" d="M40 396H176V516H40Z" fill="#EBF4FC" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="apps--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="453">Applications</tspan></text>
+<text id="apps--owner" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="52" y="470">Migration factory</tspan></text>
+<path id="apps--rule" data-role="decoration" d="M40 392L1240 392" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="ops" data-role="lane" data-node="ops" d="M40 524H176V644H40Z" fill="#F2F2F2"/>
+<text id="ops--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="581">Operations</tspan></text>
+<text id="ops--owner" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="52" y="598">Service management</tspan></text>
+<path id="ops--rule" data-role="decoration" d="M40 520L1240 520" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-decision--line" data-role="decoration" d="M640 226L640 648" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="landing" data-role="node" data-node="landing" data-status="new" d="M192 272H480V328H192Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="landing--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="204" y="315.5">Build landing zone</tspan></text>
+<path id="landing--badge" data-role="badge" d="M445 278H466A8 8 0 0 1 474 286V286A8 8 0 0 1 466 294H445A8 8 0 0 1 437 286V286A8 8 0 0 1 445 278Z" fill="#C0D8C0" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="landing--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="455.5" y="290.5">New</tspan></text>
+<path id="finops" data-role="node" data-node="finops" d="M496 272H936V328H496Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="finops--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="508" y="304.5">FinOps and cost controls</tspan></text>
+<path id="pilot" data-role="node" data-node="pilot" d="M496 432H632V488H496Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="pilot--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="508" y="464.5">12 pilot apps</tspan></text>
+<path id="bulk" data-role="node" data-node="bulk" data-emphasis="accent" d="M648 432H936V488H648Z" fill="#D0E1EE" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="bulk--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="660" y="455.5">180 apps in two waves</tspan></text>
+<text id="bulk--metric" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="660" y="474">70% of estate</tspan></text>
+<path id="tail" data-role="node" data-node="tail" d="M952 432H1232V488H952Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="tail--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="964" y="464.5">Retire or rehost the tail</tspan></text>
+<path id="runbooks" data-role="node" data-node="runbooks" d="M192 560H632V616H192Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="runbooks--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="204" y="592.5">Cloud runbooks</tspan></text>
+<path id="decom" data-role="node" data-node="decom" data-status="at-risk" d="M952 560H1232V616H952Z" fill="#F2F2F2" stroke="#D13438" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="decom--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="964" y="603.5">Decommission data centre</tspan></text>
+<path id="decom--badge" data-role="badge" d="M1187 566H1218A8 8 0 0 1 1226 574V574A8 8 0 0 1 1218 582H1187A8 8 0 0 1 1179 574V574A8 8 0 0 1 1187 566Z" fill="#EBC8C9" stroke="#D13438" stroke-width="1" stroke-linejoin="round"/>
+<text id="decom--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1202.5" y="578.5">At risk</tspan></text>
+<path id="ds-track" data-role="decoration" d="M184 218L1240 218" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-decision" data-role="marker" data-node="go-decision" d="M640 210L648 218L640 226L632 218Z" fill="#FFFFFF" stroke="#3B3B3B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="go-decision--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="650" y="212">Wave go/no-go</tspan></text>
+<path id="exit-date" data-role="marker" data-node="exit-date" data-emphasis="accent" d="M1220 208L1230 218L1220 228L1210 218Z" fill="#0078D4" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="exit-date--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#0078D4" text-anchor="end"><tspan x="1208" y="212">Lease ends</tspan></text>
+<path id="zone-ready" data-role="marker" data-node="zone-ready" d="M488 360L496 368L488 376L480 368Z" fill="#3B3B3B" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="zone-ready--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="502" y="372.5">Landing zone ready</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="40" y="677">Source: Migration factory plan v3 · Note: Dates are end of month</tspan></text>
+</svg>

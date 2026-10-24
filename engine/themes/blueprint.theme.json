@@ -1,0 +1,32 @@
+{
+  "id": "blueprint",
+  "name": "Blueprint",
+  "description": "Technical and precise: light lines on deep blue with a faint grid. For architecture shown to mixed audiences.",
+  "extends": null,
+  "color": {
+    "background": "#0B2545",
+    "surface": "#12335C",
+    "surfaceAlt": "#1A426F",
+    "ink": "#F2F6FB",
+    "inkMuted": "#B8CCE3",
+    "line": "#6E8FB5",
+    "lineStrong": "#DCE7F3",
+    "accent": "#FFC24B",
+    "accentInk": "#0B2545",
+    "highlight": "#4FD1C5",
+    "categorical": ["#FFC24B", "#4FD1C5", "#8FB8FF", "#FF8C69", "#C3A6FF", "#9BE37A"],
+    "status": { "new": "#7BD88F", "changed": "#FFD166", "retired": "#7F97B5", "atRisk": "#FF6B6B" }
+  },
+  "font": {
+    "family": "IBM Plex Sans",
+    "files": { "regular": "fonts/IBMPlexSans-Regular.ttf", "semibold": "fonts/IBMPlexSans-SemiBold.ttf" },
+    "size": { "title": 28, "subtitle": 16, "group": 15, "label": 14, "body": 12, "caption": 11 },
+    "weight": { "title": 600, "label": 600, "body": 400 },
+    "titleCase": "sentence",
+    "lineHeight": 1.3
+  },
+  "shape": { "radius": 2, "stroke": 1.25, "strokeStrong": 2, "shadow": "none", "chevronDepth": 18 },
+  "space": { "unit": 8, "gap": 16, "padding": 16, "margin": 48 },
+  "connector": { "style": "orthogonal", "arrow": "triangle", "cornerRadius": 0 },
+  "style": { "renderer": "clean", "showIcons": true, "accentFill": "tint", "grid": true, "headerRule": true, "bandFill": "surface" }
+}

@@ -1,0 +1,120 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "executive",
+  "title": "Orders with no contract in place wait about three weeks for a tender",
+  "subtitle": "Purchase-order process, from request to supplier payment",
+  "callout": {
+    "text": "Where a contract exists, Procurement skips the tender and orders straight away",
+    "anchor": "tender"
+  },
+  "body": {
+    "lanes": [
+      {
+        "id": "requester",
+        "label": "Requester"
+      },
+      {
+        "id": "line-manager",
+        "label": "Line manager"
+      },
+      {
+        "id": "procurement",
+        "label": "Procurement"
+      },
+      {
+        "id": "supplier",
+        "label": "Supplier"
+      },
+      {
+        "id": "warehouse",
+        "label": "Warehouse"
+      },
+      {
+        "id": "finance",
+        "label": "Finance"
+      }
+    ],
+    "steps": [
+      {
+        "id": "raise-request",
+        "lane": "requester",
+        "label": "Raise PO request"
+      },
+      {
+        "id": "approve-request",
+        "lane": "line-manager",
+        "label": "Approve request"
+      },
+      {
+        "id": "contract-check",
+        "lane": "procurement",
+        "label": "Contract in place?",
+        "shape": "decision"
+      },
+      {
+        "id": "tender",
+        "lane": "procurement",
+        "label": "Run 3-quote tender",
+        "emphasis": "accent",
+        "metric": "about 3 weeks"
+      },
+      {
+        "id": "place-order",
+        "lane": "procurement",
+        "label": "Place order"
+      },
+      {
+        "id": "deliver",
+        "lane": "supplier",
+        "label": "Deliver goods"
+      },
+      {
+        "id": "receipt",
+        "lane": "warehouse",
+        "label": "Receipt goods"
+      },
+      {
+        "id": "pay",
+        "lane": "finance",
+        "label": "Pay supplier"
+      }
+    ],
+    "edges": [
+      {
+        "from": "raise-request",
+        "to": "approve-request"
+      },
+      {
+        "from": "approve-request",
+        "to": "contract-check"
+      },
+      {
+        "from": "contract-check",
+        "to": "place-order",
+        "label": "yes"
+      },
+      {
+        "from": "contract-check",
+        "to": "tender",
+        "label": "no"
+      },
+      {
+        "from": "tender",
+        "to": "place-order"
+      },
+      {
+        "from": "place-order",
+        "to": "deliver"
+      },
+      {
+        "from": "deliver",
+        "to": "receipt"
+      },
+      {
+        "from": "receipt",
+        "to": "pay"
+      }
+    ]
+  }
+}

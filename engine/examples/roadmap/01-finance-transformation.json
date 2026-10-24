@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "type": "roadmap",
+  "altitude": "executive",
+  "title": "The ERP switch in Q3 2027 unlocks the finance hub a year later",
+  "subtitle": "Finance transformation roadmap, 2026–2028",
+  "body": {
+    "horizons": [
+      { "id": "h1", "label": "H2 2026", "description": "Mobilise" },
+      { "id": "h2", "label": "H1 2027", "description": "Build" },
+      { "id": "h3", "label": "H2 2027", "description": "Switch" },
+      { "id": "h4", "label": "2028", "description": "Scale" }
+    ],
+    "workstreams": [
+      { "id": "erp", "label": "ERP platform" },
+      { "id": "hub", "label": "Finance hub" },
+      { "id": "people", "label": "People & skills" }
+    ],
+    "items": [
+      { "id": "erp-design", "label": "Design & configure", "workstream": "erp", "start": "h1", "end": "h2" },
+      { "id": "erp-cutover", "label": "Cutover", "workstream": "erp", "start": "h3", "status": "at-risk" },
+      { "id": "hub-pilot", "label": "Pilot R2R in the hub", "workstream": "hub", "start": "h2", "end": "h3" },
+      { "id": "hub-scale", "label": "Move P2P and O2C to the hub", "workstream": "hub", "start": "h4", "emphasis": "accent" },
+      { "id": "upskill", "label": "Business partner academy", "workstream": "people", "start": "h1", "end": "h4" }
+    ],
+    "milestones": [
+      { "id": "go-live", "label": "ERP go-live", "horizon": "h3", "at": "middle", "emphasis": "accent" },
+      { "id": "gate-1", "label": "Investment gate", "horizon": "h1", "at": "end", "kind": "gate" }
+    ]
+  }
+}

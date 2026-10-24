@@ -1,0 +1,140 @@
+{
+  "version": "1.0",
+  "type": "layered-architecture",
+  "altitude": "management",
+  "title": "Twenty services across four layers sit inside a single management view",
+  "body": {
+    "layers": [
+      {
+        "id": "layer-1",
+        "label": "Channels",
+        "nodes": [
+          {
+            "id": "svc-1",
+            "label": "Channels service 1",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-2",
+            "label": "Channels service 2",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-3",
+            "label": "Channels service 3",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-4",
+            "label": "Channels service 4",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-5",
+            "label": "Channels service 5",
+            "description": "Owned by one product team"
+          }
+        ]
+      },
+      {
+        "id": "layer-2",
+        "label": "Services",
+        "nodes": [
+          {
+            "id": "svc-6",
+            "label": "Services service 1",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-7",
+            "label": "Services service 2",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-8",
+            "label": "Services service 3",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-9",
+            "label": "Services service 4",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-10",
+            "label": "Services service 5",
+            "description": "Owned by one product team"
+          }
+        ]
+      },
+      {
+        "id": "layer-3",
+        "label": "Integration",
+        "nodes": [
+          {
+            "id": "svc-11",
+            "label": "Integration service 1",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-12",
+            "label": "Integration service 2",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-13",
+            "label": "Integration service 3",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-14",
+            "label": "Integration service 4",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-15",
+            "label": "Integration service 5",
+            "description": "Owned by one product team"
+          }
+        ]
+      },
+      {
+        "id": "layer-4",
+        "label": "Data",
+        "nodes": [
+          {
+            "id": "svc-16",
+            "label": "Data service 1",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-17",
+            "label": "Data service 2",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-18",
+            "label": "Data service 3",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-19",
+            "label": "Data service 4",
+            "description": "Owned by one product team"
+          },
+          {
+            "id": "svc-20",
+            "label": "Data service 5",
+            "description": "Owned by one product team"
+          }
+        ]
+      }
+    ],
+    "crossCutting": [
+      {
+        "id": "security",
+        "label": "Security"
+      }
+    ]
+  }
+}

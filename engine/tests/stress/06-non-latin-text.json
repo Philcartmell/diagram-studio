@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "type": "value-chain",
+  "altitude": "executive",
+  "title": "Zürich, São Paulo and 東京 share one supply chain from 2027",
+  "subtitle": "Déploiement mondial — façade commune, Öffnungszeiten vereinheitlicht",
+  "body": {
+    "primary": [
+      {
+        "id": "sourcing",
+        "label": "Approvisionnement",
+        "items": [
+          "Fournisseurs clés",
+          "Qualité contrôlée"
+        ]
+      },
+      {
+        "id": "tokyo",
+        "label": "東京の物流センター",
+        "items": [
+          "在庫管理",
+          "出荷"
+        ],
+        "emphasis": "accent"
+      },
+      {
+        "id": "sales",
+        "label": "Vendas e serviço",
+        "items": [
+          "São Paulo",
+          "Zürich"
+        ]
+      }
+    ],
+    "outcome": {
+      "label": "Größere Marge",
+      "description": "+2 pts"
+    }
+  }
+}

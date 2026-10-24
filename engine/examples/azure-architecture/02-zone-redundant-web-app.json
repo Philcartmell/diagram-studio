@@ -1,0 +1,105 @@
+{
+  "version": "1.0",
+  "type": "azure-architecture",
+  "altitude": "detailed",
+  "title": "Private endpoints keep every data path of the web app off the public internet",
+  "subtitle": "Baseline zone-redundant App Service web app, single region",
+  "body": {
+    "layout": "row",
+    "children": [
+      { "id": "users", "service": "users" },
+      {
+        "id": "region",
+        "boundary": "region",
+        "label": "Azure region",
+        "layout": "column",
+        "children": [
+          {
+            "id": "main",
+            "layout": "row",
+            "children": [
+              {
+                "id": "vnet",
+                "boundary": "virtual-network",
+                "label": "Spoke virtual network",
+                "layout": "row",
+                "children": [
+                  {
+                    "id": "snet-agw",
+                    "boundary": "subnet",
+                    "label": "Application Gateway subnet",
+                    "nsg": true,
+                    "layout": "column",
+                    "children": [{ "id": "agw", "service": "application-gateway", "label": "Application Gateway with WAF" }]
+                  },
+                  {
+                    "id": "snet-app",
+                    "boundary": "subnet",
+                    "label": "App Service integration subnet",
+                    "nsg": true,
+                    "layout": "column",
+                    "children": [{ "id": "app", "service": "app-service", "label": "App Service", "description": "Zone-redundant, 3 instances" }]
+                  },
+                  {
+                    "id": "snet-pe",
+                    "boundary": "subnet",
+                    "label": "Private endpoint subnet",
+                    "nsg": true,
+                    "layout": "column",
+                    "children": [
+                      { "id": "pe-kv", "service": "private-endpoint", "label": "Key Vault private endpoint" },
+                      { "id": "pe-sql", "service": "private-endpoint", "label": "SQL private endpoint" },
+                      { "id": "pe-st", "service": "private-endpoint", "label": "Storage private endpoint" }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "paas",
+                "layout": "column",
+                "children": [
+                  { "id": "kv", "service": "key-vault" },
+                  { "id": "sql", "service": "sql-database" },
+                  { "id": "st", "service": "storage-account" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "shared",
+            "layout": "row",
+            "children": [
+              { "id": "dns", "service": "private-dns-zone", "label": "Private DNS zones" },
+              {
+                "id": "monitoring",
+                "boundary": "group",
+                "label": "Monitoring",
+                "layout": "row",
+                "children": [
+                  { "id": "appi", "service": "application-insights" },
+                  { "id": "law", "service": "log-analytics" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "users", "to": "agw", "step": 1, "label": "HTTPS" },
+      { "from": "agw", "to": "app", "step": 2 },
+      { "from": "app", "to": "pe-kv", "step": 3 },
+      { "from": "app", "to": "pe-sql" },
+      { "from": "app", "to": "pe-st" },
+      { "from": "pe-kv", "to": "kv" },
+      { "from": "pe-sql", "to": "sql" },
+      { "from": "pe-st", "to": "st" },
+      { "from": "dns", "to": "vnet", "style": "dotted", "arrows": "none", "label": "Linked" }
+    ],
+    "steps": [
+      { "step": 1, "text": "Users reach the public IP of Application Gateway over HTTPS; the web application firewall inspects every request." },
+      { "step": 2, "text": "Application Gateway forwards allowed traffic to App Service, which runs one instance in each availability zone." },
+      { "step": 3, "text": "App Service reaches Key Vault, SQL Database and Storage through private endpoints over virtual network integration." }
+    ]
+  }
+}

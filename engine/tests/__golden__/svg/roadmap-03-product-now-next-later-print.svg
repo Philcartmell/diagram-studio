@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="print" data-altitude="executive">
+<title id="ds-svg-title">Self-service onboarding comes first; pricing changes wait for the new data</title>
+<desc id="ds-svg-desc">Self-service onboarding comes first; pricing changes wait for the new data</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#000000"><tspan x="48" y="76.5">Self-service onboarding comes first; pricing changes wait for the new data</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 104L1232 104" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="now" data-role="phase" data-node="now" d="M198 128H530A4 4 0 0 1 534 132V156A4 4 0 0 1 530 160H198A4 4 0 0 1 194 156V132A4 4 0 0 1 198 128Z" fill="#E3E3E3"/>
+<text id="now--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="364" y="148.5">Now</tspan></text>
+<path id="next--column" data-role="decoration" d="M536 208H880V544H536Z" fill="#F7F7F7"/>
+<path id="next" data-role="phase" data-node="next" d="M542 128H874A4 4 0 0 1 878 132V156A4 4 0 0 1 874 160H542A4 4 0 0 1 538 156V132A4 4 0 0 1 542 128Z" fill="#E3E3E3"/>
+<text id="next--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="708" y="148.5">Next</tspan></text>
+<path id="later" data-role="phase" data-node="later" d="M886 128H1226A4 4 0 0 1 1230 132V156A4 4 0 0 1 1226 160H886A4 4 0 0 1 882 156V132A4 4 0 0 1 886 128Z" fill="#E3E3E3"/>
+<text id="later--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1056" y="148.5">Later</tspan></text>
+<path id="acquire" data-role="lane" data-node="acquire" d="M52 212H180A4 4 0 0 1 184 216V312A4 4 0 0 1 180 316H52A4 4 0 0 1 48 312V216A4 4 0 0 1 52 212Z" fill="#F2F2F2"/>
+<text id="acquire--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="269.5">Acquire</tspan></text>
+<path id="engage" data-role="lane" data-node="engage" d="M52 324H180A4 4 0 0 1 184 328V424A4 4 0 0 1 180 428H52A4 4 0 0 1 48 424V328A4 4 0 0 1 52 324Z" fill="#F2F2F2"/>
+<text id="engage--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="381.5">Engage</tspan></text>
+<path id="engage--rule" data-role="decoration" d="M48 320L1232 320" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="monetise" data-role="lane" data-node="monetise" d="M52 436H180A4 4 0 0 1 184 440V536A4 4 0 0 1 180 540H52A4 4 0 0 1 48 536V440A4 4 0 0 1 52 436Z" fill="#F2F2F2"/>
+<text id="monetise--label" data-role="header" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#000000"><tspan x="60" y="493.5">Monetise</tspan></text>
+<path id="monetise--rule" data-role="decoration" d="M48 432L1232 432" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch--line" data-role="decoration" d="M536 202L536 544" fill="none" stroke="#1A1A1A" stroke-width="2.5" stroke-dasharray="10 7.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="self-onboard" data-role="node" data-node="self-onboard" data-emphasis="accent" d="M204 248H524A4 4 0 0 1 528 252V284A4 4 0 0 1 524 288H204A4 4 0 0 1 200 284V252A4 4 0 0 1 204 248Z" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="self-onboard--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF"><tspan x="212" y="273">Self-service onboarding</tspan></text>
+<path id="referrals" data-role="node" data-node="referrals" d="M548 248H1220A4 4 0 0 1 1224 252V284A4 4 0 0 1 1220 288H548A4 4 0 0 1 544 284V252A4 4 0 0 1 548 248Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="referrals--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="556" y="273">Referral programme</tspan></text>
+<path id="insights" data-role="node" data-node="insights" d="M204 360H868A4 4 0 0 1 872 364V396A4 4 0 0 1 868 400H204A4 4 0 0 1 200 396V364A4 4 0 0 1 204 360Z" fill="#F2F2F2" stroke="#8C8C8C" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="insights--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#000000"><tspan x="212" y="385">Usage insights</tspan></text>
+<path id="pricing" data-role="node" data-node="pricing" data-emphasis="highlight" d="M892 472H1220A4 4 0 0 1 1224 476V508A4 4 0 0 1 1220 512H892A4 4 0 0 1 888 508V476A4 4 0 0 1 892 472Z" fill="#5E5E5E" stroke="#5E5E5E" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="pricing--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF"><tspan x="900" y="497">Usage-based pricing</tspan></text>
+<path id="ds-track" data-role="decoration" d="M192 194L1232 194" fill="none" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch" data-role="marker" data-node="launch" d="M536 186L544 194L536 202L528 194Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" stroke-linejoin="round"/>
+<text id="launch--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="546" y="187.5">Public launch</tspan></text>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "type": "value-chain",
+  "altitude": "detailed",
+  "title": "Claims automation and pricing analytics carry the digital investment case",
+  "subtitle": "Personal lines insurance value chain, detailed view",
+  "legend": "auto",
+  "body": {
+    "support": [
+      { "id": "data", "label": "Data & analytics", "items": ["Pricing models", "Fraud scoring", "Customer data platform"], "emphasis": "highlight" },
+      { "id": "tech", "label": "Technology", "items": ["Policy admin system", "Claims platform", "Cloud"] },
+      { "id": "people", "label": "People", "items": ["Underwriting academy", "Claims handler skills"] }
+    ],
+    "primary": [
+      { "id": "product", "label": "Product design", "items": ["Cover design", "Partner products"], "tags": ["core"] },
+      { "id": "pricing", "label": "Pricing & underwriting", "items": ["Risk models", "Rate changes", "Referral rules"], "emphasis": "accent", "tags": ["digital"] },
+      { "id": "distribution", "label": "Distribution", "items": ["Aggregators", "Direct web", "Brokers"], "tags": ["core"] },
+      { "id": "servicing", "label": "Policy servicing", "items": ["Renewals", "Mid-term changes"], "tags": ["core"] },
+      { "id": "claims", "label": "Claims", "items": ["First notice of loss", "Triage", "Settlement"], "emphasis": "accent", "status": "changed", "tags": ["digital"] }
+    ],
+    "outcome": { "label": "Combined ratio", "description": "Target 92%" }
+  }
+}

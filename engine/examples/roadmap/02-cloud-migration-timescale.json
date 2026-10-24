@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "type": "roadmap",
+  "altitude": "management",
+  "title": "Most applications move to cloud in 2027, after a six-month foundation phase",
+  "subtitle": "Cloud migration plan, horizons drawn to time scale",
+  "footer": { "source": "Migration factory plan v3", "note": "Dates are end of month" },
+  "body": {
+    "scale": "time",
+    "horizons": [
+      { "id": "found", "label": "Foundations", "description": "Q4 2026 – Q1 2027", "start": "2026-10", "end": "2027-03" },
+      { "id": "wave1", "label": "Wave 1", "description": "Q2 2027", "start": "2027-04", "end": "2027-06" },
+      { "id": "wave2", "label": "Waves 2–3", "description": "H2 2027", "start": "2027-07", "end": "2027-12" },
+      { "id": "exit", "label": "Data centre exit", "description": "H1 2028", "start": "2028-01", "end": "2028-06" }
+    ],
+    "workstreams": [
+      { "id": "platform", "label": "Landing zone", "owner": "Cloud platform team" },
+      { "id": "apps", "label": "Applications", "owner": "Migration factory", "emphasis": "accent" },
+      { "id": "ops", "label": "Operations", "owner": "Service management" }
+    ],
+    "items": [
+      { "id": "landing", "label": "Build landing zone", "workstream": "platform", "start": "found", "status": "new" },
+      { "id": "finops", "label": "FinOps and cost controls", "workstream": "platform", "start": "wave1", "end": "wave2" },
+      { "id": "pilot", "label": "12 pilot apps", "workstream": "apps", "start": "wave1" },
+      { "id": "bulk", "label": "180 apps in two waves", "workstream": "apps", "start": "wave2", "emphasis": "accent", "metric": "70% of estate" },
+      { "id": "tail", "label": "Retire or rehost the tail", "workstream": "apps", "start": "exit" },
+      { "id": "runbooks", "label": "Cloud runbooks", "workstream": "ops", "start": "found", "end": "wave1" },
+      { "id": "decom", "label": "Decommission data centre", "workstream": "ops", "start": "exit", "status": "at-risk" }
+    ],
+    "milestones": [
+      { "id": "zone-ready", "label": "Landing zone ready", "horizon": "found", "at": "end", "workstream": "platform" },
+      { "id": "go-decision", "label": "Wave go/no-go", "horizon": "wave1", "at": "end", "kind": "gate" },
+      { "id": "exit-date", "label": "Lease ends", "horizon": "exit", "at": "end", "emphasis": "accent" }
+    ]
+  }
+}

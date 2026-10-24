@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "type": "layered-architecture",
+  "altitude": "executive",
+  "title": "One customer data layer replaces four separate customer records",
+  "subtitle": "Target customer platform, for the executive review",
+  "body": {
+    "layers": [
+      { "id": "channels", "label": "Channels", "nodes": [
+        { "id": "app", "label": "Mobile app" },
+        { "id": "web", "label": "Website" },
+        { "id": "branch", "label": "Branches" },
+        { "id": "contact", "label": "Contact centre" }
+      ]},
+      { "id": "services", "label": "Customer services", "nodes": [
+        { "id": "onboarding", "label": "Onboarding" },
+        { "id": "servicing", "label": "Servicing" },
+        { "id": "payments", "label": "Payments" }
+      ]},
+      { "id": "data", "label": "Customer data", "emphasis": "accent", "status": "new", "nodes": [
+        { "id": "single-view", "label": "Single customer view", "description": "One record, shared by every channel" }
+      ]}
+    ],
+    "crossCutting": [
+      { "id": "security", "label": "Security & identity" },
+      { "id": "monitoring", "label": "Monitoring" }
+    ],
+    "external": [
+      { "id": "credit-bureau", "label": "Credit bureau" },
+      { "id": "card-network", "label": "Card network" }
+    ]
+  }
+}

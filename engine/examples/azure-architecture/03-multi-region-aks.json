@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "type": "azure-architecture",
+  "altitude": "detailed",
+  "title": "Front Door shifts traffic to the healthy region's AKS stamp without manual steps",
+  "subtitle": "Active-active AKS in two regions with hub-spoke networking",
+  "body": {
+    "layout": "row",
+    "children": [
+      { "id": "users", "service": "users" },
+      { "id": "front-door", "service": "front-door" },
+      {
+        "id": "regions",
+        "layout": "column",
+        "children": [
+          {
+            "id": "region-a",
+            "boundary": "region",
+            "label": "Region A",
+            "layout": "row",
+            "children": [
+              {
+                "id": "spoke-a",
+                "boundary": "virtual-network",
+                "label": "Spoke virtual network",
+                "layout": "row",
+                "children": [
+                  { "id": "snet-agw-a", "boundary": "subnet", "label": "Gateway subnet", "nsg": true, "children": [{ "id": "agw-a", "service": "application-gateway" }] },
+                  { "id": "snet-aks-a", "boundary": "subnet", "label": "Cluster subnet", "nsg": true, "children": [{ "id": "aks-a", "service": "aks", "label": "AKS cluster" }] }
+                ]
+              },
+              {
+                "id": "hub-a",
+                "boundary": "virtual-network",
+                "label": "Hub virtual network",
+                "layout": "column",
+                "children": [{ "id": "fw-a", "service": "azure-firewall" }]
+              }
+            ]
+          },
+          {
+            "id": "region-b",
+            "boundary": "region",
+            "label": "Region B",
+            "layout": "row",
+            "children": [
+              {
+                "id": "spoke-b",
+                "boundary": "virtual-network",
+                "label": "Spoke virtual network",
+                "layout": "row",
+                "children": [
+                  { "id": "snet-agw-b", "boundary": "subnet", "label": "Gateway subnet", "nsg": true, "children": [{ "id": "agw-b", "service": "application-gateway" }] },
+                  { "id": "snet-aks-b", "boundary": "subnet", "label": "Cluster subnet", "nsg": true, "children": [{ "id": "aks-b", "service": "aks", "label": "AKS cluster" }] }
+                ]
+              },
+              {
+                "id": "hub-b",
+                "boundary": "virtual-network",
+                "label": "Hub virtual network",
+                "layout": "column",
+                "children": [{ "id": "fw-b", "service": "azure-firewall" }]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shared",
+        "boundary": "group",
+        "label": "Shared resources",
+        "layout": "column",
+        "children": [
+          { "id": "acr", "service": "container-registry", "description": "Geo-replicated" },
+          { "id": "law", "service": "log-analytics" }
+        ]
+      }
+    ],
+    "flowTypes": [
+      { "id": "inbound", "label": "Inbound request" },
+      { "id": "egress", "label": "Egress through the hub firewall", "style": "dashed" },
+      { "id": "ops", "label": "Image pull and diagnostics", "style": "dotted" }
+    ],
+    "flows": [
+      { "from": "users", "to": "front-door", "type": "inbound", "step": 1 },
+      { "from": "front-door", "to": "agw-a", "type": "inbound", "step": 2 },
+      { "from": "front-door", "to": "agw-b", "type": "inbound" },
+      { "from": "agw-a", "to": "aks-a", "type": "inbound", "step": 3 },
+      { "from": "agw-b", "to": "aks-b", "type": "inbound" },
+      { "from": "aks-a", "to": "fw-a", "type": "egress", "step": 4 },
+      { "from": "aks-b", "to": "fw-b", "type": "egress" },
+      { "from": "fw-a", "to": "acr", "type": "ops", "step": 5 },
+      { "from": "fw-b", "to": "law", "type": "ops" }
+    ],
+    "steps": [
+      { "step": 1, "text": "Users connect to the global Front Door endpoint, which probes both regions." },
+      { "step": 2, "text": "Front Door routes each request to the closest healthy region's Application Gateway." },
+      { "step": 3, "text": "Application Gateway forwards to the ingress of that region's AKS cluster." },
+      { "step": 4, "text": "Cluster egress is forced through the hub firewall by a route table." },
+      { "step": 5, "text": "Through the firewall, nodes pull images from the geo-replicated registry and send logs to Log Analytics." }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "management",
+  "title": "HR moves routine work to one service centre and keeps advice close to leaders",
+  "subtitle": "People function operating model, target state 2027",
+  "body": {
+    "customers": { "label": "Served", "items": ["Employees", "Line managers", "Leadership team"] },
+    "layers": [
+      { "id": "advisory", "label": "HR business partners", "description": "Strategic advice by division", "nodes": [
+        { "id": "bp-ops", "label": "Operations partner", "owner": "COO division" },
+        { "id": "bp-commercial", "label": "Commercial partner", "owner": "CCO division" },
+        { "id": "bp-corporate", "label": "Corporate partner", "owner": "CFO division" }
+      ]},
+      { "id": "coe", "label": "Centres of excellence", "description": "Policy and programme design", "nodes": [
+        { "id": "reward", "label": "Reward", "description": "Pay, benefits, recognition" },
+        { "id": "talent", "label": "Talent", "description": "Hiring, careers, succession", "status": "changed" },
+        { "id": "learning", "label": "Learning", "description": "Academies and skills" }
+      ]},
+      { "id": "service-centre", "label": "People service centre", "description": "Tier 1 and 2 support", "emphasis": "accent", "status": "new", "nodes": [
+        { "id": "helpdesk", "label": "People helpdesk", "metric": "80% first-contact resolution" },
+        { "id": "payroll", "label": "Payroll & admin" },
+        { "id": "onboarding", "label": "Onboarding" }
+      ]}
+    ],
+    "foundations": ["HR platform", "Employee self-service", "People data"],
+    "governance": { "label": "People leadership team", "description": "Sets priorities and policy", "position": "left" }
+  }
+}

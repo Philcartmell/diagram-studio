@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "detailed",
+  "canvas": {
+    "aspect": "auto"
+  },
+  "title": "Sixty processes map onto six capability layers in the detailed design",
+  "body": {
+    "layers": [
+      {
+        "id": "layer-1",
+        "label": "Layer 1",
+        "nodes": [
+          {
+            "id": "p-1",
+            "label": "Process 1"
+          },
+          {
+            "id": "p-2",
+            "label": "Process 2"
+          },
+          {
+            "id": "p-3",
+            "label": "Process 3"
+          },
+          {
+            "id": "p-4",
+            "label": "Process 4"
+          },
+          {
+            "id": "p-5",
+            "label": "Process 5"
+          },
+          {
+            "id": "p-6",
+            "label": "Process 6"
+          },
+          {
+            "id": "p-7",
+            "label": "Process 7"
+          },
+          {
+            "id": "p-8",
+            "label": "Process 8"
+          },
+          {
+            "id": "p-9",
+            "label": "Process 9"
+          },
+          {
+            "id": "p-10",
+            "label": "Process 10"
+          }
+        ]
+      },
+      {
+        "id": "layer-2",
+        "label": "Layer 2",
+        "nodes": [
+          {
+            "id": "p-11",
+            "label": "Process 11"
+          },
+          {
+            "id": "p-12",
+            "label": "Process 12"
+          },
+          {
+            "id": "p-13",
+            "label": "Process 13"
+          },
+          {
+            "id": "p-14",
+            "label": "Process 14"
+          },
+          {
+            "id": "p-15",
+            "label": "Process 15"
+          },
+          {
+            "id": "p-16",
+            "label": "Process 16"
+          },
+          {
+            "id": "p-17",
+            "label": "Process 17"
+          },
+          {
+            "id": "p-18",
+            "label": "Process 18"
+          },
+          {
+            "id": "p-19",
+            "label": "Process 19"
+          },
+          {
+            "id": "p-20",
+            "label": "Process 20"
+          }
+        ]
+      },
+      {
+        "id": "layer-3",
+        "label": "Layer 3",
+        "nodes": [
+          {
+            "id": "p-21",
+            "label": "Process 21"
+          },
+          {
+            "id": "p-22",
+            "label": "Process 22"
+          },
+          {
+            "id": "p-23",
+            "label": "Process 23"
+          },
+          {
+            "id": "p-24",
+            "label": "Process 24"
+          },
+          {
+            "id": "p-25",
+            "label": "Process 25"
+          },
+          {
+            "id": "p-26",
+            "label": "Process 26"
+          },
+          {
+            "id": "p-27",
+            "label": "Process 27"
+          },
+          {
+            "id": "p-28",
+            "label": "Process 28"
+          },
+          {
+            "id": "p-29",
+            "label": "Process 29"
+          },
+          {
+            "id": "p-30",
+            "label": "Process 30"
+          }
+        ]
+      },
+      {
+        "id": "layer-4",
+        "label": "Layer 4",
+        "nodes": [
+          {
+            "id": "p-31",
+            "label": "Process 31"
+          },
+          {
+            "id": "p-32",
+            "label": "Process 32"
+          },
+          {
+            "id": "p-33",
+            "label": "Process 33"
+          },
+          {
+            "id": "p-34",
+            "label": "Process 34"
+          },
+          {
+            "id": "p-35",
+            "label": "Process 35"
+          },
+          {
+            "id": "p-36",
+            "label": "Process 36"
+          },
+          {
+            "id": "p-37",
+            "label": "Process 37"
+          },
+          {
+            "id": "p-38",
+            "label": "Process 38"
+          },
+          {
+            "id": "p-39",
+            "label": "Process 39"
+          },
+          {
+            "id": "p-40",
+            "label": "Process 40"
+          }
+        ]
+      },
+      {
+        "id": "layer-5",
+        "label": "Layer 5",
+        "nodes": [
+          {
+            "id": "p-41",
+            "label": "Process 41"
+          },
+          {
+            "id": "p-42",
+            "label": "Process 42"
+          },
+          {
+            "id": "p-43",
+            "label": "Process 43"
+          },
+          {
+            "id": "p-44",
+            "label": "Process 44"
+          },
+          {
+            "id": "p-45",
+            "label": "Process 45"
+          },
+          {
+            "id": "p-46",
+            "label": "Process 46"
+          },
+          {
+            "id": "p-47",
+            "label": "Process 47"
+          },
+          {
+            "id": "p-48",
+            "label": "Process 48"
+          },
+          {
+            "id": "p-49",
+            "label": "Process 49"
+          },
+          {
+            "id": "p-50",
+            "label": "Process 50"
+          }
+        ]
+      },
+      {
+        "id": "layer-6",
+        "label": "Layer 6",
+        "nodes": [
+          {
+            "id": "p-51",
+            "label": "Process 51"
+          },
+          {
+            "id": "p-52",
+            "label": "Process 52"
+          },
+          {
+            "id": "p-53",
+            "label": "Process 53"
+          },
+          {
+            "id": "p-54",
+            "label": "Process 54"
+          },
+          {
+            "id": "p-55",
+            "label": "Process 55"
+          },
+          {
+            "id": "p-56",
+            "label": "Process 56"
+          },
+          {
+            "id": "p-57",
+            "label": "Process 57"
+          },
+          {
+            "id": "p-58",
+            "label": "Process 58"
+          },
+          {
+            "id": "p-59",
+            "label": "Process 59"
+          },
+          {
+            "id": "p-60",
+            "label": "Process 60"
+          }
+        ]
+      }
+    ]
+  }
+}

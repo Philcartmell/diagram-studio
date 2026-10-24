@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">The ERP switch in Q3 2027 unlocks the finance hub a year later</title>
+<desc id="ds-svg-desc">Finance transformation roadmap, 2026–2028</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">The ERP switch in Q3 2027 unlocks the finance hub a year later</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Finance transformation roadmap, 2026–2028</tspan></text>
+<path id="h1" data-role="phase" data-node="h1" d="M186 136H446V184H186Z" fill="#E6E6E6"/>
+<text id="h1--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="316" y="157">H2 2026</tspan></text>
+<text id="h1--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="316" y="171.5">Mobilise</tspan></text>
+<path id="h2--column" data-role="decoration" d="M448 232H712V616H448Z" fill="#F7F7F7"/>
+<path id="h2" data-role="phase" data-node="h2" d="M450 136H710V184H450Z" fill="#E6E6E6"/>
+<text id="h2--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="580" y="157">H1 2027</tspan></text>
+<text id="h2--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="580" y="171.5">Build</tspan></text>
+<path id="h3" data-role="phase" data-node="h3" d="M714 136H974V184H714Z" fill="#E6E6E6"/>
+<text id="h3--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="844" y="157">H2 2027</tspan></text>
+<text id="h3--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="844" y="171.5">Switch</tspan></text>
+<path id="h4--column" data-role="decoration" d="M976 232H1240V616H976Z" fill="#F7F7F7"/>
+<path id="h4" data-role="phase" data-node="h4" d="M978 136H1238V184H978Z" fill="#E6E6E6"/>
+<text id="h4--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1108" y="157">2028</tspan></text>
+<text id="h4--description" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="1108" y="171.5">Scale</tspan></text>
+<path id="erp" data-role="lane" data-node="erp" d="M40 236H176V356H40Z" fill="#F2F2F2"/>
+<text id="erp--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="301">ERP platform</tspan></text>
+<path id="hub" data-role="lane" data-node="hub" d="M40 364H176V484H40Z" fill="#F2F2F2"/>
+<text id="hub--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="429">Finance hub</tspan></text>
+<path id="hub--rule" data-role="decoration" d="M40 360L1240 360" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="people" data-role="lane" data-node="people" d="M40 492H176V612H40Z" fill="#F2F2F2"/>
+<text id="people--label" data-role="header" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#000000"><tspan x="52" y="557">People &amp; skills</tspan></text>
+<path id="people--rule" data-role="decoration" d="M40 488L1240 488" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="gate-1--line" data-role="decoration" d="M448 226L448 616" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="erp-design" data-role="node" data-node="erp-design" d="M192 272H704V328H192Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="erp-design--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="204" y="304.5">Design &amp; configure</tspan></text>
+<path id="erp-cutover" data-role="node" data-node="erp-cutover" data-status="at-risk" d="M720 272H968V328H720Z" fill="#F2F2F2" stroke="#D13438" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="erp-cutover--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="732" y="315.5">Cutover</tspan></text>
+<path id="erp-cutover--badge" data-role="badge" d="M923 278H954A8 8 0 0 1 962 286V286A8 8 0 0 1 954 294H923A8 8 0 0 1 915 286V286A8 8 0 0 1 923 278Z" fill="#EBC8C9" stroke="#D13438" stroke-width="1" stroke-linejoin="round"/>
+<text id="erp-cutover--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="938.5" y="290.5">At risk</tspan></text>
+<path id="hub-pilot" data-role="node" data-node="hub-pilot" d="M456 400H968V456H456Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="hub-pilot--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="468" y="432.5">Pilot R2R in the hub</tspan></text>
+<path id="hub-scale" data-role="node" data-node="hub-scale" data-emphasis="accent" d="M984 400H1232V456H984Z" fill="#D0E1EE" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="hub-scale--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="996" y="432.5">Move P2P and O2C to the hub</tspan></text>
+<path id="upskill" data-role="node" data-node="upskill" d="M192 528H1232V584H192Z" fill="#F2F2F2" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="upskill--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="204" y="560.5">Business partner academy</tspan></text>
+<path id="ds-track" data-role="decoration" d="M184 218L1240 218" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-live" data-role="marker" data-node="go-live" data-emphasis="accent" d="M848 208L858 218L848 228L838 218Z" fill="#0078D4" stroke="#0078D4" stroke-width="1" stroke-linejoin="round"/>
+<text id="go-live--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#0078D4"><tspan x="860" y="212">ERP go-live</tspan></text>
+<path id="gate-1" data-role="marker" data-node="gate-1" d="M448 210L456 218L448 226L440 218Z" fill="#FFFFFF" stroke="#3B3B3B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="gate-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000"><tspan x="458" y="212">Investment gate</tspan></text>
+</svg>

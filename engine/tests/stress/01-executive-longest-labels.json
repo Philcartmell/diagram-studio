@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "executive",
+  "title": "Nine shared capabilities carry the target model at executive level",
+  "subtitle": "Stress: longest executive labels and descriptions at the node limit",
+  "body": {
+    "layers": [
+      {
+        "id": "layer-1",
+        "label": "Capability layer 1",
+        "nodes": [
+          {
+            "id": "n-1",
+            "label": "Customer onboarding and identity checks",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-2",
+            "label": "Pricing analytics and rate optimisation",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-3",
+            "label": "Claims triage and first notice of losses",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          }
+        ]
+      },
+      {
+        "id": "layer-2",
+        "label": "Capability layer 2",
+        "nodes": [
+          {
+            "id": "n-4",
+            "label": "Supplier risk monitoring and escalations",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-5",
+            "label": "Group treasury cash and liquidity views",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-6",
+            "label": "Regulatory reporting and attestation hub",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          }
+        ]
+      },
+      {
+        "id": "layer-3",
+        "label": "Capability layer 3",
+        "nodes": [
+          {
+            "id": "n-7",
+            "label": "Workforce planning and capacity modeling",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-8",
+            "label": "Contract lifecycle and obligations log",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          },
+          {
+            "id": "n-9",
+            "label": "Data quality controls and lineage review",
+            "description": "Shared across divisions with one owner and one set of service levels"
+          }
+        ]
+      }
+    ]
+  }
+}

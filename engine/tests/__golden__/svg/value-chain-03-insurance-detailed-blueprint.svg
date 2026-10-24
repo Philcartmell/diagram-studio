@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="value-chain" data-theme="blueprint" data-altitude="detailed">
+<title id="ds-svg-title">Claims automation and pricing analytics carry the digital investment case</title>
+<desc id="ds-svg-desc">Personal lines insurance value chain, detailed view</desc>
+<defs><pattern id="ds-grid-pattern" width="24" height="24" patternUnits="userSpaceOnUse" x="0" y="0"><path d="M24 0H0V24" fill="none" stroke="#213C5E" stroke-width="0.75"/></pattern></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#0B2545"/>
+<rect id="ds-grid" data-role="decoration" x="0" y="0" width="1280" height="720" fill="url(#ds-grid-pattern)"/>
+<text id="ds-title" data-role="title" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#F2F6FB"><tspan x="48" y="77">Claims automation and pricing analytics carry the digital investment case</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="400" fill="#B8CCE3"><tspan x="48" y="108.5">Personal lines insurance value chain, detailed view</tspan></text>
+<path id="ds-header-rule" data-role="decoration" d="M48 128L1232 128" fill="none" stroke="#6E8FB5" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="data" data-role="band" data-node="data" data-emphasis="highlight" d="M50 152H1038A2 2 0 0 1 1040 154V198A2 2 0 0 1 1038 200H50A2 2 0 0 1 48 198V154A2 2 0 0 1 50 152Z" fill="#10334F" stroke="#4FD1C5" stroke-width="2" stroke-linejoin="round"/>
+<text id="data--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#4FD1C5"><tspan x="64" y="181.5">Data &amp; analytics</tspan></text>
+<text id="data--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="232" y="180.5">Pricing models · Fraud scoring · Customer data platform</tspan></text>
+<path id="tech" data-role="band" data-node="tech" d="M50 216H1038A2 2 0 0 1 1040 218V262A2 2 0 0 1 1038 264H50A2 2 0 0 1 48 262V218A2 2 0 0 1 50 216Z" fill="#12335C"/>
+<text id="tech--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="64" y="245.5">Technology</tspan></text>
+<text id="tech--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="232" y="244.5">Policy admin system · Claims platform · Cloud</tspan></text>
+<path id="people" data-role="band" data-node="people" d="M50 280H1038A2 2 0 0 1 1040 282V326A2 2 0 0 1 1038 328H50A2 2 0 0 1 48 326V282A2 2 0 0 1 50 280Z" fill="#12335C"/>
+<text id="people--label" data-role="header" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#F2F6FB"><tspan x="64" y="309.5">People</tspan></text>
+<text id="people--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3"><tspan x="232" y="308.5">Underwriting academy · Claims handler skills</tspan></text>
+<path id="product" data-role="node" data-node="product" d="M48 352L230 352L248 408L230 464L48 464Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="product--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="142" y="406.5">Product design</tspan></text>
+<path id="product--tag-core" data-role="marker" d="M58 450H62A2 2 0 0 1 64 452V456A2 2 0 0 1 62 458H58A2 2 0 0 1 56 456V452A2 2 0 0 1 58 450Z" fill="#FFC24B"/>
+<path id="pricing" data-role="node" data-node="pricing" data-emphasis="accent" d="M246 352L428 352L446 408L428 464L246 464L264 408Z" fill="#33475A" stroke="#FFC24B" stroke-width="2" stroke-linejoin="round"/>
+<text id="pricing--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="347.5" y="406.5">Pricing &amp; underwriting</tspan></text>
+<path id="pricing--tag-digital" data-role="marker" d="M272 450H276A2 2 0 0 1 278 452V456A2 2 0 0 1 276 458H272A2 2 0 0 1 270 456V452A2 2 0 0 1 272 450Z" fill="#4FD1C5"/>
+<path id="distribution" data-role="node" data-node="distribution" d="M444 352L626 352L644 408L626 464L444 464L462 408Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="distribution--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="545.5" y="406.5">Distribution</tspan></text>
+<path id="distribution--tag-core" data-role="marker" d="M470 450H474A2 2 0 0 1 476 452V456A2 2 0 0 1 474 458H470A2 2 0 0 1 468 456V452A2 2 0 0 1 470 450Z" fill="#FFC24B"/>
+<path id="servicing" data-role="node" data-node="servicing" d="M642 352L824 352L842 408L824 464L642 464L660 408Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="servicing--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="743.5" y="406.5">Policy servicing</tspan></text>
+<path id="servicing--tag-core" data-role="marker" d="M668 450H672A2 2 0 0 1 674 452V456A2 2 0 0 1 672 458H668A2 2 0 0 1 666 456V452A2 2 0 0 1 668 450Z" fill="#FFC24B"/>
+<path id="claims" data-role="node" data-node="claims" data-emphasis="accent" data-status="changed" d="M840 352L1022 352L1040 408L1022 464L840 464L858 408Z" fill="#33475A" stroke="#FFC24B" stroke-width="2" stroke-linejoin="round"/>
+<text id="claims--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="941.5" y="417.5">Claims</tspan></text>
+<path id="claims--badge" data-role="badge" d="M967 358H1010A8 8 0 0 1 1018 366V366A8 8 0 0 1 1010 374H967A8 8 0 0 1 959 366V366A8 8 0 0 1 967 358Z" fill="#60655D" stroke="#FFD166" stroke-width="1" stroke-linejoin="round"/>
+<text id="claims--badge-text" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="988.5" y="370">Changed</tspan></text>
+<path id="claims--tag-digital" data-role="marker" d="M866 450H870A2 2 0 0 1 872 452V456A2 2 0 0 1 870 458H866A2 2 0 0 1 864 456V452A2 2 0 0 1 866 450Z" fill="#4FD1C5"/>
+<path id="product--panel" data-role="node" d="M59 480H237A2 2 0 0 1 239 482V630A2 2 0 0 1 237 632H59A2 2 0 0 1 57 630V482A2 2 0 0 1 59 480Z" fill="#12335C"/>
+<path id="product--bullet-1" data-role="marker" d="M70 500A2.5 2.5 0 1 1 75 500A2.5 2.5 0 1 1 70 500Z" fill="#DCE7F3"/>
+<text id="product--item-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="81" y="504.5">Cover design</tspan></text>
+<path id="product--bullet-2" data-role="marker" d="M70 519.5A2.5 2.5 0 1 1 75 519.5A2.5 2.5 0 1 1 70 519.5Z" fill="#DCE7F3"/>
+<text id="product--item-2" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="81" y="524">Partner products</tspan></text>
+<path id="pricing--panel" data-role="node" d="M257 480H435A2 2 0 0 1 437 482V630A2 2 0 0 1 435 632H257A2 2 0 0 1 255 630V482A2 2 0 0 1 257 480Z" fill="#1F3245" stroke="#FFC24B" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="pricing--bullet-1" data-role="marker" d="M268 500A2.5 2.5 0 1 1 273 500A2.5 2.5 0 1 1 268 500Z" fill="#FFC24B"/>
+<text id="pricing--item-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="279" y="504.5">Risk models</tspan></text>
+<path id="pricing--bullet-2" data-role="marker" d="M268 519.5A2.5 2.5 0 1 1 273 519.5A2.5 2.5 0 1 1 268 519.5Z" fill="#FFC24B"/>
+<text id="pricing--item-2" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="279" y="524">Rate changes</tspan></text>
+<path id="pricing--bullet-3" data-role="marker" d="M268 539A2.5 2.5 0 1 1 273 539A2.5 2.5 0 1 1 268 539Z" fill="#FFC24B"/>
+<text id="pricing--item-3" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="279" y="543.5">Referral rules</tspan></text>
+<path id="distribution--panel" data-role="node" d="M455 480H633A2 2 0 0 1 635 482V630A2 2 0 0 1 633 632H455A2 2 0 0 1 453 630V482A2 2 0 0 1 455 480Z" fill="#12335C"/>
+<path id="distribution--bullet-1" data-role="marker" d="M466 500A2.5 2.5 0 1 1 471 500A2.5 2.5 0 1 1 466 500Z" fill="#DCE7F3"/>
+<text id="distribution--item-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="477" y="504.5">Aggregators</tspan></text>
+<path id="distribution--bullet-2" data-role="marker" d="M466 519.5A2.5 2.5 0 1 1 471 519.5A2.5 2.5 0 1 1 466 519.5Z" fill="#DCE7F3"/>
+<text id="distribution--item-2" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="477" y="524">Direct web</tspan></text>
+<path id="distribution--bullet-3" data-role="marker" d="M466 539A2.5 2.5 0 1 1 471 539A2.5 2.5 0 1 1 466 539Z" fill="#DCE7F3"/>
+<text id="distribution--item-3" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="477" y="543.5">Brokers</tspan></text>
+<path id="servicing--panel" data-role="node" d="M653 480H831A2 2 0 0 1 833 482V630A2 2 0 0 1 831 632H653A2 2 0 0 1 651 630V482A2 2 0 0 1 653 480Z" fill="#12335C"/>
+<path id="servicing--bullet-1" data-role="marker" d="M664 500A2.5 2.5 0 1 1 669 500A2.5 2.5 0 1 1 664 500Z" fill="#DCE7F3"/>
+<text id="servicing--item-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="675" y="504.5">Renewals</tspan></text>
+<path id="servicing--bullet-2" data-role="marker" d="M664 519.5A2.5 2.5 0 1 1 669 519.5A2.5 2.5 0 1 1 664 519.5Z" fill="#DCE7F3"/>
+<text id="servicing--item-2" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="675" y="524">Mid-term changes</tspan></text>
+<path id="claims--panel" data-role="node" d="M851 480H1029A2 2 0 0 1 1031 482V630A2 2 0 0 1 1029 632H851A2 2 0 0 1 849 630V482A2 2 0 0 1 851 480Z" fill="#1F3245" stroke="#FFC24B" stroke-width="1.5" stroke-linejoin="round"/>
+<path id="claims--bullet-1" data-role="marker" d="M862 500A2.5 2.5 0 1 1 867 500A2.5 2.5 0 1 1 862 500Z" fill="#FFC24B"/>
+<text id="claims--item-1" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="873" y="504.5">First notice of loss</tspan></text>
+<path id="claims--bullet-2" data-role="marker" d="M862 519.5A2.5 2.5 0 1 1 867 519.5A2.5 2.5 0 1 1 862 519.5Z" fill="#FFC24B"/>
+<text id="claims--item-2" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="873" y="524">Triage</tspan></text>
+<path id="claims--bullet-3" data-role="marker" d="M862 539A2.5 2.5 0 1 1 867 539A2.5 2.5 0 1 1 862 539Z" fill="#FFC24B"/>
+<text id="claims--item-3" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F6FB"><tspan x="873" y="543.5">Settlement</tspan></text>
+<path id="outcome" data-role="node" d="M1080 152L1194 152L1232 308L1194 464L1080 464Z" fill="#12335C" stroke="#6E8FB5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="outcome--label" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F6FB" text-anchor="middle"><tspan x="1140" y="294.5">Combined</tspan><tspan x="1140" y="312.5">ratio</tspan></text>
+<text id="outcome--description" data-role="label" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#B8CCE3" text-anchor="middle"><tspan x="1140" y="332.5">Target 92%</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M51 656H65A3 3 0 0 1 68 659V665A3 3 0 0 1 65 668H51A3 3 0 0 1 48 665V659A3 3 0 0 1 51 656Z" fill="#33475A" stroke="#FFC24B" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="74" y="666">Focus area</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M151 656H165A3 3 0 0 1 168 659V665A3 3 0 0 1 165 668H151A3 3 0 0 1 148 665V659A3 3 0 0 1 151 656Z" fill="#1B496B" stroke="#4FD1C5" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="174" y="666">Secondary focus</tspan></text>
+<path id="ds-legend-0-2-swatch" data-role="legend" d="M281.5 656H289.5A6 6 0 0 1 295.5 662V662A6 6 0 0 1 289.5 668H281.5A6 6 0 0 1 275.5 662V662A6 6 0 0 1 281.5 656Z" fill="#414B4C" stroke="#FFD166" stroke-width="1" stroke-linejoin="round"/>
+<text id="ds-legend-0-2-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="301.5" y="666">Changed</tspan></text>
+<path id="ds-legend-0-3-swatch" data-role="legend" d="M367 656H375A2 2 0 0 1 377 658V666A2 2 0 0 1 375 668H367A2 2 0 0 1 365 666V658A2 2 0 0 1 367 656Z" fill="#FFC24B"/>
+<text id="ds-legend-0-3-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="383" y="666">Core</tspan></text>
+<path id="ds-legend-0-4-swatch" data-role="legend" d="M428 656H436A2 2 0 0 1 438 658V666A2 2 0 0 1 436 668H428A2 2 0 0 1 426 666V658A2 2 0 0 1 428 656Z" fill="#4FD1C5"/>
+<text id="ds-legend-0-4-label" data-role="legend" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#B8CCE3"><tspan x="444" y="666">Digital</tspan></text>
+</svg>

@@ -1,0 +1,34 @@
+{
+  "id": "azure",
+  "name": "Azure",
+  "description": "Microsoft Azure reference-architecture style: white canvas, Segoe-compatible Selawik type, black labels, Azure blue structure and green step badges. Default for azure-architecture diagrams.",
+  "extends": null,
+  "color": {
+    "background": "#FFFFFF",
+    "surface": "#F2F2F2",
+    "surfaceAlt": "#E6E6E6",
+    "ink": "#000000",
+    "inkMuted": "#505050",
+    "line": "#A6A6A6",
+    "lineStrong": "#3B3B3B",
+    "accent": "#0078D4",
+    "accentInk": "#FFFFFF",
+    "highlight": "#107C10",
+    "categorical": ["#0078D4", "#107C10", "#8661C5", "#CA5010", "#008575", "#C239B3"],
+    "status": { "new": "#107C10", "changed": "#C19C00", "retired": "#A6A6A6", "atRisk": "#D13438" },
+    "notation": { "step": "#107C10", "stepInk": "#FFFFFF", "network": "#0078D4", "zone": "#FFB900" }
+  },
+  "font": {
+    "family": "Selawik",
+    "officeFamily": "Segoe UI",
+    "files": { "regular": "fonts/Selawik-Regular.ttf", "semibold": "fonts/Selawik-Semibold.ttf" },
+    "size": { "title": 24, "subtitle": 14, "group": 13, "label": 12, "body": 11, "caption": 11 },
+    "weight": { "title": 600, "label": 600, "body": 400 },
+    "titleCase": "sentence",
+    "lineHeight": 1.3
+  },
+  "shape": { "radius": 0, "stroke": 1, "strokeStrong": 1.5, "shadow": "none", "chevronDepth": 16 },
+  "space": { "unit": 8, "gap": 24, "padding": 16, "margin": 40 },
+  "connector": { "style": "orthogonal", "arrow": "triangle", "cornerRadius": 0 },
+  "style": { "renderer": "clean", "showIcons": false, "accentFill": "tint", "headerRule": false, "bandFill": "surface" }
+}

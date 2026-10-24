@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "type": "layered-architecture",
+  "altitude": "management",
+  "title": "A governed data layer lets every team build on the same trusted numbers",
+  "subtitle": "Target data platform, for the investment committee",
+  "body": {
+    "layers": [
+      { "id": "consume", "label": "Use", "description": "Where people see data", "nodes": [
+        { "id": "dashboards", "label": "Dashboards", "description": "Board and management packs" },
+        { "id": "self-serve", "label": "Self-service analysis" },
+        { "id": "models", "label": "AI and forecasting", "status": "new" }
+      ]},
+      { "id": "trusted", "label": "Trusted data", "description": "One version of the truth", "emphasis": "accent", "nodes": [
+        { "id": "metrics", "label": "Shared metrics layer", "description": "Revenue, margin, churn defined once", "status": "new" },
+        { "id": "catalogue", "label": "Data catalogue", "description": "Owners and definitions" }
+      ]},
+      { "id": "ingest", "label": "Collect", "description": "Raw data from source systems", "nodes": [
+        { "id": "erp-feed", "label": "ERP" },
+        { "id": "crm-feed", "label": "CRM" },
+        { "id": "web-feed", "label": "Web & app events" },
+        { "id": "files", "label": "Partner files" }
+      ]}
+    ],
+    "crossCutting": [
+      { "id": "governance", "label": "Data governance", "description": "Owners, quality, access" },
+      { "id": "privacy", "label": "Privacy & security" },
+      { "id": "finops", "label": "Cost controls" }
+    ]
+  }
+}

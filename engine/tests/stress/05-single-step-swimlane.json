@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "type": "swimlane",
+  "altitude": "executive",
+  "title": "A single automated step replaces the old four-team approval chain",
+  "body": {
+    "lanes": [
+      {
+        "id": "system",
+        "label": "Platform"
+      }
+    ],
+    "steps": [
+      {
+        "id": "auto",
+        "lane": "system",
+        "label": "Auto-approve",
+        "shape": "system",
+        "emphasis": "accent"
+      }
+    ],
+    "edges": []
+  }
+}

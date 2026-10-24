@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "type": "matrix-2x2",
+  "altitude": "executive",
+  "title": "Three initiatives deliver most of the value for modest effort",
+  "subtitle": "2027 initiative portfolio by value and effort",
+  "callout": { "text": "Fund the quick wins first; re-scope the data lake before approving it", "anchor": "data-lake" },
+  "body": {
+    "xAxis": { "label": "Effort to deliver", "low": "Low", "high": "High" },
+    "yAxis": { "label": "Value to the business", "low": "Low", "high": "High" },
+    "quadrants": [
+      { "position": "top-left", "label": "Quick wins", "description": "Do now", "emphasis": "accent" },
+      { "position": "top-right", "label": "Major projects", "description": "Plan carefully" },
+      { "position": "bottom-left", "label": "Fill-ins", "description": "Do when capacity allows" },
+      { "position": "bottom-right", "label": "Thankless tasks", "description": "Avoid or re-scope" }
+    ],
+    "items": [
+      { "id": "e-invoicing", "label": "E-invoicing", "x": 0.18, "y": 0.82, "emphasis": "accent" },
+      { "id": "self-service", "label": "Self-service reporting", "x": 0.32, "y": 0.7 },
+      { "id": "auto-recs", "label": "Automated reconciliations", "x": 0.28, "y": 0.58 },
+      { "id": "erp", "label": "ERP upgrade", "x": 0.82, "y": 0.78 },
+      { "id": "data-lake", "label": "Data lake", "x": 0.86, "y": 0.22, "status": "at-risk" },
+      { "id": "policy", "label": "Policy refresh", "x": 0.2, "y": 0.25 }
+    ]
+  }
+}

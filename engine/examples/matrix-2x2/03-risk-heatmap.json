@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "type": "matrix-2x2",
+  "altitude": "management",
+  "title": "Cyber and supplier risks need action now; the rest can be monitored",
+  "subtitle": "Enterprise risk register, Q3 2026",
+  "legend": "auto",
+  "footer": { "source": "Risk committee, September 2026", "classification": "Confidential" },
+  "body": {
+    "xAxis": { "label": "Likelihood", "low": "Rare", "high": "Likely" },
+    "yAxis": { "label": "Impact", "low": "Minor", "high": "Severe" },
+    "quadrants": [
+      { "position": "top-left", "label": "Prepare", "description": "Severe but rare" },
+      { "position": "top-right", "label": "Act now", "description": "Severe and likely", "emphasis": "accent" },
+      { "position": "bottom-left", "label": "Accept", "description": "Minor and rare" },
+      { "position": "bottom-right", "label": "Monitor", "description": "Minor but likely" }
+    ],
+    "items": [
+      { "id": "cyber", "label": "Ransomware attack", "x": 0.74, "y": 0.86, "tags": ["technology"], "status": "at-risk" },
+      { "id": "supplier", "label": "Key supplier failure", "x": 0.62, "y": 0.66, "tags": ["operations"] },
+      { "id": "talent", "label": "Loss of key engineers", "x": 0.82, "y": 0.42, "tags": ["people"] },
+      { "id": "regulation", "label": "New conduct rules", "x": 0.3, "y": 0.78, "tags": ["regulatory"] },
+      { "id": "outage", "label": "Data centre outage", "x": 0.22, "y": 0.6, "tags": ["technology"] },
+      { "id": "fx", "label": "Currency swings", "x": 0.7, "y": 0.18, "tags": ["financial"] },
+      { "id": "brand", "label": "Social media incident", "x": 0.25, "y": 0.28, "tags": ["operations"] }
+    ]
+  }
+}

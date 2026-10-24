@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "type": "operating-model",
+  "altitude": "detailed",
+  "title": "Product teams own delivery end to end while platforms become shared services",
+  "subtitle": "Technology operating model, detailed view for the transformation team",
+  "legend": "auto",
+  "footer": { "source": "Technology strategy refresh, Q3 2026", "classification": "Internal" },
+  "body": {
+    "customers": { "label": "Business areas", "items": ["Retail", "Corporate", "Wealth", "Group functions"] },
+    "layers": [
+      { "id": "products", "label": "Product teams", "description": "Aligned to customer journeys", "nodes": [
+        { "id": "mobile", "label": "Mobile banking", "tags": ["customer-facing"] },
+        { "id": "lending", "label": "Lending journeys", "tags": ["customer-facing"] },
+        { "id": "payments-team", "label": "Payments", "tags": ["customer-facing"], "emphasis": "highlight" },
+        { "id": "advice", "label": "Advice & wealth", "tags": ["customer-facing"] },
+        { "id": "colleague", "label": "Colleague tools", "tags": ["internal"] }
+      ]},
+      { "id": "platforms", "label": "Platform teams", "description": "Shared, self-service", "emphasis": "accent", "nodes": [
+        { "id": "cloud", "label": "Cloud platform", "status": "new", "tags": ["internal"] },
+        { "id": "data-platform", "label": "Data platform", "status": "new", "tags": ["internal"] },
+        { "id": "integration", "label": "Integration", "tags": ["internal"] },
+        { "id": "identity", "label": "Identity & access", "tags": ["internal"] }
+      ]},
+      { "id": "enabling", "label": "Enabling functions", "nodes": [
+        { "id": "architecture", "label": "Architecture" },
+        { "id": "security", "label": "Cyber security", "status": "at-risk" },
+        { "id": "vendor", "label": "Vendor management" },
+        { "id": "mainframe", "label": "Mainframe operations", "status": "retired", "emphasis": "muted" }
+      ]}
+    ],
+    "foundations": ["Engineering standards", "Funding by product", "Service management"],
+    "governance": { "label": "Technology leadership", "description": "Portfolio and risk", "items": ["Architecture board", "Risk committee"] }
+  }
+}
