@@ -6,7 +6,7 @@ import type { Theme } from './types.js';
  *
  *   accent | surface | ink ...      a named colour token
  *   status.new | status.at-risk     status colours
- *   notation.step | notation.network  notation colours (with fallbacks)
+ *   notation.step | notation.network  notation colours (with fallbacks; stageHead has none)
  *   cat.3                           categorical palette entry (wraps)
  *   accent@12                       12% accent over `background`
  *   accent@12:surface               12% accent over `surface`
@@ -82,7 +82,23 @@ export class TokenResolver {
     if (token.startsWith('notation.')) {
       const key = token.slice(9);
       const n = c.notation ?? {};
-      const fallback: Record<string, string> = { step: c.accent, stepInk: c.accentInk, network: c.accent, zone: c.status.changed };
+      const network = n.network ?? c.accent;
+      const fallback: Record<string, string> = {
+        step: c.accent,
+        stepInk: c.accentInk,
+        flow2: c.accent,
+        network,
+        zone: c.status.changed,
+        account: c.lineStrong,
+        cloud: network,
+        plane: c.line,
+        platform: c.surfaceAlt,
+        governance: c.accent,
+        stageHead: c.surfaceAlt,
+        bronze: '#B0753A',
+        silver: '#8C8C8C',
+        gold: '#B8960C',
+      };
       if (!(key in fallback)) throw new Error(`Unknown notation colour token "${token}"`);
       return normalizeHex(n[key as keyof typeof n] ?? fallback[key]);
     }

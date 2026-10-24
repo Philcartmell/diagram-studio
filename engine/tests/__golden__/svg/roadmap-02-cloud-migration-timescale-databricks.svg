@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="databricks" data-altitude="management">
+<title id="ds-svg-title">Most applications move to cloud in 2027, after a six-month foundation phase</title>
+<desc id="ds-svg-desc">Cloud migration plan, horizons drawn to time scale</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1B3139"><tspan x="40" y="63.5">Most applications move to cloud in 2027, after a six-month foundation phase</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#5A6F77"><tspan x="40" y="90">Cloud migration plan, horizons drawn to time scale</tspan></text>
+<path id="found" data-role="phase" data-node="found" d="M190 136H482A4 4 0 0 1 486 140V180A4 4 0 0 1 482 184H190A4 4 0 0 1 186 180V140A4 4 0 0 1 190 136Z" fill="#EEEDE9"/>
+<text id="found--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="336" y="156.5">Foundations</tspan></text>
+<text id="found--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="middle"><tspan x="336" y="171">Q4 2026 – Q1 2027</tspan></text>
+<path id="wave1--column" data-role="decoration" d="M488 232H640V648H488Z" fill="#FBFAF8"/>
+<path id="wave1" data-role="phase" data-node="wave1" d="M494 136H634A4 4 0 0 1 638 140V180A4 4 0 0 1 634 184H494A4 4 0 0 1 490 180V140A4 4 0 0 1 494 136Z" fill="#EEEDE9"/>
+<text id="wave1--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="564" y="156.5">Wave 1</tspan></text>
+<text id="wave1--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="middle"><tspan x="564" y="171">Q2 2027</tspan></text>
+<path id="wave2" data-role="phase" data-node="wave2" d="M646 136H938A4 4 0 0 1 942 140V180A4 4 0 0 1 938 184H646A4 4 0 0 1 642 180V140A4 4 0 0 1 646 136Z" fill="#EEEDE9"/>
+<text id="wave2--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="792" y="156.5">Waves 2–3</tspan></text>
+<text id="wave2--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="middle"><tspan x="792" y="171">H2 2027</tspan></text>
+<path id="exit--column" data-role="decoration" d="M944 232H1240V648H944Z" fill="#FBFAF8"/>
+<path id="exit" data-role="phase" data-node="exit" d="M950 136H1234A4 4 0 0 1 1238 140V180A4 4 0 0 1 1234 184H950A4 4 0 0 1 946 180V140A4 4 0 0 1 950 136Z" fill="#EEEDE9"/>
+<text id="exit--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="1092" y="156.5">Data centre exit</tspan></text>
+<text id="exit--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="middle"><tspan x="1092" y="171">H1 2028</tspan></text>
+<path id="platform" data-role="lane" data-node="platform" d="M48 236H168A8 8 0 0 1 176 244V380A8 8 0 0 1 168 388H48A8 8 0 0 1 40 380V244A8 8 0 0 1 48 236Z" fill="#F9F7F4"/>
+<text id="platform--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="308">Landing zone</tspan></text>
+<text id="platform--owner" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="52" y="325.5">Cloud platform team</tspan></text>
+<path id="apps" data-role="lane" data-node="apps" data-emphasis="accent" d="M48 396H168A8 8 0 0 1 176 404V508A8 8 0 0 1 168 516H48A8 8 0 0 1 40 508V404A8 8 0 0 1 48 396Z" fill="#FFEFED" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="apps--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="452">Applications</tspan></text>
+<text id="apps--owner" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="52" y="469.5">Migration factory</tspan></text>
+<path id="apps--rule" data-role="decoration" d="M40 392L1240 392" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="ops" data-role="lane" data-node="ops" d="M48 524H168A8 8 0 0 1 176 532V636A8 8 0 0 1 168 644H48A8 8 0 0 1 40 636V532A8 8 0 0 1 48 524Z" fill="#F9F7F4"/>
+<text id="ops--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="580">Operations</tspan></text>
+<text id="ops--owner" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="52" y="597.5">Service management</tspan></text>
+<path id="ops--rule" data-role="decoration" d="M40 520L1240 520" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-decision--line" data-role="decoration" d="M640 226L640 648" fill="none" stroke="#618794" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="landing" data-role="node" data-node="landing" data-status="new" d="M200 272H472A8 8 0 0 1 480 280V320A8 8 0 0 1 472 328H200A8 8 0 0 1 192 320V280A8 8 0 0 1 200 272Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="landing--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="204" y="315">Build landing zone</tspan></text>
+<path id="landing--badge" data-role="badge" d="M444 278H466A8 8 0 0 1 474 286V286A8 8 0 0 1 466 294H444A8 8 0 0 1 436 286V286A8 8 0 0 1 444 278Z" fill="#C2DED3" stroke="#00875C" stroke-width="1" stroke-linejoin="round"/>
+<text id="landing--badge-text" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="455" y="290">New</tspan></text>
+<path id="finops" data-role="node" data-node="finops" d="M504 272H928A8 8 0 0 1 936 280V320A8 8 0 0 1 928 328H504A8 8 0 0 1 496 320V280A8 8 0 0 1 504 272Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="finops--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="508" y="304">FinOps and cost controls</tspan></text>
+<path id="pilot" data-role="node" data-node="pilot" d="M504 432H624A8 8 0 0 1 632 440V480A8 8 0 0 1 624 488H504A8 8 0 0 1 496 480V440A8 8 0 0 1 504 432Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="pilot--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="508" y="464">12 pilot apps</tspan></text>
+<path id="bulk" data-role="node" data-node="bulk" data-emphasis="accent" d="M656 432H928A8 8 0 0 1 936 440V480A8 8 0 0 1 928 488H656A8 8 0 0 1 648 480V440A8 8 0 0 1 656 432Z" fill="#FADCD6" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="bulk--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="660" y="455">180 apps in two waves</tspan></text>
+<text id="bulk--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="660" y="473.5">70% of estate</tspan></text>
+<path id="tail" data-role="node" data-node="tail" d="M960 432H1224A8 8 0 0 1 1232 440V480A8 8 0 0 1 1224 488H960A8 8 0 0 1 952 480V440A8 8 0 0 1 960 432Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="tail--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="964" y="464">Retire or rehost the tail</tspan></text>
+<path id="runbooks" data-role="node" data-node="runbooks" d="M200 560H624A8 8 0 0 1 632 568V608A8 8 0 0 1 624 616H200A8 8 0 0 1 192 608V568A8 8 0 0 1 200 560Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="runbooks--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="204" y="592">Cloud runbooks</tspan></text>
+<path id="decom" data-role="node" data-node="decom" data-status="at-risk" d="M960 560H1224A8 8 0 0 1 1232 568V608A8 8 0 0 1 1224 616H960A8 8 0 0 1 952 608V568A8 8 0 0 1 960 560Z" fill="#F9F7F4" stroke="#98102A" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="decom--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="964" y="603">Decommission data centre</tspan></text>
+<path id="decom--badge" data-role="badge" d="M1185 566H1218A8 8 0 0 1 1226 574V574A8 8 0 0 1 1218 582H1185A8 8 0 0 1 1177 574V574A8 8 0 0 1 1185 566Z" fill="#E4C4C8" stroke="#98102A" stroke-width="1" stroke-linejoin="round"/>
+<text id="decom--badge-text" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="1201.5" y="578">At risk</tspan></text>
+<path id="ds-track" data-role="decoration" d="M184 218L1240 218" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="go-decision" data-role="marker" data-node="go-decision" d="M640 210L648 218L640 226L632 218Z" fill="#FFFFFF" stroke="#618794" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="go-decision--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="650" y="211.5">Wave go/no-go</tspan></text>
+<path id="exit-date" data-role="marker" data-node="exit-date" data-emphasis="accent" d="M1220 208L1230 218L1220 228L1210 218Z" fill="#FF3621" stroke="#FF3621" stroke-width="1" stroke-linejoin="round"/>
+<text id="exit-date--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="end"><tspan x="1208" y="211.5">Lease ends</tspan></text>
+<path id="zone-ready" data-role="marker" data-node="zone-ready" d="M488 360L496 368L488 376L480 368Z" fill="#618794" stroke="#618794" stroke-width="1" stroke-linejoin="round"/>
+<text id="zone-ready--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="502" y="372">Landing zone ready</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="40" y="676.5">Source: Migration factory plan v3 · Note: Dates are end of month</tspan></text>
+</svg>

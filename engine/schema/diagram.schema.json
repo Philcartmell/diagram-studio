@@ -10,7 +10,7 @@
     "$schema": { "type": "string" },
     "version": { "const": "1.0", "description": "Schema version." },
     "type": {
-      "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture"]
+      "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture"]
     },
     "altitude": { "enum": ["executive", "management", "detailed"] },
     "theme": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
@@ -58,7 +58,8 @@
     { "properties": { "type": { "const": "value-chain" }, "body": { "$ref": "types/value-chain.schema.json" } } },
     { "properties": { "type": { "const": "matrix-2x2" }, "body": { "$ref": "types/matrix-2x2.schema.json" } } },
     { "properties": { "type": { "const": "layered-architecture" }, "body": { "$ref": "types/layered-architecture.schema.json" } } },
-    { "properties": { "type": { "const": "azure-architecture" }, "body": { "$ref": "types/azure-architecture.schema.json" } } }
+    { "properties": { "type": { "const": "azure-architecture" }, "body": { "$ref": "types/azure-architecture.schema.json" } } },
+    { "properties": { "type": { "const": "databricks-architecture" }, "body": { "$ref": "types/databricks-architecture.schema.json" } } }
   ],
   "$defs": {
     "id": {

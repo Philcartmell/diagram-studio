@@ -1,7 +1,8 @@
 /**
  * The Azure icon catalog: official Azure architecture icons (assets/azure-icons),
  * neutral glyphs for non-Azure participants, and user-supplied icons dropped into
- * azure-icons/ in the user folder. Built by tools/build-azure-icons.mjs.
+ * azure-icons/ in the user folder. Built by tools/build-azure-icons.mjs. Services
+ * resolve here for both icon packs: Azure, and Databricks (../databricks/icons.ts).
  *
  * Microsoft's terms for these icons: use one only for the product it was designed
  * for, never crop, flip, rotate, distort or recolour it, and show the full service
@@ -9,7 +10,8 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { closest, dirs, humanize, isPlainObject } from '../util.js';
+import { databricksIconFile, databricksIconInfo, databricksNames, databricksSlug } from '../databricks/icons.js';
+import { closest, dirs, humanize, isPlainObject, scoreFields } from '../util.js';
 
 export interface AzureIconInfo {
   label: string;
@@ -32,10 +34,29 @@ interface Catalog {
   arm: Record<string, string>;
 }
 
+/** The icon packs a service name can come from. A diagram type has a home pack, tried first. */
+export type IconPack = 'azure' | 'databricks';
+
 export type ResolvedService =
   | { kind: 'azure'; id: string; label: string; category: string; file: string }
+  /** id is "databricks:<slug>", so canonical ids never clash with Azure ones. */
+  | { kind: 'databricks'; id: string; label: string; category: string; file: string }
   | { kind: 'generic'; id: string; label: string; glyph: string }
   | { kind: 'missing'; id: string; label: string; note: string };
+
+export type ProductIcon = Extract<ResolvedService, { file: string }>;
+
+/** An official product icon (Azure, Databricks or custom), drawn in its own colours. */
+export function isProductIcon(r: ResolvedService | undefined): r is ProductIcon {
+  return r?.kind === 'azure' || r?.kind === 'databricks';
+}
+
+const PREFIX = /^(azure|databricks):(.+)$/;
+
+/** The pack a diagram type tries first for unprefixed names. */
+export function homePackOf(type: string): IconPack {
+  return type === 'databricks-architecture' ? 'databricks' : 'azure';
+}
 
 const ICON_DIR = () => path.join(dirs.assets, 'azure-icons');
 
@@ -86,11 +107,27 @@ export function resetAzureIcons(): void {
   symbolCache.clear();
 }
 
-/** Resolve an icon id or alias (case-insensitive) to an Azure icon, generic glyph or a missing-icon note. */
-export function resolveService(name: string): ResolvedService | undefined {
+/**
+ * Resolve an icon id or alias (case-insensitive) to an Azure or Databricks icon, a generic
+ * glyph or a missing-icon note. "databricks:" or "azure:" picks the pack; otherwise the
+ * home pack is tried first, so a name both packs know ("ai-search") follows the diagram type.
+ */
+export function resolveService(name: string, home: IconPack = 'azure'): ResolvedService | undefined {
+  const key = name.trim().toLowerCase();
+  const m = PREFIX.exec(key);
+  if (m) return m[1] === 'databricks' ? resolveDatabricks(m[2]) : resolveAzure(m[2]);
+  return home === 'databricks' ? (resolveDatabricks(key) ?? resolveAzure(key)) : (resolveAzure(key) ?? resolveDatabricks(key));
+}
+
+function resolveDatabricks(key: string): ResolvedService | undefined {
+  const slug = databricksSlug(key);
+  const info = slug ? databricksIconInfo(slug) : undefined;
+  return slug && info ? { kind: 'databricks', id: `databricks:${slug}`, label: info.label, category: info.category, file: databricksIconFile(slug) } : undefined;
+}
+
+function resolveAzure(key: string): ResolvedService | undefined {
   const c = load();
   const cu = loadCustom();
-  const key = name.trim().toLowerCase();
   const direct = (id: string): ResolvedService | undefined => {
     const own = cu.get(id);
     if (own) return { kind: 'azure', id, label: own.label, category: 'custom', file: own.file };
@@ -109,18 +146,23 @@ export function resolveService(name: string): ResolvedService | undefined {
   return alias ? direct(alias) : undefined;
 }
 
-/** Every id and alias, for "did you mean" suggestions. */
-export function serviceNames(): string[] {
+/** Every id and alias, for "did you mean" suggestions; the other pack's names carry its prefix. */
+export function serviceNames(home: IconPack = 'azure'): string[] {
   const c = load();
-  return [...Object.keys(c.icons), ...Object.keys(c.generic), ...Object.keys(c.aliases), ...loadCustom().keys()];
+  const azure = [...Object.keys(c.icons), ...Object.keys(c.generic), ...Object.keys(c.aliases), ...loadCustom().keys()];
+  const dbx = databricksNames();
+  return home === 'databricks' ? [...dbx, ...azure] : [...azure, ...dbx.map((n) => `databricks:${n}`)];
 }
 
-export function suggestService(name: string): string | undefined {
-  const key = name.trim().toLowerCase();
-  const names = serviceNames();
+export function suggestService(name: string, home: IconPack = 'azure'): string | undefined {
+  const key = name.trim().toLowerCase().replace(PREFIX, '$2');
+  const names = serviceNames(home);
+  // Compare without pack prefixes, then suggest the name as it must be written (home pack first).
+  const bare = names.map((n) => n.replace(PREFIX, '$2'));
+  const written = (b: string | undefined) => (b === undefined ? undefined : names[bare.indexOf(b)]);
   // Prefer a containment match ("kubernetes" → "kubernetes-services") over edit distance.
-  const contained = names.filter((n) => n.includes(key) || key.includes(n)).sort((a, b) => a.length - b.length);
-  return closest(key, names) ?? contained[0];
+  const contained = bare.filter((n) => n.includes(key) || key.includes(n)).sort((a, b) => a.length - b.length);
+  return written(closest(key, bare) ?? contained[0]);
 }
 
 export interface IconSearchHit {
@@ -143,21 +185,7 @@ export function searchServices(query: string, limit = 25): IconSearchHit[] {
   const exact = (id: string, aliases: string[] = [], arm: string[] = []) =>
     (id === joined || aliases.includes(joined) ? 20 : 0) + (arm.includes(q) ? 20 : arm.some((t) => t.startsWith(`${q}#`)) ? 10 : 0);
   const hits: IconSearchHit[] = [];
-  const score = (fields: string[]): number => {
-    let s = 0;
-    for (const w of words) {
-      let best = 0;
-      for (const [i, f] of fields.entries()) {
-        const fl = f.toLowerCase();
-        if (fl === w) best = Math.max(best, 10 - i);
-        else if (fl.startsWith(w)) best = Math.max(best, 6 - i * 0.5);
-        else if (fl.includes(w)) best = Math.max(best, 3 - i * 0.25);
-      }
-      if (!best) return 0;
-      s += best;
-    }
-    return s;
-  };
+  const score = (fields: string[]): number => scoreFields(words, fields);
   for (const [id, ic] of Object.entries(c.icons)) {
     const s = words.length ? score([id, ic.label, ...(ic.aliases ?? []), ic.category, ...(ic.arm ?? [])]) : 1;
     if (s > 0) hits.push({ id, label: ic.label, category: ic.category, kind: 'azure', aliases: ic.aliases, arm: ic.arm, score: s + (ic.curated ? 1 : 0) + exact(id, ic.aliases, ic.arm) });
@@ -217,12 +245,18 @@ export interface IconSymbol {
 
 const symbolCache = new Map<string, IconSymbol>();
 
-/** The normalised SVG of a resolved Azure (or custom) icon. */
+/** The id of an icon's <symbol> in an SVG document ("ds-az-key-vaults", "ds-dbx-unity-catalog"). */
+export function iconSymbolId(id: string): string {
+  const m = PREFIX.exec(id);
+  return m?.[1] === 'databricks' ? `ds-dbx-${m[2]}` : `ds-az-${m ? m[2] : id}`;
+}
+
+/** The normalised SVG of a resolved product icon (Azure, Databricks or custom), by canonical id. */
 export function iconSymbol(id: string): IconSymbol | undefined {
   const hit = symbolCache.get(id);
   if (hit) return hit;
   const r = resolveService(id);
-  if (!r || r.kind !== 'azure') return undefined;
+  if (!isProductIcon(r)) return undefined;
   let svg = fs.readFileSync(r.file, 'utf8').trim();
   const root = /<svg\b[^>]*>/.exec(svg);
   if (!root) return undefined;

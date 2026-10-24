@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "type": "databricks-architecture",
+  "altitude": "management",
+  "title": "Customer data stays in the customer's cloud account",
+  "subtitle": "Classic Databricks workspace deployment on Azure",
+  "body": {
+    "layout": "row",
+    "children": [
+      { "id": "users", "service": "users", "label": "Users and applications" },
+      {
+        "id": "databricks",
+        "boundary": "databricks-account",
+        "layout": "column",
+        "children": [
+          {
+            "id": "control",
+            "boundary": "plane",
+            "label": "Control plane",
+            "layout": "row",
+            "children": [
+              { "id": "web-app", "service": "workspace", "label": "Web application" },
+              { "id": "catalog", "service": "unity-catalog" },
+              { "id": "orchestration", "service": "lakeflow-jobs", "label": "Compute orchestration" }
+            ]
+          },
+          { "id": "serverless", "boundary": "plane", "label": "Serverless compute plane", "children": [{ "id": "serverless-compute", "service": "serverless-compute" }] }
+        ]
+      },
+      {
+        "id": "subscription",
+        "boundary": "cloud-account",
+        "label": "Your Azure subscription",
+        "layout": "column",
+        "children": [
+          { "id": "classic", "boundary": "plane", "label": "Classic compute plane", "children": [{ "id": "clusters", "service": "compute-clusters" }] },
+          { "id": "storage", "boundary": "plane", "label": "Workspace storage", "children": [{ "id": "adls", "service": "storage-accounts", "label": "ADLS Gen2" }] }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "users", "to": "web-app", "step": 1 },
+      { "from": "orchestration", "to": "clusters", "step": 2 },
+      { "from": "clusters", "to": "adls", "step": 3 },
+      { "from": "serverless-compute", "to": "adls", "step": 4 }
+    ],
+    "steps": [
+      { "step": 1, "text": "Users and applications work in the workspace web application." },
+      { "step": 2, "text": "The control plane starts clusters in the customer's subscription." },
+      { "step": 3, "text": "Clusters read and write data in the customer's storage account." },
+      { "step": 4, "text": "Serverless compute reaches the same storage over secure links." }
+    ]
+  }
+}

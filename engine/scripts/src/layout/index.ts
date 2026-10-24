@@ -25,6 +25,8 @@ const LAYOUTS: Record<DiagramType, LayoutFn> = {
   'matrix-2x2': layoutMatrix,
   'layered-architecture': layoutLayeredArchitecture,
   'azure-architecture': layoutAzureArchitecture,
+  // One body format and one layout for both architecture types; the type sets the home icon pack and theme.
+  'databricks-architecture': layoutAzureArchitecture,
 };
 
 export interface LayoutResult {
@@ -42,7 +44,7 @@ export async function layout(spec: Spec, theme: Theme, fonts: FontSet): Promise<
   const grid = ctx.els.find((e) => e.kind === 'grid');
   if (grid && grid.kind === 'grid') grid.h = ctx.H;
   const workflow =
-    spec.type === 'azure-architecture' ? ((spec.body as unknown as AzureArchitectureBody).steps ?? []).map((s) => `${s.step}. ${s.text}`) : [];
+    spec.type === 'azure-architecture' || spec.type === 'databricks-architecture' ? ((spec.body as unknown as AzureArchitectureBody).steps ?? []).map((s) => `${s.step}. ${s.text}`) : [];
   const notes = [spec.subtitle, spec.callout?.text ? `So what: ${spec.callout.text}` : undefined, ...(workflow.length ? ['Workflow:', ...workflow] : [])]
     .filter(Boolean)
     .join('\n');

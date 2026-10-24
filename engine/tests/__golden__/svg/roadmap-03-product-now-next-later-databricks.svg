@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="roadmap" data-theme="databricks" data-altitude="executive">
+<title id="ds-svg-title">Self-service onboarding comes first; pricing changes wait for the new data</title>
+<desc id="ds-svg-desc">Self-service onboarding comes first; pricing changes wait for the new data</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1B3139"><tspan x="40" y="63.5">Self-service onboarding comes first; pricing changes wait for the new data</tspan></text>
+<path id="now" data-role="phase" data-node="now" d="M190 112H530A4 4 0 0 1 534 116V140A4 4 0 0 1 530 144H190A4 4 0 0 1 186 140V116A4 4 0 0 1 190 112Z" fill="#EEEDE9"/>
+<text id="now--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="360" y="132">Now</tspan></text>
+<path id="next--column" data-role="decoration" d="M536 192H888V528H536Z" fill="#FBFAF8"/>
+<path id="next" data-role="phase" data-node="next" d="M542 112H882A4 4 0 0 1 886 116V140A4 4 0 0 1 882 144H542A4 4 0 0 1 538 140V116A4 4 0 0 1 542 112Z" fill="#EEEDE9"/>
+<text id="next--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="712" y="132">Next</tspan></text>
+<path id="later" data-role="phase" data-node="later" d="M894 112H1234A4 4 0 0 1 1238 116V140A4 4 0 0 1 1234 144H894A4 4 0 0 1 890 140V116A4 4 0 0 1 894 112Z" fill="#EEEDE9"/>
+<text id="later--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="1064" y="132">Later</tspan></text>
+<path id="acquire" data-role="lane" data-node="acquire" d="M48 196H168A8 8 0 0 1 176 204V292A8 8 0 0 1 168 300H48A8 8 0 0 1 40 292V204A8 8 0 0 1 48 196Z" fill="#F9F7F4"/>
+<text id="acquire--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="252.5">Acquire</tspan></text>
+<path id="engage" data-role="lane" data-node="engage" d="M48 308H168A8 8 0 0 1 176 316V404A8 8 0 0 1 168 412H48A8 8 0 0 1 40 404V316A8 8 0 0 1 48 308Z" fill="#F9F7F4"/>
+<text id="engage--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="364.5">Engage</tspan></text>
+<path id="engage--rule" data-role="decoration" d="M40 304L1240 304" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="monetise" data-role="lane" data-node="monetise" d="M48 420H168A8 8 0 0 1 176 428V516A8 8 0 0 1 168 524H48A8 8 0 0 1 40 516V428A8 8 0 0 1 48 420Z" fill="#F9F7F4"/>
+<text id="monetise--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="52" y="476.5">Monetise</tspan></text>
+<path id="monetise--rule" data-role="decoration" d="M40 416L1240 416" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch--line" data-role="decoration" d="M536 186L536 528" fill="none" stroke="#618794" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="self-onboard" data-role="node" data-node="self-onboard" data-emphasis="accent" d="M200 232H520A8 8 0 0 1 528 240V264A8 8 0 0 1 520 272H200A8 8 0 0 1 192 264V240A8 8 0 0 1 200 232Z" fill="#FADCD6" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="self-onboard--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="204" y="256">Self-service onboarding</tspan></text>
+<path id="referrals" data-role="node" data-node="referrals" d="M552 232H1224A8 8 0 0 1 1232 240V264A8 8 0 0 1 1224 272H552A8 8 0 0 1 544 264V240A8 8 0 0 1 552 232Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="referrals--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="556" y="256">Referral programme</tspan></text>
+<path id="insights" data-role="node" data-node="insights" d="M200 344H872A8 8 0 0 1 880 352V376A8 8 0 0 1 872 384H200A8 8 0 0 1 192 376V352A8 8 0 0 1 200 344Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="insights--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="204" y="368">Usage insights</tspan></text>
+<path id="pricing" data-role="node" data-node="pricing" data-emphasis="highlight" d="M904 456H1224A8 8 0 0 1 1232 464V488A8 8 0 0 1 1224 496H904A8 8 0 0 1 896 488V464A8 8 0 0 1 904 456Z" fill="#DBE4EB" stroke="#2272B4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="pricing--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139"><tspan x="908" y="480">Usage-based pricing</tspan></text>
+<path id="ds-track" data-role="decoration" d="M184 178L1240 178" fill="none" stroke="#A3AFB4" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="launch" data-role="marker" data-node="launch" d="M536 170L544 178L536 186L528 178Z" fill="#FFFFFF" stroke="#618794" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="launch--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="546" y="171.5">Public launch</tspan></text>
+</svg>

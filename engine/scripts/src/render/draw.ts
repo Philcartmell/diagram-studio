@@ -52,9 +52,9 @@ export interface IconPrim {
   sw: number;
 }
 
-/** An official Azure icon, drawn from its own SVG at a square size. */
-export interface AzureIconPrim {
-  t: 'azure';
+/** An official product icon (Azure or Databricks), drawn from its own SVG at a square size. */
+export interface ProductIconPrim {
+  t: 'product';
   icon: string;
   x: number;
   y: number;
@@ -71,7 +71,7 @@ export interface GridPrim {
   color: string;
 }
 
-export type Prim = PathPrim | TextPrim | IconPrim | AzureIconPrim | GridPrim;
+export type Prim = PathPrim | TextPrim | IconPrim | ProductIconPrim | GridPrim;
 
 export interface DrawItem {
   id: string;
@@ -301,8 +301,8 @@ function drawElement(e: SceneElement, sketch: SketchPainter | undefined, fonts: 
       return { id: e.id, role: e.role, prims, data: Object.keys(data).length ? data : undefined };
     }
     case 'icon': {
-      if (e.set === 'azure') {
-        return { id: e.id, role: 'icon', prims: [{ t: 'azure', icon: e.name, x: half(e.x), y: half(e.y), size: half(e.size) }] };
+      if (e.set === 'product') {
+        return { id: e.id, role: 'icon', prims: [{ t: 'product', icon: e.name, x: half(e.x), y: half(e.y), size: half(e.size) }] };
       }
       const paths = iconPaths(e.name);
       if (!paths) return null;

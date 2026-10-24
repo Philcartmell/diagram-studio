@@ -81,7 +81,7 @@
       "properties": {
         "id": { "$ref": "../diagram.schema.json#/$defs/id" },
         "label": { "type": "string", "minLength": 1, "maxLength": 80 },
-        "service": { "type": "string", "pattern": "^[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 64 },
+        "service": { "type": "string", "pattern": "^((azure|databricks):)?[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 75 },
         "icon": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
         "description": { "type": "string", "minLength": 1, "maxLength": 300 },
         "emphasis": { "$ref": "../diagram.schema.json#/$defs/emphasis" },
@@ -95,10 +95,10 @@
       "required": ["id", "children"],
       "properties": {
         "id": { "$ref": "../diagram.schema.json#/$defs/id" },
-        "boundary": { "enum": ["azure", "on-premises", "region", "subscription", "resource-group", "virtual-network", "subnet", "zone", "group", "service"] },
+        "boundary": { "enum": ["azure", "on-premises", "region", "subscription", "resource-group", "virtual-network", "subnet", "zone", "group", "service", "databricks-account", "cloud-account", "plane", "workspace", "unity-catalog", "platform", "panel", "stage", "bronze", "silver", "gold"] },
         "label": { "type": "string", "minLength": 1, "maxLength": 60 },
         "description": { "type": "string", "minLength": 1, "maxLength": 60 },
-        "service": { "type": "string", "pattern": "^[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 64 },
+        "service": { "type": "string", "pattern": "^((azure|databricks):)?[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$", "maxLength": 75 },
         "layout": { "$ref": "#/$defs/layout" },
         "columns": { "$ref": "#/$defs/columns" },
         "nsg": { "type": "boolean" },

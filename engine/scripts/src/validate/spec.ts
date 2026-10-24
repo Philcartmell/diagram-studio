@@ -3,6 +3,7 @@
  * limits. Every problem is a plain sentence with a JSON path.
  */
 import { iconNames, iconPaths } from '../render/icons.js';
+import { homePackOf } from '../azure/icons.js';
 import { azureLabel, azureNodes, checkAzure } from './azure.js';
 import type {
   Altitude,
@@ -68,9 +69,10 @@ export function countedNodes(spec: Spec): CountedNode[] {
       (b as unknown as MatrixBody).items.forEach((s, i) => push(`body.items[${i}]`, s));
       break;
     case 'azure-architecture':
+    case 'databricks-architecture':
       // Services and boxes count; boundaries frame them and do not.
       for (const { node, path } of azureNodes(b as unknown as AzureArchitectureBody))
-        push(path, { ...node, label: azureLabel(node) ?? node.id });
+        push(path, { ...node, label: azureLabel(node, homePackOf(spec.type)) ?? node.id });
       break;
   }
   return out;
@@ -228,7 +230,8 @@ function crossReferences(spec: Spec, errors: Issue[], warnings: Issue[]) {
       break;
     }
     case 'azure-architecture':
-      checkAzure(spec.body as unknown as AzureArchitectureBody, err, warn);
+    case 'databricks-architecture':
+      checkAzure(spec.body as unknown as AzureArchitectureBody, err, warn, homePackOf(spec.type));
       break;
     default:
       break;
@@ -313,14 +316,16 @@ function titleChecks(spec: Spec, warnings: Issue[]) {
   }
 }
 
+const VENDOR_THEME: Partial<Record<Spec['type'], string>> = { 'azure-architecture': 'azure', 'databricks-architecture': 'databricks' };
+
 /** Apply defaults from the spec, the user's defaults file and the PRD. */
 export function withDefaults(spec: Spec, themeOverride?: string): Spec {
   const d = loadDefaults();
   return {
     ...spec,
     altitude: spec.altitude ?? d.altitude ?? 'executive',
-    // Azure diagrams default to the Microsoft reference look rather than the saved default.
-    theme: themeOverride ?? spec.theme ?? (spec.type === 'azure-architecture' ? 'azure' : undefined) ?? d.theme ?? 'boardroom',
+    // Architecture diagrams default to their vendor's look rather than the saved default.
+    theme: themeOverride ?? spec.theme ?? VENDOR_THEME[spec.type] ?? d.theme ?? 'boardroom',
     legend: spec.legend ?? 'auto',
     canvas: { aspect: spec.canvas?.aspect ?? '16:9' },
   };

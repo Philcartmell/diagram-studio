@@ -12,7 +12,7 @@ import { Resvg } from '@resvg/resvg-js';
 import { iconSvgAt } from '../azure/icons.js';
 
 const azurePng = new Map<string, Buffer>();
-/** Azure icons are full-colour SVG with gradients: embed a crisp 256 px raster of each. */
+/** Product icons (Azure, Databricks) are full-colour SVG with gradients: embed a crisp 256 px raster of each. */
 function azureIconPng(icon: string): Buffer | undefined {
   let png = azurePng.get(icon);
   if (!png) {
@@ -90,7 +90,7 @@ export async function renderPdf(scene: Scene, theme: Theme, fonts: FontSet): Pro
           doc.restore();
           break;
         }
-        case 'azure': {
+        case 'product': {
           const png = azureIconPng(p.icon);
           if (png) doc.image(png, p.x, p.y, { width: p.size, height: p.size });
           break;

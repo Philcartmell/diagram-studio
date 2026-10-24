@@ -1,24 +1,25 @@
 # Roadmap
 
-Where Diagram Studio is going. Version 1.0.0 has the engine, the `azure` and `business` skills, the live preview board, and one shared version for the npm package and the plugin.
+Where Diagram Studio is going. Version 1.0.0 has the engine, the `azure`, `databricks` and `business` skills, the live preview board, and one shared version for the npm package and the plugin.
 
 Every skill works from the same **session folder** (`diagrams/<name>/`: `brief.md`, `concepts/`, `working/`, `history/`, `exports/`). The skill writes it, the engine renders into it, and each view (the browser board now, a Claude Code pane later) only reads it. Keeping that contract stable lets each item below ship on its own.
 
 ## Go public
 
-- Check Microsoft's terms for redistributing the Azure icons in a public npm package.
+- Check Microsoft's terms for redistributing the Azure icons, and Databricks' brand guidelines for the Databricks artwork, in a public npm package.
 - Make the repository public, publish 1.0.0 to npm and turn on trusted publishing (see [RELEASING.md](RELEASING.md)).
 - Optionally submit the plugin to Anthropic's plugin directory, which requires a name nobody else has listed there.
 - `pptxgenjs` depends on a version of `image-size` with a denial-of-service advisory for formats the engine never passes it (JXL, HEIF, ICNS). Update when `pptxgenjs` moves to a fixed version.
 
-## Databricks
+## Databricks follow-ups
 
-A `databricks` skill, built the way the Azure one was:
+The `databricks` skill, the `databricks-architecture` type, the icon catalog and the theme shipped in 1.0.0. Next, from the style analysis:
 
-- **Define good.** Study a set of Databricks reference architectures shape by shape, as the Azure style was built from 14 Microsoft diagrams, and write the definition down as `engine/references/databricks-style.md`, with a self-review checklist.
-- **Icons.** Find Databricks' official architecture icons and their terms, and add them as a second icon pack. Azure Databricks diagrams need both packs side by side.
-- **Layout.** Generalise the `azure-architecture` layout (nested boundaries, icons, numbered flows) into a shared architecture core with per-vendor icon packs and boundary kinds (workspace, Unity Catalog, medallion layers), rather than writing a second layout.
-- **Skill.** `plugins/diagram-studio/skills/databricks/`, with its own questions, concepts and refining vocabulary.
+- **Capability chips.** Databricks' own reference maps show capabilities as green text chips inside white panels rather than icons. A chip node look would let a platform map match them exactly.
+- **Use-case overlays.** Databricks fades the unused panels of the reference map and draws one or two paths across it. `"emphasis": "muted"` already fades a panel; a documented overlay pattern (and an example) would make it routine.
+- **Badges on the line.** Databricks puts ringed step badges on the path; the engine places filled badges beside it, as Microsoft does.
+- **Draft from a deployment.** As `azure import` drafts from ARM, draft a topology from a Databricks asset bundle, Terraform state or the workspace API.
+- **More examples:** RAG, MLOps across dev, staging and production workspaces, Private Link on Azure.
 
 ## Azure follow-ups
 
@@ -30,7 +31,7 @@ A `databricks` skill, built the way the Azure one was:
 
 - **Auto-render hook:** a `PostToolUse` hook in the plugin renders any spec under `diagrams/**` that Claude writes and hands the QA result back, so the board updates even if Claude skips a step.
 - **Point and say:** spec ids are already SVG element ids. The board draws the SVG inline, so clicking a box can show its id and label and write `diagrams/<name>/.selection.json`. "Make *this* the accent" then needs no naming.
-- **Visual history:** keep the SVG with each `history/vNN` snapshot and show a strip of versions on the board for "go back to v3".
+- **Visual history:** the board already shows every rendered folder as a thumbnail strip, newest first. Keep the SVG with each `history/vNN` snapshot too, so the strip can show every version of the working design for "go back to v3".
 
 ## A pane inside Claude Code
 

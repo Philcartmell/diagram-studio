@@ -9,7 +9,7 @@
  * service slides within its slot to line up with what it connects to, so most
  * connectors run straight. The orthogonal router draws the flows last.
  */
-import { resolveService } from '../azure/icons.js';
+import { type IconPack, homePackOf, isProductIcon, resolveService } from '../azure/icons.js';
 import type { Box, Dash, Point, ShapeKind, Side, TextEl } from '../scene/types.js';
 import {
   type AzureArchitectureBody,
@@ -24,6 +24,7 @@ import {
 } from '../spec.js';
 import { STATUS_LABEL, badgeLook, nodeLook } from '../theme/paint.js';
 import type { Token } from '../theme/tokens.js';
+import type { Theme } from '../theme/types.js';
 import { snap, snapUp } from '../util.js';
 import { boundaryLabel, stepKey } from '../validate/azure.js';
 import { type LayoutContext, type TextStyle, addShape, addText, fitIssue, lh, styles, textWidth, wrap } from './context.js';
@@ -63,13 +64,20 @@ interface BoundaryStyle {
   fill: Token;
   dash?: Dash;
   width: number;
-  /** Azure icon id shown in the header. */
+  /** Canonical icon id (Azure, or "databricks:<slug>") shown in the header. */
   icon?: string;
   strong: boolean;
   align: 'start' | 'middle';
+  /** A filled bar behind the header (Databricks stage columns). */
+  headFill?: Token;
+  /** Square corners regardless of the theme radius. */
+  square?: boolean;
 }
 
-function boundaryStyle(kind: AzureBoundaryKind, onFill: boolean): BoundaryStyle {
+/** The Databricks mark for a boundary: the Azure Databricks service icon in Azure diagrams, Databricks' own artwork otherwise. */
+const dbxIcon = (home: IconPack, product: 'databricks' | 'workspace') => (home === 'azure' ? 'azure-databricks' : `databricks:${product}`);
+
+function boundaryStyle(kind: AzureBoundaryKind, onFill: boolean, home: IconPack, theme: Theme): BoundaryStyle {
   switch (kind) {
     case 'azure':
       return { stroke: 'notation.network', fill: 'none', dash: 'dashed', width: 1.5, strong: true, align: 'start' };
@@ -90,7 +98,30 @@ function boundaryStyle(kind: AzureBoundaryKind, onFill: boolean): BoundaryStyle 
     case 'group':
       return { stroke: 'line', fill: 'none', dash: 'dashed', width: 1, strong: false, align: 'middle' };
     case 'service':
-      return { stroke: 'line', fill: onFill ? 'background' : 'surface@60', width: 1, strong: true, align: 'start' };
+      return { stroke: 'line', fill: onFill ? 'background' : 'surface@60', width: 1, strong: true, align: 'start', square: true };
+    case 'databricks-account':
+      return { stroke: 'notation.account', fill: 'none', dash: 'dashed', width: 1.5, icon: dbxIcon(home, 'databricks'), strong: true, align: 'start' };
+    case 'cloud-account':
+      return { stroke: 'notation.cloud', fill: 'none', dash: 'dashed', width: 1.5, strong: true, align: 'start' };
+    case 'plane':
+      return { stroke: 'notation.plane', fill: 'background', width: 1, strong: true, align: 'start' };
+    case 'workspace':
+      return { stroke: 'notation.plane', fill: 'background', width: 1, icon: dbxIcon(home, 'workspace'), strong: true, align: 'start' };
+    case 'unity-catalog':
+      return { stroke: 'notation.governance', fill: onFill ? 'background' : 'notation.governance@5', width: 1.5, icon: 'databricks:unity-catalog', strong: true, align: 'start' };
+    case 'platform':
+      return { stroke: 'none', fill: 'notation.platform', width: 0, icon: dbxIcon(home, 'databricks'), strong: true, align: 'start' };
+    case 'panel':
+      return { stroke: 'none', fill: 'background', width: 0, strong: true, align: 'middle' };
+    case 'stage':
+      // Databricks draws a lane as a grey header bar over open space; Microsoft as a grey panel.
+      return theme.color.notation?.stageHead
+        ? { stroke: 'none', fill: 'none', width: 0, strong: true, align: 'middle', headFill: 'notation.stageHead' }
+        : { stroke: 'none', fill: 'surface', width: 0, strong: true, align: 'middle' };
+    case 'bronze':
+    case 'silver':
+    case 'gold':
+      return { stroke: `notation.${kind}`, fill: 'none', dash: 'dashed', width: 1.5, strong: true, align: 'middle' };
   }
 }
 
@@ -110,7 +141,8 @@ interface Base {
 interface Leaf extends Base {
   kind: 'leaf';
   node: AzureNode;
-  look: 'azure' | 'glyph' | 'box';
+  /** product: an official Azure or Databricks icon; glyph: a neutral participant or Lucide icon. */
+  look: 'product' | 'glyph' | 'box';
   icon?: string;
   size: number;
   label: string;
@@ -163,10 +195,10 @@ function blockW(env: Env, lines: string[], st: TextStyle): number {
 
 function measureLeaf(env: Env, n: AzureNode): Leaf {
   const { ctx } = env;
-  const res = n.service ? resolveService(n.service) : undefined;
+  const res = n.service ? resolveService(n.service, homePackOf(ctx.spec.type)) : undefined;
   const label = n.label ?? res?.label ?? n.id;
-  const look: Leaf['look'] = res?.kind === 'azure' ? 'azure' : res?.kind === 'generic' || n.icon ? 'glyph' : 'box';
-  const icon = res?.kind === 'azure' ? res.id : res?.kind === 'generic' ? res.glyph : n.icon;
+  const look: Leaf['look'] = isProductIcon(res) ? 'product' : res?.kind === 'generic' || n.icon ? 'glyph' : 'box';
+  const icon = isProductIcon(res) ? res.id : res?.kind === 'generic' ? res.glyph : n.icon;
   const statusH = n.status && n.status !== 'current' ? 20 : 0;
   if (look === 'box') {
     const content = { label, description: n.description, status: n.status };
@@ -189,10 +221,17 @@ function measureLeaf(env: Env, n: AzureNode): Leaf {
 function measureCont(env: Env, spec: AzureContainer | undefined, body: AzureArchitectureBody, depth: number, onFill: boolean): Cont {
   const { ctx } = env;
   const boundary = spec?.boundary;
-  const style = boundary ? boundaryStyle(boundary, onFill) : undefined;
+  const style = boundary ? boundaryStyle(boundary, onFill, homePackOf(ctx.spec.type), ctx.theme) : undefined;
   const fills = onFill || (!!style && style.fill !== 'none');
   const items = spec ? spec.children : body.children;
   const children = items.map((it) => measureItem(env, it, body, depth + 1, fills));
+  // Sibling boxes share one size, so a row of them reads as a set rather than a ragged edge.
+  const boxes = children.filter((c): c is Leaf => c.kind === 'leaf' && c.look === 'box');
+  if (boxes.length > 1) {
+    const w = Math.max(...boxes.map((b) => b.w));
+    const h = Math.max(...boxes.map((b) => b.h));
+    for (const b of boxes) Object.assign(b, { w, h });
+  }
   const layout = (spec ? spec.layout : body.layout) ?? (spec ? 'row' : 'row');
   const columns = Math.max(1, Math.min(children.length, (spec ? spec.columns : body.columns) ?? Math.ceil(Math.sqrt(children.length))));
   const allLeaves = children.every((c) => c.kind === 'leaf');
@@ -218,10 +257,10 @@ function measureCont(env: Env, spec: AzureContainer | undefined, body: AzureArch
   };
   for (const k of children) k.parent = c;
   if (spec && boundary && style) {
-    const label = boundaryLabel(spec) ?? '';
+    const label = boundaryLabel(spec, homePackOf(ctx.spec.type)) ?? '';
     const st = style.strong ? env.headStrong : env.headPlain;
-    const icon = boundary === 'service' && spec.service ? resolveService(spec.service) : style.icon ? resolveService(style.icon) : undefined;
-    const iconId = icon?.kind === 'azure' ? icon.id : undefined;
+    const icon = boundary === 'service' && spec.service ? resolveService(spec.service, homePackOf(ctx.spec.type)) : style.icon ? resolveService(style.icon) : undefined;
+    const iconId = isProductIcon(icon) ? icon.id : undefined;
     const reserve = (spec.nsg ? SHIELD + 12 : 0) + (spec.step !== undefined ? env.badge + 12 : 0);
     const maxW = Math.max(cw, 200) - (iconId ? HEAD_ICON + 6 : 0) - (style.align === 'middle' ? 2 * reserve : reserve);
     const lines = label ? wrap(ctx, label, Math.max(96, maxW), st) : [];
@@ -436,7 +475,7 @@ function alignToPartners(root: Cont, leaves: Leaf[], partners: Map<string, Item[
 // ---- Flow notation -------------------------------------------------------------------
 
 /** Flow-type colours: Microsoft green then Azure blue where the theme defines notation colours, else accent then highlight. */
-const FLOW_COLORS: Token[] = ['notation.step', 'accent', 'lineStrong', 'cat.2', 'cat.3', 'cat.4'];
+const FLOW_COLORS: Token[] = ['notation.step', 'notation.flow2', 'lineStrong', 'cat.2', 'cat.3', 'cat.4'];
 const FLOW_COLORS_PLAIN: Token[] = ['accent', 'highlight', 'lineStrong', 'cat.2', 'cat.3', 'cat.4'];
 const BADGE_SHAPES: ShapeKind[] = ['ellipse', 'rect', 'triangle', 'diamond', 'ellipse', 'rect'];
 
@@ -805,14 +844,14 @@ function drawBoundary(env: Env, c: Cont, obstacles: RouteNode[], softLines: Poin
     y: c.y,
     w: c.w,
     h: c.h,
-    radius: c.boundary === 'region' || c.boundary === 'service' ? 0 : ctx.theme.shape.radius,
+    radius: c.boundary === 'region' || s.square ? 0 : ctx.theme.shape.radius,
     paint: { fill, stroke: stroke === 'none' ? 'none' : stroke, strokeWidth: emphasis === 'accent' || emphasis === 'highlight' ? Math.max(1.5, s.width) : s.width, dash: s.dash },
     container: true,
     obstacle: false,
     inset: { l: c.pad.l, r: c.pad.r, t: c.pad.t, b: c.pad.b },
     parent: c.parent?.spec ? c.parent.id : undefined,
     group: `g-${c.id}`,
-    meta: { specId: c.id, kind: c.boundary, label: boundaryLabel(spec), emphasis },
+    meta: { specId: c.id, kind: c.boundary, label: boundaryLabel(spec, homePackOf(ctx.spec.type)), emphasis },
   });
   ctx.anchors.set(c.id, { x: c.x, y: c.y, w: c.w, h: c.h });
   softLines.push([
@@ -823,10 +862,25 @@ function drawBoundary(env: Env, c: Cont, obstacles: RouteNode[], softLines: Poin
     { x: c.x, y: c.y },
   ]);
   const h = c.head!;
+  if (s.headFill) {
+    addShape(ctx, {
+      id: `${c.id}--head`,
+      role: 'decoration',
+      shape: 'rect',
+      x: c.x,
+      y: c.y,
+      w: c.w,
+      h: h.h,
+      radius: ctx.theme.shape.radius,
+      paint: { fill: s.headFill, stroke: 'none', strokeWidth: 0 },
+      box: false,
+      group: `g-${c.id}`,
+    });
+  }
   let tx = c.x + HEAD_INSET;
   const ty = c.y + HEAD_INSET;
   if (h.icon) {
-    ctx.els.push({ kind: 'icon', id: `${c.id}--icon`, role: 'icon', set: 'azure', name: h.icon, alt: boundaryLabel(spec), x: tx, y: ty, size: HEAD_ICON, color: 'none', group: `g-${c.id}` });
+    ctx.els.push({ kind: 'icon', id: `${c.id}--icon`, role: 'icon', set: 'product', name: h.icon, alt: boundaryLabel(spec, homePackOf(ctx.spec.type)), x: tx, y: ty, size: HEAD_ICON, color: 'none', group: `g-${c.id}` });
     obstacles.push({ id: c.id, box: { x: tx, y: ty, w: HEAD_ICON, h: HEAD_ICON }, shape: 'rect' });
     tx += HEAD_ICON + 6;
   }
@@ -835,22 +889,29 @@ function drawBoundary(env: Env, c: Cont, obstacles: RouteNode[], softLines: Poin
   let y = ty + (h.icon ? Math.max(0, (HEAD_ICON - textH) / 2) : 0);
   const middle = h.align === 'middle';
   const ax = middle ? c.x + c.w / 2 : tx;
-  const ink: Token = `text(ink,${fill === 'none' ? 'background' : fill})`;
+  const behind = s.headFill ?? (fill === 'none' ? 'background' : fill);
+  const ink: Token = `text(ink,${behind})`;
   if (h.lines.length) {
     const t = addText(ctx, { id: `${c.id}--label`, role: 'header', x: ax, y, lines: h.lines, ...h.st, anchor: middle ? 'middle' : 'start', color: ink, group: `g-${c.id}`, slot: 'heading' });
     obstacles.push({ id: c.id, box: textBox(t, (e) => ctx.fonts.blockWidth(e.lines, e.size, e.weight)), shape: 'rect' });
     y += h.lines.length * lineH;
   }
   if (h.descLines.length) {
-    const t = addText(ctx, { id: `${c.id}--description`, role: 'header', x: ax, y, lines: h.descLines, ...env.caption, weight: ctx.theme.font.weight.body, anchor: middle ? 'middle' : 'start', color: `text(inkMuted,${fill === 'none' ? 'background' : fill})`, group: `g-${c.id}`, slot: 'text' });
+    const t = addText(ctx, { id: `${c.id}--description`, role: 'header', x: ax, y, lines: h.descLines, ...env.caption, weight: ctx.theme.font.weight.body, anchor: middle ? 'middle' : 'start', color: `text(inkMuted,${behind})`, group: `g-${c.id}`, slot: 'text' });
     obstacles.push({ id: c.id, box: textBox(t, (e) => ctx.fonts.blockWidth(e.lines, e.size, e.weight)), shape: 'rect' });
   }
   if (spec.nsg && c.boundary === 'subnet') {
     const sx = c.x + c.w - SHIELD - HEAD_INSET;
     const sy = c.y - SHIELD / 2;
-    ctx.els.push({ kind: 'icon', id: `${c.id}--nsg`, role: 'icon', set: 'azure', name: 'network-security-groups', alt: 'Network security group', x: sx, y: sy, size: SHIELD, color: 'none', group: `g-${c.id}` });
+    ctx.els.push({ kind: 'icon', id: `${c.id}--nsg`, role: 'icon', set: 'product', name: 'network-security-groups', alt: 'Network security group', x: sx, y: sy, size: SHIELD, color: 'none', group: `g-${c.id}` });
     obstacles.push({ id: c.id, box: { x: sx, y: sy, w: SHIELD, h: SHIELD }, shape: 'rect' });
   }
+}
+
+/** The fill a leaf's label sits on: its nearest filled boundary (a dark platform block, say), else the canvas. */
+function fillBehind(l: Leaf): Token {
+  for (let c = l.parent; c; c = c.parent) if (c.style && c.style.fill !== 'none') return c.style.fill;
+  return 'background';
 }
 
 function drawLeaf(env: Env, l: Leaf) {
@@ -903,16 +964,16 @@ function drawLeaf(env: Env, l: Leaf) {
     obstacle: true,
     parent: l.parent?.spec ? l.parent.id : undefined,
     group,
-    meta: { specId: l.id, kind: l.look === 'azure' ? 'service' : 'participant', label: l.label, description: n.description, emphasis, status: n.status },
+    meta: { specId: l.id, kind: l.look === 'product' ? 'service' : 'participant', label: l.label, description: n.description, emphasis, status: n.status },
   });
   ctx.anchors.set(l.id, ib);
-  if (l.look === 'azure') {
-    ctx.els.push({ kind: 'icon', id: `${l.id}--icon`, role: 'icon', set: 'azure', name: l.icon!, alt: l.label, x: ib.x, y: ib.y, size: ib.w, color: 'none', group });
+  if (l.look === 'product') {
+    ctx.els.push({ kind: 'icon', id: `${l.id}--icon`, role: 'icon', set: 'product', name: l.icon!, alt: l.label, x: ib.x, y: ib.y, size: ib.w, color: 'none', group });
   } else {
     const g = Math.round(ib.w * 0.75);
     ctx.els.push({ kind: 'icon', id: `${l.id}--icon`, role: 'icon', name: l.icon!, x: ib.x + (ib.w - g) / 2, y: ib.y + (ib.w - g) / 2, size: g, color: 'lineStrong', group });
   }
-  const behind: Token = emphasis === 'accent' ? 'accent@10' : emphasis === 'highlight' ? 'highlight@10' : 'background';
+  const behind: Token = emphasis === 'accent' ? 'accent@10' : emphasis === 'highlight' ? 'highlight@10' : fillBehind(l);
   let y = ib.y + ib.h + ICON_GAP;
   const cx = l.x + l.w / 2;
   if (l.labelLines.length) {

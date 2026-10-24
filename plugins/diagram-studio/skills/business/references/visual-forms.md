@@ -17,7 +17,7 @@ Start from the shape of what the user gave you, not from the words they used. "O
 
 If only one form fits, say so and make the concepts differ in story instead (see below).
 
-Azure services, networks and deployments are drawn by the azure skill (`/diagram-studio:azure`) with the official icons. Here a cloud platform is a `layered-architecture` in plain words, for readers who do not need the services named.
+Azure services, networks and deployments are drawn by the azure skill (`/diagram-studio:azure`), and Databricks pipelines and platforms by the databricks skill (`/diagram-studio:databricks`), with the official icons. Here a cloud platform is a `layered-architecture` in plain words, for readers who do not need the services named.
 
 ## What each form needs from the user
 

@@ -20,6 +20,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-The fonts, the Lucide icon subset and the Microsoft Azure icons in
-engine/assets/ are not covered by this licence; see the licence and notice
-files beside them.
+The fonts, the Lucide icon subset, the Microsoft Azure icons and the
+Databricks icons in engine/assets/ are not covered by this licence; see the
+licence and notice files beside them.

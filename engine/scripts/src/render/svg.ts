@@ -9,7 +9,7 @@ import type { Theme } from '../theme/types.js';
 import { escapeXml, fmt } from '../util.js';
 import { type DrawItem, type Prim, sceneToDraw } from './draw.js';
 import { fontFaceCss } from './fonts.js';
-import { iconSymbol } from '../azure/icons.js';
+import { iconSymbol, iconSymbolId } from '../azure/icons.js';
 
 export const GENERATOR = 'diagram-studio 1.0.0';
 
@@ -67,8 +67,8 @@ function primToSvg(p: Prim, idAttrs: string): string {
         .join('')}</g>`;
     case 'grid':
       return `<rect${idAttrs}${attrs({ x: p.x, y: p.y, width: p.w, height: p.h, fill: 'url(#ds-grid-pattern)' })}/>`;
-    case 'azure':
-      return `<use${idAttrs}${attrs({ href: `#ds-az-${p.icon}`, x: p.x, y: p.y, width: p.size, height: p.size })}/>`;
+    case 'product':
+      return `<use${idAttrs}${attrs({ href: `#${iconSymbolId(p.icon)}`, x: p.x, y: p.y, width: p.size, height: p.size })}/>`;
   }
 }
 
@@ -76,7 +76,7 @@ function itemToSvg(it: DrawItem): string {
   const data = it.data ?? {};
   const id = attrs({ id: it.id, 'data-role': it.role, ...data });
   const filter = it.shadow ? ' filter="url(#ds-shadow)"' : '';
-  if (it.prims.length === 1 && it.prims[0].t !== 'icon' && it.prims[0].t !== 'azure') {
+  if (it.prims.length === 1 && it.prims[0].t !== 'icon' && it.prims[0].t !== 'product') {
     const s = primToSvg(it.prims[0], id);
     return filter ? s.replace(/^<(\w+)/, `<$1${filter}`) : s;
   }
@@ -101,11 +101,11 @@ export async function renderSvg(scene: Scene, opts: SvgOptions): Promise<string>
         `<path d="M${fmt(s)} 0H0V${fmt(s)}" fill="none" stroke="${grid.color}" stroke-width="0.75"/></pattern>`,
     );
   }
-  // Azure icons: one <symbol> per icon used, drawn with <use> (ids inside are namespaced).
-  const azureIcons = [...new Set(items.flatMap((i) => i.prims).flatMap((p) => (p.t === 'azure' ? [p.icon] : [])))].sort();
-  for (const icon of azureIcons) {
+  // Product icons (Azure, Databricks): one <symbol> per icon used, drawn with <use> (ids inside are namespaced).
+  const productIcons = [...new Set(items.flatMap((i) => i.prims).flatMap((p) => (p.t === 'product' ? [p.icon] : [])))].sort();
+  for (const icon of productIcons) {
     const sym = iconSymbol(icon);
-    if (sym) defs.push(`<symbol id="ds-az-${icon}" viewBox="${sym.viewBox.join(' ')}">${sym.body}</symbol>`);
+    if (sym) defs.push(`<symbol id="${iconSymbolId(icon)}" viewBox="${sym.viewBox.join(' ')}">${sym.body}</symbol>`);
   }
   if (items.some((i) => i.shadow)) {
     defs.push(

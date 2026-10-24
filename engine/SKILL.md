@@ -1,6 +1,6 @@
 ---
 name: diagram-studio
-description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports. Use it whenever someone wants a diagram for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing diagram re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling. Not for data charts (bar, line, pie) or for AWS and Google Cloud diagrams.
+description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), or a Databricks architecture in the Databricks brand look with the official Databricks icons (lakehouse and medallion flows, workspace deployment topologies, platform maps, Databricks inside Azure diagrams), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports. Use it whenever someone wants a diagram for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing diagram re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling. Not for data charts (bar, line, pie) or for AWS and Google Cloud diagrams.
 ---
 
 # Diagram Studio
@@ -25,6 +25,7 @@ then run `node <repo>/engine/scripts/dist/cli.js <command>`. Any of these is wri
 | `ds types` / `ds example <type> [--n 2]` | List types / print a starter spec |
 | `ds icons` | List icon names (only for themes that show icons) |
 | `ds azure icons <words>` / `ds azure import <arm.json> --out spec.json` | Search the official Azure icons / draft an Azure spec from an ARM template or resource list |
+| `ds databricks icons <words>` | Search the Databricks product icons (former names such as `dlt` work) |
 | `ds preview <dir> [--open]` | Live board of every diagram rendered under `<dir>`; refreshes on each render (run it in the background) |
 | `ds docs [topic]` | Print this guide (`guide`) or a reference (`swimlane`, `spec-format`…) from any install |
 | `ds theme list \| preview <id> \| validate <file\|id> \| create --from-brand … \| default <id>` | Themes |
@@ -54,9 +55,10 @@ Results are JSON on stdout; human messages on stderr. Exit **0** ok, **1** valid
 | How value is created end to end, with focus areas | `value-chain` | value chain, Porter, end to end, where we make money, primary activities |
 | Where to focus: items placed on two dimensions | `matrix-2x2` | 2x2, prioritise, impact vs effort, portfolio, risk heatmap, quadrant |
 | How a system fits together, for non-technical readers | `layered-architecture` | architecture, platform, layers, stack, systems landscape |
-| How it runs on Azure: services, networks, numbered flows | `azure-architecture` | Azure, AKS, App Service, VNet, subnet, private endpoint, hub-spoke, reference architecture, ARM template |
+| How it runs on Azure: services, networks, numbered flows | `azure-architecture` | Azure, AKS, App Service, VNet, subnet, private endpoint, hub-spoke, reference architecture, ARM template, Azure Databricks |
+| How it runs on Databricks: lakehouse flows, workspace deployment, platform map | `databricks-architecture` | Databricks, lakehouse, medallion, bronze/silver/gold, Unity Catalog, Lakeflow, control plane, workspace |
 
-For `azure-architecture`, also read `references/azure-style.md` once per session: it defines what a good Azure diagram looks like (two kinds: solution workflow and network topology), and the self-review checklist there replaces the one below. Given an ARM template or resource list, start from `ds azure import`, then add the story.
+For `azure-architecture`, also read `references/azure-style.md` once per session: it defines what a good Azure diagram looks like (two kinds: solution workflow and network topology), and the self-review checklist there replaces the one below. Given an ARM template or resource list, start from `ds azure import`, then add the story. For `databricks-architecture`, read `references/databricks-style.md` the same way. An Azure architecture that includes Azure Databricks stays `azure-architecture` and uses `databricks:` icons; a Databricks-centred picture is `databricks-architecture`.
 
 Not supported: data charts (use a charting tool), free-form drawing, AWS or Google Cloud diagrams, org charts and journey maps (planned for v2 — say so, and offer the nearest supported type only if it genuinely fits).
 
@@ -128,7 +130,7 @@ If any answer is no, change the spec (re-word, re-group, move the accent, change
 
 ## Themes
 
-Built-in: `boardroom` (default, consulting navy), `blueprint` (light on deep blue, grid), `sketch` (hand-drawn, workshops), `bold` (dark keynote), `minimal` (line-led, documents), `print` (greyscale-safe), `azure` (Microsoft reference-architecture look; the default for `azure-architecture`, and usable for any type). Switch with `"theme": "sketch"` or `--theme sketch`; geometry stays put, only styling changes (in `azure-architecture`, service cells follow each theme's type size).
+Built-in: `boardroom` (default, consulting navy), `blueprint` (light on deep blue, grid), `sketch` (hand-drawn, workshops), `bold` (dark keynote), `minimal` (line-led, documents), `print` (greyscale-safe), `azure` (Microsoft reference-architecture look; the default for `azure-architecture`, and usable for any type), `databricks` (Databricks brand look, DM Sans; the default for `databricks-architecture`). Switch with `"theme": "sketch"` or `--theme sketch`; geometry stays put, only styling changes (in the architecture types, service cells follow each theme's type size).
 
 - **One-off tweak:** `"themeOverrides": { "color": { "accent": "#D4001A" } }` (validated for contrast).
 - **Brand kit:** when the user gives brand colours (hex codes, or a screenshot — read the hex values from it yourself) and optionally a font name:

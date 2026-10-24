@@ -252,7 +252,7 @@ export async function renderPptx(scene: Scene, theme: Theme, fonts: FontSet): Pr
         break;
       }
       case 'icon': {
-        if (e.set === 'azure') {
+        if (e.set === 'product') {
           // Native SVG (PowerPoint 365); the PNG fallback is filled in after writing.
           const svg = iconSvgAt(e.name, 96);
           if (svg) slide.addImage({ data: 'image/svg+xml;base64,' + Buffer.from(svg).toString('base64'), x: inX(c, e.x), y: inY(c, e.y), w: inL(c, e.size), h: inL(c, e.size), altText: e.alt ?? '', objectName: name(c, e.group, e.id) } as never);

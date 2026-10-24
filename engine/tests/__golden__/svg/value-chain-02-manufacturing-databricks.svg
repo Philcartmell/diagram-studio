@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="value-chain" data-theme="databricks" data-altitude="management">
+<title id="ds-svg-title">Planning and procurement drive two thirds of the cost-out programme</title>
+<desc id="ds-svg-desc">Manufacturing value chain with 2027 savings targets</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1B3139"><tspan x="40" y="63.5">Planning and procurement drive two thirds of the cost-out programme</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#5A6F77"><tspan x="40" y="90">Manufacturing value chain with 2027 savings targets</tspan></text>
+<path id="plan" data-role="node" data-node="plan" data-emphasis="accent" d="M40 136L224 136L240 196L224 256L40 256Z" fill="#FADCD6" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="plan--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="135" y="191">Plan</tspan></text>
+<text id="plan--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="135" y="209.5">£14m</tspan></text>
+<path id="procure" data-role="node" data-node="procure" data-emphasis="accent" d="M240 136L424 136L440 196L424 256L240 256L256 196Z" fill="#FADCD6" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="procure--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="341.5" y="191">Procure</tspan></text>
+<text id="procure--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="341.5" y="209.5">£11m</tspan></text>
+<path id="make" data-role="node" data-node="make" data-status="changed" d="M440 136L624 136L640 196L624 256L440 256L456 196Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="make--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="541.5" y="202">Make</tspan></text>
+<text id="make--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="541.5" y="220.5">£6m</tspan></text>
+<path id="make--badge" data-role="badge" d="M566 142H612A8 8 0 0 1 620 150V150A8 8 0 0 1 612 158H566A8 8 0 0 1 558 150V150A8 8 0 0 1 566 142Z" fill="#E9D8BE" stroke="#B26B00" stroke-width="1" stroke-linejoin="round"/>
+<text id="make--badge-text" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="589" y="154">Changed</tspan></text>
+<path id="deliver" data-role="node" data-node="deliver" d="M640 136L824 136L840 196L824 256L640 256L656 196Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="deliver--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="741.5" y="191">Deliver</tspan></text>
+<text id="deliver--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="741.5" y="209.5">£4m</tspan></text>
+<path id="service" data-role="node" data-node="service" d="M840 136L1024 136L1040 196L1024 256L840 256L856 196Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="service--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="941.5" y="191">Service</tspan></text>
+<text id="service--metric" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="941.5" y="209.5">£2m</tspan></text>
+<path id="plan--panel" data-role="node" d="M56 272H224A8 8 0 0 1 232 280V384A8 8 0 0 1 224 392H56A8 8 0 0 1 48 384V280A8 8 0 0 1 56 272Z" fill="#FFEFED" stroke="#FF3621" stroke-width="1" stroke-linejoin="round"/>
+<text id="plan--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#1B3139"><tspan x="60" y="295">Integrated demand and supply</tspan><tspan x="60" y="309.5">planning</tspan></text>
+<path id="procure--panel" data-role="node" d="M256 272H424A8 8 0 0 1 432 280V384A8 8 0 0 1 424 392H256A8 8 0 0 1 248 384V280A8 8 0 0 1 256 272Z" fill="#FFEFED" stroke="#FF3621" stroke-width="1" stroke-linejoin="round"/>
+<text id="procure--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#1B3139"><tspan x="260" y="295">Category-led sourcing, fewer</tspan><tspan x="260" y="309.5">suppliers</tspan></text>
+<path id="make--panel" data-role="node" d="M456 272H624A8 8 0 0 1 632 280V384A8 8 0 0 1 624 392H456A8 8 0 0 1 448 384V280A8 8 0 0 1 456 272Z" fill="#F9F7F4"/>
+<text id="make--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="460" y="295">Lean lines, predictive</tspan><tspan x="460" y="309.5">maintenance</tspan></text>
+<path id="deliver--panel" data-role="node" d="M656 272H824A8 8 0 0 1 832 280V384A8 8 0 0 1 824 392H656A8 8 0 0 1 648 384V280A8 8 0 0 1 656 272Z" fill="#F9F7F4"/>
+<text id="deliver--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="660" y="295">Network redesign, two DCs</tspan></text>
+<path id="service--panel" data-role="node" d="M856 272H1024A8 8 0 0 1 1032 280V384A8 8 0 0 1 1024 392H856A8 8 0 0 1 848 384V280A8 8 0 0 1 856 272Z" fill="#F9F7F4"/>
+<text id="service--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="860" y="295">Spares and field service</tspan></text>
+<path id="outcome" data-role="node" d="M1080 136L1200 136L1240 196L1200 256L1080 256Z" fill="#F9F7F4" stroke="#A3AFB4" stroke-width="1" stroke-linejoin="round"/>
+<text id="outcome--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="1143" y="183.5">£37m</tspan></text>
+<text id="outcome--description" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="middle"><tspan x="1143" y="202.5">run-rate savings by</tspan><tspan x="1143" y="217">2028</tspan></text>
+</svg>

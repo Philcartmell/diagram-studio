@@ -41,13 +41,23 @@
         },
         "notation": {
           "type": "object",
-          "description": "Optional colours for diagram notation (azure-architecture). Missing entries fall back to accent, accentInk and status.changed.",
+          "description": "Optional colours for diagram notation (azure- and databricks-architecture). Missing entries fall back to core colours (accent, accentInk, line, lineStrong, surfaceAlt, status.changed).",
           "additionalProperties": false,
           "properties": {
             "step": { "$ref": "#/$defs/hex", "description": "Numbered step badges" },
             "stepInk": { "$ref": "#/$defs/hex", "description": "Numbers on step badges" },
             "network": { "$ref": "#/$defs/hex", "description": "Virtual network boundaries" },
-            "zone": { "$ref": "#/$defs/hex", "description": "Availability zone outlines" }
+            "zone": { "$ref": "#/$defs/hex", "description": "Availability zone outlines" },
+            "flow2": { "$ref": "#/$defs/hex", "description": "The second flow type (the first uses step)" },
+            "account": { "$ref": "#/$defs/hex", "description": "Databricks account boundaries" },
+            "cloud": { "$ref": "#/$defs/hex", "description": "Customer cloud account boundaries" },
+            "plane": { "$ref": "#/$defs/hex", "description": "Control and compute plane and workspace outlines" },
+            "platform": { "$ref": "#/$defs/hex", "description": "Databricks platform block fill" },
+            "governance": { "$ref": "#/$defs/hex", "description": "Unity Catalog boundaries" },
+            "stageHead": { "$ref": "#/$defs/hex", "description": "Stage header bars; without it a stage is a grey panel" },
+            "bronze": { "$ref": "#/$defs/hex", "description": "Bronze medallion layer" },
+            "silver": { "$ref": "#/$defs/hex", "description": "Silver medallion layer" },
+            "gold": { "$ref": "#/$defs/hex", "description": "Gold medallion layer" }
           }
         }
       }

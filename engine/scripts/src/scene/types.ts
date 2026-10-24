@@ -179,10 +179,10 @@ export interface IconEl {
   kind: 'icon';
   id: string;
   role: 'icon';
-  /** Icon name: a Lucide name, or a resolved Azure icon id when `set` is "azure". */
+  /** Icon name: a Lucide name, or a canonical product icon id when `set` is "product". */
   name: string;
-  /** "azure" draws the official full-colour Azure icon (never recoloured); default Lucide line icon. */
-  set?: 'lucide' | 'azure';
+  /** "product" draws an official full-colour Azure or Databricks icon (never recoloured); default Lucide line icon. */
+  set?: 'lucide' | 'product';
   /** Alternative text (the service name) for exports that carry it. */
   alt?: string;
   x: number;

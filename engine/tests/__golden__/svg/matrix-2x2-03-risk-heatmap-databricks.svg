@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="matrix-2x2" data-theme="databricks" data-altitude="management">
+<title id="ds-svg-title">Cyber and supplier risks need action now; the rest can be monitored</title>
+<desc id="ds-svg-desc">Enterprise risk register, Q3 2026</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" fill="#1B3139"><tspan x="40" y="63.5">Cyber and supplier risks need action now; the rest can be monitored</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#5A6F77"><tspan x="40" y="90">Enterprise risk register, Q3 2026</tspan></text>
+<path id="quadrant-top-left" data-role="group" d="M280 160H656A8 8 0 0 1 664 168V344A8 8 0 0 1 656 352H280A8 8 0 0 1 272 344V168A8 8 0 0 1 280 160Z" fill="#F9F7F4"/>
+<text id="quadrant-top-left--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="284" y="183">Prepare</tspan></text>
+<text id="quadrant-top-left--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="284" y="200">Severe but rare</tspan></text>
+<path id="quadrant-top-right" data-role="group" data-emphasis="accent" d="M688 160H1064A8 8 0 0 1 1072 168V344A8 8 0 0 1 1064 352H688A8 8 0 0 1 680 344V168A8 8 0 0 1 688 160Z" fill="#FFEFED" stroke="#FF3621" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="quadrant-top-right--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139" text-anchor="end"><tspan x="1060" y="183">Act now</tspan></text>
+<text id="quadrant-top-right--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="end"><tspan x="1060" y="200">Severe and likely</tspan></text>
+<path id="quadrant-bottom-left" data-role="group" d="M280 368H656A8 8 0 0 1 664 376V552A8 8 0 0 1 656 560H280A8 8 0 0 1 272 552V376A8 8 0 0 1 280 368Z" fill="#F9F7F4"/>
+<text id="quadrant-bottom-left--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139"><tspan x="284" y="529.5">Accept</tspan></text>
+<text id="quadrant-bottom-left--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="284" y="546.5">Minor and rare</tspan></text>
+<path id="quadrant-bottom-right" data-role="group" d="M688 368H1064A8 8 0 0 1 1072 376V552A8 8 0 0 1 1064 560H688A8 8 0 0 1 680 552V376A8 8 0 0 1 688 368Z" fill="#F9F7F4"/>
+<text id="quadrant-bottom-right--label" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600" fill="#1B3139" text-anchor="end"><tspan x="1060" y="529.5">Monitor</tspan></text>
+<text id="quadrant-bottom-right--description" data-role="header" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="end"><tspan x="1060" y="546.5">Minor but likely</tspan></text>
+<g id="ds-axis-y" data-role="axis"><path d="M260 560L260 169" fill="none" stroke="#618794" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M260 160L264 170L256 170Z" fill="#618794"/></g>
+<g id="ds-axis-x" data-role="axis"><path d="M272 572L1063 572" fill="none" stroke="#618794" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M1072 572L1062 576L1062 568Z" fill="#618794"/></g>
+<text id="ds-axis-y-high" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="end"><tspan x="252" y="173">Severe</tspan></text>
+<text id="ds-axis-y-low" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="end"><tspan x="252" y="556.5">Minor</tspan></text>
+<text id="ds-axis-x-low" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="272" y="589">Rare</tspan></text>
+<text id="ds-axis-x-high" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77" text-anchor="end"><tspan x="1072" y="589">Likely</tspan></text>
+<text id="ds-axis-x-title" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139" text-anchor="middle"><tspan x="672" y="603.5">Likelihood</tspan></text>
+<text id="ds-axis-y-title" data-role="axis" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="254" y="147">Impact</tspan></text>
+<path id="cyber" data-role="marker" data-node="cyber" data-status="at-risk" d="M864 224A8 8 0 1 1 880 224A8 8 0 1 1 864 224Z" fill="#FF3621" stroke="#98102A" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="cyber--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="886" y="228">Ransomware attack (at risk)</tspan></text>
+<path id="supplier" data-role="marker" data-node="supplier" d="M776 280A8 8 0 1 1 792 280A8 8 0 1 1 776 280Z" fill="#2272B4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="supplier--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="798" y="284">Key supplier failure</tspan></text>
+<path id="talent" data-role="marker" data-node="talent" d="M920 416A8 8 0 1 1 936 416A8 8 0 1 1 920 416Z" fill="#00875C" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="talent--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="942" y="420">Loss of key engineers</tspan></text>
+<path id="regulation" data-role="marker" data-node="regulation" d="M496 248A8 8 0 1 1 512 248A8 8 0 1 1 496 248Z" fill="#1B5162" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="regulation--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="518" y="252">New conduct rules</tspan></text>
+<path id="outage" data-role="marker" data-node="outage" d="M440 304A8 8 0 1 1 456 304A8 8 0 1 1 440 304Z" fill="#FF3621" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="outage--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="462" y="308">Data centre outage</tspan></text>
+<path id="fx" data-role="marker" data-node="fx" d="M832 488A8 8 0 1 1 848 488A8 8 0 1 1 832 488Z" fill="#98102A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="fx--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="854" y="492">Currency swings</tspan></text>
+<path id="brand" data-role="marker" data-node="brand" d="M464 456A8 8 0 1 1 480 456A8 8 0 1 1 464 456Z" fill="#2272B4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="brand--label" data-role="label" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#1B3139"><tspan x="486" y="460">Social media incident</tspan></text>
+<text id="ds-footer" data-role="footer" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="40" y="676.5">Source: Risk committee, September 2026</tspan></text>
+<text id="ds-classification" data-role="footer" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#5A6F77" text-anchor="end" letter-spacing="0.5"><tspan x="1240" y="676.5">CONFIDENTIAL</tspan></text>
+<path id="ds-legend-0-0-swatch" data-role="legend" d="M42 633.5H50A2 2 0 0 1 52 635.5V643.5A2 2 0 0 1 50 645.5H42A2 2 0 0 1 40 643.5V635.5A2 2 0 0 1 42 633.5Z" fill="#FF3621"/>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="58" y="643.5">Technology</tspan></text>
+<path id="ds-legend-0-1-swatch" data-role="legend" d="M139 633.5H147A2 2 0 0 1 149 635.5V643.5A2 2 0 0 1 147 645.5H139A2 2 0 0 1 137 643.5V635.5A2 2 0 0 1 139 633.5Z" fill="#2272B4"/>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="155" y="643.5">Operations</tspan></text>
+<path id="ds-legend-0-2-swatch" data-role="legend" d="M234 633.5H242A2 2 0 0 1 244 635.5V643.5A2 2 0 0 1 242 645.5H234A2 2 0 0 1 232 643.5V635.5A2 2 0 0 1 234 633.5Z" fill="#00875C"/>
+<text id="ds-legend-0-2-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="250" y="643.5">People</tspan></text>
+<path id="ds-legend-0-3-swatch" data-role="legend" d="M307 633.5H315A2 2 0 0 1 317 635.5V643.5A2 2 0 0 1 315 645.5H307A2 2 0 0 1 305 643.5V635.5A2 2 0 0 1 307 633.5Z" fill="#1B5162"/>
+<text id="ds-legend-0-3-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="323" y="643.5">Regulatory</tspan></text>
+<path id="ds-legend-0-4-swatch" data-role="legend" d="M399.5 633.5H407.5A2 2 0 0 1 409.5 635.5V643.5A2 2 0 0 1 407.5 645.5H399.5A2 2 0 0 1 397.5 643.5V635.5A2 2 0 0 1 399.5 633.5Z" fill="#98102A"/>
+<text id="ds-legend-0-4-label" data-role="legend" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#5A6F77"><tspan x="415.5" y="643.5">Financial</tspan></text>
+</svg>

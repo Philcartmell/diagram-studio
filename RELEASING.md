@@ -61,7 +61,7 @@ If the workflow fails before publishing, fix the problem, move the tag (`git tag
 
 The repository starts private. While it is private you can install the plugin from it yourself (Claude Code uses your git credentials) or load it with `--plugin-dir`, but nobody else can, and nothing is on npm. Don't push a `v*` tag until step 6.
 
-1. **Check the icon terms.** The npm package contains Microsoft's Azure icons, and a public package redistributes them. Read Microsoft's current terms for the icons (see `engine/assets/azure-icons/NOTICE.md`) before publishing.
+1. **Check the icon terms.** The npm package contains Microsoft's Azure icons and Databricks' product artwork, and a public package redistributes them. Read Microsoft's current terms for the icons and Databricks' brand guidelines (see the `NOTICE.md` in `engine/assets/azure-icons/` and `engine/assets/databricks-icons/`) before publishing.
 2. **Make the repository public:**
 
    ```bash

@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "type": "databricks-architecture",
+  "altitude": "management",
+  "title": "One platform covers ingestion, warehousing and AI on governed data",
+  "subtitle": "Platform reference architecture",
+  "body": {
+    "layout": "row",
+    "children": [
+      {
+        "id": "sources",
+        "boundary": "stage",
+        "label": "Sources",
+        "layout": "column",
+        "children": [
+          { "id": "erp", "service": "database", "label": "ERP database" },
+          { "id": "events", "service": "event-hubs", "label": "Event Hubs" }
+        ]
+      },
+      {
+        "id": "platform",
+        "boundary": "platform",
+        "layout": "column",
+        "children": [
+          {
+            "id": "workloads",
+            "layout": "row",
+            "children": [
+              {
+                "id": "engineering",
+                "boundary": "panel",
+                "label": "Data Engineering",
+                "layout": "column",
+                "children": [
+                  { "id": "connect", "service": "lakeflow-connect" },
+                  { "id": "pipelines", "service": "spark-declarative-pipelines", "label": "Declarative Pipelines" }
+                ]
+              },
+              { "id": "warehousing", "boundary": "panel", "label": "Data Warehousing", "children": [{ "id": "warehouse", "service": "sql-warehouse" }] },
+              {
+                "id": "ai",
+                "boundary": "panel",
+                "label": "AI",
+                "layout": "column",
+                "children": [
+                  { "id": "serving", "service": "model-serving" },
+                  { "id": "search", "service": "ai-search" }
+                ]
+              }
+            ]
+          },
+          { "id": "governance", "boundary": "unity-catalog", "children": [{ "id": "delta", "service": "delta-lake" }] }
+        ]
+      },
+      {
+        "id": "consumers",
+        "boundary": "stage",
+        "label": "Analyse",
+        "layout": "column",
+        "children": [
+          { "id": "power-bi", "service": "power-bi-embedded", "label": "Power BI" },
+          { "id": "apps", "service": "databricks-apps" }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "erp", "to": "connect" },
+      { "from": "events", "to": "pipelines" },
+      { "from": "pipelines", "to": "warehouse" },
+      { "from": "warehouse", "to": "power-bi" },
+      { "from": "serving", "to": "apps" }
+    ]
+  }
+}

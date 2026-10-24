@@ -1,7 +1,7 @@
 {
   "name": "diagram-studio",
   "version": "1.0.0",
-  "description": "Boardroom-quality business diagrams and Microsoft-style Azure architecture diagrams from a JSON spec: a deterministic renderer with SVG, PNG, PDF, editable PowerPoint and draw.io export.",
+  "description": "Boardroom-quality business diagrams, Microsoft-style Azure architectures and Databricks architectures from a JSON spec: a deterministic renderer with SVG, PNG, PDF, editable PowerPoint and draw.io export.",
   "type": "module",
   "license": "MIT",
   "author": "Phil Cartmell",
@@ -17,6 +17,8 @@
   "keywords": [
     "diagrams",
     "azure",
+    "databricks",
+    "lakehouse",
     "architecture",
     "powerpoint",
     "pptx",
@@ -51,6 +53,7 @@
     "matrix": "node scripts/tools/matrix.mjs",
     "icons": "node scripts/tools/build-icons.mjs",
     "azure-icons": "node scripts/tools/build-azure-icons.mjs",
+    "databricks-icons": "node scripts/tools/build-databricks-icons.mjs",
     "prepublishOnly": "npm test"
   },
   "dependencies": {

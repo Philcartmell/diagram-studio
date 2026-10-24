@@ -59,6 +59,15 @@ describe('preview board', () => {
     expect(concept.stale).toBe(false);
   });
 
+  it('orders cards by latest activity, so a re-rendered diagram moves to the front', async () => {
+    await new Promise((r) => setTimeout(r, 20));
+    await renderInto(path.join(root, 'concepts', 'a-layers'), '01-finance-hub', ['svg', 'png']);
+    const cards = collectState(root).cards;
+    expect(cards.map((c) => c.folder)).toEqual(['concepts/a-layers', 'working']);
+    expect(cards[0].touched).toBeGreaterThanOrEqual(cards[0].updated);
+    expect(cards[0].touched).toBeGreaterThan(cards[1].touched);
+  });
+
   it('marks a card stale when a later render failed QA', () => {
     const dir = path.join(root, 'concepts', 'a-layers');
     const later = new Date(Date.now() + 60000);
@@ -78,11 +87,17 @@ describe('preview board', () => {
     try {
       const page = await fetch(server.url);
       expect(page.status).toBe(200);
-      expect(await page.text()).toMatch(/<title>preview · Diagram Studio<\/title>/);
+      const html = await page.text();
+      expect(html).toMatch(/<title>preview · Diagram Studio<\/title>/);
+      // A detail view over a thumbnail strip, and a stacked list on phone-sized screens.
+      expect(html).toMatch(/id="detail"[\s\S]*id="strip"/);
+      expect(html).toMatch(/@media \(max-width: 700px\)/);
 
       const state = await (await fetch(server.url + 'api/state')).json();
       const svg = await fetch(new URL(state.cards[0].svg, server.url));
       expect(svg.headers.get('content-type')).toBe('image/svg+xml');
+      // Versioned URLs never change content, so the page can reuse them without re-downloading.
+      expect(svg.headers.get('cache-control')).toMatch(/immutable/);
       expect(await svg.text()).toMatch(/^<svg/);
 
       expect((await fetch(server.url + 'files/..%2F..%2Fhelpers.mjs')).status).toBe(404);

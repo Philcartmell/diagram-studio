@@ -1,0 +1,715 @@
+{
+ "description": "Official Databricks artwork, from a community pack (unofficial, not endorsed by Databricks). Use an icon only for the Databricks product it depicts and the logo mark only for the Databricks platform; never recolour, crop or distort; label every icon with the product name.",
+ "source": "Databricks Architecture Icons (https://oieduardorabelo.github.io/databricks-architecture-icons/)",
+ "count": 71,
+ "categories": {
+  "platform": {
+   "label": "Platform & Compute",
+   "color": "#FF3621"
+  },
+  "engineering": {
+   "label": "Data Engineering",
+   "color": "#2272B4"
+  },
+  "storage": {
+   "label": "Storage & Databases",
+   "color": "#00875C"
+  },
+  "analytics": {
+   "label": "Analytics & BI",
+   "color": "#1B5162"
+  },
+  "ai": {
+   "label": "AI & Agents",
+   "color": "#98102A"
+  },
+  "governance": {
+   "label": "Governance & Security",
+   "color": "#1B3139"
+  },
+  "sharing": {
+   "label": "Sharing & Collaboration",
+   "color": "#BA7B23"
+  },
+  "devtools": {
+   "label": "Developer Tools & Apps",
+   "color": "#618794"
+  }
+ },
+ "icons": {
+  "abac": {
+   "label": "Attribute-Based Access Control",
+   "category": "governance",
+   "description": "Tag- and attribute-driven policies that enforce row, column and object permissions at scale.",
+   "docs": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/abac/",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/lockOutlinedIcon.svg",
+   "aliases": [
+    "attribute-based-access-control"
+   ]
+  },
+  "agent-bricks": {
+   "label": "Agent Bricks",
+   "category": "ai",
+   "description": "Platform for building, evaluating and governing enterprise AI agents grounded in your own data.",
+   "docs": "https://www.databricks.com/product/artificial-intelligence/agent-bricks",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-mosaic-ai-bricks.svg"
+  },
+  "ai-bi": {
+   "label": "Databricks AI/BI",
+   "category": "analytics",
+   "description": "The built-in business intelligence experience spanning dashboards, Genie spaces and semantics.",
+   "docs": "https://www.databricks.com/product/business-intelligence",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-ai-bi.svg"
+  },
+  "ai-bi-dashboards": {
+   "label": "AI/BI Dashboards",
+   "category": "analytics",
+   "description": "Dashboards with natural-language chart authoring and forecasting. Publication needs no separate license.",
+   "docs": "https://www.databricks.com/product/business-intelligence/ai-bi-dashboards",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/dashboardIcon.svg",
+   "aliases": [
+    "dashboards",
+    "lakeview",
+    "lakeview-dashboards"
+   ]
+  },
+  "ai-functions": {
+   "label": "AI Functions",
+   "category": "ai",
+   "description": "SQL functions such as ai_query, ai_classify and ai_extract that call models directly inside queries.",
+   "docs": "https://docs.databricks.com/aws/en/large-language-models/ai-functions",
+   "source": "https://www.databricks.com/sites/default/files/2025-08/primary-icon-orange-built-in-functions.svg"
+  },
+  "ai-search": {
+   "label": "Databricks AI Search",
+   "category": "ai",
+   "description": "Managed hybrid vector and BM25 search with auto-syncing indexes and built-in reranking.",
+   "docs": "https://www.databricks.com/product/artificial-intelligence/ai-search",
+   "source": "https://www.databricks.com/sites/default/files/2024-11/SearchDataIcon.svg",
+   "aliases": [
+    "databricks-vector-search",
+    "mosaic-ai-vector-search",
+    "vector-search"
+   ]
+  },
+  "apache-iceberg": {
+   "label": "Apache Iceberg",
+   "category": "storage",
+   "kind": "logo",
+   "description": "First-class managed and foreign Iceberg tables, readable and writable through Unity and Iceberg REST catalogs.",
+   "docs": "https://www.databricks.com/product/lakehouse-storage",
+   "source": "https://www.databricks.com/sites/default/files/2024-12/logo-color-apache-iceberg.svg",
+   "aliases": [
+    "iceberg"
+   ]
+  },
+  "apache-spark": {
+   "label": "Apache Spark",
+   "category": "platform",
+   "kind": "logo",
+   "description": "Managed, autoscaling Apache Spark for large-scale batch, streaming and ML processing.",
+   "docs": "https://www.databricks.com/product/spark",
+   "source": "https://www.databricks.com/sites/default/files/2023-01/logo-apache-spark.svg",
+   "aliases": [
+    "spark"
+   ]
+  },
+  "asset-bundles": {
+   "label": "Databricks Asset Bundles",
+   "category": "devtools",
+   "description": "Infrastructure-as-code packaging of jobs, pipelines and apps for repeatable multi-environment deploys.",
+   "docs": "https://docs.databricks.com/aws/en/dev-tools/bundles/",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/briefcaseOutlinedIcon.svg",
+   "aliases": [
+    "bundles",
+    "dabs",
+    "databricks-asset-bundles"
+   ]
+  },
+  "auto-loader": {
+   "label": "Auto Loader",
+   "category": "engineering",
+   "description": "Incrementally and idempotently ingests new files from cloud object storage as they arrive.",
+   "docs": "https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/primary-icon-orange-access-connector.svg",
+   "aliases": [
+    "autoloader"
+   ]
+  },
+  "automl": {
+   "label": "Databricks AutoML",
+   "category": "ai",
+   "description": "Glass-box automated training that produces baseline models plus the editable notebooks that built them.",
+   "docs": "https://www.databricks.com/product/automl",
+   "source": "https://www.databricks.com/sites/default/files/2024-02/primary-icon-orange-machine-learning.svg"
+  },
+  "clean-rooms": {
+   "label": "Databricks Clean Rooms",
+   "category": "sharing",
+   "description": "Privacy-safe multi-party collaboration on shared data with no raw-data access, across clouds.",
+   "docs": "https://www.databricks.com/product/collaboration/clean-rooms",
+   "source": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-collaborate.svg",
+   "aliases": [
+    "clean-room"
+   ]
+  },
+  "compute-clusters": {
+   "label": "Compute (Clusters)",
+   "category": "platform",
+   "description": "All-purpose and job compute resources that run notebooks, pipelines and jobs.",
+   "docs": "https://docs.databricks.com/aws/en/compute/",
+   "source": "https://www.databricks.com/sites/default/files/2025-05/clusterIcon.svg",
+   "aliases": [
+    "clusters",
+    "cluster",
+    "compute",
+    "all-purpose-compute",
+    "jobs-compute",
+    "classic-compute"
+   ]
+  },
+  "customerlake": {
+   "label": "CustomerLake",
+   "category": "ai",
+   "description": "Agentic customer data platform with identity resolution, Customer 360 and marketing agents, native to the lakehouse.",
+   "docs": "https://www.databricks.com/product/customerlake-cdp",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/icon-customerlake.svg"
+  },
+  "data-intelligence-platform": {
+   "label": "Data Intelligence Platform",
+   "category": "platform",
+   "description": "The unified platform for data engineering, analytics, AI and governance on one lakehouse foundation.",
+   "docs": "https://www.databricks.com/product/data-intelligence-platform",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-data-intelligence-platform.svg",
+   "aliases": [
+    "data-intelligence"
+   ]
+  },
+  "data-lineage": {
+   "label": "Data & AI Lineage",
+   "category": "governance",
+   "description": "Automatic column-level lineage across tables, dashboards, models and agents for impact analysis and audit.",
+   "docs": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-data-lineage.svg",
+   "aliases": [
+    "lineage"
+   ]
+  },
+  "data-quality-monitoring": {
+   "label": "Data Quality Monitoring",
+   "category": "governance",
+   "description": "Automated profiling, freshness checks and anomaly detection over tables and inference logs.",
+   "docs": "https://www.databricks.com/product/machine-learning/lakehouse-monitoring",
+   "source": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Observable-Metrics_0.svg",
+   "aliases": [
+    "lakehouse-monitoring"
+   ]
+  },
+  "data-warehousing": {
+   "label": "Databricks Lakehouse (Data Warehousing)",
+   "category": "analytics",
+   "description": "Serverless data warehouse built on open table formats and governed by Unity Catalog.",
+   "docs": "https://www.databricks.com/product/databricks-lakehouse",
+   "source": "https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-data-warehouse.svg"
+  },
+  "databricks": {
+   "label": "Databricks",
+   "category": "platform",
+   "kind": "logo",
+   "description": "The Databricks logo mark. Use it to label the platform boundary in an architecture diagram.",
+   "docs": "https://www.databricks.com/",
+   "source": "https://www.databricks.com/sites/default/files/2026-05/Databricks-Logo-Icon.svg",
+   "aliases": [
+    "databricks-logo",
+    "databricks-platform"
+   ]
+  },
+  "databricks-apps": {
+   "label": "Databricks Apps",
+   "category": "devtools",
+   "description": "Serverless hosting for Python data and AI apps built with Streamlit, Dash or Gradio, with Unity Catalog auth.",
+   "docs": "https://www.databricks.com/product/databricks-apps",
+   "source": "https://www.databricks.com/sites/default/files/2025-06/appsIcon-orange.svg",
+   "aliases": [
+    "apps"
+   ]
+  },
+  "databricks-cli": {
+   "label": "Databricks CLI",
+   "category": "devtools",
+   "description": "Command-line client for workspaces, jobs, compute, Unity Catalog and bundle deployment.",
+   "docs": "https://docs.databricks.com/aws/en/dev-tools/cli/",
+   "source": "https://www.databricks.com/sites/default/files/2026-03/runIcon.svg"
+  },
+  "databricks-connect": {
+   "label": "Databricks Connect",
+   "category": "devtools",
+   "description": "Run local DataFrame code against remote Databricks compute from any IDE or application.",
+   "docs": "https://docs.databricks.com/aws/en/dev-tools/databricks-connect/",
+   "source": "https://www.databricks.com/sites/default/files/2023-07/primary-icon-orange-unified.svg"
+  },
+  "databricks-runtime": {
+   "label": "Databricks Runtime",
+   "category": "platform",
+   "description": "An optimized runtime image with Spark, Delta and ML libraries. The ML variant adds GPU frameworks and AutoML.",
+   "docs": "https://www.databricks.com/product/machine-learning-runtime",
+   "source": "https://www.databricks.com/sites/default/files/2024-01/primary-icon-orange-runtime.svg"
+  },
+  "databricks-sql": {
+   "label": "Databricks SQL",
+   "category": "analytics",
+   "description": "The SQL surface of the lakehouse: warehouses, editor, queries, alerts and BI connectivity.",
+   "docs": "https://www.databricks.com/product/databricks-sql",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-databricks-sql.svg",
+   "aliases": [
+    "dbsql"
+   ]
+  },
+  "delta-lake": {
+   "label": "Delta Lake",
+   "category": "storage",
+   "description": "Open table format adding ACID transactions, time travel and change data feed to object storage.",
+   "docs": "https://www.databricks.com/product/delta-lake-on-databricks",
+   "source": "https://www.databricks.com/sites/default/files/2023-03/icon-orange_delta-lake.svg",
+   "aliases": [
+    "delta"
+   ]
+  },
+  "delta-sharing": {
+   "label": "Delta Sharing",
+   "category": "sharing",
+   "description": "An open protocol for live, zero-copy data sharing across clouds, platforms and organizations.",
+   "docs": "https://www.databricks.com/product/delta-sharing",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/shareIcon-orange.svg"
+  },
+  "document-intelligence": {
+   "label": "Document Intelligence",
+   "category": "ai",
+   "description": "SQL-native parsing, extraction and classification that turns PDFs and images into governed structured data.",
+   "docs": "https://www.databricks.com/product/artificial-intelligence/document-intelligence",
+   "source": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Data-Parser-Normalizer-ETL-ELT.svg"
+  },
+  "enterprise-security": {
+   "label": "Enterprise Security",
+   "category": "governance",
+   "description": "Network isolation, customer-managed keys, private connectivity and compliance controls for the workspace.",
+   "docs": "https://www.databricks.com/trust/security-features",
+   "source": "https://www.databricks.com/sites/default/files/2025-06/primary-icon-orange-enterprise-security.svg"
+  },
+  "feature-store": {
+   "label": "Databricks Feature Store",
+   "category": "ai",
+   "description": "Governed feature registry with batch and low-latency online serving, and training/serving consistency.",
+   "docs": "https://www.databricks.com/product/feature-store",
+   "source": "https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-cache-sync-reduction.svg",
+   "aliases": [
+    "feature-engineering"
+   ]
+  },
+  "genie": {
+   "label": "Databricks Genie",
+   "category": "ai",
+   "description": "The agentic AI experience that answers questions and acts on governed enterprise data.",
+   "docs": "https://www.databricks.com/product/business-intelligence",
+   "source": "https://www.databricks.com/sites/default/files/2026-05/icon-genie.svg"
+  },
+  "genie-agents": {
+   "label": "Genie Agents",
+   "category": "ai",
+   "description": "Governed natural-language analytics spaces that answer business questions over curated data.",
+   "docs": "https://www.databricks.com/product/genie/agents",
+   "source": "https://www.databricks.com/sites/default/files/2025-02/speechBubbleIcon.svg",
+   "aliases": [
+    "ai-bi-genie-spaces",
+    "genie-spaces",
+    "ai-bi-genie"
+   ]
+  },
+  "genie-code": {
+   "label": "Genie Code",
+   "category": "ai",
+   "description": "Agentic coding partner for data teams that builds pipelines, dashboards, notebooks and ML workflows.",
+   "docs": "https://www.databricks.com/product/genie/code",
+   "source": "https://www.databricks.com/sites/default/files/2026-03/GenieCodeIcon.svg"
+  },
+  "genie-deep-research": {
+   "label": "Genie Deep Research",
+   "category": "ai",
+   "description": "Multi-step research agent that investigates a question across governed data and returns a cited report.",
+   "docs": "https://www.databricks.com/product/genie/one",
+   "source": "https://www.databricks.com/sites/default/files/2026-02/GenieDeepResearchIcon.svg"
+  },
+  "genie-one": {
+   "label": "Genie One",
+   "category": "ai",
+   "description": "AI coworker hub where business users ask questions, get grounded answers and trigger agentic actions.",
+   "docs": "https://www.databricks.com/product/genie/one",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/icon-genie-one-16x16.svg"
+  },
+  "git-folders": {
+   "label": "Git Folders (Repos)",
+   "category": "devtools",
+   "description": "Workspace folders backed by Git for branch-based development and CI/CD.",
+   "docs": "https://www.databricks.com/product/repos",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/FolderBranchIcon.svg",
+   "aliases": [
+    "repos"
+   ]
+  },
+  "ide-integrations": {
+   "label": "IDE Integrations",
+   "category": "devtools",
+   "description": "Official VS Code and PyCharm extensions for editing, syncing, running and debugging on Databricks.",
+   "docs": "https://www.databricks.com/product/data-science/ide-integrations",
+   "source": "https://www.databricks.com/sites/default/files/2026-05/codeIcon.svg"
+  },
+  "lakebase": {
+   "label": "Lakebase",
+   "category": "storage",
+   "description": "Serverless Postgres OLTP database with branching, scale-to-zero and native lakehouse sync for apps and agents.",
+   "docs": "https://www.databricks.com/product/lakebase",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-lakebase.svg"
+  },
+  "lakebridge": {
+   "label": "Lakebridge",
+   "category": "engineering",
+   "description": "Migration tooling that profiles legacy warehouses, converts code to ANSI SQL and validates the results.",
+   "docs": "https://www.databricks.com/solutions/migration",
+   "source": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-reserved-keywords-parser.svg"
+  },
+  "lakeflow": {
+   "label": "Lakeflow",
+   "category": "engineering",
+   "description": "The unified data engineering suite covering ingestion, declarative transformation and orchestration.",
+   "docs": "https://www.databricks.com/product/data-engineering",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-lakeflow.svg"
+  },
+  "lakeflow-connect": {
+   "label": "Lakeflow Connect",
+   "category": "engineering",
+   "description": "Managed ingestion with 100+ connectors for SaaS applications, databases and cloud storage.",
+   "docs": "https://www.databricks.com/product/data-engineering/lakeflow-connect",
+   "source": "https://www.databricks.com/sites/default/files/2023-09/primary-icon-orange-connectors.svg"
+  },
+  "lakeflow-designer": {
+   "label": "Lakeflow Designer",
+   "category": "engineering",
+   "description": "No-code, drag-and-drop pipeline authoring that generates governed, production-ready pipeline code.",
+   "docs": "https://www.databricks.com/product/data-engineering/lakeflow-designer",
+   "source": "https://www.databricks.com/sites/default/files/2025-05/dagicon.svg"
+  },
+  "lakeflow-jobs": {
+   "label": "Lakeflow Jobs",
+   "category": "engineering",
+   "description": "Native orchestration for data, analytics and AI workflows, with control flow, retries and alerting.",
+   "docs": "https://www.databricks.com/product/data-engineering/lakeflow-jobs",
+   "source": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-automation-orchestration.svg",
+   "aliases": [
+    "databricks-workflows",
+    "jobs",
+    "workflows"
+   ]
+  },
+  "lakehouse": {
+   "label": "Lakehouse Architecture",
+   "category": "platform",
+   "description": "Open architecture combining data lake economics with warehouse reliability and ACID management.",
+   "docs": "https://www.databricks.com/product/data-lakehouse",
+   "source": "https://www.databricks.com/sites/default/files/2024-06/primary-icon-orange-delta-lakehouse.svg"
+  },
+  "lakehouse-federation": {
+   "label": "Lakehouse Federation",
+   "category": "analytics",
+   "description": "Query and govern external systems such as Snowflake, BigQuery, Postgres and MySQL in place, without moving data.",
+   "docs": "https://docs.databricks.com/aws/en/query-federation/",
+   "source": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-Network-Data-Sources.svg",
+   "aliases": [
+    "federation",
+    "query-federation"
+   ]
+  },
+  "lakehouse-rt": {
+   "label": "Lakehouse//RT",
+   "category": "analytics",
+   "description": "Real-time warehouse tier serving millisecond queries at high concurrency directly on lake tables.",
+   "docs": "https://www.databricks.com/product/lakehouse/real-time-lakehouse",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/icon-lakehouse-rt.svg"
+  },
+  "lakehouse-storage": {
+   "label": "Lakehouse Storage (Managed Tables)",
+   "category": "storage",
+   "description": "Self-optimizing managed Delta and Iceberg tables with automatic layout, compaction and caching.",
+   "docs": "https://www.databricks.com/product/lakehouse-storage",
+   "source": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-Delta-Table.svg",
+   "aliases": [
+    "managed-tables"
+   ]
+  },
+  "lakewatch": {
+   "label": "Lakewatch",
+   "category": "governance",
+   "description": "Open agentic SIEM for petabyte-scale security logs, detection-as-code and AI-assisted threat hunting.",
+   "docs": "https://www.databricks.com/product/lakewatch",
+   "source": "https://www.databricks.com/sites/default/files/2023-02/icon-orange-SIEM.svg"
+  },
+  "liquid-clustering": {
+   "label": "Liquid Clustering",
+   "category": "storage",
+   "description": "Partition-free, self-tuning data layout that adapts clustering keys to real query patterns.",
+   "docs": "https://docs.databricks.com/aws/en/delta/clustering",
+   "source": "https://www.databricks.com/sites/default/files/2025-05/layerIcon.svg"
+  },
+  "marketplace": {
+   "label": "Databricks Marketplace",
+   "category": "sharing",
+   "description": "Open exchange for datasets, models, notebooks, dashboards and solution accelerators.",
+   "docs": "https://www.databricks.com/product/marketplace",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/dataMarketplaceIcon.svg",
+   "aliases": [
+    "databricks-marketplace"
+   ]
+  },
+  "mlflow": {
+   "label": "Managed MLflow",
+   "category": "ai",
+   "description": "Hosted MLflow for experiment tracking, GenAI tracing, evaluation and the Unity Catalog model registry.",
+   "docs": "https://www.databricks.com/product/managed-mlflow",
+   "source": "https://www.databricks.com/sites/default/files/2023-01/icon-orange-Full-Lifecycle-Machine-Learning.svg",
+   "aliases": [
+    "managed-mlflow"
+   ]
+  },
+  "model-serving": {
+   "label": "Databricks Model Serving",
+   "category": "ai",
+   "description": "Unified serverless endpoints for custom ML models, foundation models and agents, plus batch inference.",
+   "docs": "https://www.databricks.com/product/model-serving",
+   "source": "https://www.databricks.com/sites/default/files/2025-05/CloudModelIcon.svg",
+   "aliases": [
+    "mosaic-ai-model-serving",
+    "serving-endpoints"
+   ]
+  },
+  "model-training": {
+   "label": "Databricks Model Training",
+   "category": "ai",
+   "description": "Managed fine-tuning and custom model training on serverless H100 GPUs, without moving data.",
+   "docs": "https://www.databricks.com/product/machine-learning/mosaic-ai-training",
+   "source": "https://www.databricks.com/sites/default/files/2024-10/modelsIcon.svg"
+  },
+  "multicloud": {
+   "label": "Multicloud Deployment",
+   "category": "platform",
+   "description": "The same platform and governance model deployed across AWS, Azure and Google Cloud.",
+   "docs": "https://www.databricks.com/product/data-intelligence-platform",
+   "source": "https://www.databricks.com/sites/default/files/2025-05/primary-icon-orange-multicloud.svg"
+  },
+  "notebooks": {
+   "label": "Databricks Notebooks",
+   "category": "devtools",
+   "description": "Collaborative multi-language notebooks with built-in visualisation, versioning and AI assistance.",
+   "docs": "https://www.databricks.com/product/collaborative-notebooks",
+   "source": "https://www.databricks.com/sites/default/files/2026-03/notebookIcon.svg",
+   "aliases": [
+    "notebook"
+   ]
+  },
+  "opensharing": {
+   "label": "OpenSharing",
+   "category": "sharing",
+   "description": "Linux Foundation standard extending governed sharing to data, models and agents across engines and clouds.",
+   "docs": "https://www.databricks.com/product/opensharing",
+   "source": "https://www.databricks.com/sites/default/files/2026-03/primary-icon-orange-open-source.svg"
+  },
+  "partner-connect": {
+   "label": "Partner Connect",
+   "category": "sharing",
+   "description": "Guided setup that wires validated ingestion, BI and governance partner tools into your workspace.",
+   "docs": "https://www.databricks.com/partnerconnect",
+   "source": "https://www.databricks.com/sites/default/files/2023-06/primary-icon-orange-partner-connect.svg"
+  },
+  "photon": {
+   "label": "Photon",
+   "category": "platform",
+   "description": "A native C++ vectorized query engine. It accelerates SQL and DataFrame work with no code changes.",
+   "docs": "https://www.databricks.com/product/photon",
+   "source": "https://www.databricks.com/sites/default/files/2023-03/icon-orange-photon.svg"
+  },
+  "predictive-optimization": {
+   "label": "Predictive Optimization",
+   "category": "storage",
+   "description": "AI-driven background maintenance that runs OPTIMIZE, VACUUM and statistics where they pay off most.",
+   "docs": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+   "source": "https://www.databricks.com/sites/default/files/2025-08/gearOutlinedIcon.svg"
+  },
+  "rest-api": {
+   "label": "REST API & SDKs",
+   "category": "devtools",
+   "description": "Programmatic control of every platform resource, with official Python, Java, Go and JavaScript SDKs.",
+   "docs": "https://docs.databricks.com/api/workspace/introduction",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-webhook.svg"
+  },
+  "serverless-compute": {
+   "label": "Serverless Compute",
+   "category": "platform",
+   "description": "Fully managed, versionless compute that starts in seconds and autoscales without cluster administration.",
+   "docs": "https://www.databricks.com/product/serverless-compute",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/primary-icon-orange-scale.svg",
+   "aliases": [
+    "serverless"
+   ]
+  },
+  "spark-declarative-pipelines": {
+   "label": "Apache Spark Declarative Pipelines",
+   "category": "engineering",
+   "description": "Declarative batch and streaming ETL with built-in data quality expectations, CDC and dependency management.",
+   "docs": "https://www.databricks.com/product/data-engineering/spark-declarative-pipelines",
+   "source": "https://www.databricks.com/sites/default/files/2025-02/primary-icon-orange-lakeflow-pipelines.svg",
+   "aliases": [
+    "lakeflow-declarative-pipelines",
+    "delta-live-tables",
+    "dlt",
+    "declarative-pipelines",
+    "ldp",
+    "sdp"
+   ]
+  },
+  "spark-real-time-mode": {
+   "label": "Real-Time Mode for Apache Spark",
+   "category": "platform",
+   "description": "Structured Streaming execution mode delivering millisecond latency for time-critical pipelines.",
+   "docs": "https://www.databricks.com/product/data-engineering/spark-real-time-mode",
+   "source": "https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-speed.svg"
+  },
+  "sql-warehouse": {
+   "label": "SQL Warehouse",
+   "category": "analytics",
+   "description": "Serverless, Photon-powered SQL compute endpoint for BI tools, dashboards and ad hoc queries.",
+   "docs": "https://docs.databricks.com/aws/en/compute/sql-warehouse/",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/TableLightningIcon.svg",
+   "aliases": [
+    "sql-warehouses",
+    "dbsql-warehouse"
+   ]
+  },
+  "structured-streaming": {
+   "label": "Structured Streaming",
+   "category": "engineering",
+   "description": "The Apache Spark API for exactly-once stream processing in continuous, incremental pipelines.",
+   "docs": "https://docs.databricks.com/aws/en/structured-streaming/",
+   "source": "https://www.databricks.com/sites/default/files/2026-06/streamIcon.svg"
+  },
+  "system-tables": {
+   "label": "System Tables",
+   "category": "governance",
+   "description": "Built-in analytical tables exposing billing, usage, lineage, audit and job history for observability.",
+   "docs": "https://docs.databricks.com/aws/en/admin/system-tables/",
+   "source": "https://www.databricks.com/sites/default/files/2026-02/visibleIcon.svg"
+  },
+  "terraform-provider": {
+   "label": "Databricks Terraform Provider",
+   "category": "devtools",
+   "description": "Official Terraform provider for declaring workspaces, compute, Unity Catalog objects and permissions.",
+   "docs": "https://registry.terraform.io/providers/databricks/databricks/latest/docs",
+   "source": "https://www.databricks.com/sites/default/files/2026-05/primary-icon-orange-automation.svg"
+  },
+  "unity-ai-gateway": {
+   "label": "Unity AI Gateway",
+   "category": "ai",
+   "description": "Single control plane for model, MCP and agent access with guardrails, rate limits, budgets and audit.",
+   "docs": "https://www.databricks.com/product/artificial-intelligence/unity-ai-gateway",
+   "source": "https://www.databricks.com/sites/default/files/2024-10/primary-icon-orange-authentication-service.svg"
+  },
+  "unity-catalog": {
+   "label": "Unity Catalog",
+   "category": "governance",
+   "description": "Unified governance for data, models, agents and MCP servers across clouds, under one permission model.",
+   "docs": "https://www.databricks.com/product/unity-catalog",
+   "source": "https://www.databricks.com/sites/default/files/2026-01/icon-unity-catalog.svg",
+   "aliases": [
+    "uc"
+   ]
+  },
+  "unity-catalog-semantics": {
+   "label": "Unity Catalog Semantics",
+   "category": "governance",
+   "description": "Central semantic layer of metric views and business definitions that grounds BI tools and AI agents.",
+   "docs": "https://www.databricks.com/product/unity-catalog/business-semantics",
+   "source": "https://www.databricks.com/sites/default/files/2023-08/primary-icon-orange-context-enrichment.svg"
+  },
+  "workspace": {
+   "label": "Databricks Workspace",
+   "category": "devtools",
+   "description": "A collaborative environment. It groups the notebooks, queries, dashboards, jobs and files of each team.",
+   "docs": "https://docs.databricks.com/aws/en/workspace/",
+   "source": "https://www.databricks.com/sites/default/files/2025-01/workspacesIcon-orange.svg",
+   "aliases": [
+    "databricks-workspace"
+   ]
+  },
+  "zerobus-ingest": {
+   "label": "Zerobus Ingest",
+   "category": "engineering",
+   "description": "Broker-free streaming ingest over gRPC, REST and OpenTelemetry with roughly five-second freshness.",
+   "docs": "https://www.databricks.com/product/data-engineering/lakeflow-connect/zerobus-ingest",
+   "source": "https://www.databricks.com/sites/default/files/2025-04/primary-icon-orange-input-ingest_.svg"
+  }
+ },
+ "aliases": {
+  "ai-bi-genie": "genie-agents",
+  "ai-bi-genie-spaces": "genie-agents",
+  "all-purpose-compute": "compute-clusters",
+  "apps": "databricks-apps",
+  "attribute-based-access-control": "abac",
+  "autoloader": "auto-loader",
+  "bundles": "asset-bundles",
+  "classic-compute": "compute-clusters",
+  "clean-room": "clean-rooms",
+  "cluster": "compute-clusters",
+  "clusters": "compute-clusters",
+  "compute": "compute-clusters",
+  "dabs": "asset-bundles",
+  "dashboards": "ai-bi-dashboards",
+  "data-intelligence": "data-intelligence-platform",
+  "databricks-asset-bundles": "asset-bundles",
+  "databricks-logo": "databricks",
+  "databricks-marketplace": "marketplace",
+  "databricks-platform": "databricks",
+  "databricks-vector-search": "ai-search",
+  "databricks-workflows": "lakeflow-jobs",
+  "databricks-workspace": "workspace",
+  "dbsql": "databricks-sql",
+  "dbsql-warehouse": "sql-warehouse",
+  "declarative-pipelines": "spark-declarative-pipelines",
+  "delta": "delta-lake",
+  "delta-live-tables": "spark-declarative-pipelines",
+  "dlt": "spark-declarative-pipelines",
+  "feature-engineering": "feature-store",
+  "federation": "lakehouse-federation",
+  "genie-spaces": "genie-agents",
+  "iceberg": "apache-iceberg",
+  "jobs": "lakeflow-jobs",
+  "jobs-compute": "compute-clusters",
+  "lakeflow-declarative-pipelines": "spark-declarative-pipelines",
+  "lakehouse-monitoring": "data-quality-monitoring",
+  "lakeview": "ai-bi-dashboards",
+  "lakeview-dashboards": "ai-bi-dashboards",
+  "ldp": "spark-declarative-pipelines",
+  "lineage": "data-lineage",
+  "managed-mlflow": "mlflow",
+  "managed-tables": "lakehouse-storage",
+  "mosaic-ai-model-serving": "model-serving",
+  "mosaic-ai-vector-search": "ai-search",
+  "notebook": "notebooks",
+  "query-federation": "lakehouse-federation",
+  "repos": "git-folders",
+  "sdp": "spark-declarative-pipelines",
+  "serverless": "serverless-compute",
+  "serving-endpoints": "model-serving",
+  "spark": "apache-spark",
+  "sql-warehouses": "sql-warehouse",
+  "uc": "unity-catalog",
+  "vector-search": "ai-search",
+  "workflows": "lakeflow-jobs"
+ }
+}

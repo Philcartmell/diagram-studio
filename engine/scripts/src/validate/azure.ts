@@ -1,5 +1,5 @@
-/** Cross-reference checks for azure-architecture specs. */
-import { resolveService, suggestService } from '../azure/icons.js';
+/** Cross-reference checks for azure-architecture and databricks-architecture specs (one body format). */
+import { type IconPack, resolveService, suggestService } from '../azure/icons.js';
 import { type AzureArchitectureBody, type AzureContainer, type AzureItem, type AzureNode, isAzureContainer } from '../spec.js';
 
 export interface WalkedItem {
@@ -29,10 +29,10 @@ export function azureNodes(body: AzureArchitectureBody): { node: AzureNode; path
 }
 
 /** The label a node shows: its own, else the official service name. */
-export function azureLabel(item: AzureNode | AzureContainer): string | undefined {
+export function azureLabel(item: AzureNode | AzureContainer, home: IconPack = 'azure'): string | undefined {
   if (item.label) return item.label;
   if (item.service) {
-    const r = resolveService(item.service);
+    const r = resolveService(item.service, home);
     if (r) return r.label;
   }
   return undefined;
@@ -47,27 +47,50 @@ const DEFAULT_LABEL: Partial<Record<NonNullable<AzureContainer['boundary']>, str
   'resource-group': 'Resource group',
   'virtual-network': 'Virtual network',
   subnet: 'Subnet',
+  'databricks-account': 'Databricks account',
+  'cloud-account': 'Cloud account',
+  'unity-catalog': 'Unity Catalog',
+  bronze: 'Bronze',
+  silver: 'Silver',
+  gold: 'Gold',
 };
 
-export function boundaryLabel(c: AzureContainer): string | undefined {
+/** Boundaries whose default name says which product they are, so it follows the diagram type. */
+const VENDOR_LABEL: Partial<Record<NonNullable<AzureContainer['boundary']>, Record<IconPack, string>>> = {
+  workspace: { azure: 'Azure Databricks workspace', databricks: 'Databricks workspace' },
+  platform: { azure: 'Azure Databricks', databricks: 'Databricks Data Intelligence Platform' },
+};
+
+/** Boundaries that mean nothing without a name. */
+const NEEDS_LABEL: Partial<Record<NonNullable<AzureContainer['boundary']>, string>> = {
+  region: 'East US 2',
+  zone: 'Zone 1',
+  plane: 'Control plane',
+  panel: 'Data Engineering',
+  stage: 'Ingest',
+};
+
+export function boundaryLabel(c: AzureContainer, home: IconPack = 'azure'): string | undefined {
   if (c.label) return c.label;
-  if (c.boundary === 'service') return azureLabel(c);
-  return c.boundary ? DEFAULT_LABEL[c.boundary] : undefined;
+  if (c.boundary === 'service') return azureLabel(c, home);
+  if (!c.boundary) return undefined;
+  return VENDOR_LABEL[c.boundary]?.[home] ?? DEFAULT_LABEL[c.boundary];
 }
 
 type Report = (path: string, message: string, code: string) => void;
 
-export function checkAzure(body: AzureArchitectureBody, err: Report, warn: Report): void {
+export function checkAzure(body: AzureArchitectureBody, err: Report, warn: Report, home: IconPack = 'azure'): void {
   const walked = walkAzure(body);
   const byId = new Map(walked.map((w) => [w.item.id, w]));
 
   const checkService = (path: string, name: string) => {
-    const r = resolveService(name);
+    const r = resolveService(name, home);
     if (!r) {
-      const g = suggestService(name);
+      const g = suggestService(name, home);
+      const what = home === 'databricks' ? 'a Databricks or Azure icon id or alias' : 'an Azure icon id or alias';
       err(
         path,
-        `"${name}" is not an Azure icon id or alias.${g ? ` Did you mean "${g}"?` : ''} Run \`diagram-studio azure icons <words>\` to search the catalog.`,
+        `"${name}" is not ${what}.${g ? ` Did you mean "${g}"?` : ''} Run \`diagram-studio azure icons <words>\` or \`diagram-studio databricks icons <words>\` to search the catalogs.`,
         'ref.service',
       );
     } else if (r.kind === 'missing') {
@@ -85,13 +108,15 @@ export function checkAzure(body: AzureArchitectureBody, err: Report, warn: Repor
         warn(`${path}.service`, `only "service" boundaries show an icon; set "boundary": "service" or remove "service".`, 'ref.boundary-service');
       if (!c.boundary && (c.label || c.nsg || c.step !== undefined || c.emphasis))
         warn(path, `has no "boundary", so it is an invisible layout group and its label, nsg, step and emphasis are not drawn. Add "boundary" (for example "group") to draw it.`, 'ref.invisible-group');
-      if ((c.boundary === 'region' || c.boundary === 'zone') && !c.label)
-        err(`${path}.label`, `is missing: name the ${c.boundary} (for example "${c.boundary === 'region' ? 'East US 2' : 'Zone 1'}").`, 'ref.boundary-label');
+      if (c.boundary && NEEDS_LABEL[c.boundary] && !c.label)
+        err(`${path}.label`, `is missing: name the ${c.boundary} (for example "${NEEDS_LABEL[c.boundary]}").`, 'ref.boundary-label');
       if (c.nsg && c.boundary !== 'subnet') warn(`${path}.nsg`, `network security groups attach to subnets; this is a ${c.boundary ?? 'layout group'}.`, 'ref.nsg');
       if (c.columns && c.layout && c.layout !== 'grid') warn(`${path}.columns`, `only applies to "layout": "grid".`, 'ref.columns');
     } else {
       const n = item;
       if (n.service) checkService(`${path}.service`, n.service);
+      if (n.service && resolveService(n.service, home)?.id === 'databricks:databricks')
+        warn(`${path}.service`, `is the Databricks logo, which labels the platform itself. Draw the platform as a "platform" or "databricks-account" boundary (they carry the logo), and use product icons for what runs on it.`, 'ref.logo');
       if (n.service && n.icon) err(path, `has both "service" and "icon"; use "service" for Azure services and "icon" only for non-Azure things.`, 'ref.icon');
       if (!n.label && !n.service) err(`${path}.label`, `is missing: a node without a "service" needs a label.`, 'ref.label');
     }

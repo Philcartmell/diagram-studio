@@ -3,7 +3,7 @@
 An Azure architecture in Microsoft reference-architecture style. Services are drawn with the official Azure icons and labelled with their product names. They sit inside nested boundaries (Azure, region, virtual network, subnet, availability zone, group), and flows carry numbered green step badges explained in a workflow panel. Answers "how does this run on Azure?". Read `references/azure-style.md` first: it defines what a good Azure diagram looks like, and this type implements it.
 
 **Use for:** solution workflows with numbered steps ("how a document flows through the pipeline"), network and infrastructure topologies (hub-spoke, private endpoints, zone-redundant baselines, multi-region), and drafts from a deployed estate (ARM template or resource list).
-**Not for:** non-Azure clouds; business-level system pictures without vendor icons (`layered-architecture`); processes across teams (`swimlane`).
+**Not for:** non-Azure clouds; Databricks-centred pictures (lakehouse flows, Databricks deployment topology, platform maps: `databricks-architecture`); business-level system pictures without vendor icons (`layered-architecture`); processes across teams (`swimlane`).
 
 ## Body fields
 
@@ -40,6 +40,8 @@ An Azure architecture in Microsoft reference-architecture style. Services are dr
 | `group` | dashed grey border, label centred on top | for stages, tiers, "Monitoring", "Shared resources" |
 | `service` | grey panel headed by a service's icon (set `service`) | for a resource that contains others: AKS cluster, Foundry account, App Service plan |
 
+Databricks boundaries work here too: `workspace`, `databricks-account`, `plane`, `unity-catalog`, `bronze`, `silver` and `gold` (see Databricks below). `platform`, `panel`, `stage` and `cloud-account` exist as well, for `databricks-architecture`.
+
 Without `boundary`, a container is an **invisible layout group**: it arranges its children (for example a column of PaaS services beside a virtual network) but draws nothing.
 
 `description` on a boundary is a small line under its label: the address space, a SKU, "Customer-hosted".
@@ -51,6 +53,8 @@ Services and boxes count toward the altitude node limit; boundaries do not.
 You arrange, the renderer measures and aligns. Every container lays out its children in a `row`, `column` or `grid` in the order you list them. Boundaries in a row stretch to the same height (and in a column, to the same width). Each service then slides within its slot to line up with what it connects to, so most flows run straight. Flows are routed orthogonally around icons and labels, and they avoid boundaries that contain neither end. Step badges and flow labels go beside their lines.
 
 The canvas grows in standard steps (1280 × 720 up to 3840 × 2160 for 16:9) until the architecture fits. The render notes say so, because labels then print smaller on a slide. With `"canvas": { "aspect": "auto" }` it fits the content exactly.
+
+Plain boxes side by side in one container share one size, so a row of them reads as a set; keep their text short enough for one line.
 
 Arrange like Microsoft does:
 
@@ -66,6 +70,17 @@ Arrange like Microsoft does:
 - The catalog is the official Azure icon pack (637 icons). Ids are the icon names in kebab case (`kubernetes-services`, `key-vaults`, `front-door-and-cdn-profiles`), and about 400 aliases cover everyday names (`aks`, `app-service`, `function-app`, `cosmos-db`, `vnet`, `nsg`, `pe`, `log-analytics`, `front-door`).
 - **Microsoft Entra ID has no icon in the pack;** Microsoft ships Entra icons separately. Save the official SVG as `entra-id.svg` in the `azure-icons` folder of the user folder (`diagram-studio version` prints where) and `"service": "entra-id"` works. Any SVG dropped into that folder becomes an icon with that id (optional labels in `labels.json` beside them).
 - Use an Azure icon only for that product. Non-Azure things get a generic participant (`internet`, `on-premises`, `client`, `third-party`…) or a plain box.
+
+## Databricks in an Azure diagram
+
+Azure Databricks diagrams keep this type and the Microsoft look. Read the "Databricks inside an Azure diagram" section of `references/databricks-style.md` once; in short:
+
+- **The workspace** is `"boundary": "workspace"`: a white panel with the Azure Databricks icon and "Azure Databricks workspace" at its top-left. A diagram with a single Databricks node uses `"service": "azure-databricks"` alone.
+- **Features inside it** are Databricks product icons with the `databricks:` prefix: `databricks:dlt` (declarative pipelines), `databricks:jobs`, `databricks:sql-warehouse`, `databricks:mlflow`, `databricks:model-serving`, `databricks:unity-catalog`. Search with `diagram-studio databricks icons <words>`. Unprefixed names stay Azure (`ai-search` is Azure AI Search).
+- **The control plane** is a `databricks-account` boundary (dashed grey, outside the customer's subscription) holding a `plane` for the control plane and one for the serverless compute plane.
+- **The classic compute plane** is the customer's `virtual-network` (VNet injection): a host subnet and a container subnet, both with `"nsg": true`, plus a private endpoint subnet for the back-end Private Link endpoint.
+- **Unity Catalog** is a `unity-catalog` band under the flow; **medallion layers** are `bronze`, `silver` and `gold` boundaries in a Store `group` beside ADLS Gen2.
+- **Governance and isolation** (per-team slices, identities, permissions, Foundry models, remote storage): read "Governance and isolation on Azure Databricks" in `references/databricks-style.md`. Databricks objects (catalog, storage and service credentials, external location, secret scope, model provider service) are plain boxes inside the workspace; Azure resources (access connector, managed identity, Key Vault, containers, private endpoints) sit outside it. Label arrows with Unity Catalog privileges inside and Azure roles outside. `ds example azure-architecture --n 5` is the full pattern.
 
 ## From a deployed estate (ARM)
 
@@ -190,7 +205,7 @@ Names and facts in the examples below are illustrative. Copy the structure, not 
 }
 ```
 
-More: `ds example azure-architecture` prints the document-classification workflow (`--n 2` the zone-redundant web app baseline, `--n 3` the multi-region AKS topology with three flow types).
+More: `ds example azure-architecture` prints the document-classification workflow (`--n 2` the zone-redundant web app baseline, `--n 3` the multi-region AKS topology with three flow types, `--n 4` modern analytics with an Azure Databricks workspace, medallion layers and Unity Catalog, `--n 5` per-team isolation in one shared Azure Databricks workspace: identities, permissions, Foundry through Unity Gateway and a cross-subscription source).
 
 ## Fixing render errors
 

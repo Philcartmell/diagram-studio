@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.diagram-studio.local/types/databricks-architecture.schema.json",
+  "title": "databricks-architecture body",
+  "description": "A Databricks architecture in the Databricks brand look. The body format is the same as azure-architecture: products drawn with the official Databricks icons (Azure icons too, with the \"azure:\" prefix when a name is shared), nested boundaries, flows with numbered steps, and an optional workflow narrative.",
+  "$ref": "azure-architecture.schema.json"
+}

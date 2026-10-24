@@ -1,6 +1,6 @@
 ---
 name: azure
-description: Runs an Azure architecture design session with the user, drawn in Microsoft Azure Architecture Center style with the official Azure icons. It works out which kind of diagram the reader needs (a solution workflow with numbered steps, a network topology with regions, virtual networks, subnets and private endpoints, or a hybrid of the two), can draft from an ARM template or resource list, proposes two or three concepts side by side on a live preview board, refines the chosen one through conversation, and exports PowerPoint, draw.io, SVG, PNG or PDF when the user is happy. Use it when someone wants an Azure architecture drawn, explained or reviewed ("diagram our AKS baseline", "how would a multi-region App Service look?", "show how a document flows through our Functions pipeline", "turn this ARM export into a diagram", "draw our hub-spoke network for the architecture review"). Not for business diagrams such as operating models, swimlanes or roadmaps (this plugin's business skill draws those), AWS or Google Cloud diagrams, or data charts.
+description: Runs an Azure architecture design session with the user, drawn in Microsoft Azure Architecture Center style with the official Azure icons. It works out which kind of diagram the reader needs (a solution workflow with numbered steps, a network topology with regions, virtual networks, subnets and private endpoints, or a hybrid of the two), can draft from an ARM template or resource list, proposes two or three concepts side by side on a live preview board, refines the chosen one through conversation, and exports PowerPoint, draw.io, SVG, PNG or PDF when the user is happy. Use it when someone wants an Azure architecture drawn, explained or reviewed ("diagram our AKS baseline", "how would a multi-region App Service look?", "show how a document flows through our Functions pipeline", "turn this ARM export into a diagram", "draw our hub-spoke network for the architecture review", "where does Azure Databricks sit in our data platform?"). Azure Databricks workspaces are drawn the Microsoft way, with Databricks product icons inside. A Databricks-centred picture (a lakehouse pipeline, a Databricks deployment topology, a platform map in the Databricks look) belongs to this plugin's databricks skill. Not for business diagrams such as operating models, swimlanes or roadmaps (this plugin's business skill draws those), AWS or Google Cloud diagrams, or data charts.
 argument-hint: "[the Azure workload, architecture or deployment to draw]"
 ---
 
@@ -22,6 +22,8 @@ The spec rules ship with the engine, so read them from it rather than from memor
 | When unsure of an envelope field | `diagram-studio docs spec-format` |
 | Starting a spec | `diagram-studio example azure-architecture` (a solution workflow; `--n 2` a zone-redundant web app topology, `--n 3` a multi-region AKS topology with three flow types). Copy the structure, never the facts |
 | Choosing an icon | `diagram-studio azure icons <words>`: product names, aliases such as `aks` or `kv`, or ARM types such as `Microsoft.Web/sites` |
+| Azure Databricks in the diagram | The "Databricks inside an Azure diagram" section of `diagram-studio docs databricks-style`, and `diagram-studio databricks icons <words>` for the product icons (written `databricks:<id>` here) |
+| Identity, permission or isolation designs (per-team slices, managed identities, Key Vaults, Foundry models, remote storage) | "Governance and isolation on Azure Databricks" in `diagram-studio docs databricks-style`, and `diagram-studio example azure-architecture --n 5`, the full pattern |
 
 ## The session folder
 
@@ -47,7 +49,7 @@ Start it once per session, as a background command, as soon as the session folde
 diagram-studio preview diagrams/<session> --open
 ```
 
-It prints `{"url": …}` and opens the default browser. In the Claude desktop app, if you have a built-in browser or preview tool, open the URL there instead of passing `--open`, so the board sits beside the chat. The board refreshes itself after every render. It features `working/` at the top, shows concepts as lettered cards (A, B, C), shows `brief.md` in a side panel, and marks a card when its last render failed QA. Give the user the URL once. If a board for this folder is already running, reuse it. If no browser can open (a remote or headless session), skip the board, describe each render in words and give the file paths.
+It prints `{"url": …}` and opens the default browser. In the Claude desktop app, if you have a built-in browser or preview tool, open the URL there instead of passing `--open`, so the board sits beside the chat. The board refreshes itself after every render and shows the newest render large, with every render (working design starred, concepts lettered A, B, C) in a thumbnail strip underneath, newest first. The user can click a thumbnail or use the arrow keys to look back; the next render takes over the main view again. On a phone-sized screen it stacks every render instead. It shows `brief.md` in a side panel and marks a render whose last attempt failed QA. Give the user the URL once. If a board for this folder is already running, reuse it. If no browser can open (a remote or headless session), skip the board, describe each render in words and give the file paths.
 
 ## Workflow
 
@@ -60,6 +62,7 @@ From what the user has given you, pull out:
 - **Audience,** which sets the altitude. Executives get a solution workflow with at most nine services (`executive`). Architecture reviews get `management` (up to 20). Engineers get the detailed topology (`detailed`, up to 60).
 - **The message:** what the reader should believe afterwards. This becomes the action title: "Private endpoints keep every data path off the internet", not "Web app architecture".
 - **Where it will be used:** a slide in a deck (16:9, the action title above the diagram), or a page in a wiki or design document (`"frame": "figure"`, no title in the image, as in the Architecture Center).
+- **Whether the facts are current.** When the design depends on how a product works today (identity, permissions, networking, Databricks features), check the current Microsoft and Databricks docs before drawing, with web search if you have it. Use today's names and correct the user's terms gently, in one line: "the access connector is an Azure resource; inside Databricks it's the storage credential", "SCIM is now automatic identity management", "AI Gateway is now Unity Gateway". Name your sources when you report back.
 
 Then ask only what you cannot infer, in **one** `AskUserQuestion` call with at most four questions, most important first:
 
@@ -125,7 +128,8 @@ Pass only the flags they chose (`--all` for everything). SVG is always written. 
 - **Never invent facts.** Services, SKUs, regions, zones, address ranges, names and numbers come from the user or the deployment. Record assumptions in `brief.md` and say them in one line.
 - **Azure icons stand only for Azure products.** Draw non-Azure things with a generic participant (`internet`, `on-premises`, `client`, `device`, `third-party`, `admin`) or a plain box.
 - **Current product names.** Microsoft Entra ID, not Azure Active Directory; Azure AI Search, not Cognitive Search. The catalog's default labels are current.
+- **Databricks terms inside the workspace, Azure terms outside.** Catalogs, credentials, external locations, secret scopes and model provider services go inside the workspace; access connectors, managed identities, Key Vaults, containers and private endpoints go in Azure resource groups outside it. Label arrows with Unity Catalog privileges inside and Azure roles outside.
 - **Edit the spec, never an output.** No hand-written SVG, no editing the PPTX or draw.io files.
 - **Keep chat short.** The board carries the picture; chat carries decisions and trade-offs.
 - **One diagram per session folder.** A second diagram (another region, or the topology for engineers after the workflow for executives) gets its own session. Multi-slide decks are not supported yet: offer one diagram per slide.
-- **Azure only.** This skill draws Azure architectures. For operating models, swimlanes, roadmaps, value chains, 2x2s or a plain layered architecture without vendor icons, hand over to `/diagram-studio:business`. AWS, Google Cloud and data charts are not supported: say so.
+- **Azure only.** This skill draws Azure architectures, Azure Databricks included. A Databricks-centred picture in the Databricks look goes to `/diagram-studio:databricks`. For operating models, swimlanes, roadmaps, value chains, 2x2s or a plain layered architecture without vendor icons, hand over to `/diagram-studio:business`. AWS, Google Cloud and data charts are not supported: say so.

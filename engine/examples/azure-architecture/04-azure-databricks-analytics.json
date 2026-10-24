@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "type": "azure-architecture",
+  "altitude": "management",
+  "title": "Azure Databricks turns streaming and operational data into governed analytics",
+  "subtitle": "Modern analytics with Azure Databricks, after the Azure Architecture Center pattern",
+  "body": {
+    "layout": "column",
+    "children": [
+      {
+        "id": "main",
+        "layout": "row",
+        "children": [
+          {
+            "id": "ingest",
+            "boundary": "group",
+            "label": "Sources",
+            "layout": "column",
+            "children": [
+              { "id": "events", "service": "event-hubs", "label": "Event Hubs", "description": "Streaming events" },
+              { "id": "orders-db", "service": "sql-database", "label": "Azure SQL Database", "description": "Orders" }
+            ]
+          },
+          {
+            "id": "workspace",
+            "boundary": "workspace",
+            "layout": "grid",
+            "columns": 2,
+            "children": [
+              { "id": "pipelines", "service": "databricks:declarative-pipelines", "label": "Declarative pipelines" },
+              { "id": "warehouse", "service": "databricks:sql-warehouse" },
+              { "id": "jobs", "service": "databricks:lakeflow-jobs" },
+              { "id": "mlflow", "service": "databricks:mlflow" }
+            ]
+          },
+          {
+            "id": "serve",
+            "boundary": "group",
+            "label": "Serve",
+            "layout": "column",
+            "children": [
+              { "id": "power-bi", "service": "power-bi-embedded", "label": "Power BI" },
+              { "id": "aml", "service": "machine-learning", "label": "Azure Machine Learning" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "store",
+        "boundary": "group",
+        "label": "Store",
+        "layout": "row",
+        "children": [
+          { "id": "adls", "service": "storage-accounts", "label": "ADLS Gen2" },
+          { "id": "bronze", "boundary": "bronze", "children": [{ "id": "raw", "label": "Raw events" }] },
+          { "id": "silver", "boundary": "silver", "children": [{ "id": "conformed", "label": "Conformed orders" }] },
+          { "id": "gold", "boundary": "gold", "children": [{ "id": "aggregates", "label": "Sales aggregates" }] }
+        ]
+      },
+      {
+        "id": "govern",
+        "boundary": "unity-catalog",
+        "layout": "row",
+        "step": 6,
+        "children": [
+          { "id": "lineage", "service": "databricks:data-lineage" },
+          { "id": "quality", "service": "databricks:data-quality-monitoring" }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "events", "to": "pipelines", "step": 1 },
+      { "from": "orders-db", "to": "pipelines" },
+      { "from": "pipelines", "to": "raw", "step": 2 },
+      { "from": "raw", "to": "conformed", "step": 3 },
+      { "from": "conformed", "to": "aggregates" },
+      { "from": "warehouse", "to": "power-bi", "step": 4 },
+      { "from": "mlflow", "to": "aml", "step": 5 }
+    ],
+    "steps": [
+      { "step": 1, "text": "Declarative pipelines read streaming events from Event Hubs and orders from Azure SQL Database." },
+      { "step": 2, "text": "Raw records land as bronze Delta tables in ADLS Gen2." },
+      { "step": 3, "text": "Pipelines conform them into silver tables and aggregate gold tables for reporting." },
+      { "step": 4, "text": "Power BI queries the gold tables through a Databricks SQL warehouse." },
+      { "step": 5, "text": "Models tracked in MLflow are deployed with Azure Machine Learning." },
+      { "step": 6, "text": "Unity Catalog governs every table, with lineage and quality monitoring across the estate." }
+    ]
+  }
+}

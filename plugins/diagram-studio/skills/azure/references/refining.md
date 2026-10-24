@@ -12,6 +12,7 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "That line is the main path", "the rest is secondary" | `"style": "dashed"` or `"dotted"` on the secondary flows or their flow type. Lines stay black unless `flowTypes` explains a colour |
 | "Show the DNS links", "show the peering" | DNS zone links: `"style": "dotted", "arrows": "none", "label": "Linked"`. Peering: `"arrows": "both", "style": "dashed", "label": "Peering"` |
 | "Label that line" | `label` on the flow, up to 40 characters; keep it to a protocol or a verb ("HTTPS", "Reads") |
+| QA: a label or step "has no clear spot" | The arrow is too short. Put its two ends side by side so it runs horizontally, or move the step to a longer arrow in the same chain |
 
 ## Network structure
 
@@ -26,6 +27,25 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "Add monitoring", "where do logs go?" | A `"boundary": "group"` labelled "Monitoring" (Azure Monitor, Log Analytics, Application Insights), usually without flows. Never wire Log Analytics to every service |
 | "Show the address space", "which SKU?" | `description` on the boundary or node, only with the values the user gave you |
 | "Show what's on-premises" | An `"boundary": "on-premises"` container, joined by the VPN or ExpressRoute gateway the user named |
+
+## Azure Databricks
+
+| The user says | Edit |
+| --- | --- |
+| "Add Databricks", "we use Azure Databricks" | One node, `"service": "azure-databricks"`, when it is one service among many. When its insides matter, a `"boundary": "workspace"` (the Azure Databricks icon and name at its top-left) holding Databricks product icons |
+| "Show what runs in the workspace" | Product icons with the `databricks:` prefix inside the workspace: `databricks:dlt`, `databricks:jobs`, `databricks:sql-warehouse`, `databricks:mlflow`, `databricks:model-serving`. Search with `diagram-studio databricks icons <words>` |
+| "Dev, test and prod workspaces" | Several `workspace` boundaries in a row, named by environment |
+| "Add the medallion layers", "bronze, silver, gold" | A `"boundary": "group"` labelled "Store" holding ADLS Gen2 (`storage-accounts`) and `bronze`, `silver`, `gold` boundaries with their tables, joined left to right |
+| "Add Unity Catalog", "governance" | A `"boundary": "unity-catalog"` band under the flow, holding `databricks:data-lineage` or `databricks:data-quality-monitoring`; not wired to every table |
+| "Show the control plane" | A `databricks-account` boundary outside the customer's subscription, holding a `plane` for the control plane and one for serverless compute |
+| "VNet injection", "secure cluster connectivity" | The classic compute plane is the customer's `virtual-network`: a host subnet and a container subnet, both `"nsg": true`, plus a private endpoint subnet for the back-end Private Link endpoint |
+| "Show the permissions" | Unity Catalog privileges on arrows between Databricks objects (`USE CATALOG`, `READ FILES`, `EXECUTE`, `READ` on a secret scope); Azure roles on arrows into Azure resources (`Storage Blob Data Contributor`/`Reader`, `Key Vault Secrets User`, `Azure AI User`). When the arrow would cross the diagram, put the role in the target's `description` |
+| "One slice per team", "segregate by group" | The workspace boundary holds one identical `group` slice per team (generate them from one template); each slice's `resource-group` sits directly under it, the shared storage account below with one container per slice. See `example azure-architecture --n 5` |
+| "Use the identity for Foundry", "add the models" | A model provider service (box, `EXECUTE` for the group) and a service credential beside the storage credential, both credentials pointing to the slice's access connector; Foundry resources above the workspace, the role in their description |
+| "Read from another subscription or region" | An external location box (`READ FILES` only) using the slice's storage credential; a `private-endpoints` node in the slice's resource group; the remote account in a `subscription` boundary, `Storage Blob Data Reader` in its container's description. Serverless compute uses an NCC private endpoint rule instead |
+| "Budgets" | Serverless budget policies attribute spend and alert; Unity Gateway budgets can also block model spend. Say which the user means |
+| "The boxes are uneven" | Shorten box text to one line (about 20 characters for a label, 25 for a description); boxes side by side already share one size |
+| "Draw it in Databricks colours" | Hand over to `/diagram-studio:databricks` (a Databricks-centred picture), or `"theme": "databricks"` for this one |
 
 ## Emphasis and focus
 

@@ -8,7 +8,7 @@ export const TESTS = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(TESTS, '..');
 export const DIST = path.join(ROOT, 'scripts', 'dist');
 export const CLI = path.join(DIST, 'cli.js');
-export const THEMES = ['boardroom', 'blueprint', 'sketch', 'bold', 'minimal', 'print', 'azure'];
+export const THEMES = ['boardroom', 'blueprint', 'sketch', 'bold', 'minimal', 'print', 'azure', 'databricks'];
 
 export const load = (rel) => import(pathToFileURL(path.join(DIST, rel)).href);
 

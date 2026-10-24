@@ -11,6 +11,7 @@ import { type Format, isFailure, prepare, readSpecFile, render } from './pipelin
 import { iconNames } from './render/icons.js';
 import { catalogInfo, searchServices } from './azure/icons.js';
 import { importAzure } from './azure/import.js';
+import { databricksCatalogInfo, searchDatabricks } from './databricks/icons.js';
 import { DIAGRAM_TYPES, type DiagramType } from './spec.js';
 import { findTheme, listThemes, loadDefaults } from './theme/load.js';
 import { DiagramError, closest, dirs } from './util.js';
@@ -67,6 +68,7 @@ Usage:
   diagram-studio icons
   diagram-studio azure icons [words…] [--limit 25]
   diagram-studio azure import <arm-template.json | resource-list.json> [--out spec.json] [--title "…"]
+  diagram-studio databricks icons [words…] [--limit 25]
   diagram-studio docs [topic]
   diagram-studio preview <dir> [--port 4740] [--open]
   diagram-studio version
@@ -351,6 +353,20 @@ async function cmdAzure(a: Args): Promise<number> {
   throw new DiagramError('Usage: diagram-studio azure icons [words…] | diagram-studio azure import <file> [--out spec.json]', 'usage');
 }
 
+/** Databricks helpers: search the Databricks icon catalog. */
+function cmdDatabricks(a: Args): number {
+  if (a.pos[1] !== 'icons') throw new DiagramError('Usage: diagram-studio databricks icons [words…] [--limit 25]', 'usage');
+  const query = a.pos.slice(2).join(' ');
+  const limit = str(a.flags.limit) ? Number(a.flags.limit) : 25;
+  const results = searchDatabricks(query, limit);
+  const info = databricksCatalogInfo();
+  out({ query, catalog: { source: info.source, icons: info.count }, results });
+  if (!results.length) err(`No icon matches "${query}". Try fewer or different words (a product name, or a former name like "dlt").`);
+  else for (const r of results) err(`${r.id.padEnd(30)} ${r.label}  (${r.category})`);
+  err('In an azure-architecture diagram, write these as "databricks:<id>".');
+  return 0;
+}
+
 async function main(): Promise<number> {
   const major = Number(process.versions.node.split('.')[0]);
   if (major < 20) throw new DiagramError(`diagram-studio needs Node 20 or newer (this is ${process.versions.node}).`, 'usage');
@@ -380,6 +396,8 @@ async function main(): Promise<number> {
       return cmdTheme(a);
     case 'azure':
       return cmdAzure(a);
+    case 'databricks':
+      return cmdDatabricks(a);
     case 'docs':
       return cmdDocs(a);
     case 'preview':

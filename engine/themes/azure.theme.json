@@ -16,7 +16,11 @@
     "highlight": "#107C10",
     "categorical": ["#0078D4", "#107C10", "#8661C5", "#CA5010", "#008575", "#C239B3"],
     "status": { "new": "#107C10", "changed": "#C19C00", "retired": "#A6A6A6", "atRisk": "#D13438" },
-    "notation": { "step": "#107C10", "stepInk": "#FFFFFF", "network": "#0078D4", "zone": "#FFB900" }
+    "notation": {
+      "step": "#107C10", "stepInk": "#FFFFFF", "network": "#0078D4", "zone": "#FFB900",
+      "account": "#7F7F7F", "plane": "#595959", "governance": "#7F7F7F",
+      "bronze": "#9F671C", "silver": "#8B8B8B", "gold": "#BC980A"
+    }
   },
   "font": {
     "family": "Selawik",

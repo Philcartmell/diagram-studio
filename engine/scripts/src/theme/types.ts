@@ -11,8 +11,30 @@ export interface ThemeColors {
   highlight: string;
   categorical: string[];
   status: { new: string; changed: string; retired: string; atRisk: string };
-  /** Notation colours (azure-architecture); fall back to accent, accentInk and status.changed. */
-  notation?: { step?: string; stepInk?: string; network?: string; zone?: string };
+  /** Notation colours (azure- and databricks-architecture); each falls back to a core colour. */
+  notation?: {
+    step?: string;
+    stepInk?: string;
+    /** The second flow type's colour (the first is step). */
+    flow2?: string;
+    network?: string;
+    zone?: string;
+    /** Databricks account boundary. */
+    account?: string;
+    /** Customer cloud account boundary. */
+    cloud?: string;
+    /** Control, serverless and classic compute plane outlines; workspace outlines. */
+    plane?: string;
+    /** Fill of the Databricks platform block. */
+    platform?: string;
+    /** Unity Catalog boundary. */
+    governance?: string;
+    /** When set, stages draw a header bar in this colour instead of a grey panel. */
+    stageHead?: string;
+    bronze?: string;
+    silver?: string;
+    gold?: string;
+  };
 }
 
 export type FontFileKey = 'regular' | 'medium' | 'semibold' | 'bold';

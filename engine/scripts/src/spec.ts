@@ -13,6 +13,7 @@ export const DIAGRAM_TYPES = [
   'matrix-2x2',
   'layered-architecture',
   'azure-architecture',
+  'databricks-architecture',
 ] as const;
 export type DiagramType = (typeof DIAGRAM_TYPES)[number];
 
@@ -168,7 +169,19 @@ export type AzureBoundaryKind =
   | 'subnet'
   | 'zone'
   | 'group'
-  | 'service';
+  | 'service'
+  // Databricks: who runs what, and where the data lives.
+  | 'databricks-account'
+  | 'cloud-account'
+  | 'plane'
+  | 'workspace'
+  | 'unity-catalog'
+  | 'platform'
+  | 'panel'
+  | 'stage'
+  | 'bronze'
+  | 'silver'
+  | 'gold';
 
 export type AzureLayout = 'row' | 'column' | 'grid';
 export type AzureStep = string | number;

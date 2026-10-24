@@ -1,0 +1,302 @@
+{
+  "version": "1.0",
+  "type": "azure-architecture",
+  "altitude": "detailed",
+  "title": "Each team reaches only its own data and models; data science also reads a remote source",
+  "subtitle": "One shared Azure Databricks workspace sliced by Entra ID group, with Foundry via Unity Gateway and a cross-subscription source",
+  "canvas": { "aspect": "auto" },
+  "body": {
+    "layout": "row",
+    "workflow": "bottom",
+    "children": [
+      {
+        "id": "account",
+        "layout": "column",
+        "children": [
+          {
+            "id": "metastore",
+            "service": "databricks:unity-catalog",
+            "label": "Unity Catalog metastore",
+            "description": "Account level: holds each slice’s catalog, credentials and model provider service"
+          },
+          {
+            "id": "gateway",
+            "service": "databricks:unity-ai-gateway",
+            "label": "Unity Gateway",
+            "description": "Every model call: EXECUTE checks, rate limits, usage tracking and budgets"
+          }
+        ]
+      },
+      {
+        "id": "main",
+        "layout": "column",
+        "children": [
+          {
+            "id": "foundries",
+            "layout": "row",
+            "children": [
+              {
+                "id": "rg-foundry-shared",
+                "boundary": "resource-group",
+                "label": "rg-foundry-shared",
+                "children": [
+                  {
+                    "id": "foundry-shared",
+                    "service": "ai-foundry",
+                    "label": "foundry-shared",
+                    "description": "Microsoft Foundry, shared by data engineering and analytics. Azure AI User: id-dbx-eng, id-dbx-analytics"
+                  }
+                ]
+              },
+              {
+                "id": "rg-foundry-science",
+                "boundary": "resource-group",
+                "label": "rg-foundry-science",
+                "children": [
+                  {
+                    "id": "foundry-science",
+                    "service": "ai-foundry",
+                    "label": "foundry-science",
+                    "description": "Microsoft Foundry, dedicated to data science. Azure AI User: id-dbx-science"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "workspace",
+            "boundary": "workspace",
+            "label": "Shared Azure Databricks workspace",
+            "layout": "row",
+            "children": [
+              {
+                "id": "slice-eng",
+                "boundary": "group",
+                "label": "Data engineering slice",
+                "layout": "column",
+                "children": [
+                  {
+                    "id": "eng-top",
+                    "layout": "row",
+                    "children": [
+                      { "id": "eng-group", "service": "groups", "label": "grp-dbx-eng", "description": "Entra ID group, automatic identity management" },
+                      { "id": "eng-mps", "label": "Model provider service", "description": "eng.ai.foundry" }
+                    ]
+                  },
+                  {
+                    "id": "eng-objects",
+                    "layout": "row",
+                    "children": [
+                      { "id": "eng-scope", "label": "Secret scope", "description": "eng-secrets" },
+                      { "id": "eng-catalog", "label": "eng catalog", "description": "Managed location" },
+                      { "id": "eng-storage-cred", "label": "Storage credential", "description": "eng-storage" },
+                      { "id": "eng-service-cred", "label": "Service credential", "description": "eng-ai" }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "slice-ana",
+                "boundary": "group",
+                "label": "Analytics slice",
+                "layout": "column",
+                "children": [
+                  {
+                    "id": "ana-top",
+                    "layout": "row",
+                    "children": [
+                      { "id": "ana-group", "service": "groups", "label": "grp-dbx-analytics", "description": "Entra ID group, automatic identity management" },
+                      { "id": "ana-mps", "label": "Model provider service", "description": "analytics.ai.foundry" }
+                    ]
+                  },
+                  {
+                    "id": "ana-objects",
+                    "layout": "row",
+                    "children": [
+                      { "id": "ana-scope", "label": "Secret scope", "description": "analytics-secrets" },
+                      { "id": "ana-catalog", "label": "analytics catalog", "description": "Managed location" },
+                      { "id": "ana-storage-cred", "label": "Storage credential", "description": "analytics-storage" },
+                      { "id": "ana-service-cred", "label": "Service credential", "description": "analytics-ai" }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "slice-ds",
+                "boundary": "group",
+                "label": "Data science slice",
+                "layout": "column",
+                "children": [
+                  {
+                    "id": "ds-top",
+                    "layout": "row",
+                    "children": [
+                      { "id": "ds-group", "service": "groups", "label": "grp-dbx-science", "description": "Entra ID group, automatic identity management" },
+                      { "id": "ds-mps", "label": "Model provider service", "description": "science.ai.foundry" }
+                    ]
+                  },
+                  {
+                    "id": "ds-objects",
+                    "layout": "row",
+                    "children": [
+                      { "id": "ds-scope", "label": "Secret scope", "description": "science-secrets" },
+                      { "id": "ds-catalog", "label": "science catalog", "description": "Managed location" },
+                      { "id": "ds-storage-cred", "label": "Storage credential", "description": "science-storage" },
+                      { "id": "ds-ext-location", "label": "External location", "description": "sales-raw, read only" },
+                      { "id": "ds-service-cred", "label": "Service credential", "description": "science-ai" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "azure",
+            "layout": "row",
+            "children": [
+              {
+                "id": "rg-eng",
+                "boundary": "resource-group",
+                "label": "rg-dbx-eng",
+                "layout": "row",
+                "children": [
+                  { "id": "eng-kv", "service": "key-vaults", "label": "kv-dbx-eng" },
+                  { "id": "eng-uami", "service": "managed-identities", "label": "id-dbx-eng", "description": "User-assigned managed identity" },
+                  { "id": "eng-connector", "label": "Access connector", "description": "for Azure Databricks" }
+                ]
+              },
+              {
+                "id": "rg-ana",
+                "boundary": "resource-group",
+                "label": "rg-dbx-analytics",
+                "layout": "row",
+                "children": [
+                  { "id": "ana-kv", "service": "key-vaults", "label": "kv-dbx-analytics" },
+                  { "id": "ana-uami", "service": "managed-identities", "label": "id-dbx-analytics", "description": "User-assigned managed identity" },
+                  { "id": "ana-connector", "label": "Access connector", "description": "for Azure Databricks" }
+                ]
+              },
+              {
+                "id": "rg-ds",
+                "boundary": "resource-group",
+                "label": "rg-dbx-science",
+                "layout": "row",
+                "children": [
+                  { "id": "ds-kv", "service": "key-vaults", "label": "kv-dbx-science" },
+                  { "id": "ds-uami", "service": "managed-identities", "label": "id-dbx-science", "description": "User-assigned managed identity" },
+                  { "id": "ds-connector", "label": "Access connector", "description": "for Azure Databricks" },
+                  {
+                    "id": "ds-pe",
+                    "service": "private-endpoint",
+                    "label": "pe-stsales-dfs",
+                    "description": "In the workspace VNet; approved by the account owner"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "storage",
+            "boundary": "service",
+            "service": "storage-accounts",
+            "label": "ADLS Gen2 storage account",
+            "description": "Shared account, one container per slice",
+            "layout": "row",
+            "children": [
+              { "id": "eng-container", "service": "blob-block", "label": "eng container", "description": "Managed location" },
+              { "id": "ana-container", "service": "blob-block", "label": "analytics container", "description": "Managed location" },
+              { "id": "ds-container", "service": "blob-block", "label": "science container", "description": "Managed location" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sales-sub",
+        "boundary": "subscription",
+        "label": "Sales subscription",
+        "description": "Another subscription, North Europe",
+        "layout": "column",
+        "children": [
+          {
+            "id": "sales-storage",
+            "boundary": "service",
+            "service": "storage-accounts",
+            "label": "stsalesneu",
+            "description": "Public access disabled",
+            "children": [
+              { "id": "sales-raw", "service": "blob-block", "label": "sales-raw container", "description": "Storage Blob Data Reader: id-dbx-science" }
+            ]
+          }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "metastore", "to": "workspace", "label": "Attached" },
+      { "from": "eng-group", "to": "eng-mps", "label": "EXECUTE", "step": 1 },
+      { "from": "eng-mps", "to": "foundry-shared", "label": "Unity Gateway", "step": 2 },
+      { "from": "eng-mps", "to": "eng-service-cred" },
+      { "from": "eng-group", "to": "eng-catalog", "label": "USE CATALOG" },
+      { "from": "eng-catalog", "to": "eng-storage-cred", "step": 3 },
+      { "from": "eng-storage-cred", "to": "eng-connector", "step": 4 },
+      { "from": "eng-service-cred", "to": "eng-connector" },
+      { "from": "eng-connector", "to": "eng-uami" },
+      { "from": "eng-uami", "to": "eng-container", "label": "Storage Blob Data Contributor", "step": 5 },
+      { "from": "eng-group", "to": "eng-scope", "label": "READ" },
+      { "from": "eng-scope", "to": "eng-kv", "label": "Key Vault Secrets User", "style": "dashed", "step": 6 },
+      { "from": "ana-group", "to": "ana-mps", "label": "EXECUTE" },
+      { "from": "ana-mps", "to": "foundry-shared", "label": "Unity Gateway" },
+      { "from": "ana-mps", "to": "ana-service-cred" },
+      { "from": "ana-group", "to": "ana-catalog", "label": "USE CATALOG" },
+      { "from": "ana-catalog", "to": "ana-storage-cred" },
+      { "from": "ana-storage-cred", "to": "ana-connector" },
+      { "from": "ana-service-cred", "to": "ana-connector" },
+      { "from": "ana-connector", "to": "ana-uami" },
+      { "from": "ana-uami", "to": "ana-container", "label": "Storage Blob Data Contributor" },
+      { "from": "ana-group", "to": "ana-scope", "label": "READ" },
+      { "from": "ana-scope", "to": "ana-kv", "label": "Key Vault Secrets User", "style": "dashed" },
+      { "from": "ds-group", "to": "ds-mps", "label": "EXECUTE" },
+      { "from": "ds-mps", "to": "foundry-science", "label": "Unity Gateway" },
+      { "from": "ds-mps", "to": "ds-service-cred" },
+      { "from": "ds-group", "to": "ds-catalog", "label": "USE CATALOG" },
+      { "from": "ds-catalog", "to": "ds-storage-cred" },
+      { "from": "ds-storage-cred", "to": "ds-connector" },
+      { "from": "ds-service-cred", "to": "ds-connector" },
+      { "from": "ds-connector", "to": "ds-uami" },
+      { "from": "ds-uami", "to": "ds-container", "label": "Storage Blob Data Contributor" },
+      { "from": "ds-group", "to": "ds-scope", "label": "READ" },
+      { "from": "ds-scope", "to": "ds-kv", "label": "Key Vault Secrets User", "style": "dashed" },
+      { "from": "ds-group", "to": "ds-ext-location", "label": "READ FILES", "step": 7 },
+      { "from": "ds-ext-location", "to": "ds-storage-cred", "step": 8 },
+      { "from": "ds-pe", "to": "sales-raw", "label": "Private Link (dfs)", "step": 9 }
+    ],
+    "steps": [
+      { "step": 1, "text": "The team’s Entra ID group holds EXECUTE on its model provider service, a Unity Catalog object in the team’s own catalog." },
+      {
+        "step": 2,
+        "text": "Calls go through Unity Gateway to the team’s Foundry, authenticated by the slice’s service credential, whose managed identity holds Azure AI User on that Foundry. Engineering and analytics share one Foundry; data science has its own."
+      },
+      {
+        "step": 3,
+        "text": "The group holds USE CATALOG on its catalog only; the catalog’s managed location is reached through the slice’s storage credential."
+      },
+      {
+        "step": 4,
+        "text": "Both credentials reference the slice’s access connector for Azure Databricks, which uses the slice’s user-assigned managed identity."
+      },
+      { "step": 5, "text": "That identity holds Storage Blob Data Contributor on the slice’s container only." },
+      {
+        "step": 6,
+        "text": "The group has READ on its secret scope, backed by the slice’s Key Vault (Key Vault Secrets User for the AzureDatabricks application). Every slice repeats steps 1–6 with its own resources."
+      },
+      { "step": 7, "text": "Data science only: the group holds READ FILES (no WRITE FILES) on an external location for the remote sales-raw path." },
+      {
+        "step": 8,
+        "text": "The external location uses the slice’s storage credential; its managed identity holds Storage Blob Data Reader on the remote container (cross-subscription RBAC, same Entra tenant)."
+      },
+      {
+        "step": 9,
+        "text": "Reads travel over a private endpoint (dfs) in the workspace VNet, approved by the remote account owner, with a privatelink.dfs DNS zone. For serverless compute, the same link is an NCC private endpoint rule."
+      }
+    ]
+  }
+}

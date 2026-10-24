@@ -144,6 +144,26 @@ export function closest(word: string, options: string[]): string | undefined {
   return best !== undefined && bestD <= Math.max(2, Math.floor(word.length / 3)) ? best : undefined;
 }
 
+/**
+ * Search score of `fields` (most important first) for the query `words`: every word
+ * must match some field; exact beats prefix beats substring, earlier fields beat later.
+ */
+export function scoreFields(words: string[], fields: string[]): number {
+  let s = 0;
+  for (const w of words) {
+    let best = 0;
+    for (const [i, f] of fields.entries()) {
+      const fl = f.toLowerCase();
+      if (fl === w) best = Math.max(best, 10 - i);
+      else if (fl.startsWith(w)) best = Math.max(best, 6 - i * 0.5);
+      else if (fl.includes(w)) best = Math.max(best, 3 - i * 0.25);
+    }
+    if (!best) return 0;
+    s += best;
+  }
+  return s;
+}
+
 export function humanize(id: string): string {
   const s = id.replace(/[-_]+/g, ' ').trim();
   return s.charAt(0).toUpperCase() + s.slice(1);

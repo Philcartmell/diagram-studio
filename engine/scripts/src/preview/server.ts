@@ -3,9 +3,11 @@
  * session folder, refreshed whenever a render rewrites a file. No
  * dependencies: node:http, fs.watch and server-sent events.
  *
- * Each folder that holds an SVG is one card (the newest SVG in it). A folder
- * named `working` is featured above the rest. `brief.md` at the root is shown
- * beside the board. The server only reads files; Claude still runs `render`.
+ * Each folder that holds an SVG is one card (the newest SVG in it), newest
+ * activity first: the page shows the selected card large and every card as a
+ * thumbnail strip, and follows each new render. A folder named `working` is
+ * marked as the working design. `brief.md` at the root is shown beside the
+ * board. The server only reads files; Claude still runs `render`.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -22,6 +24,8 @@ export interface PreviewCard {
   svg: string;
   /** Milliseconds since the epoch of that SVG's last write. */
   updated: number;
+  /** Last activity in the folder: the SVG or preview.png, whichever is newer (a failed render writes only the preview). */
+  touched: number;
   /** True when preview.png is newer than the SVG: the last render failed QA. */
   stale: boolean;
   /** Other deliverables in the folder (pptx, drawio, pdf, png) as URLs. */
@@ -97,6 +101,7 @@ export function collectState(root: string): PreviewState {
         theme: typeof spec?.theme === 'string' ? spec.theme : undefined,
         svg: `${fileUrl(path.relative(root, svg))}?v=${Math.round(updated)}`,
         updated,
+        touched: Math.max(updated, mtime(preview)),
         stale: mtime(preview) > updated + 2000,
         files: entries
           .filter((e) => e.isFile() && e.name.startsWith(slug + '.') && DELIVERABLES.has(path.extname(e.name)))
@@ -108,7 +113,8 @@ export function collectState(root: string): PreviewState {
     for (const e of entries) if (e.isDirectory() && !SKIP_DIRS.has(e.name) && !e.name.startsWith('.')) walk(path.join(abs, e.name), depth + 1);
   };
   walk(root, 0);
-  cards.sort((a, b) => Number(b.featured) - Number(a.featured) || a.folder.localeCompare(b.folder));
+  // Newest activity first, so a new or re-rendered diagram is always at the front.
+  cards.sort((a, b) => b.touched - a.touched || a.folder.localeCompare(b.folder));
   let brief: string | undefined;
   try {
     brief = fs.readFileSync(path.join(root, 'brief.md'), 'utf8');
@@ -186,7 +192,8 @@ export async function startPreview(dir: string, opts: { port?: number; host?: st
       const download = ['.pptx', '.drawio', '.pdf'].includes(ext);
       res.writeHead(200, {
         'content-type': TYPES[ext] ?? 'application/octet-stream',
-        'cache-control': 'no-store',
+        // ?v= carries the file's write time, so a versioned URL never changes content: let the page reuse it.
+        'cache-control': url.searchParams.has('v') ? 'private, max-age=31536000, immutable' : 'no-store',
         ...(download ? { 'content-disposition': `attachment; filename="${path.basename(file).replace(/"/g, '')}"` } : {}),
       });
       fs.createReadStream(file).pipe(res);

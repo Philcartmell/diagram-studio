@@ -40,14 +40,14 @@ describe('PRD acceptance', () => {
       cli(['render', ex.file, '--out', b, '--no-preview']);
     }
     const svgs = fs.readdirSync(a).filter((f) => f.endsWith('.svg'));
-    expect(svgs.length).toBe(7);
+    expect(svgs.length).toBe(8);
     for (const f of svgs) expect(fs.readFileSync(path.join(a, f)).equals(fs.readFileSync(path.join(b, f))), f).toBe(true);
   });
 
   it('switching boardroom → sketch changes styling only: node positions stay within 8 units', async () => {
-    // azure-architecture sizes each service cell from its label in the theme's own font,
+    // The architecture types size each service cell from its label in the theme's own font,
     // so a theme with wider type grows the cells; its structure test lives in azure.test.mjs.
-    for (const ex of examples().filter((e) => e.type !== 'azure-architecture')) {
+    for (const ex of examples().filter((e) => e.type !== 'azure-architecture' && e.type !== 'databricks-architecture')) {
       const a = await prepare(ex.spec, { theme: 'boardroom' });
       const b = await prepare(ex.spec, { theme: 'sketch' });
       const na = nodeBoxes(a.scene);

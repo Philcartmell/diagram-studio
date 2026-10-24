@@ -130,7 +130,7 @@ export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string
   }
 
   const within = (b: Box, o: Box) => b.x >= o.x - 0.5 && b.y >= o.y - 0.5 && b.x + b.w <= o.x + o.w + 0.5 && b.y + b.h <= o.y + o.h + 0.5;
-  const parentOf = (s: { parent?: string; group?: string }, self?: string, box?: Box): { id: string; at: Point } => {
+  const parentOf = (s: { parent?: string; group?: string }, self?: string, box?: Box): { id: string; at: Point; box?: Box } => {
     let p = s.parent;
     // Badges, tags and icons ride on their node when they lie inside it.
     if (!p && s.group?.startsWith('g-')) {
@@ -140,14 +140,14 @@ export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string
     }
     // Nest only inside real containers (lanes, bands, quadrants) or the node a badge rides on.
     const ok = p && cellId.has(p) && (p !== s.parent || shapes.get(p)?.container);
-    if (ok) return { id: cellId.get(p!)!, at: origin.get(p!)! };
+    if (ok) return { id: cellId.get(p!)!, at: origin.get(p!)!, box: shapes.get(p!) };
     return { id: '1', at: { x: 0, y: 0 } };
   };
 
   const geo = (b: Box, at: Point) =>
     `<mxGeometry x="${fmt(b.x - at.x)}" y="${fmt(b.y - at.y)}" width="${fmt(b.w)}" height="${fmt(b.h)}" as="geometry"/>`;
 
-  const textCell = (texts: TextEl[], parent: { id: string; at: Point }, idBase: string) => {
+  const textCell = (texts: TextEl[], parent: { id: string; at: Point; box?: Box }, idBase: string) => {
     const widthOf = (t: TextEl) => fonts.blockWidth(t.lines, t.size, t.weight);
     const boxes = texts.map((t) => {
       const w = widthOf(t);
@@ -158,9 +158,12 @@ export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string
     const y0 = Math.min(...boxes.map((b) => b.y));
     const x1 = Math.max(...boxes.map((b) => b.x + b.w));
     const y1 = Math.max(...boxes.map((b) => b.y + b.h));
-    const slack = Math.max(8, (x1 - x0) * 0.12);
+    // Slack absorbs draw.io's own text metrics, but never pushes the cell outside its container.
+    const room = parent.box ? Math.max(0, parent.box.x + parent.box.w - x1) + Math.max(0, x0 - parent.box.x) : Infinity;
+    const slack = Math.min(Math.max(8, (x1 - x0) * 0.12), room);
     const anchor = texts[0].anchor;
-    const bx = anchor === 'start' ? x0 : anchor === 'end' ? x0 - slack : x0 - slack / 2;
+    let bx = anchor === 'start' ? x0 : anchor === 'end' ? x0 - slack : x0 - slack / 2;
+    if (parent.box) bx = Math.max(parent.box.x, Math.min(bx, parent.box.x + parent.box.w - (x1 - x0 + slack)));
     const t0 = texts[0];
     cells.push({
       id: uid(idBase),
@@ -246,7 +249,7 @@ export function renderDrawio(scene: Scene, theme: Theme, fonts: FontSet): string
       cells.push(edgeCell(e, cellId, shapes, els, uid, family, fonts));
     } else if (e.kind === 'line') {
       cells.push(lineCell(e as LineEl, uid));
-    } else if (e.kind === 'icon' && e.set === 'azure') {
+    } else if (e.kind === 'icon' && e.set === 'product') {
       const svg = iconSvgAt(e.name, 64);
       if (!svg) continue;
       const parent = parentOf(e, undefined, { x: e.x, y: e.y, w: e.size, h: e.size });

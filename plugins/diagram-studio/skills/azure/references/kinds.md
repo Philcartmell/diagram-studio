@@ -12,6 +12,7 @@ Start from the question the reader brings, not from the services the user listed
 | "Where does it run, and how is traffic contained?": regions, virtual networks, subnets, private endpoints | network topology | one request path is the point (hybrid) |
 | "Which controls does this request cross?": inbound and egress, reads and writes | hybrid: the topology with two or three numbered flows and a legend | the audience is not technical enough for the network (solution workflow) |
 | "What happens when a region fails?" | network topology across two regions, the failed region muted and the failover path numbered | the steady state matters as much (the same topology, no failure) |
+| "Who can reach which data, models and secrets, and through which identity?" | governance and isolation: one slice per team inside the workspace, the Azure resources under each slice, permissions on the arrows | the audience only needs the data flow (solution workflow) |
 | "What did we actually deploy?" (an ARM template or resource list) | the imported draft, then a curated workflow or topology | always: the draft has no story until it is curated |
 
 The audience narrows it further. Executives get a solution workflow (`executive`, at most nine services, 4–7 steps). An architecture review gets a workflow with its key network controls, or a baseline topology without every subnet (`management`, up to 20). Engineers get the full topology with subnets, NSGs, private endpoints and zones (`detailed`, up to 60).
@@ -71,6 +72,24 @@ Failover (two regions with the same structure, the failed one muted, the failove
       └──①───▶┌ Region B ───────────────────────┐  │ [Monitor]  │
               │ [AppGW]─②▶[AKS]─③▶[Cosmos DB]   │  └────────────┘
               └─────────────────────────────────┘
+```
+
+Governance and isolation (identical slices inside one workspace, the Azure resources under each slice, permissions on the arrows; `diagram-studio example azure-architecture --n 5`):
+
+```
+          [Foundry shared]                    [Foundry science]
+ ┌ Shared Azure Databricks workspace ──────────────────────────────┐
+ │ ┌ Eng slice ───────────┐ ┌ Analytics slice ─┐ ┌ Science slice ┐ │
+ │ │ [grp]─EXECUTE─▶[MPS] │ │ …the same…       │ │ …the same…    │ │
+ │ │ [Scope] [Cat] [Cred] │ │                  │ │               │ │
+ │ └────────────────┬─────┘ └──────────────────┘ └───────────────┘ │
+ └──────────────────┼──────────────────────────────────────────────┘
+   ┌ rg-eng ────────▼─────┐ ┌ rg-analytics ────┐ ┌ rg-science ───┐
+   │[Key Vault] [Identity]│ │ …the same…       │ │ …the same…    │
+   └────────────────┬─────┘ └──────────────────┘ └───────────────┘
+ ┌ Storage account ─▼──────────────────────────────────────────────┐
+ │ [eng container]       [analytics container]  [science cont.]    │
+ └─────────────────────────────────────────────────────────────────┘
 ```
 
 ## Making concepts diverge

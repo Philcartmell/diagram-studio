@@ -39,6 +39,11 @@ export const TYPE_INFO: Record<DiagramType, { summary: string; useFor: string; e
     useFor: '"How this runs on Azure" — solution workflows with numbered steps, and network or infrastructure topologies.',
     essentials: ['children[] (services and boundaries)', 'flows[]', 'steps[]', 'flowTypes[]'],
   },
+  'databricks-architecture': {
+    summary: 'Databricks products as official icons inside platform boundaries (control plane, compute plane, workspace, Unity Catalog, medallion layers), with numbered flows, in the Databricks brand look.',
+    useFor: '"How this runs on Databricks" — lakehouse data flows, platform and workspace topology, governance and AI serving.',
+    essentials: ['children[] (products and boundaries)', 'flows[]', 'steps[]', 'flowTypes[]'],
+  },
 };
 
 export function listTypes() {

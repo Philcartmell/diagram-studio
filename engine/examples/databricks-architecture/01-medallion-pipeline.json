@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "type": "databricks-architecture",
+  "altitude": "management",
+  "title": "One governed pipeline turns raw events into trusted dashboards",
+  "subtitle": "Medallion lakehouse on Databricks",
+  "body": {
+    "layout": "column",
+    "children": [
+      {
+        "id": "lanes",
+        "layout": "row",
+        "children": [
+          {
+            "id": "sources",
+            "boundary": "stage",
+            "label": "Sources",
+            "layout": "column",
+            "children": [
+              { "id": "apps", "service": "client", "label": "Operational apps" },
+              { "id": "files", "service": "storage-accounts", "label": "Cloud storage" }
+            ]
+          },
+          {
+            "id": "ingest",
+            "boundary": "stage",
+            "label": "Ingest",
+            "layout": "column",
+            "children": [
+              { "id": "connect", "service": "lakeflow-connect" },
+              { "id": "autoloader", "service": "auto-loader" }
+            ]
+          },
+          {
+            "id": "transform",
+            "boundary": "stage",
+            "label": "Transform",
+            "layout": "row",
+            "children": [
+              { "id": "bronze", "boundary": "bronze", "children": [{ "id": "raw", "label": "Raw events" }] },
+              { "id": "silver", "boundary": "silver", "children": [{ "id": "clean", "label": "Cleaned orders" }] },
+              { "id": "gold", "boundary": "gold", "children": [{ "id": "kpis", "label": "Daily KPIs" }] }
+            ]
+          },
+          { "id": "serve", "boundary": "stage", "label": "Serve", "children": [{ "id": "warehouse", "service": "sql-warehouse" }] },
+          {
+            "id": "analyse",
+            "boundary": "stage",
+            "label": "Analyse",
+            "layout": "column",
+            "children": [
+              { "id": "dashboards", "service": "ai-bi-dashboards" },
+              { "id": "genie", "service": "genie-agents" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "governance",
+        "boundary": "unity-catalog",
+        "layout": "row",
+        "children": [
+          { "id": "lineage", "service": "data-lineage" },
+          { "id": "quality", "service": "data-quality-monitoring" }
+        ]
+      }
+    ],
+    "flows": [
+      { "from": "apps", "to": "connect", "step": 1 },
+      { "from": "files", "to": "autoloader" },
+      { "from": "connect", "to": "raw", "step": 2 },
+      { "from": "autoloader", "to": "raw" },
+      { "from": "raw", "to": "clean", "step": 3 },
+      { "from": "clean", "to": "kpis" },
+      { "from": "kpis", "to": "warehouse", "step": 4 },
+      { "from": "warehouse", "to": "dashboards", "step": 5 },
+      { "from": "warehouse", "to": "genie" }
+    ],
+    "steps": [
+      { "step": 1, "text": "Lakeflow Connect ingests changes from operational apps; Auto Loader picks up new files." },
+      { "step": 2, "text": "Raw records land in bronze tables." },
+      { "step": 3, "text": "Pipelines clean and conform them into silver, then aggregate gold KPIs." },
+      { "step": 4, "text": "A SQL warehouse serves the gold tables." },
+      { "step": 5, "text": "Dashboards and Genie answer questions from the same governed data." }
+    ]
+  }
+}
