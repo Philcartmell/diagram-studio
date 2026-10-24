@@ -105,7 +105,8 @@ function setVersion(version) {
   }
   write(FILES.changelog, log);
   check();
-  console.log(`Next: git commit -am "Release v${version}" && git tag v${version} && git push --follow-tags`);
+  // Annotated tag, pushed by name: `git push --follow-tags` skips lightweight tags.
+  console.log(`Next: git commit -am "Release v${version}" && git tag -a v${version} -m v${version} && git push --atomic origin main v${version}`);
 }
 
 const [cmd, arg] = process.argv.slice(2);

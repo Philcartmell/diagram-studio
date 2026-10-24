@@ -16,7 +16,7 @@ CI fails if they disagree (`node tools/release.mjs check`). A new skill must car
 - **The plugin** comes from the default branch of this repository, through the marketplace in `.claude-plugin/marketplace.json`. Users get it with `claude plugin marketplace update` and `claude plugin update`.
 - **The engine** is published to npm by `.github/workflows/release.yml` when you push a `v<version>` tag. Each publish carries provenance, linking the package to the commit and workflow that built it.
 
-Because the skills pin the engine version, a plugin release always runs the engine it was tested with. Push the release commit and its tag **together** (`git push --follow-tags`). A user who updates the plugin in the few minutes before the npm publish finishes would otherwise get an `npx` error.
+Because the skills pin the engine version, a plugin release always runs the engine it was tested with. Push the release commit and its tag **together**, in one push (step 4 below). A user who updates the plugin in the few minutes before the npm publish finishes would otherwise get an `npx` error.
 
 ## Versioning
 
@@ -49,13 +49,29 @@ Golden renders change with layout improvements. Review the `engine/tests/__golde
 
    ```bash
    git commit -am "Release v1.1.0"
-   git tag v1.1.0
-   git push --follow-tags
+   git tag -a v1.1.0 -m v1.1.0
+   git push --atomic origin main v1.1.0
    ```
 
-5. The release workflow checks that the tag matches every version, runs the full suite, publishes `diagram-studio@1.1.0` to npm and creates the GitHub release from the changelog section. Watch it with `gh run watch`.
+   Name the tag in the push. `git push --follow-tags` sends only annotated tags, so a plain `git tag v1.1.0` would never reach GitHub and the release would never start. `main` and `v*` tags are protected by rulesets (see below). As a repository admin you bypass them for this push.
 
-If the workflow fails before publishing, fix the problem, move the tag (`git tag -f v1.1.0 && git push -f origin v1.1.0`) and it runs again. Once a version is on npm it cannot be republished: release a patch instead. The workflow skips the publish step when that version is already on npm, so a re-run only redoes the GitHub release.
+5. The release workflow checks that the tag matches every version, runs the full suite, publishes `diagram-studio@1.1.0` to npm and creates the GitHub release from the changelog section. Watch it with `gh run watch`. If npm's staged publishing is on for the account, approve the staged version on npmjs.com.
+
+If the workflow fails:
+
+- **A problem outside the code** (npm settings, a network error): fix it, then re-run the failed job with `gh run rerun <run-id> --failed`. An `E404` on `PUT https://registry.npmjs.org/diagram-studio` means npm didn't recognise the workflow: check the trusted publisher (step 6 of "Going public").
+- **A problem in the code, found before publishing:** fix it, then move the tag (`git tag -fa v1.1.0 -m v1.1.0 && git push -f origin v1.1.0`) so it runs again on the fixed commit.
+
+Once a version is on npm it cannot be republished: release a patch instead. The workflow skips the publish step when that version is already on npm, so a re-run only redoes the GitHub release.
+
+## Branch and tag protection
+
+Two rulesets (repository **Settings** → **Rules**) guard what reaches users:
+
+- **Protect main:** changes arrive through a pull request with all five CI jobs passing, merged by squash or rebase. No force-pushes, no deletion.
+- **Protect release tags:** only repository admins can create, move or delete `v*` tags. Pushing one publishes to npm.
+
+Repository admins bypass both, which the release commit and tag need. Outside contributors work from forks. Their CI runs wait for an admin's approval, and only an admin can merge.
 
 ## Going public: the first release (once)
 
@@ -83,8 +99,8 @@ The repository starts private. While it is private you can install the plugin fr
 7. **Tag and push:**
 
    ```bash
-   git tag v1.0.0
-   git push --follow-tags
+   git tag -a v1.0.0 -m v1.0.0
+   git push --atomic origin main v1.0.0
    ```
 
    The workflow sees 1.0.0 already on npm, skips the publish and creates the GitHub release.
