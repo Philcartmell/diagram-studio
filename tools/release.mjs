@@ -15,6 +15,7 @@ const FILES = {
   pkg: 'engine/package.json',
   lock: 'engine/package-lock.json',
   plugin: 'plugins/diagram-studio/.claude-plugin/plugin.json',
+  agentPlugin: 'plugins/diagram-studio/plugin.json',
   skills: 'plugins/diagram-studio/skills',
   changelog: 'CHANGELOG.md',
 };
@@ -48,6 +49,7 @@ function versions() {
     [`${FILES.lock} (version)`, lock.version],
     [`${FILES.lock} (packages[""])`, lock.packages[''].version],
     [FILES.plugin, JSON.parse(read(FILES.plugin)).version],
+    [FILES.agentPlugin, JSON.parse(read(FILES.agentPlugin)).version],
     ...skillFiles().flatMap((f) => {
       const skill = read(f);
       return SKILL_PINS.map((re, i) => [`${f} (pin ${i + 1})`, skill.match(re)?.[1] ?? 'missing']);
@@ -92,7 +94,7 @@ function setVersion(version) {
   lock.version = version;
   lock.packages[''].version = version;
   write(FILES.lock, JSON.stringify(lock, null, 2) + '\n');
-  write(FILES.plugin, read(FILES.plugin).replace(/("version":\s*")[^"]+(")/, `$1${version}$2`));
+  for (const f of [FILES.plugin, FILES.agentPlugin]) write(f, read(f).replace(/("version":\s*")[^"]+(")/, `$1${version}$2`));
   const major = version.split('.')[0];
   for (const f of skillFiles()) {
     write(
