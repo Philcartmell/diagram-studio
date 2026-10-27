@@ -4,12 +4,13 @@ A plugin for Claude Code and GitHub Copilot that designs diagrams with you. Desc
 
 <table>
 <tr>
-<td align="center" width="16%"><a href="#example-azure"><img src="docs/images/example-azure.png" alt="Azure workflow" width="150"></a><br><sub>Azure workflow</sub></td>
-<td align="center" width="16%"><a href="#example-business"><img src="docs/images/example-business.png" alt="Operating model" width="150"></a><br><sub>Operating model</sub></td>
-<td align="center" width="16%"><a href="#example-swimlane"><img src="docs/images/example-swimlane.png" alt="Swimlane" width="150"></a><br><sub>Swimlane</sub></td>
-<td align="center" width="16%"><a href="#example-databricks"><img src="docs/images/example-databricks.png" alt="Databricks lakehouse" width="150"></a><br><sub>Databricks lakehouse</sub></td>
-<td align="center" width="16%"><a href="#example-exhibit"><img src="docs/images/example-exhibit.png" alt="Data exhibit" width="150"></a><br><sub>Data exhibit</sub></td>
-<td align="center" width="16%"><a href="#example-deck"><img src="docs/images/example-deck.png" alt="Nine-page deck" width="150"></a><br><sub>Nine-page deck</sub></td>
+<td align="center" width="14%"><a href="#example-azure"><img src="docs/images/example-azure.png" alt="Azure workflow" width="110"></a><br><sub>Azure workflow</sub></td>
+<td align="center" width="14%"><a href="#example-landing-zone"><img src="docs/images/example-landing-zone.png" alt="Landing zone reference architecture" width="110"></a><br><sub>Landing zone</sub></td>
+<td align="center" width="14%"><a href="#example-business"><img src="docs/images/example-business.png" alt="Operating model" width="110"></a><br><sub>Operating model</sub></td>
+<td align="center" width="14%"><a href="#example-swimlane"><img src="docs/images/example-swimlane.png" alt="Swimlane" width="110"></a><br><sub>Swimlane</sub></td>
+<td align="center" width="14%"><a href="#example-databricks"><img src="docs/images/example-databricks.png" alt="Databricks lakehouse" width="110"></a><br><sub>Databricks lakehouse</sub></td>
+<td align="center" width="14%"><a href="#example-exhibit"><img src="docs/images/example-exhibit.png" alt="Data exhibit" width="110"></a><br><sub>Data exhibit</sub></td>
+<td align="center" width="14%"><a href="#example-deck"><img src="docs/images/example-deck.png" alt="Nine-page deck" width="110"></a><br><sub>Nine-page deck</sub></td>
 </tr>
 </table>
 
@@ -86,6 +87,22 @@ orders reach the warehouse within a minute of checkout. Put the steps underneath
 ```
 
 ![An Azure order-processing workflow in UK South: Front Door, a storefront web app, a Service Bus queue, a Function and Cosmos DB, with five numbered steps](docs/images/example-azure.png)
+
+<a id="example-landing-zone"></a>
+
+**Azure: a landing zone reference architecture**
+
+```
+/diagram-studio:azure A landing zone reference architecture for the architecture review. Platform subscriptions: Connectivity,
+with a hub virtual network holding Azure Firewall, a gateway to our on-premises datacentre, Bastion and a DNS Private Resolver,
+plus the private DNS zones; Identity, with domain controllers in their own virtual network, platform managed identities and a
+platform Key Vault; and Management, with Log Analytics, Monitor, Defender for Cloud, Policy and Automation. Two application
+landing zones, each a spoke peered back to the hub and linked to the private DNS zones: Orders (a container app reaching
+Azure SQL and Key Vault through private endpoints) and Storefront (Application Gateway with WAF, a web app, and storage
+through a private endpoint). The point to land: every landing zone peers back to one platform hub for network, DNS and identity.
+```
+
+![An Azure landing zone reference architecture: a platform group with Connectivity, Identity and Management subscriptions, and two application landing zones whose spoke networks peer back to the hub network and link to the private DNS zones, with private endpoints to their data services](docs/images/example-landing-zone.png)
 
 <a id="example-business"></a>
 
