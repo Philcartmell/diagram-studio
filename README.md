@@ -14,6 +14,9 @@ A plugin for Claude Code and GitHub Copilot that designs diagrams with you. Desc
 </tr>
 </table>
 
+- **See it as you go.** A live preview board opens in your browser and refreshes after every change. Compare two or three concepts side by side, then refine the one you pick in plain words: "number the steps", "too busy", "add private endpoints".
+- **Take it anywhere.** Export an editable PowerPoint slide (native, grouped shapes), a draw.io file, SVG, PNG or a vector PDF. A deck exports as one PowerPoint, PDF or draw.io file.
+
 ## Install
 
 You need [Node.js](https://nodejs.org) 20 or later (`node --version`) and one of the coding agents below. Diagram Studio is a plugin: the skills run in your agent, and a small engine does the drawing. The first session downloads the engine through `npx` (about 2 MB) and reuses it afterwards.
