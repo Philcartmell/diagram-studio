@@ -2,6 +2,8 @@
 
 A plugin for Claude Code and GitHub Copilot that designs diagrams with you. Describe what you need, or point it at an ARM export. Your agent works out what the reader needs to see, shows two or three concepts on a live preview board, refines the one you pick, and exports editable PowerPoint, draw.io, SVG, PNG or PDF.
 
+**Contents:** [Install](#install) ([Claude Code](#claude-code), [Copilot CLI](#github-copilot-cli), [VS Code](#vs-code-with-github-copilot)) · [Skills](#skills) · [Examples](#examples) · [How it works](#how-it-works) · [What you get](#what-you-get) · [Use](#use) · [Update](#update) · [The engine on its own](#the-engine-on-its-own) · [Develop](#develop) · [Licences](#licences)
+
 <table>
 <tr>
 <td align="center" width="14%"><a href="#example-azure"><img src="docs/images/example-azure.png" alt="Azure workflow" width="110"></a><br><sub>Azure workflow</sub></td>
