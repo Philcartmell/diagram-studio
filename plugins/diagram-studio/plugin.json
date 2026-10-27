@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "diagram-studio",
+  "version": "1.1.0",
+  "description": "Design diagrams with your coding agent: Azure architectures in Microsoft Azure Architecture Center style with the official icons, Databricks lakehouses, deployments and platform maps in the Databricks brand look, business diagrams such as operating models, swimlanes, roadmaps, value chains, 2x2s and layered architectures, consulting-style data exhibits with bar charts, waterfalls, line charts and KPIs, and whole decks built from any of these. Compare concepts on a live preview board, refine by conversation, then export PowerPoint, draw.io, SVG, PNG or PDF.",
+  "license": "MIT",
+  "author": {
+    "name": "Phil Cartmell"
+  },
+  "homepage": "https://github.com/Philcartmell/diagram-studio#readme",
+  "repository": "https://github.com/Philcartmell/diagram-studio",
+  "keywords": ["diagrams", "charts", "decks", "azure", "databricks", "architecture", "lakehouse", "azure-icons", "arm-template", "operating-model", "swimlane", "roadmap", "powerpoint", "drawio"]
+}
