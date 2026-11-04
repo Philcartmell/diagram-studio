@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "type": "sequence",
+  "altitude": "management",
+  "title": "Each quote session lives for one request and is closed when the price is sent",
+  "body": {
+    "numbering": "badge",
+    "style": { "participants": "pill", "arrowheads": "filled", "shadow": true },
+    "participants": [
+      { "id": "broker", "label": "Broker portal" },
+      { "id": "engine", "label": "Pricing engine", "emphasis": "highlight" },
+      { "id": "session", "label": "Quote session", "kind": "service" },
+      { "id": "rates", "label": "Rate tables", "kind": "database" }
+    ],
+    "steps": [
+      { "from": "broker", "to": "engine", "label": "Price this risk" },
+      { "from": "engine", "to": "session", "label": "Open session", "create": true },
+      { "from": "session", "to": "rates", "label": "Read rates" },
+      { "from": "rates", "to": "session", "label": "Rates", "kind": "return" },
+      { "fragment": "opt", "label": "broker has a discount", "steps": [
+        { "from": "session", "to": "session", "label": "Apply discount" }
+      ]},
+      { "from": "session", "to": "engine", "label": "Price", "kind": "return", "destroy": "from" },
+      { "from": "engine", "to": "broker", "label": "Quote £1,240", "kind": "return" }
+    ]
+  }
+}

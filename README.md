@@ -12,7 +12,7 @@ A plugin for Claude Code and GitHub Copilot that designs diagrams with you. Desc
 - [Skills](#skills)
 - [Examples](#examples)
   - [Azure workflow](#example-azure) and [landing zone](#example-landing-zone)
-  - [Operating model](#example-business), [swimlane](#example-swimlane), [Databricks lakehouse](#example-databricks)
+  - [Operating model](#example-business), [swimlane](#example-swimlane), [sequence diagram](#example-sequence), [Databricks lakehouse](#example-databricks)
   - [Data exhibit](#example-exhibit) and [deck](#example-deck)
 - [How it works](#how-it-works)
 - [What you get](#what-you-get)
@@ -24,13 +24,14 @@ A plugin for Claude Code and GitHub Copilot that designs diagrams with you. Desc
 
 <table>
 <tr>
-<td align="center" width="14%"><a href="#example-azure"><img src="docs/images/example-azure.png" alt="Azure workflow" width="110"></a><br><sub>Azure workflow</sub></td>
-<td align="center" width="14%"><a href="#example-landing-zone"><img src="docs/images/example-landing-zone.png" alt="Landing zone reference architecture" width="110"></a><br><sub>Landing zone</sub></td>
-<td align="center" width="14%"><a href="#example-business"><img src="docs/images/example-business.png" alt="Operating model" width="110"></a><br><sub>Operating model</sub></td>
-<td align="center" width="14%"><a href="#example-swimlane"><img src="docs/images/example-swimlane.png" alt="Swimlane" width="110"></a><br><sub>Swimlane</sub></td>
-<td align="center" width="14%"><a href="#example-databricks"><img src="docs/images/example-databricks.png" alt="Databricks lakehouse" width="110"></a><br><sub>Databricks lakehouse</sub></td>
-<td align="center" width="14%"><a href="#example-exhibit"><img src="docs/images/example-exhibit.png" alt="Data exhibit" width="110"></a><br><sub>Data exhibit</sub></td>
-<td align="center" width="14%"><a href="#example-deck"><img src="docs/images/example-deck.png" alt="Nine-page deck" width="110"></a><br><sub>Nine-page deck</sub></td>
+<td align="center" width="12%"><a href="#example-azure"><img src="docs/images/example-azure.png" alt="Azure workflow" width="110"></a><br><sub>Azure workflow</sub></td>
+<td align="center" width="12%"><a href="#example-landing-zone"><img src="docs/images/example-landing-zone.png" alt="Landing zone reference architecture" width="110"></a><br><sub>Landing zone</sub></td>
+<td align="center" width="12%"><a href="#example-business"><img src="docs/images/example-business.png" alt="Operating model" width="110"></a><br><sub>Operating model</sub></td>
+<td align="center" width="12%"><a href="#example-swimlane"><img src="docs/images/example-swimlane.png" alt="Swimlane" width="110"></a><br><sub>Swimlane</sub></td>
+<td align="center" width="12%"><a href="#example-sequence"><img src="docs/images/example-sequence.png" alt="Sequence diagram" width="110"></a><br><sub>Sequence</sub></td>
+<td align="center" width="12%"><a href="#example-databricks"><img src="docs/images/example-databricks.png" alt="Databricks lakehouse" width="110"></a><br><sub>Databricks lakehouse</sub></td>
+<td align="center" width="12%"><a href="#example-exhibit"><img src="docs/images/example-exhibit.png" alt="Data exhibit" width="110"></a><br><sub>Data exhibit</sub></td>
+<td align="center" width="12%"><a href="#example-deck"><img src="docs/images/example-deck.png" alt="Nine-page deck" width="110"></a><br><sub>Nine-page deck</sub></td>
 </tr>
 </table>
 
@@ -91,7 +92,7 @@ In Claude Code, start one with its slash command. In Copilot, ask in plain words
 | --- | --- |
 | `/diagram-studio:azure` | Azure architectures in the style of the Microsoft Azure Architecture Center, with the official Azure icons: solution workflows, network topologies, or a draft from your deployment. Azure Databricks workspaces included |
 | `/diagram-studio:databricks` | Databricks architectures in the Databricks brand look, with the official Databricks product icons: lakehouse and medallion pipelines, workspace deployment topologies, platform maps |
-| `/diagram-studio:business` | Business slides for leadership packs: operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures, and consulting-style data exhibits (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine them with text) |
+| `/diagram-studio:business` | Business slides for leadership packs: operating models, swimlanes, sequence diagrams (or your Mermaid ones, restyled), roadmaps, value chains, 2x2 matrices and layered architectures, and consulting-style data exhibits (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine them with text) |
 | `/diagram-studio:deck` | Decks: agree the storyline, then build every page from any of the above and export one PowerPoint, PDF or draw.io file with consistent titles, theme, classification and page numbers |
 
 ## Examples
@@ -153,6 +154,22 @@ final response, and the contact centre closes the case and sends a survey. Phase
 ```
 
 ![A complaint handling swimlane across customer, contact centre, complaints team and Legal, with the six-day legal review highlighted](docs/images/example-swimlane.png)
+
+<a id="example-sequence"></a>
+
+**Who calls whom: a sequence diagram**
+
+```
+/diagram-studio:business Sequence diagram of our card checkout for the payments steering group. The shopper pays
+£84.50 in the web shop, which asks our payments service to authorise (POST /payments), and payments asks the card
+gateway. If the issuer asks for a check, the gateway sends a strong customer check to the card issuer, which asks the
+shopper to approve in their banking app; that can take up to 60 seconds. Otherwise the gateway approves it as
+frictionless when the risk score is below 20. Then the authorisation comes back, payments records a ledger entry and
+the shop confirms the order. Authorise to confirmation takes 1.4 s typically. Group our platform and the partners,
+number the steps, and split it into place order, bank check and confirm.
+```
+
+![A card payment sequence diagram: shopper, web shop, payments service, card gateway and card issuer, grouped into our platform and partners, with an alternative for the bank check, a note on the 60-second wait and a 1.4-second timing bracket](docs/images/example-sequence.png)
 
 <a id="example-databricks"></a>
 
@@ -296,6 +313,7 @@ npm install -g diagram-studio
 diagram-studio example azure-architecture > diagram.json
 diagram-studio render diagram.json --all --out out
 diagram-studio azure import template.json --out draft.json
+diagram-studio import mermaid flow.mmd --out sequence.json
 diagram-studio databricks icons unity catalog
 diagram-studio docs guide
 ```

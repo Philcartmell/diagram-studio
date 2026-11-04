@@ -146,6 +146,13 @@ export function shapePath(s: Pick<ShapeEl, 'shape' | 'x' | 'y' | 'w' | 'h' | 'ra
         `H${n(x)}Z`
       );
     }
+    case 'note': {
+      const f = noteFold(w, h);
+      return (
+        `M${n(x)} ${n(y)}H${n(x + w - f)}L${n(x + w)} ${n(y + f)}V${n(y + h)}H${n(x)}Z` +
+        `M${n(x + w - f)} ${n(y)}V${n(y + f)}H${n(x + w)}`
+      );
+    }
     case 'predefined': {
       const bar = Math.min(10, w * 0.08);
       return (
@@ -154,6 +161,11 @@ export function shapePath(s: Pick<ShapeEl, 'shape' | 'x' | 'y' | 'w' | 'h' | 'ra
       );
     }
   }
+}
+
+/** Size of a note's folded corner. */
+export function noteFold(w: number, h: number): number {
+  return Math.min(10, w / 4, h / 3);
 }
 
 /** Default text-area insets for a shape kind (before padding). */
@@ -180,6 +192,8 @@ export function shapeTextInsets(kind: ShapeKind, w: number, h: number, depth: nu
       return { l: pad, r: pad, t: pad * 0.75 + Math.min(8, h * 0.12), b: pad * 0.75 };
     case 'delay':
       return { l: pad, r: Math.min(h / 2, w / 3) * 0.6 + pad / 2, t: pad * 0.75, b: pad * 0.75 };
+    case 'note':
+      return { l: pad, r: pad + noteFold(w, h) / 2, t: pad * 0.75, b: pad * 0.75 };
     case 'predefined':
       return { l: pad * 0.5 + Math.min(10, w * 0.08), r: pad * 0.5 + Math.min(10, w * 0.08), t: pad * 0.75, b: pad * 0.75 };
     default:

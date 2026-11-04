@@ -29,6 +29,8 @@
     "svg",
     "operating-model",
     "swimlane",
+    "sequence-diagram",
+    "mermaid",
     "roadmap",
     "claude"
   ],

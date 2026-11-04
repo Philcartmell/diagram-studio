@@ -47,7 +47,7 @@
 <text id="governance--label" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328" text-anchor="middle"><tspan x="1160" y="391.5">Finance leadership</tspan><tspan x="1160" y="409.5">team</tspan></text>
 <path id="ds-callout" data-role="callout" d="M50 480H278A2 2 0 0 1 280 482V558A2 2 0 0 1 278 560H50A2 2 0 0 1 48 558V482A2 2 0 0 1 50 480Z" fill="#FAF0EC"/>
 <path id="ds-callout-bar" data-role="decoration" d="M48 480H52V560H48Z" fill="#C2410C"/>
-<text id="ds-callout-heading" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#C2410C" letter-spacing="0.5"><tspan x="64" y="503">SO WHAT</tspan></text>
+<text id="ds-callout-heading" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#C2410C" letter-spacing="0.5"><tspan x="64" y="503">KEY TAKEAWAY</tspan></text>
 <text id="ds-callout-text" data-role="label" font-family="'Source Sans 3', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F2328"><tspan x="64" y="524">40% of transactional effort moves</tspan><tspan x="64" y="542">to the hub</tspan></text>
 <path id="ds-callout-pointer" data-role="decoration" d="M280 520L304 520" fill="none" stroke="#C2410C" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

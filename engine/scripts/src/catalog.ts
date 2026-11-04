@@ -14,6 +14,11 @@ export const TYPE_INFO: Record<DiagramType, { summary: string; useFor: string; e
     useFor: '"Who does what across teams" — processes, approvals, handoffs.',
     essentials: ['lanes[]', 'phases[]', 'steps[]', 'edges[]'],
   },
+  sequence: {
+    summary: 'Participants as lifelines and the messages between them in time order, with loops, alternatives, notes, phases and timing brackets.',
+    useFor: '"Who talks to whom, in what order" — request flows, integrations, customer journeys across parties, API handshakes.',
+    essentials: ['participants[]', 'steps[] (messages, notes, fragments, phases)', 'groups[]', 'timings[]'],
+  },
   roadmap: {
     summary: 'Horizons over time as columns, workstreams as rows, items as bars, milestones and gates.',
     useFor: '"What happens when" — transformation plans, programme timelines.',

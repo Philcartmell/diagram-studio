@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "type": "sequence",
+  "altitude": "executive",
+  "title": "New suppliers wait five days because the risk check runs after the contract",
+  "body": {
+    "participants": [
+      { "id": "supplier", "label": "Supplier", "kind": "person" },
+      { "id": "buying", "label": "Buying team" },
+      { "id": "risk", "label": "Risk desk", "emphasis": "accent" },
+      { "id": "finance", "label": "Finance" }
+    ],
+    "steps": [
+      { "from": "supplier", "to": "buying", "label": "Submit quote" },
+      { "from": "buying", "to": "supplier", "label": "Sign contract", "kind": "return" },
+      { "from": "buying", "to": "risk", "label": "Request risk check", "emphasis": "accent" },
+      { "delay": "5 working days" },
+      { "from": "risk", "to": "buying", "label": "Supplier cleared", "kind": "return", "emphasis": "accent" },
+      { "from": "buying", "to": "finance", "label": "Set up supplier record" },
+      { "from": "finance", "to": "supplier", "label": "First payment", "kind": "async" }
+    ]
+  },
+  "callout": { "text": "Running the risk check alongside the quote removes the five-day wait.", "anchor": "risk" }
+}

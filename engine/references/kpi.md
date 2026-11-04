@@ -2,7 +2,7 @@
 
 Big figures with a line of explanation each: a row of tiles for a headline slide, or a column down the side of an exhibit. The figure prints exactly as written, so "$140 BN", "10–20%" and "~1.9 billion" all work; the engine never rounds or restates it.
 
-**Use for:** headline results, the "so what" numbers beside a chart, a summary of a business case.
+**Use for:** headline results, the headline numbers beside a chart, a summary of a business case.
 **Not for:** comparing figures against each other (use a `bar-chart`), more than six numbers.
 
 ## Body fields

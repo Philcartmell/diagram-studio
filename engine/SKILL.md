@@ -1,6 +1,6 @@
 ---
 name: diagram-studio
-description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), or a Databricks architecture in the Databricks brand look with the official Databricks icons (lakehouse and medallion flows, workspace deployment topologies, platform maps, Databricks inside Azure diagrams), or a consulting-style data exhibit (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine any of these with text or diagrams), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports; several pages render as one multi-slide deck. Use it whenever someone wants a diagram, chart or exhibit for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing one re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling, and computes every total and difference in a chart. Not for pie charts, scatter plots, maps, or AWS and Google Cloud diagrams.
+description: Turns a plain-language request ("show our target operating model", "swimlane of invoice approval across four teams", "2x2 of our initiatives") into a boardroom-quality business diagram — operating models, swimlanes, sequence diagrams of who calls whom in what order, roadmaps, value chains, 2x2 matrices and layered architectures — or a Microsoft-reference-style Azure architecture diagram with the official Azure icons (solution workflows with numbered steps, network topologies with regions, virtual networks, subnets and private endpoints, or a draft from an ARM template), or a Databricks architecture in the Databricks brand look with the official Databricks icons (lakehouse and medallion flows, workspace deployment topologies, platform maps, Databricks inside Azure diagrams), or a consulting-style data exhibit (bar and column charts, waterfalls, line charts, KPI figures, and slides that combine any of these with text or diagrams), delivered as SVG and PNG, with optional PDF, editable PowerPoint (PPTX) and draw.io exports; several pages render as one multi-slide deck. Use it whenever someone wants a diagram, chart or exhibit for a leadership pack, board paper, steering committee, workshop or design document, or wants an existing one re-themed, revised or put in their brand. Claude writes a JSON spec; a deterministic renderer guarantees the layout, spacing and styling, and computes every total and difference in a chart. Not for pie charts, scatter plots, maps, or AWS and Google Cloud diagrams.
 ---
 
 # Diagram Studio
@@ -27,6 +27,7 @@ then run `node <repo>/engine/scripts/dist/cli.js <command>`. Any of these is wri
 | `ds icons` | List icon names (only for themes that show icons) |
 | `ds azure icons <words>` / `ds azure import <arm.json> --out spec.json` | Search the official Azure icons / draft an Azure spec from an ARM template or resource list |
 | `ds databricks icons <words>` | Search the Databricks product icons (former names such as `dlt` work) |
+| `ds import mermaid <flow.mmd> --out spec.json` | Draft a `sequence` spec from a Mermaid `sequenceDiagram` (or a Markdown file with one) |
 | `ds preview <dir> [--open]` | Live board of every diagram rendered under `<dir>`; refreshes on each render (run it in the background) |
 | `ds docs [topic]` | Print this guide (`guide`) or a reference (`swimlane`, `spec-format`…) from any install |
 | `ds theme list \| preview <id> \| validate <file\|id> \| create --from-brand … \| default <id>` | Themes |
@@ -52,6 +53,7 @@ Results are JSON on stdout; human messages on stderr. Exit **0** ok, **1** valid
 | --- | --- | --- |
 | How we are organised to deliver: layers of capability, who serves whom | `operating-model` | operating model, TOM, target state, shared services, centres of excellence |
 | Who does what across teams, handoffs, approvals | `swimlane` | process, workflow, approval, handoffs, end-to-end, as-is / to-be process |
+| Who talks to whom, in what order: calls, replies, waits between parties or systems | `sequence` | sequence diagram, request flow, API calls, integration, handshake, interaction, Mermaid sequenceDiagram |
 | What happens when: phases, workstreams, milestones, gates | `roadmap` | roadmap, plan, timeline, phasing, now/next/later, waves |
 | How value is created end to end, with focus areas | `value-chain` | value chain, Porter, end to end, where we make money, primary activities |
 | Where to focus: items placed on two dimensions | `matrix-2x2` | 2x2, prioritise, impact vs effort, portfolio, risk heatmap, quadrant |
@@ -67,7 +69,7 @@ Results are JSON on stdout; human messages on stderr. Exit **0** ok, **1** valid
 
 Several pages for one meeting are a **deck**: one spec per page plus a `deck.json` (read `references/deck.md`). Any type, an exhibit included, can be a deck page.
 
-For `azure-architecture`, also read `references/azure-style.md` once per session: it defines what a good Azure diagram looks like (two kinds: solution workflow and network topology), and the self-review checklist there replaces the one below. Given an ARM template or resource list, start from `ds azure import`, then add the story. For `databricks-architecture`, read `references/databricks-style.md` the same way. An Azure architecture that includes Azure Databricks stays `azure-architecture` and uses `databricks:` icons; a Databricks-centred picture is `databricks-architecture`.
+For `azure-architecture`, also read `references/azure-style.md` once per session: it defines what a good Azure diagram looks like (two kinds: solution workflow and network topology), and the self-review checklist there replaces the one below. Given an ARM template or resource list, start from `ds azure import`, then add the story. Given a Mermaid `sequenceDiagram`, start from `ds import mermaid`. For `databricks-architecture`, read `references/databricks-style.md` the same way. An Azure architecture that includes Azure Databricks stays `azure-architecture` and uses `databricks:` icons; a Databricks-centred picture is `databricks-architecture`.
 
 Not supported: pie and donut charts, scatter plots, maps and data tables, free-form drawing, AWS or Google Cloud diagrams, org charts and journey maps (planned for v2 — say so, and offer the nearest supported type only if it genuinely fits).
 
@@ -94,7 +96,7 @@ Every `title` states the finding, not the topic, in sentence case, under 90 char
 - ✗ "Finance operating model" → ✓ "A shared finance hub frees business partners to focus on decisions"
 - ✗ "Invoice approval process" → ✓ "Invoices over £10k wait two days for a second approval"
 
-Use the `subtitle` for scope ("Target finance operating model, 2027"). Use `callout` for the one "so what" sentence. With an `anchor` it sits in a side column level with that element (best for swimlanes and 2x2s); without one it is a full-width bar under the diagram (often better for operating models, layered architectures and roadmaps, where a side column squeezes the content). Either form costs space; if a dense diagram stops fitting, drop the callout and put the point in the title.
+Use the `subtitle` for scope ("Target finance operating model, 2027"). Use `callout` for the one key-takeaway sentence: what the reader should conclude or do. Its box is headed "Key takeaway"; set `callout.heading` for another heading ("Recommendation", "Decision needed") or `false` for none. With an `anchor` it sits in a side column level with that element (best for swimlanes and 2x2s); without one it is a full-width bar under the diagram (often better for operating models, layered architectures and roadmaps, where a side column squeezes the content). Either form costs space; if a dense diagram stops fitting, drop the callout and put the point in the title.
 
 ## Spec essentials
 
@@ -105,7 +107,7 @@ Use the `subtitle` for scope ("Target finance operating model, 2027"). Use `call
   "altitude": "executive",
   "title": "Action title that states the finding",
   "subtitle": "Scope or context",
-  "callout": { "text": "The so-what in one sentence", "anchor": "some-id" },
+  "callout": { "text": "The key takeaway in one sentence", "anchor": "some-id" },
   "body": { }
 }
 ```
@@ -159,7 +161,7 @@ Built-in: `boardroom` (default, consulting navy), `blueprint` (light on deep blu
 | SVG | always | Master copy, fonts embedded, deterministic |
 | PNG | `--png` | `--scale 1\|2\|3` (default 2), `--transparent` |
 | PDF | `--pdf` | Vector, fonts embedded; A4 aspects print on A4 |
-| PPTX | `--pptx` | One 16:9 slide (a deck: a slide per page) of native, grouped, editable shapes, charts included; title in the title placeholder; subtitle and so-what in the notes; swimlane arrows are real connectors |
+| PPTX | `--pptx` | One 16:9 slide (a deck: a slide per page) of native, grouped, editable shapes, charts included; title in the title placeholder; subtitle and key takeaway in the notes; swimlane arrows are real connectors |
 | draw.io | `--drawio` | Opens in diagrams.net; lanes are swimlane containers |
 
 Files are named `<slug-of-title>.<ext>` in `--out` (default: the spec's folder), plus `preview.png` and `<slug>.diagram.json`.

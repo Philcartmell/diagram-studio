@@ -169,10 +169,19 @@ export async function prepareDeck(input: unknown, opts: { deckPath?: string; the
     // A page that outgrew the deck canvas would shrink as a whole, title and all. Redraw it as a
     // figure under the standard frame, so every title sits in the same place on every page.
     const [W, H] = CANVAS[aspect];
-    if (!isFailure(p) && !p.errors.length && (p.scene.width > W + 0.5 || p.scene.height > H + 0.5) && p.spec.type !== 'exhibit') {
+    // A page that only fails because it does not fit the deck canvas gets the same treatment; the
+    // exhibit's minimum scale still refuses a figure too small to read.
+    const laid = isFailure(p) ? undefined : p;
+    const onlyFit = !!laid && laid.errors.length > 0 && laid.errors.every((e) => e.check === 'canvas-fit' || e.check === 'off-canvas');
+    const outgrew = !!laid && !laid.errors.length && (laid.scene.width > W + 0.5 || laid.scene.height > H + 0.5);
+    if (laid && (outgrew || onlyFit) && laid.spec.type !== 'exhibit') {
       const framed = await prepare(asFigurePage(spec), { theme: opts.theme, page: info, seriesHues });
       if (!isFailure(framed) && !framed.errors.length) {
-        result.notes.push(`Its layout needs ${p.scene.width} × ${p.scene.height}, more than the deck's ${W} × ${H}, so it is drawn as a figure under the deck's title frame.`);
+        result.notes.push(
+          outgrew
+            ? `Its layout needs ${laid.scene.width} × ${laid.scene.height}, more than the deck's ${W} × ${H}, so it is drawn as a figure under the deck's title frame.`
+            : `It does not fit the deck's ${W} × ${H} canvas at full size, so it is drawn as a slightly smaller figure under the deck's title frame.`,
+        );
         p = framed;
       }
     }

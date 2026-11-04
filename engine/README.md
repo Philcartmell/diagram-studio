@@ -2,7 +2,7 @@
 
 A deterministic renderer for boardroom-quality diagrams. You describe the diagram as a JSON spec; it does all the layout, styling and quality checks, and writes SVG, PNG, PDF, editable PowerPoint and draw.io.
 
-It draws operating models, swimlanes, roadmaps, value chains, 2x2 matrices and layered architectures, plus Azure architectures in Microsoft Azure Architecture Center style with the official Azure icons, and Databricks architectures in the Databricks brand look with the official Databricks product icons. It also draws consulting-style charts (bar and column charts, waterfalls, line charts, KPI figures) with every total and difference computed from your values, exhibits that put any of these side by side on one slide, and decks: several pages rendered as one PowerPoint, PDF or draw.io file. It is the engine behind the [Diagram Studio](https://github.com/Philcartmell/diagram-studio) plugin for Claude Code, which runs a design conversation on top of it, and it works just as well on its own. The engine and the plugin share a version and are released together from that repository.
+It draws operating models, swimlanes, sequence diagrams, roadmaps, value chains, 2x2 matrices and layered architectures, plus Azure architectures in Microsoft Azure Architecture Center style with the official Azure icons, and Databricks architectures in the Databricks brand look with the official Databricks product icons. It also draws consulting-style charts (bar and column charts, waterfalls, line charts, KPI figures) with every total and difference computed from your values, exhibits that put any of these side by side on one slide, and decks: several pages rendered as one PowerPoint, PDF or draw.io file. It is the engine behind the [Diagram Studio](https://github.com/Philcartmell/diagram-studio) plugin for Claude Code, which runs a design conversation on top of it, and it works just as well on its own. The engine and the plugin share a version and are released together from that repository.
 
 ## Install
 
@@ -23,6 +23,7 @@ diagram-studio preview out --open                            # live board that r
 diagram-studio docs guide                                    # the spec guide; `docs` lists every topic
 diagram-studio azure icons key vault                         # search the official Azure icons
 diagram-studio azure import template.json --out draft.json   # draft an Azure diagram from an ARM template
+diagram-studio import mermaid flow.mmd --out sequence.json   # draft a sequence diagram from Mermaid
 diagram-studio databricks icons unity catalog                # search the Databricks product icons
 ```
 
@@ -30,7 +31,7 @@ Results are JSON on stdout, messages on stderr. Exit codes: 0 ok, 1 validation e
 
 | | |
 | --- | --- |
-| Types | `operating-model`, `swimlane`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture`, `azure-architecture`, `databricks-architecture` |
+| Types | `operating-model`, `swimlane`, `sequence`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture`, `azure-architecture`, `databricks-architecture`, `bar-chart`, `waterfall`, `line-chart`, `kpi`, `narrative`, `exhibit` |
 | Altitudes | `executive` (≤ 9 nodes), `management` (≤ 20), `detailed` (≤ 60) |
 | Themes | `boardroom`, `blueprint`, `sketch`, `bold`, `minimal`, `print`, `azure`, `databricks`; brand themes with `theme create --from-brand` |
 | Exports | SVG (fonts embedded), PNG, PDF (vector), PPTX (native, grouped, editable shapes), draw.io |

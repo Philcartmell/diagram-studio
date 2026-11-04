@@ -11,6 +11,7 @@ import type { Box, ConnectorEl, LineEl, Point, Scene, ShapeEl, TextEl } from '..
 import type { FontSet } from '../text/measure.js';
 import type { Theme } from '../theme/types.js';
 import { escapeXml, fmt } from '../util.js';
+import { noteFold } from '../scene/geometry.js';
 import { textBlocks } from './text-blocks.js';
 
 interface Cell {
@@ -77,6 +78,8 @@ function shapeStyle(s: ShapeEl): Record<string, string | number | undefined> {
       return { shape: 'hexagon', perimeter: 'hexagonPerimeter2', fixedSize: 1, size: Math.min(s.w / 2, s.h * 0.29) };
     case 'predefined':
       return { shape: 'process', backgroundOutline: 1, size: 0.08 };
+    case 'note':
+      return { shape: 'note', backgroundOutline: 1, size: noteFold(s.w, s.h) };
   }
 }
 
@@ -381,10 +384,10 @@ function lineCell(l: LineEl, uid: (b: string) => string): Cell {
     value: '',
     edge: true,
     style: styleStr({
-      endArrow: l.arrowEnd ? 'block' : 'none',
-      startArrow: l.arrowStart ? 'block' : 'none',
-      endFill: 1,
-      startFill: 1,
+      endArrow: l.arrowEnd ? (l.arrow === 'open' ? 'open' : 'block') : 'none',
+      startArrow: l.arrowStart ? (l.arrow === 'open' ? 'open' : 'block') : 'none',
+      endFill: l.arrow === 'open' ? 0 : 1,
+      startFill: l.arrow === 'open' ? 0 : 1,
       html: 1,
       rounded: 0,
       strokeColor: l.paint.stroke,

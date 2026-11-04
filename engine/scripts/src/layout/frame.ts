@@ -1,13 +1,13 @@
 /**
  * The page frame shared by every type: action title and subtitle on top,
- * then legend, "so what" callout and footer reserved at the edges. Layout
+ * then legend, key-takeaway callout and footer reserved at the edges. Layout
  * modules fill the content box in between.
  */
 import { intersects } from '../scene/geometry.js';
 import { textBox } from './labels.js';
 import type { Box, Dash, ShapeEl, ShapeKind } from '../scene/types.js';
 import type { Token } from '../theme/tokens.js';
-import type { Emphasis, LegendEntry, Status } from '../spec.js';
+import { type Emphasis, type LegendEntry, type Status, calloutHeading } from '../spec.js';
 import { STATUS_LABEL, badgeLook, nodeLook, panelLook, rulePaint, statusToken, tagToken } from '../theme/paint.js';
 import { emphasisCarriers } from '../validate/spec.js';
 import { humanize, snap, snapUp } from '../util.js';
@@ -30,7 +30,7 @@ export interface LegendItem {
   status?: Status;
   tag?: string;
   /** Flow entries: a line sample and, optionally, the step-badge shape used by that flow. */
-  flow?: { stroke: Token; dash?: Dash; badge?: { shape: ShapeKind; fill: Token } };
+  flow?: { stroke: Token; dash?: Dash; badge?: { shape: ShapeKind; fill: Token }; arrow?: 'triangle' | 'open' | 'cross' };
   /** Swatch entries (chart series): a filled square, or another shape such as a badge hexagon. */
   swatch?: { fill: Token; shape?: ShapeKind };
   /** Line entries (line-chart series): a short line sample without an arrow. */
@@ -120,7 +120,16 @@ function calloutHeight(ctx: LayoutContext, width: number): number {
   const st = styles(ctx.theme);
   const textW = width - 16 - 12;
   const lines = wrap(ctx, ctx.spec.callout!.text, textW, st.label);
-  return snapUp(12 + lh(ctx, st.caption.size) + 4 + lines.length * lh(ctx, st.label.size) + 12);
+  const n = calloutHeadingLines(ctx, textW).length;
+  const head = n ? n * lh(ctx, st.caption.size) + 4 : 0;
+  return snapUp(12 + head + lines.length * lh(ctx, st.label.size) + 12);
+}
+
+/** The callout heading in small capitals, wrapped to the box (letter spacing included); empty for none. */
+function calloutHeadingLines(ctx: LayoutContext, width: number): string[] {
+  const text = calloutHeading(ctx.spec.callout)?.toUpperCase();
+  if (!text) return [];
+  return wrap(ctx, text, width - 0.6 * text.length, styles(ctx.theme).captionStrong);
 }
 
 export interface FrameOptions {
@@ -290,27 +299,30 @@ function drawCallout(ctx: LayoutContext, b: Box) {
     group: 'g-ds-callout',
   });
   const textW = b.w - 16 - 12;
-  addText(ctx, {
-    id: 'ds-callout-heading',
-    role: 'label',
-    x: b.x + 16,
-    y: b.y + 12,
-    w: textW,
-    lines: ['SO WHAT'],
-    ...st.captionStrong,
-    anchor: 'start',
-    color: look.inkMuted,
-    letterSpacing: 0.6,
-    box: 'ds-callout',
-    group: 'g-ds-callout',
-    slot: 'heading',
-  });
+  const head = calloutHeadingLines(ctx, textW);
+  if (head.length) {
+    addText(ctx, {
+      id: 'ds-callout-heading',
+      role: 'label',
+      x: b.x + 16,
+      y: b.y + 12,
+      w: textW,
+      lines: head,
+      ...st.captionStrong,
+      anchor: 'start',
+      color: look.inkMuted,
+      letterSpacing: 0.6,
+      box: 'ds-callout',
+      group: 'g-ds-callout',
+      slot: 'heading',
+    });
+  }
   const lines = wrap(ctx, ctx.spec.callout!.text, textW, st.label);
   addText(ctx, {
     id: 'ds-callout-text',
     role: 'label',
     x: b.x + 16,
-    y: b.y + 12 + lh(ctx, st.caption.size) + 4,
+    y: b.y + 12 + (head.length ? head.length * lh(ctx, st.caption.size) + 4 : 0),
     w: textW,
     lines,
     ...st.label,
@@ -360,7 +372,11 @@ function drawLegend(ctx: LayoutContext, rows: LegendItem[][], x0: number, y0: nu
       if (it.kind === 'flow' && it.flow) {
         const f = it.flow;
         const ly = y + LEGEND_ROW / 2;
-        ctx.els.push({ kind: 'line', id: `${id}-line`, role: 'legend', points: [{ x, y: ly }, { x: x + FLOW_W, y: ly }], paint: { fill: 'none', stroke: f.stroke, strokeWidth: 1.5, dash: f.dash }, arrowEnd: true, group: 'g-ds-legend' });
+        ctx.els.push({ kind: 'line', id: `${id}-line`, role: 'legend', points: [{ x, y: ly }, { x: x + FLOW_W, y: ly }], paint: { fill: 'none', stroke: f.stroke, strokeWidth: 1.5, dash: f.dash }, arrowEnd: f.arrow !== 'cross', arrow: f.arrow === 'open' ? 'open' : f.arrow === 'triangle' ? 'triangle' : undefined, group: 'g-ds-legend' });
+        if (f.arrow === 'cross') {
+          const e = x + FLOW_W - 4;
+          for (const k of [1, -1]) ctx.els.push({ kind: 'line', id: `${id}-cross-${k > 0 ? 1 : 2}`, role: 'legend', points: [{ x: e - 4, y: ly - 4 * k }, { x: e + 4, y: ly + 4 * k }], paint: { fill: 'none', stroke: f.stroke, strokeWidth: 1.5 }, group: 'g-ds-legend' });
+        }
         if (f.badge) {
           addShape(ctx, {
             id: `${id}-badge`,

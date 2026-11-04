@@ -10,7 +10,7 @@
     "$schema": { "type": "string" },
     "version": { "const": "1.0", "description": "Schema version." },
     "type": {
-      "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture", "bar-chart", "waterfall", "line-chart", "kpi", "narrative", "exhibit"]
+      "enum": ["operating-model", "swimlane", "sequence", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture", "bar-chart", "waterfall", "line-chart", "kpi", "narrative", "exhibit"]
     },
     "altitude": { "enum": ["executive", "management", "detailed"] },
     "theme": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
@@ -30,7 +30,11 @@
       "required": ["text"],
       "properties": {
         "text": { "type": "string", "minLength": 1, "maxLength": 140 },
-        "anchor": { "$ref": "#/$defs/id" }
+        "anchor": { "$ref": "#/$defs/id" },
+        "heading": {
+          "description": "Small heading above the text (default \"Key takeaway\"); false for none.",
+          "oneOf": [{ "type": "string", "minLength": 1, "maxLength": 32 }, { "const": false }]
+        }
       }
     },
     "legend": {
@@ -61,6 +65,7 @@
   "oneOf": [
     { "properties": { "type": { "const": "operating-model" }, "body": { "$ref": "types/operating-model.schema.json" } } },
     { "properties": { "type": { "const": "swimlane" }, "body": { "$ref": "types/swimlane.schema.json" } } },
+    { "properties": { "type": { "const": "sequence" }, "body": { "$ref": "types/sequence.schema.json" } } },
     { "properties": { "type": { "const": "roadmap" }, "body": { "$ref": "types/roadmap.schema.json" } } },
     { "properties": { "type": { "const": "value-chain" }, "body": { "$ref": "types/value-chain.schema.json" } } },
     { "properties": { "type": { "const": "matrix-2x2" }, "body": { "$ref": "types/matrix-2x2.schema.json" } } },

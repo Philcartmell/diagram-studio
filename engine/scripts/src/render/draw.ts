@@ -257,7 +257,7 @@ function drawElement(e: SceneElement, sketch: SketchPainter | undefined, fonts: 
       const { stroke, strokeWidth } = e.paint;
       const dash = dashArray(e.paint.dash, strokeWidth);
       const wantArrow = e.kind === 'connector' ? e.arrowEnd && theme.connector.arrow !== 'none' : !!e.arrowEnd;
-      const open = theme.connector.arrow === 'open';
+      const open = (e.kind === 'line' && e.arrow ? e.arrow : theme.connector.arrow) === 'open';
       let pts = e.points;
       let head: Point[] | undefined;
       if (wantArrow && pts.length >= 2) {

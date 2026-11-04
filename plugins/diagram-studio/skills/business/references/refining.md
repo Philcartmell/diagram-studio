@@ -10,7 +10,7 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "And Y as well, but less" | `"emphasis": "highlight"` on Y (the theme's second colour) |
 | "Y is just context", "fade Y out", "grey out the old one" | `"emphasis": "muted"` |
 | "X is new", "Y is being retired", "Z is at risk" | `"status"` on that element, only because the user said so |
-| "Add the so-what", "what's the point?" | `callout.text`. Add `anchor` to place it beside one element (good for swimlanes and 2x2s); leave the anchor out for a bar under the diagram (good for layers and roadmaps) |
+| "Add the key takeaway", "add the so-what", "what's the point?" | `callout.text`. Its heading defaults to "Key takeaway"; "call it a recommendation" sets `callout.heading`, "no heading" sets it to `false`. Add `anchor` to place it beside one element (good for swimlanes and 2x2s); leave the anchor out for a bar under the diagram (good for layers and roadmaps) |
 | "The title is weak", "punchier" | Rewrite `title` as a finding in under 90 characters, using only the user's facts. Offer two options if it changes the claim |
 
 ## Amount of detail
@@ -34,6 +34,15 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "For a document", "portrait" | `"canvas": { "aspect": "A4-portrait" }` (or `A4-landscape`) |
 | "It doesn't fit", "let it grow" | `"canvas": { "aspect": "auto" }`, for working-team diagrams only; slides stay 16:9 |
 | "Show real dates", "the phases aren't equal" | Roadmap `"scale": "time"` with `start` and `end` on every horizon |
+| Sequence: "number the steps", "so I can refer to them" | `"numbering": "badge"` (or `"inline"`) |
+| Sequence: "show where it waits", "how long does this take?" | A `{ "delay": "…" }` step where time passes, or `timings` from one message `id` to another, with the user's figure |
+| Sequence: "show the happy path", "trace the failure" | `"emphasis": "accent"` on two or more messages of that path; the rest mutes itself |
+| Sequence: "split it into stages", "group the steps" | Wrap the top-level steps in `phase`s (all of them), or put a run of steps in a `highlight` |
+| Sequence: "show which systems are ours", "partners on the right" | `groups` of neighbouring participants ("Our platform", "Partners"), `"kind": "external"` for outside parties; reorder `participants` so members sit together |
+| Sequence: "less UML", "cleaner", "lighter" | In `style`: `"participants": "underline"` or `"plain"`, `"shading": "none"`. On the body: `"activations": "none"`. Drop returns that add nothing |
+| Sequence: "more like Mermaid", "classic UML" | In `style`: `"participants": "card"`, and `"mirror": true` for long diagrams. On the body: `"activations": "auto"` |
+| Sequence: "use our colours for the partners", "colour by system type" | `color` on participants or groups: a theme colour (`accent`, `cat-2`…) first, a hex value only if they give one |
+| Sequence: "too long for the slide" | Merge call and reply where the reply adds nothing, move endpoints into `detail`, or `"canvas": { "aspect": "auto" }` / `"A4-portrait"` for documents; for a slide, split at a phase into two slides |
 | "Show it as a … instead" | A new form is a new concept, not an edit: write `concepts/<next letter>-<form>/spec.json` from the brief, render it beside the current one, and let the user choose |
 
 ## Charts and exhibits

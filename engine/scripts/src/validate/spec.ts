@@ -7,7 +7,8 @@ import { homePackOf } from '../azure/icons.js';
 import { azureLabel, azureNodes, checkAzure } from './azure.js';
 import { waterfallBars } from '../layout/waterfall.js';
 import { decimalsOf } from '../layout/chart.js';
-import { panelSpec } from '../spec.js';
+import { panelSpec, sequenceMessages } from '../spec.js';
+import { checkSequence, sequenceColorWarnings } from './sequence.js';
 import type {
   Altitude,
   AzureArchitectureBody,
@@ -23,6 +24,7 @@ import type {
   RoadmapBody,
   Spec,
   SpecNode,
+  SequenceBody,
   SwimlaneBody,
   ValueChainBody,
 } from '../spec.js';
@@ -64,6 +66,11 @@ export function countedNodes(spec: Spec): CountedNode[] {
     }
     case 'swimlane':
       (b as unknown as SwimlaneBody).steps.forEach((s, i) => push(`body.steps[${i}]`, s));
+      break;
+    case 'sequence':
+      // Calls carry the story; returns answer them and do not count against the limit.
+      for (const m of sequenceMessages(b as unknown as SequenceBody))
+        if (m.msg.kind !== 'return') push(`${m.path}`, { id: m.id, label: m.msg.label ?? '', emphasis: m.msg.emphasis });
       break;
     case 'roadmap':
       (b as unknown as RoadmapBody).items.forEach((s, i) => push(`body.items[${i}]`, s));
@@ -190,6 +197,9 @@ function crossReferences(spec: Spec, errors: Issue[], warnings: Issue[]) {
       });
       break;
     }
+    case 'sequence':
+      checkSequence(spec.body as unknown as SequenceBody, spec.altitude ?? 'executive', err, warn);
+      break;
     case 'roadmap': {
       const b = spec.body as unknown as RoadmapBody;
       const hz = b.horizons.map((h) => h.id);
@@ -431,9 +441,12 @@ function altitudeChecks(spec: Spec, altitude: Altitude, errors: Issue[], warning
     }
   }
   // In an exhibit the same series accented in each small multiple is one accent, not several.
+  const msgPaths = new Set(spec.type === 'sequence' ? sequenceMessages(spec.body as unknown as SequenceBody).map((m) => m.path) : []);
   const accented = emphasisCarriers(spec)
     .filter((c) => c.emphasis === 'accent')
-    .filter((c, i, all) => spec.type !== 'exhibit' || !c.id || all.findIndex((x) => x.id === c.id) === i);
+    .filter((c, i, all) => spec.type !== 'exhibit' || !c.id || all.findIndex((x) => x.id === c.id) === i)
+    // In a sequence, accented messages trace one path: they count as a single accent.
+    .filter((c, i, all) => !msgPaths.has(c.path) || all.findIndex((x) => msgPaths.has(x.path)) === i);
   if (accented.length > rules.accentMax) {
     warnings.push({
       path: 'body',
@@ -514,6 +527,9 @@ export function validateSpec(input: unknown, opts: { theme?: string } = {}): Val
     const merged = loadTheme(spec.theme!, spec.themeOverrides);
     const r = validateThemeObject(merged);
     for (const e of r.errors) errors.push({ ...e, path: `themeOverrides.${e.path}`, message: `themeOverrides.${e.message}` });
+  }
+  if (spec.type === 'sequence' && findTheme(spec.theme!) && !errors.some((e) => e.path.startsWith('themeOverrides'))) {
+    sequenceColorWarnings(spec.body as unknown as SequenceBody, loadTheme(spec.theme!, spec.themeOverrides), (path, message, code) => warnings.push({ path, message: `${path}: ${message}`, code }));
   }
   return { ok: errors.length === 0, errors, warnings, spec: errors.length ? undefined : spec };
 }

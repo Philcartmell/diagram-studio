@@ -55,7 +55,7 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "And Y as well, but less" | `"emphasis": "highlight"` on Y |
 | "Y is just context", "grey out the old one" | `"emphasis": "muted"` |
 | "X is new", "Y is being retired", "Z is at risk" | `"status"` on that node (`new`, `changed`, `retired`, `at-risk`), only because the user said so |
-| "Add the so-what" | `callout.text`. Without an `anchor` it is a bar under the diagram, which suits a wide architecture best; with one it sits in a side column level with that element |
+| "Add the key takeaway", "add the so-what" | `callout.text` (headed "Key takeaway"; `callout.heading` changes or removes the heading). Without an `anchor` it is a bar under the diagram, which suits a wide architecture best; with one it sits in a side column level with that element |
 | "The title is weak", "punchier" | Rewrite `title` as a finding in under 90 characters, using only the user's facts. Offer two options if it changes the claim |
 
 ## Amount of detail

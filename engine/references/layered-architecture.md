@@ -3,7 +3,7 @@
 System layers for a non-technical audience: stacked layers of components in plain words, cross-cutting concerns as vertical bars on the right, external parties in a dashed column on the left. Answers "how does the system fit together, and what changes?".
 
 **Use for:** target platform pictures for executives, modernisation stories (what is new, changed, retired), data platform overviews, architecture for steering committees and investment cases.
-**Not for:** engineering diagrams with protocols, ports, cloud services or sequence flows (out of scope in v1); organisation design (`operating-model`).
+**Not for:** engineering diagrams with protocols, ports or cloud services; message flows between systems (`sequence`); organisation design (`operating-model`).
 
 ## Body fields
 

@@ -47,8 +47,9 @@ describe('PRD acceptance', () => {
   it('switching boardroom → sketch changes styling only: node positions stay within 8 units', async () => {
     // The architecture types size each service cell from its label in the theme's own font,
     // so a theme with wider type grows the cells; its structure test lives in azure.test.mjs.
-    // Charts and exhibits likewise size their label columns and figures from the theme font.
-    const sized = ['azure-architecture', 'databricks-architecture', 'bar-chart', 'waterfall', 'line-chart', 'kpi', 'narrative', 'exhibit'];
+    // Charts and exhibits likewise size their label columns and figures from the theme font,
+    // and sequence diagrams space their lifelines to fit the message labels.
+    const sized = ['sequence', 'azure-architecture', 'databricks-architecture', 'bar-chart', 'waterfall', 'line-chart', 'kpi', 'narrative', 'exhibit'];
     for (const ex of examples().filter((e) => !sized.includes(e.type))) {
       const a = await prepare(ex.spec, { theme: 'boardroom' });
       const b = await prepare(ex.spec, { theme: 'sketch' });
@@ -166,6 +167,37 @@ describe('PRD acceptance', () => {
       execFileSync(process.execPath, [CLI, 'render', ex.file, '--out', out, '--png']);
       expect(Date.now() - t0, ex.name).toBeLessThan(3000);
     }
+  });
+});
+
+describe('key-takeaway callout', () => {
+  const spec = (callout) => ({ ...structuredClone(examples().find((e) => e.name === '01-supplier-risk-check').spec), callout });
+  const heading = (p) => p.scene.elements.find((e) => e.id === 'ds-callout-heading');
+  const text = 'Running the risk check alongside the quote removes the five-day wait.';
+
+  it('is headed "Key takeaway" by default, in the box and in the PPTX notes', async () => {
+    const p = await prepare(spec({ text, anchor: 'risk' }));
+    expect(p.errors).toEqual([]);
+    expect(heading(p).lines).toEqual(['KEY TAKEAWAY']);
+    expect(p.scene.meta.notes).toContain(`Key takeaway: ${text}`);
+    expect(JSON.stringify(p.scene)).not.toMatch(/so what/i);
+  });
+
+  it('takes a custom heading, or none', async () => {
+    const custom = await prepare(spec({ text, anchor: 'risk', heading: 'Decision needed' }));
+    expect(heading(custom).lines).toEqual(['DECISION NEEDED']);
+    expect(custom.scene.meta.notes).toContain(`Decision needed: ${text}`);
+    const none = await prepare(spec({ text, heading: false }));
+    expect(none.errors).toEqual([]);
+    expect(heading(none)).toBeUndefined();
+    const box = none.scene.elements.find((e) => e.id === 'ds-callout');
+    const body = none.scene.elements.find((e) => e.id === 'ds-callout-text');
+    expect(body.y - box.y).toBe(12);
+  });
+
+  it('rejects an empty or overlong heading', () => {
+    expect(validateSpec(spec({ text, heading: '' })).ok).toBe(false);
+    expect(validateSpec(spec({ text, heading: 'x'.repeat(33) })).ok).toBe(false);
   });
 });
 

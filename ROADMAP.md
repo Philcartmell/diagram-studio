@@ -45,8 +45,17 @@ Bar and column charts, waterfalls, line charts, KPI figures, narrative panels, e
 - **Optional native PowerPoint charts** for plain bar and line charts, for users who must edit the data in PowerPoint's chart editor. Chart groups already carry their values, so the PPTX exporter could swap the shapes for a native chart.
 - **Long tables across pages** ("continued") for PDF reports.
 
+## Sequence follow-ups
+
+Sequence diagrams, their style presets and the Mermaid import ship in the next release. Next:
+
+- **Native draw.io UML shapes.** Export participants and lifelines as draw.io `umlLifeline` cells and fragments as `umlFrame`, so the diagram stays a sequence diagram when edited there (today it exports as plain, editable shapes and lines).
+- **Export back to Mermaid**, so a restyled diagram can live in a repository's Markdown too.
+- **A time scale.** Optionally space rows by elapsed time (`"at": "+2 days"`), so a waiting step looks as long as it is.
+- **References to other diagrams** (`ref` fragments) for flows split across slides of a deck.
+
 ## Later
 
 - Corporate `.potx` masters, org charts and journey maps.
 - A project-level `.diagram-studio/` folder, so a team can share a brand theme through its repository.
-- Other destinations and sources: push the SVG to a Miro board; import Mermaid and draw.io.
+- Other destinations and sources: push the SVG to a Miro board; import draw.io, and Mermaid flowcharts (sequence diagrams import already).

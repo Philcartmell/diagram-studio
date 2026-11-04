@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="sequence" data-theme="azure" data-altitude="management">
+<title id="ds-svg-title">Each quote session lives for one request and is closed when the price is sent</title>
+<desc id="ds-svg-desc">Each quote session lives for one request and is closed when the price is sent</desc>
+<defs><filter id="ds-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000000" flood-opacity="0.12"/></filter></defs>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Each quote session lives for one request and is closed when the price is sent</tspan></text>
+<path id="fragment-1" data-role="group" d="M779 440H968V533H779Z" fill="#F9F9F9" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="broker--lifeline" data-role="decoration" d="M163 148L163 678" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="engine--lifeline" data-role="decoration" d="M483 148L483 678" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="session--lifeline" data-role="decoration" d="M803 276L803 578.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="session--destroy-1" data-role="marker" d="M796 571.5L810 585.5" fill="none" stroke="#3B3B3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="session--destroy-2" data-role="marker" d="M796 585.5L810 571.5" fill="none" stroke="#3B3B3B" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="rates--lifeline" data-role="decoration" d="M1123 148L1123 678" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="engine--activation-1" data-role="marker" d="M479.5 194H486.5A1.5 1.5 0 0 1 488 195.5V633.5A1.5 1.5 0 0 1 486.5 635H479.5A1.5 1.5 0 0 1 478 633.5V195.5A1.5 1.5 0 0 1 479.5 194Z" fill="#D4E7D4" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<path id="session--activation-1" data-role="marker" d="M799.5 254H806.5A1.5 1.5 0 0 1 808 255.5V567.5A1.5 1.5 0 0 1 806.5 569H799.5A1.5 1.5 0 0 1 798 567.5V255.5A1.5 1.5 0 0 1 799.5 254Z" fill="#EBEBEB" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="rates--activation-1" data-role="marker" d="M1119.5 333H1126.5A1.5 1.5 0 0 1 1128 334.5V399.5A1.5 1.5 0 0 1 1126.5 401H1119.5A1.5 1.5 0 0 1 1118 399.5V334.5A1.5 1.5 0 0 1 1119.5 333Z" fill="#EBEBEB" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path filter="url(#ds-shadow)" id="broker" data-role="node" data-node="broker" d="M123 112H203A18 18 0 0 1 221 130V130A18 18 0 0 1 203 148H123A18 18 0 0 1 105 130V130A18 18 0 0 1 123 112Z" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="broker--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="163" y="134.5">Broker portal</tspan></text>
+<path filter="url(#ds-shadow)" id="engine" data-role="node" data-node="engine" data-emphasis="highlight" d="M441 112H525A18 18 0 0 1 543 130V130A18 18 0 0 1 525 148H441A18 18 0 0 1 423 130V130A18 18 0 0 1 441 112Z" fill="#D7E4D7" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="engine--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="483" y="134.5">Pricing engine</tspan></text>
+<path filter="url(#ds-shadow)" id="session" data-role="node" data-node="session" d="M761 240H845A18 18 0 0 1 863 258V258A18 18 0 0 1 845 276H761A18 18 0 0 1 743 258V258A18 18 0 0 1 761 240Z" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="session--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="803" y="262.5">Quote session</tspan></text>
+<path filter="url(#ds-shadow)" id="rates" data-role="node" data-node="rates" d="M1071 116.5A52 4.5 0 0 1 1175 116.5V143.5A52 4.5 0 0 1 1071 143.5ZM1071 116.5A52 4.5 0 0 0 1175 116.5" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="rates--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1123" y="136.5">Rate tables</tspan></text>
+<path id="fragment-1--tag" data-role="header" d="M779 440L817 440L824 450L817 460L779 460Z" fill="#3B3B3B"/>
+<text id="fragment-1--tag-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5"><tspan x="787" y="454.5">OPT</tspan></text>
+<path id="fragment-1--guard--plate" data-role="decoration" d="M831 442H950A2 2 0 0 1 952 444V456A2 2 0 0 1 950 458H831A2 2 0 0 1 829 456V444A2 2 0 0 1 831 442Z" fill="#F9F9F9"/>
+<text id="fragment-1--guard" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#505050"><tspan x="832" y="454.5">[broker has a discount]</tspan></text>
+<g id="message-1" data-role="edge"><path d="M163 198L470 198" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M478 198L469 201.5L469 194.5Z" fill="#3B3B3B"/></g>
+<path id="message-1--label--plate" data-role="decoration" d="M294 177H366A2 2 0 0 1 368 179V191A2 2 0 0 1 366 193H294A2 2 0 0 1 292 191V179A2 2 0 0 1 294 177Z" fill="#FFFFFF"/>
+<text id="message-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="330.5" y="190">Price this risk</tspan></text>
+<path id="message-1--number" data-role="badge" d="M164 198A9 9 0 1 1 182 198A9 9 0 1 1 164 198Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-1--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="173" y="202.5">1</tspan></text>
+<g id="message-2" data-role="edge"><path d="M488 258L735 258" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M743 258L734 261.5L734 254.5Z" fill="#3B3B3B"/></g>
+<path id="message-2--label--plate" data-role="decoration" d="M589 237H662A2 2 0 0 1 664 239V251A2 2 0 0 1 662 253H589A2 2 0 0 1 587 251V239A2 2 0 0 1 589 237Z" fill="#FFFFFF"/>
+<text id="message-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="625.5" y="250">Open session</tspan></text>
+<path id="message-2--number" data-role="badge" d="M489 258A9 9 0 1 1 507 258A9 9 0 1 1 489 258Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-2--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="498" y="262.5">2</tspan></text>
+<g id="message-3" data-role="edge"><path d="M808 337L1110 337" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M1118 337L1109 340.5L1109 333.5Z" fill="#3B3B3B"/></g>
+<path id="message-3--label--plate" data-role="decoration" d="M944 316H1002A2 2 0 0 1 1004 318V330A2 2 0 0 1 1002 332H944A2 2 0 0 1 942 330V318A2 2 0 0 1 944 316Z" fill="#FFFFFF"/>
+<text id="message-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="973" y="329">Read rates</tspan></text>
+<path id="message-3--number" data-role="badge" d="M809 337A9 9 0 1 1 827 337A9 9 0 1 1 809 337Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-3--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="818" y="341.5">3</tspan></text>
+<g id="message-4" data-role="edge"><path d="M1118 397L816 397" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M808 397L817 393.5L817 400.5Z" fill="#3B3B3B"/></g>
+<path id="message-4--label--plate" data-role="decoration" d="M937 376H968A2 2 0 0 1 970 378V390A2 2 0 0 1 968 392H937A2 2 0 0 1 935 390V378A2 2 0 0 1 937 376Z" fill="#FFFFFF"/>
+<text id="message-4--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="953" y="389">Rates</tspan></text>
+<path id="message-4--number" data-role="badge" d="M1099 397A9 9 0 1 1 1117 397A9 9 0 1 1 1099 397Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-4--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="1108" y="401.5">4</tspan></text>
+<g id="message-5" data-role="edge"><path d="M808 472L836 472L836 492L816 492" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M808 492L817 488.5L817 495.5Z" fill="#3B3B3B"/></g>
+<path id="message-5--label--plate" data-role="decoration" d="M843 474H925A2 2 0 0 1 927 476V488A2 2 0 0 1 925 490H843A2 2 0 0 1 841 488V476A2 2 0 0 1 843 474Z" fill="#F9F9F9"/>
+<text id="message-5--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000"><tspan x="844" y="486.5">Apply discount</tspan></text>
+<path id="message-5--number" data-role="badge" d="M809 472A9 9 0 1 1 827 472A9 9 0 1 1 809 472Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-5--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="818" y="476.5">5</tspan></text>
+<g id="message-6" data-role="edge"><path d="M798 565L496 565" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M488 565L497 561.5L497 568.5Z" fill="#3B3B3B"/></g>
+<path id="message-6--label--plate" data-role="decoration" d="M619 544H647A2 2 0 0 1 649 546V558A2 2 0 0 1 647 560H619A2 2 0 0 1 617 558V546A2 2 0 0 1 619 544Z" fill="#FFFFFF"/>
+<text id="message-6--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="633" y="557">Price</tspan></text>
+<path id="message-6--number" data-role="badge" d="M779 565A9 9 0 1 1 797 565A9 9 0 1 1 779 565Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-6--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="788" y="569.5">6</tspan></text>
+<g id="message-7" data-role="edge"><path d="M478 631L171 631" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M163 631L172 627.5L172 634.5Z" fill="#3B3B3B"/></g>
+<path id="message-7--label--plate" data-role="decoration" d="M273 610H347A2 2 0 0 1 349 612V624A2 2 0 0 1 347 626H273A2 2 0 0 1 271 624V612A2 2 0 0 1 273 610Z" fill="#FFFFFF"/>
+<text id="message-7--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="310.5" y="623">Quote £1,240</tspan></text>
+<path id="message-7--number" data-role="badge" d="M459 631A9 9 0 1 1 477 631A9 9 0 1 1 459 631Z" fill="#0078D4" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="message-7--number-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle"><tspan x="468" y="635.5">7</tspan></text>
+</svg>

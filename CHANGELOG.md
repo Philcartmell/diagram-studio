@@ -4,6 +4,20 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+### Engine: `diagram-studio`
+
+- **`sequence`**: who talks to whom, in what order. Participants as lifelines (cards, pills, underlined or plain labels; person, database, queue and external kinds; optional groups such as "Our platform"), messages as arrows (calls, asynchronous messages, returns, failed or lost messages, self-messages, two-way exchanges), activation bars (automatic from calls and returns, or set per message), participants created and destroyed mid-flow, notes, fragments (`loop`, `alt`, `opt`, `par`, `critical`, `break`, `group`, nested up to four deep), highlighted runs, phases with a labelled gutter, dividers, delays where time passes, and timing brackets in the margin. Numbering as badges or inline. Accent two or more messages and the rest of the flow mutes itself.
+- Lifelines are spaced from the measured labels, a long arrow's label sits in the clear gap next to the sender, and labels sit on a plate the colour of whatever is behind them, so no line runs through text. Rows tighten before a fixed canvas reports that the flow does not fit, and spread out when there is room.
+- Customisation without losing the theme: `style` presets (`participants`, `lifeline`, `arrowheads`, `shading`, `density`, `shadow`, `mirror`) and `color` on participants, groups, messages, notes, fragments, highlights and phases, as theme colours (`accent`, `cat-3`, `at-risk`…) or hex values (with a warning when one would vanish on the background).
+- `diagram-studio import mermaid <file>` drafts a `sequence` spec from a Mermaid `sequenceDiagram` (or the first mermaid block in a Markdown file): participants and actors with aliases and types, boxes, every arrow form, activations, create and destroy, notes, every block type, `autonumber` and the title. It reports anything it skipped.
+- A folded-corner `note` shape and per-line arrowheads (open or filled) in every export.
+- The callout box is headed "Key takeaway" instead of "So what", which read as too informal and could be misread; PowerPoint notes say "Key takeaway:" too. `callout.heading` sets another heading ("Recommendation", "Decision needed") or `false` for none.
+- Exhibit panels use their natural, scaled-down layout whenever it fits with fewer problems than the box-sized one, and a deck page that only fails because it does not fit is redrawn as a smaller figure under the deck frame (the 70% legibility floor still applies).
+
+### Plugin: `diagram-studio`
+
+- `/diagram-studio:business` designs sequence diagrams: a new form with a preview sketch, sequence requests in its refining guide, and a Mermaid import path that starts the session from the user's existing diagram. The azure and databricks skills hand call-order questions to it, in their theme.
+
 ## 1.1.0 (2026-10-24)
 
 ### Engine: `diagram-studio`

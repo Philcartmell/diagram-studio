@@ -7,14 +7,14 @@ One diagram is one JSON document: a shared **envelope** plus a type-specific **b
 | Field | Type | Required | Notes |
 | --- | --- | --- | --- |
 | `version` | `"1.0"` | yes | |
-| `type` | enum | yes | `operating-model`, `swimlane`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture`, `azure-architecture`, `databricks-architecture`, `bar-chart`, `waterfall`, `line-chart`, `kpi`, `narrative`, `exhibit` |
+| `type` | enum | yes | `operating-model`, `swimlane`, `sequence`, `roadmap`, `value-chain`, `matrix-2x2`, `layered-architecture`, `azure-architecture`, `databricks-architecture`, `bar-chart`, `waterfall`, `line-chart`, `kpi`, `narrative`, `exhibit` |
 | `altitude` | enum | no | `executive` (default), `management`, `detailed` |
 | `theme` | string | no | Theme id; default `boardroom` or the saved default |
 | `themeOverrides` | object | no | Token overrides for this diagram only, e.g. `{ "color": { "accent": "#D4001A" } }` |
 | `canvas` | object | no | `{ "aspect": "16:9" \| "4:3" \| "A4-landscape" \| "A4-portrait" \| "square" \| "auto" }` |
 | `title` | string | yes | Action title stating the finding, ≤ 90 characters |
 | `subtitle` | string | no | Scope or context line, ≤ 140 characters; also copied into PPTX notes |
-| `callout` | object | no | `{ "text": "…", "anchor"?: "<id>" }` — the "so what" box. With an anchor it sits beside that element; without, as a bar at the bottom |
+| `callout` | object | no | `{ "text": "…", "anchor"?: "<id>", "heading"?: "…" | false }` — the key-takeaway box. With an anchor it sits beside that element; without, as a bar at the bottom. `heading` (≤ 32 characters) replaces the default "Key takeaway"; `false` draws no heading |
 | `legend` | `"auto"` \| `"none"` \| array | no | `auto` (default) lists the tags used; at detailed altitude it also lists statuses and emphasis. Status badges are labelled, so at executive and management altitude they need no legend |
 | `footer` | object | no | `{ "source"?, "note"?, "classification"? }` — shown as "Source: …  ·  Note: …" on the left and the classification in capitals on the right |
 | `footnotes` | array | no | 1–4 strings printed above the source line as "1  …", "2  …". Mark them in the title, subtitle or labels with ¹ ² ³ ⁴ |

@@ -12,6 +12,7 @@ import { type Format, isFailure, prepare, readSpecFile, render } from './pipelin
 import { iconNames } from './render/icons.js';
 import { catalogInfo, searchServices } from './azure/icons.js';
 import { importAzure } from './azure/import.js';
+import { importMermaid } from './import/mermaid.js';
 import { databricksCatalogInfo, searchDatabricks } from './databricks/icons.js';
 import { DIAGRAM_TYPES, type DiagramType } from './spec.js';
 import { findTheme, listThemes, loadDefaults } from './theme/load.js';
@@ -70,6 +71,7 @@ Usage:
   diagram-studio azure icons [words…] [--limit 25]
   diagram-studio azure import <arm-template.json | resource-list.json> [--out spec.json] [--title "…"]
   diagram-studio databricks icons [words…] [--limit 25]
+  diagram-studio import mermaid <sequence.mmd> [--out spec.json] [--title "…"]
   diagram-studio docs [topic]
   diagram-studio preview <dir> [--port 4740] [--open]
   diagram-studio version
@@ -403,6 +405,40 @@ async function cmdAzure(a: Args): Promise<number> {
   throw new DiagramError('Usage: diagram-studio azure icons [words…] | diagram-studio azure import <file> [--out spec.json]', 'usage');
 }
 
+/** Import a diagram written in another notation as a draft spec. */
+function cmdImport(a: Args): number {
+  const [, format, file] = a.pos;
+  if (format !== 'mermaid' || !file) throw new DiagramError('Usage: diagram-studio import mermaid <sequence.mmd> [--out spec.json] [--title "…"]', 'usage');
+  let text: string;
+  try {
+    text = fs.readFileSync(file, 'utf8');
+  } catch (e) {
+    throw new DiagramError(`Cannot read ${file}: ${(e as Error).message}`, 'io');
+  }
+  // Markdown with a fenced mermaid block: take the first one.
+  const fence = text.match(/```mermaid\s*\n([\s\S]*?)```/);
+  if (fence) text = fence[1];
+  let result;
+  try {
+    result = importMermaid(text, { title: str(a.flags.title) });
+  } catch (e) {
+    throw new DiagramError(`${path.basename(file)}: ${(e as Error).message}`, 'validation');
+  }
+  const check = validateSpec(result.spec);
+  const target = str(a.flags.out);
+  if (target) {
+    fs.mkdirSync(path.dirname(path.resolve(target)), { recursive: true });
+    fs.writeFileSync(target, JSON.stringify(result.spec, null, 2) + '\n');
+    out({ ok: true, spec: path.resolve(target), report: result.report, errors: check.errors, warnings: check.warnings });
+    err(`Wrote a draft spec to ${target}: ${result.report.participants} participants, ${result.report.messages} messages.`);
+  } else {
+    out({ ok: true, spec: result.spec, report: result.report, errors: check.errors, warnings: check.warnings });
+  }
+  for (const n of result.report.notes) err(`Note: ${n}`);
+  printIssues('Still to fix before rendering', check.errors);
+  return 0;
+}
+
 /** Databricks helpers: search the Databricks icon catalog. */
 function cmdDatabricks(a: Args): number {
   if (a.pos[1] !== 'icons') throw new DiagramError('Usage: diagram-studio databricks icons [words…] [--limit 25]', 'usage');
@@ -450,6 +486,8 @@ async function main(): Promise<number> {
       return cmdDatabricks(a);
     case 'docs':
       return cmdDocs(a);
+    case 'import':
+      return cmdImport(a);
     case 'preview':
       return cmdPreview(a);
     case 'version':
