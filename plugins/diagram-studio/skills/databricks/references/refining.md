@@ -36,7 +36,7 @@ People ask for changes in visual words. The spec only carries meaning, so transl
 | "And Y as well, but less" | `"emphasis": "highlight"` on Y |
 | "Y is just context", "grey out the old one" | `"emphasis": "muted"` |
 | "X is new", "Y is being retired" | `"status"` on that node, only because the user said so |
-| "Add the so-what" | `callout.text`; without an `anchor` it is a bar under the diagram |
+| "Add the key takeaway", "add the so-what" | `callout.text` (headed "Key takeaway"; `callout.heading` changes or removes it); without an `anchor` it is a bar under the diagram |
 | "The title is weak", "punchier" | Rewrite `title` as a finding in under 90 characters, using only the user's facts |
 
 ## Icons and names

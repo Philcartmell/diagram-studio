@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "type": "sequence",
+  "altitude": "detailed",
+  "canvas": { "aspect": "auto" },
+  "title": "Locker deliveries hand the parcel to the courier app before the locker opens",
+  "subtitle": "Parcel locker drop-off (fictitious)",
+  "body": {
+    "numbering": "inline",
+    "style": { "participants": "underline", "lifeline": "dotted", "shading": "banded", "mirror": true },
+    "participants": [
+      { "id": "courier", "label": "Courier", "kind": "person", "color": "cat-2" },
+      { "id": "app", "label": "Courier app", "kind": "service" },
+      { "id": "hub", "label": "Locker hub", "kind": "service", "status": "new" },
+      { "id": "db", "label": "Parcel store", "kind": "database" },
+      { "id": "locker", "label": "Locker unit", "kind": "system", "color": "#7A3E9D" }
+    ],
+    "steps": [
+      { "from": "courier", "to": "app", "label": "Scan parcel" },
+      { "from": "app", "to": "hub", "label": "Reserve compartment", "detail": "size M, locker 14" },
+      { "from": "hub", "to": "db", "label": "Find free compartment" },
+      { "from": "db", "to": "hub", "label": "Compartment 3", "kind": "return" },
+      { "fragment": "par", "label": "notify", "steps": [
+        { "from": "hub", "to": "locker", "label": "Open compartment 3", "kind": "async" }
+      ], "branches": [ { "label": "record", "steps": [
+        { "from": "hub", "to": "db", "label": "Mark reserved", "kind": "async" }
+      ]}]},
+      { "note": "Door must open within 10 s or the reservation lapses", "over": ["hub", "locker"] },
+      { "fragment": "loop", "label": "until door closed", "steps": [
+        { "from": "locker", "to": "locker", "label": "Poll door sensor" }
+      ]},
+      { "divider": "Parcel stored" },
+      { "highlight": "Collection", "color": "cat-3", "steps": [
+        { "from": "hub", "to": "app", "label": "Drop-off confirmed", "kind": "return" },
+        { "from": "app", "to": "courier", "label": "Show receipt", "kind": "return" }
+      ]},
+      { "fragment": "break", "label": "door jammed", "steps": [
+        { "from": "locker", "to": "hub", "label": "Fault report", "kind": "fail" }
+      ]}
+    ]
+  }
+}

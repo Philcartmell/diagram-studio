@@ -39,6 +39,6 @@
 <text id="policy--label" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#1B2733"><tspan x="294" y="524.5">Policy refresh</tspan></text>
 <path id="ds-callout" data-role="callout" d="M1006 480H1226A6 6 0 0 1 1232 486V578A6 6 0 0 1 1226 584H1006A6 6 0 0 1 1000 578V486A6 6 0 0 1 1006 480Z" fill="#EBEFF6"/>
 <path id="ds-callout-bar" data-role="decoration" d="M1000 480H1004V584H1000Z" fill="#0B3D91"/>
-<text id="ds-callout-heading" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#0B3D91" letter-spacing="0.5"><tspan x="1016" y="503.5">SO WHAT</tspan></text>
+<text id="ds-callout-heading" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#0B3D91" letter-spacing="0.5"><tspan x="1016" y="503.5">KEY TAKEAWAY</tspan></text>
 <text id="ds-callout-text" data-role="label" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" fill="#1B2733"><tspan x="1016" y="524.5">Fund the quick wins first;</tspan><tspan x="1016" y="542.5">re-scope the data lake before</tspan><tspan x="1016" y="560.5">approving it</tspan></text>
 </svg>

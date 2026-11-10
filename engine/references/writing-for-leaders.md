@@ -16,13 +16,13 @@ State the finding in one sentence, in sentence case, under 90 characters. A read
 
 Only use numbers the user gave you. If you do not have the number, write the claim without it ("Second approvals add days to large invoices"), or ask.
 
-The `subtitle` carries scope: what, where, when ("Target finance operating model, 2027"). The `callout` carries the "so what" in one sentence, anchored to the element it explains.
+The `subtitle` carries scope: what, where, when ("Target finance operating model, 2027"). The `callout` carries the key takeaway in one sentence (what the reader should conclude or do), anchored to the element it explains. It is headed "Key takeaway"; `callout.heading` changes that ("Recommendation", "Decision needed") or removes it (`false`).
 
 ## 2. Choose the altitude for the room
 
 | Room | Altitude | What to keep |
 | --- | --- | --- |
-| Board, ExCo, steering committee | `executive` | ≤ 9 nodes. Names, maybe one line each. One accent. A so-what callout. |
+| Board, ExCo, steering committee | `executive` | ≤ 9 nodes. Names, maybe one line each. One accent. A key-takeaway callout. |
 | Department leadership, programme board | `management` | ≤ 20 nodes. Owners, short descriptions, metrics. |
 | Working team, design document | `detailed` | ≤ 60 nodes. Full detail, tags, legend. |
 

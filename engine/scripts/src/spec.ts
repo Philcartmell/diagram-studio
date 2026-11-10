@@ -8,6 +8,7 @@ export type Aspect = '16:9' | '4:3' | 'A4-landscape' | 'A4-portrait' | 'square' 
 export const DIAGRAM_TYPES = [
   'operating-model',
   'swimlane',
+  'sequence',
   'roadmap',
   'value-chain',
   'matrix-2x2',
@@ -25,6 +26,15 @@ export type DiagramType = (typeof DIAGRAM_TYPES)[number];
 
 /** Types drawn from numbers: the engine computes totals and deltas, Claude supplies the values. */
 export const CHART_TYPES = ['bar-chart', 'waterfall', 'line-chart', 'kpi'] as const;
+/** The callout heading drawn when a spec sets none. */
+export const DEFAULT_CALLOUT_HEADING = 'Key takeaway';
+
+/** The callout heading to draw, or undefined for none. */
+export function calloutHeading(c: { heading?: string | false } | undefined): string | undefined {
+  if (!c || c.heading === false) return undefined;
+  return c.heading ?? DEFAULT_CALLOUT_HEADING;
+}
+
 /** Every type an exhibit panel may hold (anything but another exhibit). */
 export type PanelType = Exclude<DiagramType, 'exhibit'>;
 
@@ -64,7 +74,8 @@ export interface Spec {
   canvas?: { aspect?: Aspect };
   title: string;
   subtitle?: string;
-  callout?: { text: string; anchor?: string };
+  /** The one-sentence takeaway box; `heading` defaults to "Key takeaway", `false` draws none. */
+  callout?: { text: string; anchor?: string; heading?: string | false };
   legend?: 'auto' | 'none' | LegendEntry[];
   footer?: { source?: string; note?: string; classification?: string };
   /** Numbered notes printed above the source line; mark them in text with ¹ ² ³. */
@@ -105,6 +116,186 @@ export interface SwimlaneBody {
   phases?: string[];
   steps: SwimlaneStep[];
   edges: SpecEdge[];
+}
+
+// ---- sequence ----------------------------------------------------------------
+
+/**
+ * A colour named in a sequence spec: a theme role ("accent", "highlight", "muted"),
+ * a categorical slot ("cat-1" … "cat-8"), a status colour ("new", "at-risk"…) or a hex value.
+ */
+export type SequenceColor = string;
+
+export type ParticipantKind = 'person' | 'system' | 'service' | 'database' | 'queue' | 'external';
+
+export interface SequenceParticipant {
+  id: string;
+  label: string;
+  /** A short role line under the label ("Internal service"). */
+  description?: string;
+  kind?: ParticipantKind;
+  icon?: string;
+  emphasis?: Emphasis;
+  status?: Status;
+  color?: SequenceColor;
+}
+
+export type MessageKind = 'sync' | 'async' | 'return' | 'fail';
+
+export interface SequenceMessage {
+  id?: string;
+  from: string;
+  to: string;
+  label?: string;
+  /** A second, quieter line under the label ("POST /payments"). */
+  detail?: string;
+  kind?: MessageKind;
+  style?: 'solid' | 'dashed' | 'dotted';
+  /** Arrowheads at both ends (a two-way exchange). */
+  both?: boolean;
+  /** Start an activation bar on the receiver (overrides the automatic rule). */
+  activate?: boolean;
+  /** End the sender's activation bar after this message (overrides the automatic rule). */
+  deactivate?: boolean;
+  /** The receiver comes into being with this message: its header is drawn here, not at the top. */
+  create?: boolean;
+  /** The lifeline of the sender or receiver ends with a cross after this message. */
+  destroy?: 'from' | 'to';
+  emphasis?: Emphasis;
+  color?: SequenceColor;
+}
+
+export interface SequenceNote {
+  id?: string;
+  note: string;
+  /** One participant, or two to stretch the note across them. */
+  over: string | string[];
+  /** Beside one participant or over it (default "over"). */
+  position?: 'left' | 'right' | 'over';
+  emphasis?: Emphasis;
+  color?: SequenceColor;
+}
+
+export type FragmentKind = 'loop' | 'alt' | 'opt' | 'par' | 'critical' | 'break' | 'group';
+
+export interface SequenceBranch {
+  label?: string;
+  steps: SequenceStep[];
+}
+
+export interface SequenceFragment {
+  id?: string;
+  fragment: FragmentKind;
+  /** The guard or name ("every 30 s", "card accepted"). */
+  label?: string;
+  steps: SequenceStep[];
+  /** Further sections, split by dashed lines: the "else" of an alt, the parallel arms of a par. */
+  branches?: SequenceBranch[];
+  emphasis?: Emphasis;
+  color?: SequenceColor;
+}
+
+export interface SequenceHighlight {
+  id?: string;
+  /** A tinted background behind a run of steps, with an optional caption. */
+  highlight: string | true;
+  steps: SequenceStep[];
+  color?: SequenceColor;
+}
+
+export interface SequencePhase {
+  id?: string;
+  phase: string;
+  steps: SequenceStep[];
+  color?: SequenceColor;
+}
+
+export interface SequenceDivider {
+  divider: string;
+}
+
+export interface SequenceDelay {
+  /** Time passes: lifelines break and the caption says how long ("2–3 days later"). */
+  delay: string;
+}
+
+export type SequenceStep = SequenceMessage | SequenceNote | SequenceFragment | SequenceHighlight | SequencePhase | SequenceDivider | SequenceDelay;
+
+export interface SequenceGroup {
+  id: string;
+  label: string;
+  participants: string[];
+  color?: SequenceColor;
+  emphasis?: Emphasis;
+}
+
+export interface SequenceTiming {
+  /** First and last message ids the bracket spans. */
+  from: string;
+  to: string;
+  label: string;
+  emphasis?: Emphasis;
+}
+
+export interface SequenceStyle {
+  participants?: 'card' | 'pill' | 'underline' | 'plain';
+  lifeline?: 'dashed' | 'dotted' | 'solid';
+  arrowheads?: 'classic' | 'filled' | 'open';
+  shading?: 'none' | 'soft' | 'banded';
+  density?: 'compact' | 'comfortable';
+  shadow?: boolean;
+  /** Repeat the participant headers under the lifelines. */
+  mirror?: boolean;
+}
+
+export interface SequenceBody {
+  participants: SequenceParticipant[];
+  groups?: SequenceGroup[];
+  steps: SequenceStep[];
+  timings?: SequenceTiming[];
+  /** "badge" circles, "inline" "3." prefixes, or none (default). */
+  numbering?: 'none' | 'badge' | 'inline';
+  /** "auto": a call opens a bar on the receiver and its return closes it; "manual": only activate/deactivate flags; "none". */
+  activations?: 'auto' | 'manual' | 'none';
+  style?: SequenceStyle;
+}
+
+export function isSeqMessage(s: SequenceStep): s is SequenceMessage {
+  return typeof (s as SequenceMessage).from === 'string' && typeof (s as SequenceMessage).to === 'string';
+}
+export function isSeqNote(s: SequenceStep): s is SequenceNote {
+  return typeof (s as SequenceNote).note === 'string';
+}
+export function isSeqFragment(s: SequenceStep): s is SequenceFragment {
+  return typeof (s as SequenceFragment).fragment === 'string';
+}
+export function isSeqHighlight(s: SequenceStep): s is SequenceHighlight {
+  return (s as SequenceHighlight).highlight !== undefined;
+}
+export function isSeqPhase(s: SequenceStep): s is SequencePhase {
+  return typeof (s as SequencePhase).phase === 'string';
+}
+export function isSeqDivider(s: SequenceStep): s is SequenceDivider {
+  return typeof (s as SequenceDivider).divider === 'string';
+}
+export function isSeqDelay(s: SequenceStep): s is SequenceDelay {
+  return typeof (s as SequenceDelay).delay === 'string';
+}
+
+/** Every message in drawing order, with its JSON path and its (given or generated) id. */
+export function sequenceMessages(body: SequenceBody): { msg: SequenceMessage; path: string; id: string; index: number }[] {
+  const out: { msg: SequenceMessage; path: string; id: string; index: number }[] = [];
+  const walk = (steps: SequenceStep[], path: string) =>
+    steps.forEach((s, i) => {
+      const p = `${path}[${i}]`;
+      if (isSeqMessage(s)) out.push({ msg: s, path: p, id: s.id ?? `message-${out.length + 1}`, index: out.length });
+      else if (isSeqFragment(s)) {
+        walk(s.steps, `${p}.steps`);
+        (s.branches ?? []).forEach((b, k) => walk(b.steps, `${p}.branches[${k}].steps`));
+      } else if (isSeqHighlight(s) || isSeqPhase(s)) walk(s.steps, `${p}.steps`);
+    });
+  walk(body.steps, 'body.steps');
+  return out;
 }
 
 export interface RoadmapItem extends SpecNode {

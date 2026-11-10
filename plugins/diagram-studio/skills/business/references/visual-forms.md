@@ -9,7 +9,8 @@ Start from the shape of what the user gave you, not from the words they used. "O
 | The content is mostly… | Strong fits | Also worth a concept when… |
 | --- | --- | --- |
 | Groups of capabilities or teams, and who serves whom | `operating-model` | the point is the end-to-end flow of value (`value-chain`) or the handoffs between the groups (`swimlane`) |
-| Steps done by different teams, in order | `swimlane` | the steps fall into a few big stages and the handoffs are not the point (`value-chain`) |
+| Steps done by different teams, in order | `swimlane` | the steps fall into a few big stages and the handoffs are not the point (`value-chain`), or each step is one party asking another for something (`sequence`) |
+| Calls and replies between systems or parties, in time order ("A asks B, B checks with C"), or a Mermaid sequence diagram | `sequence` | the decisions and who owns each step matter more than the back-and-forth (`swimlane`) |
 | Things that happen over time, by workstream | `roadmap` | the message is "what first" rather than "when" (`matrix-2x2` with impact against effort) |
 | A chain of activities from input to outcome | `value-chain` | each activity has clear owners and handoffs (`swimlane`) |
 | Items compared on two qualities | `matrix-2x2` | the items group into a few buckets with no second axis (`operating-model` with a layer per bucket) |
@@ -33,6 +34,7 @@ Ask for exactly what is missing, in plain words. Never fill a gap yourself.
 | --- | --- | --- |
 | `operating-model` | the layers and what sits in each | who it serves (customers), foundations, governance |
 | `swimlane` | the teams or roles, the steps in order, who does each | decisions and their branches, phases, the bottleneck and its delay |
+| `sequence` | the parties or systems, each message in order with who sends it to whom | replies, branches ("if declined…"), loops and retries, where time passes and how long, which parties are external |
 | `roadmap` | the time horizons, the workstreams, what lands where | milestones, gates, owners, what is at risk |
 | `value-chain` | the activities in order | support activities, the outcome, the focus areas |
 | `matrix-2x2` | the two axes, the items, where each item sits (scores or a quadrant) | quadrant names, a third value as a metric |
@@ -67,6 +69,18 @@ An `AskUserQuestion` option can carry a `preview`, shown in a monospace box besi
  Manager   │           └─▶[Approve]─▶<Over £10k?>─┐
  ──────────┼──────────────────────────────────────┼─
  Finance   │                                    └─▶[Pay]
+```
+
+`sequence`:
+
+```
+  [Shopper]     [Web shop]    [Payments]    [Card bank]
+      │ Pay £84.50  │             │             │
+      │────────────▶│ Authorise   │             │
+      │             │────────────▶│ Check card  │
+      │             │             │────────────▶│
+      │             │             │◀ ─ ─ ─ ─ ─ ─│ Approved
+      │◀ ─ ─ ─ ─ ─ ─│◀ ─ ─ ─ ─ ─ ─│   ┆ 1.4 s
 ```
 
 `roadmap`:
@@ -172,6 +186,7 @@ Each concept should make a different thing obvious. In order of preference:
    - *Accent:* the bottleneck step, the new layer, or the at-risk workstream. Each one implies a different title.
    - *Grouping:* nine capabilities in three layers, or three towers with three items each. Fewer, bigger groups read faster at executive altitude.
    - *Orientation and canvas:* a horizontal swimlane for a slide, a vertical one for many lanes or a portrait page.
+   - *Sequence focus:* the same flow with the happy path accented, or with the slow step's `delay` and a `timings` bracket, or as line art (`"participants": "underline"`, `"shading": "none"`) against classic cards with activation bars.
    - *Altitude:* an executive summary next to a management view, when the user is unsure how much detail the room wants.
 3. **Never** a theme change alone. A theme is a styling choice, offered after a direction is picked.
 

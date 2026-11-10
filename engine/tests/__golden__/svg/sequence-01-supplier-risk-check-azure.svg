@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="sequence" data-theme="azure" data-altitude="executive">
+<title id="ds-svg-title">New suppliers wait five days because the risk check runs after the contract</title>
+<desc id="ds-svg-desc">New suppliers wait five days because the risk check runs after the contract</desc>
+<rect id="ds-background" data-role="background" width="1280" height="720" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">New suppliers wait five days because the risk check runs after the contract</tspan></text>
+<path id="delay-1--band" data-role="decoration" d="M44 365H981A3 3 0 0 1 984 368V398A3 3 0 0 1 981 401H44A3 3 0 0 1 41 398V368A3 3 0 0 1 44 365Z" fill="#F5F5F5"/>
+<path id="supplier--lifeline" data-role="decoration" d="M91 148L91 360.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="supplier--lifeline-gap-1" data-role="decoration" d="M91 366.5L91 398.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="supplier--lifeline-2" data-role="decoration" d="M91 404.5L91 601" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="buying--lifeline" data-role="decoration" d="M372 148L372 360.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="buying--lifeline-gap-1" data-role="decoration" d="M372 366.5L372 398.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="buying--lifeline-2" data-role="decoration" d="M372 404.5L372 601" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="risk--lifeline" data-role="decoration" d="M655 148L655 360.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="risk--lifeline-gap-1" data-role="decoration" d="M655 366.5L655 398.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="risk--lifeline-2" data-role="decoration" d="M655 404.5L655 601" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="finance--lifeline" data-role="decoration" d="M936 148L936 360.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="finance--lifeline-gap-1" data-role="decoration" d="M936 366.5L936 398.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="finance--lifeline-2" data-role="decoration" d="M936 404.5L936 601" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="supplier" data-role="node" data-node="supplier" d="M41 112H141V148H41Z" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<g id="supplier--icon" data-role="icon"><g transform="translate(55 120) scale(0.833)" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/></g></g>
+<text id="supplier--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="81" y="134.5">Supplier</tspan></text>
+<path id="buying" data-role="node" data-node="buying" d="M322 112H422V148H322Z" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="buying--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="372" y="134.5">Buying team</tspan></text>
+<path id="risk" data-role="node" data-node="risk" data-emphasis="accent" d="M607 112H703V148H607Z" fill="#D5E3EE" stroke="#0078D4" stroke-width="1.5" stroke-linejoin="round"/>
+<text id="risk--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="655" y="134.5">Risk desk</tspan></text>
+<path id="finance" data-role="node" data-node="finance" d="M888 112H984V148H888Z" fill="#F2F2F2" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<text id="finance--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="936" y="134.5">Finance</tspan></text>
+<g id="delay-1--icon" data-role="icon"><g transform="translate(461 375) scale(0.667)" fill="none" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><path d="M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0"/></g></g>
+<path id="delay-1--plate" data-role="decoration" d="M482 375H565A2 2 0 0 1 567 377V388A2 2 0 0 1 565 390H482A2 2 0 0 1 480 388V377A2 2 0 0 1 482 375Z" fill="#F5F5F5"/>
+<text id="delay-1" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#505050"><tspan x="483" y="387">5 working days</tspan></text>
+<g id="message-1" data-role="edge"><path d="M91 198L364 198" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M372 198L363 201.5L363 194.5Z" fill="#A6A6A6"/></g>
+<path id="message-1--label--plate" data-role="decoration" d="M194 177H269A2 2 0 0 1 271 179V191A2 2 0 0 1 269 193H194A2 2 0 0 1 192 191V179A2 2 0 0 1 194 177Z" fill="#FFFFFF"/>
+<text id="message-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="231.5" y="190">Submit quote</tspan></text>
+<g id="message-2" data-role="edge"><path d="M372 259L91 259" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M100 255.5L91 259L100 262.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-2--label--plate" data-role="decoration" d="M195 238H267A2 2 0 0 1 269 240V252A2 2 0 0 1 267 254H195A2 2 0 0 1 193 252V240A2 2 0 0 1 195 238Z" fill="#FFFFFF"/>
+<text id="message-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="231.5" y="251">Sign contract</tspan></text>
+<g id="message-3" data-role="edge"><path d="M372 321L646 321" fill="none" stroke="#0078D4" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M655 321L645 325L645 317Z" fill="#0078D4"/></g>
+<path id="message-3--label--plate" data-role="decoration" d="M463 300H563A2 2 0 0 1 565 302V314A2 2 0 0 1 563 316H463A2 2 0 0 1 461 314V302A2 2 0 0 1 463 300Z" fill="#FFFFFF"/>
+<text id="message-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="513.5" y="313">Request risk check</tspan></text>
+<g id="message-4" data-role="edge"><path d="M655 430L372 430" fill="none" stroke="#0078D4" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M382 426L372 430L382 434" fill="none" stroke="#0078D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-4--label--plate" data-role="decoration" d="M469 409H557A2 2 0 0 1 559 411V423A2 2 0 0 1 557 425H469A2 2 0 0 1 467 423V411A2 2 0 0 1 469 409Z" fill="#FFFFFF"/>
+<text id="message-4--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="513.5" y="422">Supplier cleared</tspan></text>
+<g id="message-5" data-role="edge"><path d="M372 492L928 492" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M936 492L927 495.5L927 488.5Z" fill="#A6A6A6"/></g>
+<path id="message-5--label--plate" data-role="decoration" d="M443 471H562A2 2 0 0 1 564 473V485A2 2 0 0 1 562 487H443A2 2 0 0 1 441 485V473A2 2 0 0 1 443 471Z" fill="#FFFFFF"/>
+<text id="message-5--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="503" y="484">Set up supplier record</tspan></text>
+<g id="message-6" data-role="edge"><path d="M936 553L91 553" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M100 549.5L91 553L100 556.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-6--label--plate" data-role="decoration" d="M769 532H843A2 2 0 0 1 845 534V546A2 2 0 0 1 843 548H769A2 2 0 0 1 767 546V534A2 2 0 0 1 769 532Z" fill="#FFFFFF"/>
+<text id="message-6--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="806" y="545">First payment</tspan></text>
+<path id="ds-callout" data-role="callout" d="M1008 112H1240V192H1008Z" fill="#EBF4FC"/>
+<path id="ds-callout-bar" data-role="decoration" d="M1008 112H1012V192H1008Z" fill="#0078D4"/>
+<text id="ds-callout-heading" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" letter-spacing="0.5"><tspan x="1024" y="135.5">KEY TAKEAWAY</tspan></text>
+<text id="ds-callout-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="1024" y="155">Running the risk check alongside the</tspan><tspan x="1024" y="170.5">quote removes the five-day wait.</tspan></text>
+</svg>

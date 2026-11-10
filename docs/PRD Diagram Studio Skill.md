@@ -39,7 +39,7 @@ The primary user is a business professional (strategy, transformation, operation
 
 | Setting | Max nodes | Text per node | Required extras | Use for |
 | --- | --- | --- | --- | --- |
-| `executive` | 9 | Name + optional 1 line | Action title, optional "so what" callout | Board, ExCo, steering committees |
+| `executive` | 9 | Name + optional 1 line | Action title, optional key-takeaway callout | Board, ExCo, steering committees |
 | `management` | 20 | Name + up to 3 lines | Action title | Department leadership, programme boards |
 | `detailed` | 60 | Name + up to 5 lines | Legend when colour carries meaning | Working teams, design docs |
 
@@ -99,7 +99,7 @@ Every diagram is one JSON document: a shared envelope plus a `body` whose shape 
 | `canvas` | object | no | `aspect`: `16:9` (default), `4:3`, `A4-landscape`, `A4-portrait`, `square`, `auto` |
 | `title` | string | yes | Action title, max 90 characters |
 | `subtitle` | string | no | Scope or context line |
-| `callout` | object | no | `{ "text", "anchor"?: nodeId }`, the "so what" box |
+| `callout` | object | no | `{ "text", "anchor"?: nodeId, "heading"?: string | false }`, the key-takeaway box (heading "Key takeaway" unless set) |
 | `legend` | `"auto"` \| `"none"` \| array | no | `auto` builds it from emphasis, status and tags used |
 | `footer` | object | no | `{ "source"?, "note"?, "classification"? }` |
 | `body` | object | yes | Type-specific, validated by that type's sub-schema |
@@ -256,6 +256,20 @@ v1 ships six types chosen for leadership use; v2 adds six more. Each type is a s
 ### Per-type reference guides
 
 Each type has `references/<type>.md` loaded by Claude only when that type is chosen. It contains: when to use (and when not), a field-by-field guide, writing tips for labels at each altitude, two complete example specs, and common mistakes (e.g. "more than 7 steps in one lane at executive altitude: group them").
+
+## Sequence diagrams
+
+**Decision.** v1 kept sequence flows out of scope as engineering notation. In practice leadership packs need them too: a checkout across payment partners, a supplier check that waits five days, an integration a programme board must approve. People already write these in Mermaid, which renders them plainly and cannot be styled to a pack. `sequence` brings the notation into the engine with the same principles as every other type: meaning in the spec, geometry and colour from the engine and the theme.
+
+| Concern | Decision |
+| --- | --- |
+| Spec shape | `participants[]` plus an ordered `steps[]` tree: messages, notes, fragments (with `branches`), highlights, phases, dividers and delays. Nesting in the spec mirrors nesting on the page, so frames can never overlap badly |
+| Layout | Deterministic, no ELK: lifeline gaps are solved from measured label widths (shortest spans first), rows stack in order, frames wrap the extents of what they hold. Spare width spreads the lifelines (to a maximum) and centres the diagram; a fixed canvas tightens rows before reporting a fit error |
+| Crispness | Messages are horizontal lines that end exactly on a lifeline or activation bar edge. Labels sit in the clear gap next to the sender where they fit, on a plate the colour of the background beneath, so no line runs through text |
+| Customisation | `style` presets rather than free-form styling, and `color` as theme roles, categorical slots, status colours or hex. A theme swap still restyles everything |
+| Emphasis | Accent two or more messages to trace a path; the rest of the flow mutes itself. An accented path counts as one accent against the altitude limit |
+| Limits | Participants: 6 / 10 / 14 by altitude. Calls (not returns) count toward the node limit |
+| Mermaid | `diagram-studio import mermaid` converts a `sequenceDiagram` to a spec and reports what it skipped |
 
 ## Charts, exhibits and decks (v1.1)
 

@@ -3,7 +3,7 @@
 Who does what across teams: lanes for each team or role, steps placed in order, arrows for flow and handoffs, optional phases as column bands. Answers "who does what, and where does it wait?".
 
 **Use for:** approval flows, onboarding, order-to-cash, incident handling, as-is vs to-be processes, any "handoffs across teams" story.
-**Not for:** organisational structure (`operating-model`), timelines with dates (`roadmap`), system integrations for engineers.
+**Not for:** organisational structure (`operating-model`), timelines with dates (`roadmap`), calls and replies between systems or parties in time order (`sequence`).
 
 ## Body fields
 

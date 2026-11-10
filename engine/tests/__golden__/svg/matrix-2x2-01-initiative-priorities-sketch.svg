@@ -39,6 +39,6 @@
 <text id="policy--label" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="700" fill="#2B2A28"><tspan x="294" y="523">Policy refresh</tspan></text>
 <path id="ds-callout" data-role="callout" d="M1008 480C1057 477, 1109 482, 1224 480C1227 479.5, 1235 481, 1232 488C1230.5 520, 1236.5 553.5, 1232 576C1232.5 578.5, 1229.5 585.5, 1224 584C1142.5 587, 1068.5 588, 1008 584C1007 580.5, 1001.5 579, 1000 576C1001 549.5, 996.5 518, 1000 488C997.5 483.5, 1004 483.5, 1008 480C1008 480, 1008 480, 1008 480" fill="#F6E9E1"/>
 <path id="ds-callout-bar" data-role="decoration" d="M1000 480H1004V584H1000Z" fill="#C0392B"/>
-<text id="ds-callout-heading" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#C0392B" letter-spacing="0.5"><tspan x="1016" y="502">SO WHAT</tspan></text>
+<text id="ds-callout-heading" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="700" fill="#C0392B" letter-spacing="0.5"><tspan x="1016" y="502">KEY TAKEAWAY</tspan></text>
 <text id="ds-callout-text" data-role="label" font-family="Kalam, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" fill="#2B2A28"><tspan x="1016" y="523">Fund the quick wins first;</tspan><tspan x="1016" y="541">re-scope the data lake before</tspan><tspan x="1016" y="559">approving it</tspan></text>
 </svg>

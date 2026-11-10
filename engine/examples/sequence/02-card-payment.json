@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "type": "sequence",
+  "altitude": "management",
+  "canvas": { "aspect": "auto" },
+  "title": "Card payments clear in under two seconds, but a bank check adds up to a minute",
+  "subtitle": "Online checkout, card payment path (fictitious)",
+  "body": {
+    "numbering": "badge",
+    "participants": [
+      { "id": "shopper", "label": "Shopper", "kind": "person" },
+      { "id": "shop", "label": "Web shop", "description": "Storefront" },
+      { "id": "payments", "label": "Payments service", "description": "Internal", "emphasis": "accent" },
+      { "id": "gateway", "label": "Card gateway", "kind": "external" },
+      { "id": "bank", "label": "Card issuer", "kind": "external" }
+    ],
+    "groups": [
+      { "id": "ours", "label": "Our platform", "participants": ["shop", "payments"] },
+      { "id": "partners", "label": "Partners", "participants": ["gateway", "bank"] }
+    ],
+    "steps": [
+      { "phase": "Place order", "steps": [
+        { "from": "shopper", "to": "shop", "label": "Pay £84.50" },
+        { "id": "auth", "from": "shop", "to": "payments", "label": "Authorise payment", "detail": "POST /payments" },
+        { "from": "payments", "to": "gateway", "label": "Authorisation request" }
+      ]},
+      { "phase": "Bank check", "steps": [
+        { "fragment": "alt", "label": "issuer asks for a check", "steps": [
+          { "from": "gateway", "to": "bank", "label": "Strong customer check" },
+          { "from": "bank", "to": "shopper", "label": "Approve in banking app", "kind": "async" },
+          { "note": "Up to 60 s while the shopper finds their phone", "over": "shopper", "position": "right" },
+          { "from": "shopper", "to": "bank", "label": "Approved" },
+          { "from": "bank", "to": "gateway", "label": "Check passed", "kind": "return" }
+        ], "branches": [
+          { "label": "frictionless", "steps": [
+            { "from": "gateway", "to": "gateway", "label": "Risk score below 20" }
+          ]}
+        ]}
+      ]},
+      { "phase": "Confirm", "steps": [
+        { "from": "gateway", "to": "payments", "label": "Authorised", "kind": "return" },
+        { "from": "payments", "to": "payments", "label": "Record ledger entry" },
+        { "id": "done", "from": "payments", "to": "shop", "label": "Payment confirmed", "kind": "return" },
+        { "from": "shop", "to": "shopper", "label": "Order confirmation", "kind": "return" }
+      ]}
+    ],
+    "timings": [
+      { "from": "auth", "to": "done", "label": "1.4 s typical", "emphasis": "accent" }
+    ]
+  }
+}

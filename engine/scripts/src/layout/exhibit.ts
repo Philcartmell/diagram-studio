@@ -80,7 +80,9 @@ async function placePanel(ctx: LayoutContext, p: ExhibitPanel, i: number, inner:
   let { sub, s } = await fit(false);
   if (s < 1 || sub.issues.length) {
     const natural = await fit(true);
-    if (natural.s > s + 0.01 && natural.sub.issues.length <= sub.issues.length) ({ sub, s } = natural);
+    // A box-sized layout that failed reports a scale of 1 (its canvas never grew), so prefer the
+    // natural layout whenever it fits with fewer issues, even though it must shrink.
+    if (natural.sub.issues.length < sub.issues.length || (natural.s > s + 0.01 && natural.sub.issues.length <= sub.issues.length)) ({ sub, s } = natural);
   }
   const where = `body.panels[${i}]`;
   if (s < MIN_PANEL_SCALE) {

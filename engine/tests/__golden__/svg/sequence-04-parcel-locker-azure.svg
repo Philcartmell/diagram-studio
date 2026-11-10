@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="984" viewBox="0 0 1280 984" role="img" aria-labelledby="ds-svg-title ds-svg-desc" data-generator="diagram-studio 1.0.0" data-type="sequence" data-theme="azure" data-altitude="detailed">
+<title id="ds-svg-title">Locker deliveries hand the parcel to the courier app before the locker opens</title>
+<desc id="ds-svg-desc">Parcel locker drop-off (fictitious)</desc>
+<rect id="ds-background" data-role="background" width="1280" height="984" fill="#FFFFFF"/>
+<text id="ds-title" data-role="title" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" fill="#000000"><tspan x="40" y="65">Locker deliveries hand the parcel to the courier app before the locker opens</tspan></text>
+<text id="ds-subtitle" data-role="subtitle" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#505050"><tspan x="40" y="90.5">Parcel locker drop-off (fictitious)</tspan></text>
+<path id="message-1--band" data-role="decoration" d="M43 200H1238A2 2 0 0 1 1240 202V229A2 2 0 0 1 1238 231H43A2 2 0 0 1 41 229V202A2 2 0 0 1 43 200Z" fill="#F7F7F7"/>
+<path id="message-3--band" data-role="decoration" d="M43 280H1238A2 2 0 0 1 1240 282V308A2 2 0 0 1 1238 310H43A2 2 0 0 1 41 308V282A2 2 0 0 1 43 280Z" fill="#F7F7F7"/>
+<path id="message-5--band" data-role="decoration" d="M43 379H1238A2 2 0 0 1 1240 381V407A2 2 0 0 1 1238 409H43A2 2 0 0 1 41 407V381A2 2 0 0 1 43 379Z" fill="#F7F7F7"/>
+<path id="message-7--band" data-role="decoration" d="M43 581H1238A2 2 0 0 1 1240 583V603A2 2 0 0 1 1238 605H43A2 2 0 0 1 41 603V583A2 2 0 0 1 43 581Z" fill="#F7F7F7"/>
+<path id="message-9--band" data-role="decoration" d="M43 724H1238A2 2 0 0 1 1240 726V752A2 2 0 0 1 1238 754H43A2 2 0 0 1 41 752V726A2 2 0 0 1 43 724Z" fill="#F7F7F7"/>
+<path id="fragment-1" data-role="group" d="M552 352.5H1092V480.5H552Z" fill="#F9F9F9" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="fragment-2" data-role="group" d="M1044 554.5H1218V614.5H1044Z" fill="#F9F9F9" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="highlight-3" data-role="group" d="M55 662.5H600V762H55Z" fill="#F3EFF9"/>
+<path id="fragment-4" data-role="group" d="M552 774H1092V838.5H552Z" fill="#F9F9F9" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="courier--lifeline" data-role="decoration" d="M79 188L79 855" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="app--lifeline" data-role="decoration" d="M319 188L319 855" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="hub--lifeline" data-role="decoration" d="M576 188L576 855" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="db--lifeline" data-role="decoration" d="M835 188L835 855" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="locker--lifeline" data-role="decoration" d="M1068 188L1068 855" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-dasharray="0.5 3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="app--activation-1" data-role="marker" d="M315.5 221H322.5A1.5 1.5 0 0 1 324 222.5V750.5A1.5 1.5 0 0 1 322.5 752H315.5A1.5 1.5 0 0 1 314 750.5V222.5A1.5 1.5 0 0 1 315.5 221Z" fill="#E3E3E3" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="hub--activation-1" data-role="marker" d="M572.5 268H579.5A1.5 1.5 0 0 1 581 269.5V718.5A1.5 1.5 0 0 1 579.5 720H572.5A1.5 1.5 0 0 1 571 718.5V269.5A1.5 1.5 0 0 1 572.5 268Z" fill="#EBEBEB" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="db--activation-1" data-role="marker" d="M831.5 300H838.5A1.5 1.5 0 0 1 840 301.5V339.5A1.5 1.5 0 0 1 838.5 341H831.5A1.5 1.5 0 0 1 830 339.5V301.5A1.5 1.5 0 0 1 831.5 300Z" fill="#E3E3E3" stroke="#3B3B3B" stroke-width="1" stroke-linejoin="round"/>
+<path id="courier" data-role="node" data-node="courier" d="M41 136H117V188H41Z" fill="none"/>
+<path id="courier--rule" data-role="decoration" d="M45 186L113 186" fill="none" stroke="#107C10" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="courier--icon" data-role="icon"><g transform="translate(46 159) scale(0.833)" fill="none" stroke="#107C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/></g></g>
+<text id="courier--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="71.5" y="173.5">Courier</tspan></text>
+<path id="app" data-role="node" data-node="app" d="M281 136H357V188H281Z" fill="none"/>
+<path id="app--rule" data-role="decoration" d="M285 186L353 186" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="app--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="319" y="173.5">Courier app</tspan></text>
+<path id="hub" data-role="node" data-node="hub" data-status="new" d="M540 136H612V188H540Z" fill="none"/>
+<path id="hub--rule" data-role="decoration" d="M544 186L608 186" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="hub--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576" y="173.5">Locker hub</tspan></text>
+<path id="hub--badge" data-role="badge" d="M566 142H587A8 8 0 0 1 595 150V150A8 8 0 0 1 587 158H566A8 8 0 0 1 558 150V150A8 8 0 0 1 566 142Z" fill="#CAE2CA" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="hub--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576.5" y="154.5">New</tspan></text>
+<path id="db" data-role="node" data-node="db" d="M797 136H873V188H797Z" fill="none"/>
+<path id="db--rule" data-role="decoration" d="M801 186L869 186" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="db--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="835" y="173.5">Parcel store</tspan></text>
+<path id="locker" data-role="node" data-node="locker" d="M1032 136H1104V188H1032Z" fill="none"/>
+<path id="locker--rule" data-role="decoration" d="M1036 186L1100 186" fill="none" stroke="#7A3E9D" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="locker--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1068" y="173.5">Locker unit</tspan></text>
+<path id="fragment-4--tag" data-role="header" d="M552 774L604 774L611 784L604 794L552 794Z" fill="#3B3B3B"/>
+<text id="fragment-4--tag-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5"><tspan x="560" y="788.5">BREAK</tspan></text>
+<path id="fragment-4--guard--plate" data-role="decoration" d="M618 776H696A2 2 0 0 1 698 778V790A2 2 0 0 1 696 792H618A2 2 0 0 1 616 790V778A2 2 0 0 1 618 776Z" fill="#F9F9F9"/>
+<text id="fragment-4--guard" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#505050"><tspan x="619" y="788.5">[door jammed]</tspan></text>
+<text id="highlight-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" letter-spacing="0.5"><tspan x="67" y="680">COLLECTION</tspan></text>
+<path id="fragment-2--tag" data-role="header" d="M1044 554.5L1091 554.5L1098 564.5L1091 574.5L1044 574.5Z" fill="#3B3B3B"/>
+<text id="fragment-2--tag-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5"><tspan x="1052" y="569">LOOP</tspan></text>
+<path id="fragment-2--guard--plate" data-role="decoration" d="M1105 557H1200A2 2 0 0 1 1202 559V570A2 2 0 0 1 1200 572H1105A2 2 0 0 1 1103 570V559A2 2 0 0 1 1105 557Z" fill="#F9F9F9"/>
+<text id="fragment-2--guard" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#505050"><tspan x="1106" y="569">[until door closed]</tspan></text>
+<path id="fragment-1--tag" data-role="header" d="M552 352.5L590 352.5L597 362.5L590 372.5L552 372.5Z" fill="#3B3B3B"/>
+<text id="fragment-1--tag-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" letter-spacing="0.5"><tspan x="560" y="367">PAR</tspan></text>
+<path id="fragment-1--guard--plate" data-role="decoration" d="M604 355H643A2 2 0 0 1 645 357V368A2 2 0 0 1 643 370H604A2 2 0 0 1 602 368V357A2 2 0 0 1 604 355Z" fill="#F9F9F9"/>
+<text id="fragment-1--guard" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#505050"><tspan x="605" y="367">[notify]</tspan></text>
+<path id="fragment-1--section-2" data-role="decoration" d="M552 417L1092 417" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="fragment-1--section-2-guard--plate" data-role="decoration" d="M561 422H603A2 2 0 0 1 605 424V435A2 2 0 0 1 603 437H561A2 2 0 0 1 559 435V424A2 2 0 0 1 561 422Z" fill="#F9F9F9"/>
+<text id="fragment-1--section-2-guard" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11.5" font-weight="400" fill="#505050"><tspan x="562" y="434">[record]</tspan></text>
+<path id="divider-1--rule" data-role="decoration" d="M41 637.5L1240 637.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="divider-1--rule-2" data-role="decoration" d="M41 640.5L1240 640.5" fill="none" stroke="#A6A6A6" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="divider-1" data-role="header" d="M595 629H687A10 10 0 0 1 697 639V639A10 10 0 0 1 687 649H595A10 10 0 0 1 585 639V639A10 10 0 0 1 595 629Z" fill="#E6E6E6" stroke="#A6A6A6" stroke-width="1" stroke-linejoin="round"/>
+<text id="divider-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle" letter-spacing="0.5"><tspan x="641" y="643.5">PARCEL STORED</tspan></text>
+<path id="note-1" data-role="callout" d="M552 490.5H1082L1092 500.5V538.5H552ZM1082 490.5V500.5H1092" fill="#E7F2E7" stroke="#7CB77C" stroke-width="1" stroke-linejoin="round"/>
+<text id="note-1--text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000"><tspan x="564" y="510">Door must open within 10 s or the</tspan><tspan x="564" y="524.5">reservation lapses</tspan></text>
+<g id="message-1" data-role="edge"><path d="M79 225L306 225" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M314 225L305 228.5L305 221.5Z" fill="#3B3B3B"/></g>
+<path id="message-1--label--plate" data-role="decoration" d="M162 205H231A2 2 0 0 1 233 207V218A2 2 0 0 1 231 220H162A2 2 0 0 1 160 218V207A2 2 0 0 1 162 205Z" fill="#F7F7F7"/>
+<text id="message-1--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="196.5" y="217">1. Scan parcel</tspan></text>
+<g id="message-2" data-role="edge"><path d="M324 272L563 272" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M571 272L562 275.5L562 268.5Z" fill="#3B3B3B"/></g>
+<path id="message-2--label--plate" data-role="decoration" d="M387 238H507A2 2 0 0 1 509 240V251A2 2 0 0 1 507 253H387A2 2 0 0 1 385 251V240A2 2 0 0 1 387 238Z" fill="#FFFFFF"/>
+<text id="message-2--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="447.5" y="249.5">2. Reserve compartment</tspan></text>
+<path id="message-2--detail--plate" data-role="decoration" d="M387 252H507A2 2 0 0 1 509 254V265A2 2 0 0 1 507 267H387A2 2 0 0 1 385 265V254A2 2 0 0 1 387 252Z" fill="#FFFFFF"/>
+<text id="message-2--detail" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="447.5" y="264">size M, locker 14</tspan></text>
+<g id="message-3" data-role="edge"><path d="M581 304L822 304" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M830 304L821 307.5L821 300.5Z" fill="#3B3B3B"/></g>
+<path id="message-3--label--plate" data-role="decoration" d="M643 284H768A2 2 0 0 1 770 286V297A2 2 0 0 1 768 299H643A2 2 0 0 1 641 297V286A2 2 0 0 1 643 284Z" fill="#F7F7F7"/>
+<text id="message-3--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="705.5" y="296">3. Find free compartment</tspan></text>
+<g id="message-4" data-role="edge"><path d="M830 337L581 337" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M590 333.5L581 337L590 340.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-4--label--plate" data-role="decoration" d="M660 317H750A2 2 0 0 1 752 319V330A2 2 0 0 1 750 332H660A2 2 0 0 1 658 330V319A2 2 0 0 1 660 317Z" fill="#FFFFFF"/>
+<text id="message-4--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="705.5" y="329">4. Compartment 3</tspan></text>
+<g id="message-5" data-role="edge"><path d="M581 403L1068 403" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M1059 406.5L1068 403L1059 399.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-5--label--plate" data-role="decoration" d="M638 383H756A2 2 0 0 1 758 385V396A2 2 0 0 1 756 398H638A2 2 0 0 1 636 396V385A2 2 0 0 1 638 383Z" fill="#F9F9F9"/>
+<text id="message-5--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="697.5" y="395">5. Open compartment 3</tspan></text>
+<g id="message-6" data-role="edge"><path d="M581 467L835 467" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M826 470.5L835 467L826 463.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-6--label--plate" data-role="decoration" d="M666 447H749A2 2 0 0 1 751 449V460A2 2 0 0 1 749 462H666A2 2 0 0 1 664 460V449A2 2 0 0 1 666 447Z" fill="#F9F9F9"/>
+<text id="message-6--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="708" y="459">6. Mark reserved</tspan></text>
+<g id="message-7" data-role="edge"><path d="M1068 585L1096 585L1096 601L1076 601" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/><path d="M1068 601L1077 597.5L1077 604.5Z" fill="#3B3B3B"/></g>
+<path id="message-7--label--plate" data-role="decoration" d="M1103 585H1196A2 2 0 0 1 1198 587V599A2 2 0 0 1 1196 601H1103A2 2 0 0 1 1101 599V587A2 2 0 0 1 1103 585Z" fill="#F9F9F9"/>
+<text id="message-7--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000"><tspan x="1104" y="597.5">7. Poll door sensor</tspan></text>
+<g id="message-8" data-role="edge"><path d="M571 716L324 716" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M333 712.5L324 716L333 719.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-8--label--plate" data-role="decoration" d="M393 696H501A2 2 0 0 1 503 698V709A2 2 0 0 1 501 711H393A2 2 0 0 1 391 709V698A2 2 0 0 1 393 696Z" fill="#F3EFF9"/>
+<text id="message-8--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="447.5" y="708">8. Drop-off confirmed</tspan></text>
+<g id="message-9" data-role="edge"><path d="M314 748L79 748" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-dasharray="5 4" stroke-linecap="butt" stroke-linejoin="round"/><path d="M88 744.5L79 748L88 751.5" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path id="message-9--label--plate" data-role="decoration" d="M158 728H235A2 2 0 0 1 237 730V741A2 2 0 0 1 235 743H158A2 2 0 0 1 156 741V730A2 2 0 0 1 158 728Z" fill="#F3EFF9"/>
+<text id="message-9--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050" text-anchor="middle"><tspan x="196.5" y="740">9. Show receipt</tspan></text>
+<path id="message-10" data-role="edge" d="M1068 825L576 825" fill="none" stroke="#3B3B3B" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="message-10--fail-1" data-role="marker" d="M571 820L581 830" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="message-10--fail-2" data-role="marker" d="M571 830L581 820" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="message-10--label--plate" data-role="decoration" d="M924 805H1000A2 2 0 0 1 1002 807V818A2 2 0 0 1 1000 820H924A2 2 0 0 1 922 818V807A2 2 0 0 1 924 805Z" fill="#F9F9F9"/>
+<text id="message-10--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#000000" text-anchor="middle"><tspan x="962" y="817">10. Fault report</tspan></text>
+<path id="courier--mirror" data-role="node" d="M41 855H117V907H41Z" fill="none"/>
+<path id="courier--mirror--rule" data-role="decoration" d="M45 905L113 905" fill="none" stroke="#107C10" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<g id="courier--mirror--icon" data-role="icon"><g transform="translate(46 878) scale(0.833)" fill="none" stroke="#107C10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/></g></g>
+<text id="courier--mirror--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000"><tspan x="71.5" y="892.5">Courier</tspan></text>
+<path id="app--mirror" data-role="node" d="M281 855H357V907H281Z" fill="none"/>
+<path id="app--mirror--rule" data-role="decoration" d="M285 905L353 905" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="app--mirror--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="319" y="892.5">Courier app</tspan></text>
+<path id="hub--mirror" data-role="node" d="M540 855H612V907H540Z" fill="none"/>
+<path id="hub--mirror--rule" data-role="decoration" d="M544 905L608 905" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="hub--mirror--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576" y="892.5">Locker hub</tspan></text>
+<path id="hub--mirror--badge" data-role="badge" d="M566 861H587A8 8 0 0 1 595 869V869A8 8 0 0 1 587 877H566A8 8 0 0 1 558 869V869A8 8 0 0 1 566 861Z" fill="#CAE2CA" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="hub--mirror--badge-text" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="576.5" y="873.5">New</tspan></text>
+<path id="db--mirror" data-role="node" d="M797 855H873V907H797Z" fill="none"/>
+<path id="db--mirror--rule" data-role="decoration" d="M801 905L869 905" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="db--mirror--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="835" y="892.5">Parcel store</tspan></text>
+<path id="locker--mirror" data-role="node" d="M1032 855H1104V907H1032Z" fill="none"/>
+<path id="locker--mirror--rule" data-role="decoration" d="M1036 905L1100 905" fill="none" stroke="#7A3E9D" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="locker--mirror--label" data-role="label" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#000000" text-anchor="middle"><tspan x="1068" y="892.5">Locker unit</tspan></text>
+<g id="ds-legend-0-0-line" data-role="legend"><path d="M40 934L59 934" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M68 934L58 938L58 930Z" fill="#3B3B3B"/></g>
+<text id="ds-legend-0-0-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="74" y="938.5">Call</tspan></text>
+<g id="ds-legend-0-1-line" data-role="legend"><path d="M111.5 934L139.5 934" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M129.5 938L139.5 934L129.5 930" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text id="ds-legend-0-1-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="145.5" y="938.5">Asynchronous message</tspan></text>
+<g id="ds-legend-0-2-line" data-role="legend"><path d="M279.5 934L307.5 934" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-dasharray="6 4.5" stroke-linecap="butt" stroke-linejoin="round"/><path d="M297.5 938L307.5 934L297.5 930" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text id="ds-legend-0-2-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="313.5" y="938.5">Return</tspan></text>
+<path id="ds-legend-0-3-line" data-role="legend" d="M366 934L394 934" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="ds-legend-0-3-cross-1" data-role="legend" d="M386 930L394 938" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<path id="ds-legend-0-3-cross-2" data-role="legend" d="M386 938L394 930" fill="none" stroke="#3B3B3B" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+<text id="ds-legend-0-3-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="400" y="938.5">Failed or lost message</tspan></text>
+<path id="ds-legend-0-4-swatch" data-role="legend" d="M533.5 928H541.5A6 6 0 0 1 547.5 934V934A6 6 0 0 1 541.5 940H533.5A6 6 0 0 1 527.5 934V934A6 6 0 0 1 533.5 928Z" fill="#CAE2CA" stroke="#107C10" stroke-width="1" stroke-linejoin="round"/>
+<text id="ds-legend-0-4-label" data-role="legend" font-family="Selawik, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#505050"><tspan x="553.5" y="938.5">New</tspan></text>
+</svg>

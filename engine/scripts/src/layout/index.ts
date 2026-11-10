@@ -8,6 +8,7 @@ import { countedNodes } from '../validate/spec.js';
 import { type ContextOptions, type LayoutContext, createContext } from './context.js';
 import { layoutOperatingModel } from './operating-model.js';
 import { layoutSwimlane } from './swimlane.js';
+import { layoutSequence } from './sequence.js';
 import { layoutRoadmap } from './roadmap.js';
 import { layoutValueChain } from './value-chain.js';
 import { layoutMatrix } from './matrix-2x2.js';
@@ -20,12 +21,14 @@ import { layoutKpi } from './kpi.js';
 import { layoutNarrative } from './narrative.js';
 import { layoutExhibit } from './exhibit.js';
 import type { AzureArchitectureBody } from '../spec.js';
+import { DEFAULT_CALLOUT_HEADING, calloutHeading } from '../spec.js';
 
 export type LayoutFn = (ctx: LayoutContext) => void | Promise<void>;
 
 const LAYOUTS: Record<DiagramType, LayoutFn> = {
   'operating-model': layoutOperatingModel,
   swimlane: layoutSwimlane,
+  sequence: layoutSequence,
   roadmap: layoutRoadmap,
   'value-chain': layoutValueChain,
   'matrix-2x2': layoutMatrix,
@@ -58,7 +61,7 @@ export async function layout(spec: Spec, theme: Theme, fonts: FontSet, opts: Con
   if (grid && grid.kind === 'grid') grid.h = ctx.H;
   const workflow =
     spec.type === 'azure-architecture' || spec.type === 'databricks-architecture' ? ((spec.body as unknown as AzureArchitectureBody).steps ?? []).map((s) => `${s.step}. ${s.text}`) : [];
-  const notes = [spec.subtitle, spec.callout?.text ? `So what: ${spec.callout.text}` : undefined, ...(workflow.length ? ['Workflow:', ...workflow] : [])]
+  const notes = [spec.subtitle, spec.callout?.text ? `${calloutHeading(spec.callout) ?? DEFAULT_CALLOUT_HEADING}: ${spec.callout.text}` : undefined, ...(workflow.length ? ['Workflow:', ...workflow] : [])]
     .filter(Boolean)
     .join('\n');
   const scene: Scene = {

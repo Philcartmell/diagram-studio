@@ -61,7 +61,9 @@ export type ShapeKind =
   | 'cylinder'
   | 'delay'
   | 'predefined'
-  | 'hexagon';
+  | 'hexagon'
+  /** A sticky note with a folded top-right corner (sequence notes). */
+  | 'note';
 
 export type Dash = 'solid' | 'dashed' | 'dotted';
 
@@ -173,6 +175,8 @@ export interface LineEl {
   paint: Paint;
   arrowEnd?: boolean;
   arrowStart?: boolean;
+  /** Arrowhead style for this line; defaults to the theme's connector arrow. */
+  arrow?: 'triangle' | 'open';
   group?: string;
 }
 

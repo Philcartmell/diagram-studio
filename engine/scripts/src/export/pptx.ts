@@ -12,6 +12,7 @@ import type { Box, ConnectorEl, LineEl, Point, Scene, SceneElement, ShapeEl, Sid
 import type { FontSet } from '../text/measure.js';
 import type { Theme } from '../theme/types.js';
 import { textBox } from '../layout/labels.js';
+import { noteFold } from '../scene/geometry.js';
 import { textBlocks } from './text-blocks.js';
 import { iconSvgAt } from '../azure/icons.js';
 
@@ -102,6 +103,7 @@ const PRESET: Record<string, string> = {
   delay: 'flowChartDelay',
   predefined: 'flowChartPredefinedProcess',
   hexagon: 'hexagon',
+  note: 'foldedCorner',
 };
 
 function addShape(c: Ctx, s: ShapeEl) {
@@ -113,6 +115,22 @@ function addShape(c: Ctx, s: ShapeEl) {
   }
   if (s.shape === 'pill') rectRadius = inL(c, s.h / 2);
   const n = name(c, s.group, s.id);
+  if (s.shape === 'note') {
+    // PowerPoint's folded-corner preset folds the bottom corner; draw the UML note (top-right fold) as a freeform.
+    const f = noteFold(s.w, s.h);
+    const P = (x: number, y: number, extra: Record<string, boolean> = {}) => ({ x: inL(c, x), y: inL(c, y), ...extra });
+    c.slide.addShape('custGeom' as never, {
+      x: inX(c, s.x),
+      y: inY(c, s.y),
+      w: inL(c, s.w),
+      h: inL(c, s.h),
+      points: [P(0, 0), P(s.w - f, 0), P(s.w, f), P(s.w, s.h), P(0, s.h), { close: true }, P(s.w - f, 0, { moveTo: true }), P(s.w - f, f), P(s.w, f)],
+      fill: fill(s.paint.fill),
+      line: line(c, s.paint.stroke, s.paint.stroke === 'none' ? 0 : s.paint.strokeWidth, s.paint.dash),
+      objectName: n,
+    } as never);
+    return;
+  }
   if ((s.shape === 'chevron' || s.shape === 'pentagon') && s.depth) c.adj.set(n, Math.round((s.depth / Math.min(s.w, s.h)) * 100000));
   c.slide.addShape(prst as never, {
     x: inX(c, s.x),
@@ -180,14 +198,14 @@ function addTextBox(c: Ctx, texts: TextEl[], shape: ShapeEl | undefined, group?:
   } as never);
 }
 
-function addPolyline(c: Ctx, id: string, pts: Point[], stroke: string, sw: number, dash: string | undefined, arrowEnd: boolean, arrowStart: boolean, group?: string) {
+function addPolyline(c: Ctx, id: string, pts: Point[], stroke: string, sw: number, dash: string | undefined, arrowEnd: boolean, arrowStart: boolean, group?: string, arrow?: 'triangle' | 'open') {
   const xs = pts.map((p) => p.x);
   const ys = pts.map((p) => p.y);
   const x0 = Math.min(...xs);
   const y0 = Math.min(...ys);
   const w = Math.max(...xs) - x0;
   const h = Math.max(...ys) - y0;
-  const kind = c.theme.connector.arrow === 'open' ? 'arrow' : 'triangle';
+  const kind = (arrow ?? c.theme.connector.arrow) === 'open' ? 'arrow' : 'triangle';
   c.slide.addShape('custGeom' as never, {
     x: inX(c, x0),
     y: inY(c, y0),
@@ -287,7 +305,7 @@ export async function renderPptxPages(pages: PptxPage[], meta: { title: string }
         }
         case 'line': {
           const l = e as LineEl;
-          addPolyline(c, l.id, l.points, l.paint.stroke, l.paint.strokeWidth, l.paint.dash, !!l.arrowEnd, !!l.arrowStart, l.group);
+          addPolyline(c, l.id, l.points, l.paint.stroke, l.paint.strokeWidth, l.paint.dash, !!l.arrowEnd, !!l.arrowStart, l.group, l.arrow);
           break;
         }
         case 'icon': {

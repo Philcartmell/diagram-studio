@@ -21,7 +21,7 @@
         "properties": {
           "id": { "$ref": "../diagram.schema.json#/$defs/id" },
           "type": {
-            "enum": ["operating-model", "swimlane", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture", "bar-chart", "waterfall", "line-chart", "kpi", "narrative"]
+            "enum": ["operating-model", "swimlane", "sequence", "roadmap", "value-chain", "matrix-2x2", "layered-architecture", "azure-architecture", "databricks-architecture", "bar-chart", "waterfall", "line-chart", "kpi", "narrative"]
           },
           "title": { "type": "string", "minLength": 1, "maxLength": 60 },
           "subtitle": { "type": "string", "minLength": 1, "maxLength": 100 },
