@@ -4,6 +4,8 @@ The engine (the `diagram-studio` npm package, in `engine/`) and the Claude Code 
 
 ## Unreleased
 
+## 1.2.0 (2026-11-10)
+
 ### Engine: `diagram-studio`
 
 - **`sequence`**: who talks to whom, in what order. Participants as lifelines (cards, pills, underlined or plain labels; person, database, queue and external kinds; optional groups such as "Our platform"), messages as arrows (calls, asynchronous messages, returns, failed or lost messages, self-messages, two-way exchanges), activation bars (automatic from calls and returns, or set per message), participants created and destroyed mid-flow, notes, fragments (`loop`, `alt`, `opt`, `par`, `critical`, `break`, `group`, nested up to four deep), highlighted runs, phases with a labelled gutter, dividers, delays where time passes, and timing brackets in the margin. Numbering as badges or inline. Accent two or more messages and the rest of the flow mutes itself.
